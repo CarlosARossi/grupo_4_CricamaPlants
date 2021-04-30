@@ -5,9 +5,9 @@
 ### Repositorio: 
 <https://github.com/CarlosARossi/grupo_4_nombre.git>
 ### Colaboradores: 
-<https://github.com/CarlosARossi>
-<https://github.com/manunacht>
-<https://github.com/CristianGus>
+- Carlos Rossi: <https://github.com/CarlosARossi>
+- Manuel Natch: <https://github.com/manunacht>
+- Cristian Leiva: <https://github.com/CristianGus>
 
 
 ## Punto 2:
