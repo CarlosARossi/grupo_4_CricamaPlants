@@ -3,11 +3,11 @@
 ## Punto 1:
 
 ### Repositorio: 
-                <https://github.com/CarlosARossi/grupo_4_nombre.git>
+<https://github.com/CarlosARossi/grupo_4_nombre.git>
 ### Colaboradores: 
-                <https://github.com/CarlosARossi>
-                <https://github.com/manunacht>
-                <https://github.com/CristianGus>
+<https://github.com/CarlosARossi>
+<https://github.com/manunacht>
+<https://github.com/CristianGus>
 
 
 ## Punto 2:
