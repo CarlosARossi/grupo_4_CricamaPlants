@@ -54,3 +54,7 @@ Sitios de referencia indicando brevemente por qué fueron elegidos
 1. **Cruces Bosque y Jardín** 
     - link: <https://cruces.com.ar/tienda/>
     - Motivo: los productos que ofrecen son del mercado elegido y la interfaz es lo suficientemente sencilla e intuitiva para el segmento etario que buscamos.
+
+2. **IKEA** 
+    - link: <https://www.ikea.com/es/es/search/products/?q=jardin>
+    - Motivo: posee una interfaz muy "limpia" y con la cantidad de informacion necesaria para un e-commerce.
