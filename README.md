@@ -41,7 +41,7 @@ Me encanta viajar y vivir nuevas experiencias, por lo que creo que saber program
 - **Cristian Leiva:**
 
 
-### Punto 3:
+## Punto 3:
 
 Deberán realizar una búsqueda de sitios similares, relacionados o que sean de interés:
 Por los productos o servicios que ofrecen.
