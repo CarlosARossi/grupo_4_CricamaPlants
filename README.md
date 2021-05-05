@@ -14,21 +14,18 @@
 
 ### Descripción de la oferta de productos y/o servicios ofrecidos
 
-- Tierra
-- Semillas
-- Plantas de interior
-- Plantas de exterior
-- Herramientas
+- Plantas
+    - Interior
+    - Exterior
+- Insumos
+    - Tierra
+    - Herramientas
 - Macetas
-seguramente habria que separarlo en secciones, tal vez mas ordenadas
 
 
 ### Descripción del público al que apunta el sitio
 
-Queremos que el sitio apunte a dos mercados distintos: 
-
-En primer lugar a un publico de entre 25 y 35 anios, los cuales usualmente viven en lugares con poco espacio o sin jardin, por lo que productos como plantas de interior, macetas para balcones o terrazas y huertas verticales serian ideales. Este segmento esta mas acostumbrado a la compra por internet.
-En segundo lugar, apuntar a la gente que vive en casas con mayor espacio y con jardin, y que busquen tener huertas de mayor tamanio, sistemas de riego, y plantas de mayor volumen. En este caso, el segmento de etario mas amplio e incluye a gente no tan acostumbrada a las compras en e-commerce, por lo que una interfaz mas amigable les sera de ayuda.
+El sitio esta apuntado a un publico de entre 25 y 35 anios, los cuales usualmente viven en lugares con poco espacio o sin jardin, por lo que productos como plantas de interior o exterior, macetas para balcones o terrazas e insumos. Este segmento esta mas acostumbrado a la compra por internet.
 
 
 ### Integrantes del equipo
@@ -58,3 +55,17 @@ Sitios de referencia indicando brevemente por qué fueron elegidos
 2. **IKEA** 
     - link: <https://www.ikea.com/es/es/search/products/?q=jardin>
     - Motivo: posee una interfaz muy "limpia" y con la cantidad de informacion necesaria para un e-commerce.
+
+3. **THONET & VANDER**
+    - link: <https://thonet-vander.com/ar/>
+    - Motivo: 
+
+4. **APPLE**
+    - link: <https://www.apple.com/>
+    - Motivo: 
+
+5. **EASY**
+    - link: <https://www.easy.com.ar/>
+    - Motivo: 
+
+
