@@ -1,4 +1,4 @@
-# Proyecto Integrador Grupo 4 
+# Proyecto Integrador Grupo 4 - Cricama Plants
 
 ## Punto 1:
 
@@ -40,13 +40,7 @@ Me encanta viajar y vivir nuevas experiencias, por lo que creo que saber program
 
 ## Punto 3:
 
-Deberán realizar una búsqueda de sitios similares, relacionados o que sean de interés:
-Por los productos o servicios que ofrecen.
-Por los clientes a los que apuntan.
-Por la estética que presentan: 
-Por las funcionalidades implementadas.
-
-Sitios de referencia indicando brevemente por qué fueron elegidos
+### Sitios de referencia
 
 1. **Cruces Bosque y Jardín** 
     - link: <https://cruces.com.ar/tienda/>
@@ -62,10 +56,14 @@ Sitios de referencia indicando brevemente por qué fueron elegidos
 
 4. **APPLE**
     - link: <https://www.apple.com/>
-    - Motivo: 
+    - Motivo: el motivo es el mimimalismo de la pagina. La integración del e-commerce con el usuario. Y la barra con las categorias arriba.
 
 5. **EASY**
     - link: <https://www.easy.com.ar/>
     - Motivo: 
 
 
+## Punto 4:
+
+### Wireframe: 
+<https://marvelapp.com/prototype/c84eg5g>
