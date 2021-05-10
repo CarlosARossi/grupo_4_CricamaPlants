@@ -35,7 +35,7 @@ Me encanta viajar y vivir nuevas experiencias, por lo que creo que saber program
 
 - **Manuel Nacht:** Tengo 19 anios. Juego al voley en river plate. Tambien estudio actuario en administracion en la UBA, estoy en primer anio. Siempre quise aprender a programar y decidi tirarme a la pileta este anio, espero aprender mucho y tambien crecer personalmente.
 
-- **Cristian Leiva:**
+- **Cristian Leiva:** Tengo 30 anios, nací y vivo actualmente en Córdoba, soy cocinero hace casi 10 años y trabajo en una empresa que realiza viandas y comidas para otras empresas, fábricas y particulares. Me gusta el fútbol y la naturaleza. Me voy de viaje cada vez que puedo para conocer otras formas de vivir y de pensar. Siempre me interesó la programación pero nunca había tenido la oportunidad de aprender, me gusta enfrentar nuevos desafíos y tratar de encontrarle la solución a los problemas con los que me encuentro.
 
 
 ## Punto 3:
@@ -60,8 +60,7 @@ Me encanta viajar y vivir nuevas experiencias, por lo que creo que saber program
 
 5. **EASY**
     - link: <https://www.easy.com.ar/>
-    - Motivo: 
-
+    - Motivo: buscábamos un lugar que represente las ventas de artículos para el hogar como base para nuestra página.
 
 ## Punto 4:
 
