@@ -30,8 +30,8 @@ El sitio esta apuntado a un publico de entre 25 y 35 anios, los cuales usualment
 
 ### Integrantes del equipo
 
-- **Carlos Rossi:** Actualmente trabajo como Jefe de Producción en una empresa de manufactura de electrónica para energías renovables. Tanto en la secundaria como en la facultad tuve experiencias programando, pero nunca al nivel de este curso. 
-Me encanta viajar y vivir nuevas experiencias, por lo que creo que saber programar es clave para poder viajar trabajando.
+- **Carlos Rossi:** Tengo 29 anios. Actualmente trabajo como Jefe de Producción en una empresa de manufactura de electrónica para energías renovables. Tanto en la secundaria como en la facultad tuve experiencias programando, pero nunca al nivel de este curso. 
+Me encanta viajar y vivir dnuevas experiencias, por lo que creo que saber programar es clave para poder viajar trabajando.
 
 - **Manuel Nacht:** Tengo 19 anios. Juego al voley en river plate. Tambien estudio actuario en administracion en la UBA, estoy en primer anio. Siempre quise aprender a programar y decidi tirarme a la pileta este anio, espero aprender mucho y tambien crecer personalmente.
 
@@ -52,7 +52,7 @@ Me encanta viajar y vivir nuevas experiencias, por lo que creo que saber program
 
 3. **THONET & VANDER**
     - link: <https://thonet-vander.com/ar/>
-    - Motivo: 
+    - Motivo: elegimos esta página por su sobriedad. También la paleta de colores y diseño te invita a pensar en una empresa sería y de calidad.
 
 4. **APPLE**
     - link: <https://www.apple.com/>
@@ -66,3 +66,10 @@ Me encanta viajar y vivir nuevas experiencias, por lo que creo que saber program
 
 ### Wireframe: 
 <https://marvelapp.com/prototype/c84eg5g>
+
+
+## Punto Opcional:
+
+   - **Tipografia:** Roboto
+   - **Logo:** 
+   - **Paleta de colores:** 
