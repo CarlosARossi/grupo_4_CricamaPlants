@@ -1,4 +1,6 @@
-# Proyecto Integrador Grupo 4 - Cricama Plants
+# **Proyecto Integrador Grupo 4 - Cricama Plants**
+
+# Sprint 1
 
 ## Punto 1:
 
@@ -73,3 +75,17 @@ Me encanta viajar y vivir dnuevas experiencias, por lo que creo que saber progra
    - **Tipografia:** Roboto
    - **Logo:** 
    - **Paleta de colores:** 
+
+
+
+# Sprint 2
+
+## Punto 1 
+
+### Retroretrospectiva:
+Ver archivo 'retro.md'
+
+## Punto 2
+
+### Tablero de trabajo: 
+<https://trello.com/b/nxOipqK2/cricamaplants>
