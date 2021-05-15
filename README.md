@@ -83,7 +83,7 @@ Me encanta viajar y vivir dnuevas experiencias, por lo que creo que saber progra
 ## Punto 1 
 
 ### Retroretrospectiva:
-Ver archivo 'retro.md'
+<https://github.com/CarlosARossi/grupo_4_CacrimaPlants/blob/master/retro.md>
 
 ## Punto 2
 
