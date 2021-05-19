@@ -73,8 +73,8 @@ Me encanta viajar y vivir dnuevas experiencias, por lo que creo que saber progra
 ## Punto Opcional:
 
    - **Tipografia:** Roboto
-   - **Logo:** 
-   - **Paleta de colores:** 
+   - **Logo:** <https://github.com/CarlosARossi/grupo_4_CricamaPlants/blob/master/Materiales/Design/Logos/Logo.png>
+   - **Paleta de colores:** <https://github.com/CarlosARossi/grupo_4_CricamaPlants/blob/master/Materiales/Design/Paleta%20de%20colores/Paleta%20de%20colores.pdf>
 
 
 
