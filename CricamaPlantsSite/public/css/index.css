@@ -35,18 +35,23 @@ h2 {
 /*********************************************** MOBILE ***********************************************/
 
 /*********************** HEADER ***********************/
+header{
+    background-color: #F5E078;
 
-.main-header{
+}
+
+.mainHeader{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content:space-around;
+    justify-content:space-between;
+    padding: 5px;
 }
 
 .logo{
-    padding: 10px;
-    width: 40vw;
+    padding: 2px;
+    width: 20vw;
     
 }
 
@@ -54,28 +59,239 @@ h2 {
     background-color: white;
     border-radius: 5px;
     padding: 5px 10px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    color:#666;
-    width: 55vw;
+    color:#30544E;
+    width: 50vw;
     margin: 5px;
+    margin-right: auto;
 }
 
 .searchBar{
+    color: #30544E;
     border: none;
     padding:5px 10px;
-    width: 75%;
+    width: 85%;
 }
 
-.main-nav ul{
+
+.mainNav{
+    display: none;
+}
+
+.iconsNav{
+    display: none;
+}
+
+.burgerMenu{
+    font-size: 6vw;
+    color: #FAD7C5;
+    width: 10vw;
+    height: 10vw;
+    text-align: center;
+    margin: auto;
+    background-color: #30544E;
+    border: solid #30544E 1px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*********************** FOOTER ***********************/
+
+footer{
+    background-color: #FAD7C5;
+    text-align: left;
+    width: 100vw;
+    height: fit-content;
+    color: #30544E;
+    padding-left: 10px;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+#brandFooter{
+    font-size: 1.7em;
+    font-weight: bolder;
+    text-align: center;
+}
+.footerNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
+    height: 50px;
+    width: auto;
+    justify-content: space-evenly;
+    margin: auto;
+    align-content: space-around;
 }
 
-.main-nav a{
+.footerNav a{
     text-decoration: none;
-    color: black;
-    display: inline-block;
-    padding: 5px 0;
-    font-size: 17px;
+    color: #30544E;
+    padding: 20px;
+}
+
+.footerTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.footerContact{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: auto;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.footerContact li{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: right;
+}
+
+.iconContact{
+    margin: 0px 2px;
+    width: 20px;
+    text-align: center
+}
+
+#copyright{
+    margin-top: 10px;
+    text-align: center;
+    width: 100vw;
+}
+
+.iconPay{
+    font-size: 2em; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.iconSocial{
+    font-size: 3em; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/*********************************************** TABLET ***********************************************/
+@media (min-width: 768px){
+ 
+    /*********************** HEADER TABLET ***********************/    
+    .logo {
+        width: 100px;
+    }
+
+    .mainNav{
+        display: flex;
+        list-style: none;
+        width: 45vw;
+        justify-content: space-between;
+    }
+    
+    .mainNav a{
+        text-decoration: none;
+        color: #30544E;
+        padding: 5px 0;
+        font-size: 1.7vw;
+    }
+
+    .iconsNav{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        width: 10vw;
+        margin-right: -6vw;
+    }
+    
+    .iconsNav a{
+        font-size: 2vw;
+        color: #30544E;
+    }
+
+    .search {
+        width: 20%;
+        margin: 5px;
+    }
+    .burgerMenu{
+        display: none;
+    }
+
+    /*********************** FOOTER TABLET ***********************/
+    footer{
+        padding: 0px;
+    }
+
+    #footerGeneral{
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 10px;
+    }
+
+    .footerContent{
+        width: 20vw;
+    }
+
+    .footerNav{
+        width: auto;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+
+    .footerNav a {
+        padding: 0px;
+    }
+
+    .iconPay{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .iconSocial{
+        font-size: 2em; 
+    }
+    
+
+}
+
+/*********************************************** DESKTOP ***********************************************/
+@media (min-width: 1021px){
+    /*********************** MAIN DESKTOP ***********************/
+    .mainHeader{
+        width: 1366px;
+        margin: auto;
+    }
+
+    .mainNav{
+        width: 50%;
+        justify-content: space-around;
+    }
+
+    .mainNav a{
+        font-size: 1.5em;
+    }
+    
+    .iconsNav{
+        margin: 0px;
+        width: 10%;
+    }
+
+    /*********************** FOOTER DESKTOP ***********************/
+
+    #footerGeneral{
+       width: 1366px;
+       margin: auto;
+    }
+
+    .footerContent{
+        width: 20%;
+    }
+}
+
+@media (max-width: 1023px){
+
 }
