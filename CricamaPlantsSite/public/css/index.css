@@ -31,7 +31,6 @@ h2 {
 }
 
 
-
 /*********************************************** MOBILE ***********************************************/
 
 /*********************** HEADER ***********************/
@@ -51,8 +50,7 @@ header{
 
 .logo{
     padding: 2px;
-    width: 20vw;
-    
+    width: 20vw;   
 }
 
 .search { 
@@ -77,13 +75,21 @@ header{
     display: none;
 }
 
+.mainNav a:hover{
+    color: #A78B48;
+}
+
 .iconsNav{
     display: none;
 }
 
+.iconsNav a:hover{
+    color: #A78B48;
+}
+
 .burgerMenu{
     font-size: 6vw;
-    color: #FAD7C5;
+    color: #F5E078;
     width: 10vw;
     height: 10vw;
     text-align: center;
@@ -95,14 +101,21 @@ header{
     justify-content: center;
     align-items: center;
 }
+
+.burgerMenu:hover{
+    background-color: #A78B48;
+    border: solid #A78B48 1px;
+
+}
+
 /*********************** FOOTER ***********************/
 
 footer{
-    background-color: #FAD7C5;
+    background-color: #30544E;
     text-align: left;
     width: 100vw;
     height: fit-content;
-    color: #30544E;
+    color: #F5E078;
     padding-left: 10px;
     padding-top: 10px;
     position: absolute;
@@ -113,6 +126,7 @@ footer{
     font-size: 1.7em;
     font-weight: bolder;
     text-align: center;
+    margin-bottom: 15px;
 }
 .footerNav{
     display: flex;
@@ -124,17 +138,23 @@ footer{
     justify-content: space-evenly;
     margin: auto;
     align-content: space-around;
+    margin-bottom: 15px;
+}
+
+.footerNav a:hover{
+    color: #A78B48;
 }
 
 .footerNav a{
     text-decoration: none;
-    color: #30544E;
+    color:#F5E078;
     padding: 20px;
 }
 
 .footerTitle {
     font-size: 1.2em;
     font-weight: bold;
+    text-align: center;
 }
 
 .footerContact{
@@ -143,14 +163,15 @@ footer{
     list-style: none;
     width: auto;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    align-items: center;
 }
 
 .footerContact li{
     display: flex;
     flex-direction: row;
     width: 200px;
-    justify-content: right;
+    justify-content: center;
 }
 
 .iconContact{
@@ -167,13 +188,13 @@ footer{
 
 .iconPay{
     font-size: 2em; 
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 .iconSocial{
     font-size: 3em; 
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
@@ -191,7 +212,7 @@ footer{
         width: 45vw;
         justify-content: space-between;
     }
-    
+
     .mainNav a{
         text-decoration: none;
         color: #30544E;
@@ -225,6 +246,11 @@ footer{
         padding: 0px;
     }
 
+
+    .footerTitle {
+        text-align: left;
+    }
+
     #footerGeneral{
         display: flex;
         flex-wrap: wrap;
@@ -246,9 +272,18 @@ footer{
         padding: 0px;
     }
 
+    .footerContact {
+        align-items: flex-start
+    }
+
+    .footerContact li {
+        justify-content: left;
+    }
+
     .iconPay{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
     .iconSocial{
