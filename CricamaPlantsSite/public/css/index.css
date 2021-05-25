@@ -18,6 +18,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #E2E7E6;
+    position: relative;
    }
 
 p {
@@ -105,6 +106,74 @@ header{
 .burgerMenu:hover{
     background-color: #A78B48;
     border: solid #A78B48 1px;
+    transition: all 0.25s;
+
+}
+
+/*********************** MAIN ***********************/
+
+main {
+    background-color: #E2E7E6;
+    padding: 10px;
+    margin-top: 0vw;
+}
+
+
+.article{
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    max-width: 306px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.box-article{
+    padding: 15px;
+}
+
+.price {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.description {
+    text-transform:uppercase ;
+    font-size: 1em;
+    font-weight: bold;
+    color:#30544E;
+}
+
+.quotes {
+    display: none;
+}
+
+.image{
+    width: 96%;
+    border-radius: 10px;
+    margin: 2%;
+}
+
+.iconCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#30544E;
+    height: 40px;
+    width: 40px;
+    border: solid 2px #30544E;
+    border-radius:100%;
+    position: absolute;
+    right: 10px;
+}
+
+.iconCart:hover{
+    background-color: #30544E;
+    color: #F5E078;
+    border: solid #F5E078 2px;
+    transition: all 0.5s;
 
 }
 
@@ -118,8 +187,8 @@ footer{
     color: #F5E078;
     padding-left: 10px;
     padding-top: 10px;
-    position: absolute;
-    bottom: 0;
+/*     position: absolute;
+    bottom: 0; */
 }
 
 #brandFooter{
@@ -217,7 +286,8 @@ footer{
         text-decoration: none;
         color: #30544E;
         padding: 5px 0;
-        font-size: 1.7vw;
+        font-size: 1.1em;
+        font-weight: bolder;
     }
 
     .iconsNav{
@@ -229,7 +299,7 @@ footer{
     }
     
     .iconsNav a{
-        font-size: 2vw;
+        font-size: 150%;
         color: #30544E;
     }
 
@@ -241,14 +311,47 @@ footer{
         display: none;
     }
 
+    /*********************** MAIN TABLET ***********************/
+    
+    main {
+        margin-top: 0vw;
+    }
+  
+    .article{
+        margin-inline: 4vw;
+        max-width: 40vw;
+    }
+    
+    .generalArticles{    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    .quotes {
+        display: block;
+        font-size: 16px;
+        text-align: center;
+        border: solid 1px #30544E;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+
     /*********************** FOOTER TABLET ***********************/
     footer{
         padding: 0px;
     }
 
-
     .footerTitle {
         text-align: left;
+    }
+
+    #brandFooter {
+        width: 68%;
+        text-align: left;
+        margin-left: 10px;
     }
 
     #footerGeneral{
@@ -295,7 +398,7 @@ footer{
 
 /*********************************************** DESKTOP ***********************************************/
 @media (min-width: 1021px){
-    /*********************** MAIN DESKTOP ***********************/
+    /*********************** HEADER DESKTOP ***********************/
     .mainHeader{
         width: 1366px;
         margin: auto;
@@ -313,6 +416,19 @@ footer{
     .iconsNav{
         margin: 0px;
         width: 10%;
+    }
+
+    /*********************** MAIN DESKTOP ***********************/
+
+    .generalArticles{
+        width: 1366px;
+        margin: auto;
+     }
+
+
+    .article{
+        margin-inline: 1vw;
+        max-width: 22%;
     }
 
     /*********************** FOOTER DESKTOP ***********************/
