@@ -1,0 +1,34 @@
+/*------------------- GENERAL -----------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E2E7E6;
+    position: relative;
+   }
+/*------------------- HEADER -----------------------*/
+/*------------------- MAIN -----------------------*/
+.form{
+    background-color: #FAD7C5;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+}
+.form *{
+    font-size: 14px;
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+}
+.button{
+    transition: all 100ms;
+}
+.button:hover{
+    color: #F5E078;
+    font-size: 18px;
+}
+/*------------------- FOOTER -----------------------*/
