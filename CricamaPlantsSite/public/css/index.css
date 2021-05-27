@@ -36,7 +36,7 @@ h2 {
 
 /*********************** HEADER ***********************/
 header{
-    background-color: #F5E078;
+    background-color: #30544E;
 
 }
 
@@ -60,12 +60,11 @@ header{
     padding: 5px 10px;
     color:#30544E;
     width: 50vw;
-    margin: 5px;
-    margin-right: auto;
+    margin: auto;
 }
 
 .searchBar{
-    color: #30544E;
+    color: #F5E078;
     border: none;
     padding:5px 10px;
     width: 85%;
@@ -90,13 +89,13 @@ header{
 
 .burgerMenu{
     font-size: 6vw;
-    color: #F5E078;
+    color: #30544E;
     width: 10vw;
     height: 10vw;
     text-align: center;
     margin: auto;
-    background-color: #30544E;
-    border: solid #30544E 1px;
+    background-color: #F5E078;
+    border: solid #F5E078 1px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -114,13 +113,21 @@ header{
 
 main {
     background-color: #E2E7E6;
-    padding: 10px;
+    padding: 0px;
     margin-top: 0vw;
 }
 
+.banner{
+    display: block;
+    width: 100vw;
+    margin: auto;
+    object-fit: cover;
+    height: 30vh;
+    object-position: bottom;
+    margin-bottom: 10px;
+}
 
 .article{
-    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
     background-color: white;
     width: 90%;
     margin: auto;
@@ -128,6 +135,10 @@ main {
     border-radius: 10px;
     margin-bottom: 10px;
     position: relative;
+}
+
+.article:hover{
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
 .box-article{
@@ -276,6 +287,7 @@ footer{
     }
 
     .mainNav{
+        
         display: flex;
         list-style: none;
         width: 45vw;
@@ -284,10 +296,10 @@ footer{
 
     .mainNav a{
         text-decoration: none;
-        color: #30544E;
+        color: #F5E078;
         padding: 5px 0;
         font-size: 1.1em;
-        font-weight: bolder;
+        font-weight: 350;
     }
 
     .iconsNav{
@@ -300,7 +312,7 @@ footer{
     
     .iconsNav a{
         font-size: 150%;
-        color: #30544E;
+        color: #F5E078;
     }
 
     .search {
@@ -319,7 +331,7 @@ footer{
   
     .article{
         margin-inline: 4vw;
-        max-width: 40vw;
+        max-width: 39vw;
     }
     
     .generalArticles{    
