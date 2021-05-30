@@ -16,11 +16,36 @@
 </head>
 <body>
     <header>
+        <div class='mainHeader'>
+            <a href='/'><img class='logo' src="/img/Logo-F5E078.png" alt="Logo CriCaMa"></a>
+
+            <ul class='mainNav'>
+                <li><a href=''>Plantas</a></li>
+                <li><a href=''>Insumos</a></li>
+                <li><a href=''>Macetas</a></li>
+                <li><a href=''>Conocenos</a></li>
+                <li><a href=''>Contacto</a></li>
+            </ul>
+
+            <ul class='iconsNav'>
+                <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href='/login'><i class="fas fa-user"></i></a></li>
+            </ul>
+
+            <form action="/search" method="POST" class="search">    
+                <i class="fas fa-search"></i><input type="text" name="precio" placeholder="Buscar productos, marcas" class="searchBar">
+            </form>
+
+            <div class="burgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+        </div>  
 
     </header>
     <main>
-        <form action = "" method = "POST" class = "registerForm">
-            <label>Completa tus datos!</label>
+        <form action = "" method = "POST" class = "form">
+            <h2 id="title">Completa tus datos!</h2>
             <div class="">
                 <input type="text" name="completeName" placeholder="Nombre completo">
             </div>
@@ -33,8 +58,7 @@
             <div class="">
                 <input type="password" name="password" placeholder="Contraseña" >
             </div>
-            <div class="">
-                <label>Elegí el mes de tu cumpleaños</label>
+            <div>
                 <select name="province">
                     <option value="buenosAires">Buenos Aires</option>
                     <option value="catamarca">Catamarca</option>
@@ -50,7 +74,7 @@
                     <option value="laRioja">La Rioja</option>
                     <option value="mendoza">Mendoza</option>
                     <option value="misiones">Misiones</option>
-                    <option value="neuquen">neuquen</option>
+                    <option value="neuquen">Neuquen</option>
                     <option value="rioNegro">Rio Negro</option>
                     <option value="salta">Salta</option>
                     <option value="sanJuan">San Juan</option>
@@ -78,7 +102,52 @@
         </form>
     </main>
     <footer>
+        <div id='footerGeneral'>
+            <div class="footerContent">
+                <p id="brandFooter">Cricama Plants</p>
+            </div>
 
+            <div class="footerContent">
+                <h2 class='footerTitle'>Navegación</h2>
+                <ul class='footerNav'>
+                    <li><a href=''>Plantas</a></li>
+                    <li><a href=''>Insumos</a></li>
+                    <li><a href=''>Macetas</a></li>
+                    <li><a href=''>Conocenos</a></li>
+                    <li><a href=''>Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footerContent">
+                <h2 class='footerTitle'>Contactanos</h2>
+                <ul class='footerContact'>
+                    <li><div class="iconContact"><i class="fas fa-mobile-alt"></i></div> <p>01112341234</p></li>
+                    <li><div class="iconContact"><i class="fas fa-map-marker-alt"></i></div> <p>Avenida Siempreviva 742</p></li>
+                    <li><div class="iconContact"><i class="fas fa-envelope"></i></div> <p>cricamaplants@gmail.com</p></li>
+                    <li><div class="iconContact"><i class="fas fa-clock"></i></div> <p>Lun a Vie 9:30 a 18:30hs</p></li>
+                </ul>
+            </div>
+
+            <div class="footerContent">
+                <h2 class='footerTitle'>Medios de pago</h2>
+                <div class="iconPay">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+
+            <div class="footerContent">
+                <h2 class='footerTitle'>Redes sociales</h2>
+                <div class="iconSocial">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        
+        <p id='copyright'>Copyright © 2021-2021 CriCaMa Plants</p>
     </footer>
 </body>
 </html>
