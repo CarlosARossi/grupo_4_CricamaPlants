@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js",
-    "start": "nodemon app.js -e css,html,js"
+    "test": "nodemon app.js -e css,html,js,mjs,json",
+    "start": "node app.js"
   },
   "author": "Rossi-Leiva-Natch",
   "license": "ISC",
