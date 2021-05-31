@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <header>
+        <div class='mainHeader'>
+            <a href='/'><img class='logo' src="/img/Logo-F5E078.png" alt="Logo CriCaMa"></a>
+
+            <ul class='mainNav'>
+                <li><a href=''>Plantas</a></li>
+                <li><a href=''>Insumos</a></li>
+                <li><a href=''>Macetas</a></li>
+                <li><a href=''>Conocenos</a></li>
+                <li><a href=''>Contacto</a></li>
+            </ul>
+
+            <ul class='iconsNav'>
+                <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href='/login'><i class="fas fa-user"></i></a></li>
+            </ul>
+
+            <form action="/search" method="POST" class="search">    
+                <i class="fas fa-search"></i><input type="text" name="precio" placeholder="Buscar productos, marcas" class="searchBar">
+            </form>
+
+            <div class="burgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+        </div>  
+
+    </header>
+    <main>
+        <form action = "" method = "POST" class = "form">
+            <h2 id="title">Completa tus datos!</h2>
+            <div class="">
+                <input type="text" name="completeName" placeholder="Nombre completo">
+            </div>
+            <div class="">
+                <input type="email" name="email" placeholder="E-mail">
+            </div>
+            <div class="">
+                <input type="date" name="DateOfBirth" placeholder="Fecha de nacimiento">
+            </div>
+            <div class="">
+                <input type="password" name="password" placeholder="Contraseña" >
+            </div>
+            <div>
+                <select name="province">
+                    <option value="buenosAires">Buenos Aires</option>
+                    <option value="catamarca">Catamarca</option>
+                    <option value="chaco">Chaco</option>
+                    <option value="chubut">Chubut</option>
+                    <option value="caba">CABA</option>
+                    <option value="cordoba">Cordoba</option>
+                    <option value="corrientes">Corrientes</option>
+                    <option value="entreRios">Entre Rios</option>
+                    <option value="formosa">Formosa</option>
+                    <option value="jujuy">Jujuy</option>
+                    <option value="laPampa">La Pampa</option>
+                    <option value="laRioja">La Rioja</option>
+                    <option value="mendoza">Mendoza</option>
+                    <option value="misiones">Misiones</option>
+                    <option value="neuquen">Neuquen</option>
+                    <option value="rioNegro">Rio Negro</option>
+                    <option value="salta">Salta</option>
+                    <option value="sanJuan">San Juan</option>
+                    <option value="sanLuis">San Luis</option>
+                    <option value="santaCruz">Santa Cruz</option>
+                    <option value="santaFe">Santa Fe</option>
+                    <option value="santiagoDelEstero">Santiago Del Estero</option>
+                    <option value="tierraDelFuego">Tierra Del Fuego</option>
+                    <option value="tucuman">Tucuman</option>
+                </select>
+            </div>
+            <div class="">
+                <input type="text" name="neighbourhood" placeholder="Localidad">
+            </div>
+            <div class="">
+                <input type="text" name="adress" placeholder="Direccion">
+            </div>
+            <div class="">
+                <input type="text" name="uf" placeholder="Departamento">
+            </div>
+            <div class="">
+                <input type="text" name="zipCode" placeholder="Codigo postal">
+            </div>
+                <button class = "button" type="submit">ENVIAR</button>
+        </form>
+    </main>
+    <footer>
+        <div id='footerGeneral'>
+            <div class="footerContent">
+                <p id="brandFooter">Cricama Plants</p>
+            </div>
+
+            <div class="footerContent">
+                <h2 class='footerTitle'>Navegación</h2>
+                <ul class='footerNav'>
+                    <li><a href=''>Plantas</a></li>
+                    <li><a href=''>Insumos</a></li>
+                    <li><a href=''>Macetas</a></li>
+                    <li><a href=''>Conocenos</a></li>
+                    <li><a href=''>Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footerContent">
+                <h2 class='footerTitle'>Contactanos</h2>
+                <ul class='footerContact'>
+                    <li><div class="iconContact"><i class="fas fa-mobile-alt"></i></div> <a href="https://api.whatsapp.com/send?phone=+5491133907970">011-3390-7970</a></li>
+                    <li><div class="iconContact"><i class="fas fa-map-marker-alt"></i></div> <p>Avenida Siempreviva 742</p></li>
+                    <li><div class="iconContact"><i class="fas fa-envelope"></i></div> <a href="mailto:cricamaplants@gmail.com?Subject=Consulta%20vía%20web">cricamaplants@gmail.com</a></li>
+                    <li><div class="iconContact"><i class="fas fa-clock"></i></div> <p>Lun a Vie 9:30 a 18:30hs</p></li>
+                </ul>
+            </div>
+
+            <div class="footerContent">
+                <h2 class='footerTitle'>Medios de pago</h2>
+                <div class="iconPay">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+
+            <div class="footerContent">
+                <h2 class='footerTitle'>Redes sociales</h2>
+                <div class="iconSocial">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        
+        <p id='copyright'>Copyright © 2021-2021 CriCaMa Plants</p>
+    </footer>
+</body>
+</html>

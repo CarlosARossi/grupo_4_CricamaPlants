@@ -37,7 +37,7 @@ h2 {
 /*********************** HEADER ***********************/
 header{
     background-color: #30544E;
-
+    margin-bottom: 15vh;
 }
 
 .mainHeader{
@@ -61,6 +61,9 @@ header{
     color:#30544E;
     width: 50vw;
     margin: auto;
+}
+.search *{
+    background-color: white;
 }
 
 .searchBar{
@@ -111,81 +114,58 @@ header{
 
 /*********************** MAIN ***********************/
 
-main {
-    background-color: #E2E7E6;
-    padding: 0px;
-    margin-top: 0vw;
-}
-
-.banner{
-    display: block;
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: #30544E;
+    justify-content: space-around;
+    margin: auto;
     width: 100vw;
-    margin: auto;
-    object-fit: cover;
-    height: 30vh;
-    object-position: bottom;
-    margin-bottom: 10px;
-}
-
-.article{
-    background-color: white;
-    width: 90%;
-    margin: auto;
-    max-width: 306px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.article:hover{
+    padding-bottom: 10vh;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
-.box-article{
-    padding: 15px;
-}
-
-.price {
-    font-size: 1.5em;
-    font-weight: bolder;
-}
-
-.description {
-    text-transform:uppercase ;
+#title{
     font-size: 1em;
-    font-weight: bold;
-    color:#30544E;
-}
-
-.quotes {
-    display: none;
-}
-
-.image{
-    width: 96%;
-    border-radius: 10px;
-    margin: 2%;
-}
-
-.iconCart{
     display: flex;
     justify-content: center;
-    align-items: center;
-    color:#30544E;
-    height: 40px;
-    width: 40px;
-    border: solid 2px #30544E;
-    border-radius:100%;
-    position: absolute;
-    right: 10px;
+    padding-top: 10vh;
 }
 
-.iconCart:hover{
+input{
+    border: none;
     background-color: #30544E;
-    color: #F5E078;
-    border: solid #F5E078 2px;
-    transition: all 0.5s;
+    border-bottom: 1px solid #F5E078;
+    padding-bottom: none;
+}
 
+::placeholder{
+    opacity: 1;
+}/**resolver este tema**/
+
+input:valid{
+    font-style: italic;
+}/**revisar esto, bajarlo a desktop**/
+
+.form *{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    width: 80vw;
+    padding: 14px;
+    margin: auto;
+}
+
+.button{
+    color: #30544E;
+    font-size: 12px;
+    background-color:#F5E078;
+    border: 1px solid #30544E;
+    display: inline-block;
+    width: 40vw;
+    border-radius: 4px;
+    margin-top: 14px;
 }
 
 /*********************** FOOTER ***********************/
@@ -198,6 +178,7 @@ footer{
     color: #F5E078;
     padding-left: 10px;
     padding-top: 10px;
+    margin-top: 15vh;
 /*     position: absolute;
     bottom: 0; */
 }
@@ -254,13 +235,6 @@ footer{
     justify-content: center;
 }
 
-.footerContact a{
-    text-decoration: none;
-    font-size: 12px;
-    margin-bottom: 10px;
-    color: #F5E078;
-}
-
 .iconContact{
     margin: 0px 2px;
     width: 20px;
@@ -294,11 +268,11 @@ footer{
     }
 
     .mainNav{
+        
         display: flex;
         list-style: none;
         width: 45vw;
         justify-content: space-between;
-        position: relative;
     }
 
     .mainNav a{
@@ -308,7 +282,6 @@ footer{
         font-size: 1.1em;
         font-weight: 350;
     }
-
 
     .iconsNav{
         display: flex;
@@ -336,27 +309,27 @@ footer{
     main {
         margin-top: 0vw;
     }
-  
-    .article{
-        margin-inline: 4vw;
-        max-width: 39vw;
+    .form{
+        width: 75vw;
+        padding-bottom: 8vh;
+        border-radius: 10px;
+    }
+    #title{
+        font-size: 1.5em;
+        padding-top: 8vh;
+    }
+    .form *{
+        font-size: 14px;
+        width: 60vw;
+        padding: 16px;
+    }
+    .button{
+        font-size: 14px;
+        width: 25vw;
+        border-radius: 6px;
+        margin-top: 16px;
     }
     
-    .generalArticles{    
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: space-between;
-    }
-
-    .quotes {
-        display: block;
-        font-size: 16px;
-        text-align: center;
-        border: solid 1px #30544E;
-        border-radius: 5px;
-        padding: 5px;
-    }
 
 
     /*********************** FOOTER TABLET ***********************/
@@ -439,18 +412,60 @@ footer{
     }
 
     /*********************** MAIN DESKTOP ***********************/
-
-    .generalArticles{
-        width: 1366px;
-        margin: auto;
-     }
-
-
-    .article{
-        margin-inline: 1vw;
-        max-width: 22%;
+    
+    .form{
+        width: 50vw;
+        padding-bottom: 5vh;
+        border-radius: 16px;
+        padding: 20px 0;
     }
 
+    #title{
+        font-size: 2em;
+        padding-top: 5vh;
+    }
+
+    .form *{
+        font-size: 16px;
+        width: 35vw;
+        padding: 18px;
+    }   
+
+    .button{
+        font-size: 18px;
+        width: 15vw;
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    input{
+        transition: all 100ms;
+    }
+    input:hover{
+        background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
+        border: solid 1px #F5E078;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .button{
+        transition: all 100ms;
+    }
+    .button:hover{
+        background-color: #30544E;
+        color: #F5E078;
+        border: solid 1px #F5E078;
+        font-size: 22px;
+        box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+    }
+
+    .list a{
+        transition: all 100ms;
+    }
+    .list a:hover{
+        color: #F5E078;
+    }
+    
     /*********************** FOOTER DESKTOP ***********************/
 
     #footerGeneral{
@@ -466,3 +481,5 @@ footer{
 @media (max-width: 1023px){
 
 }
+/*------------------- GENERAL -----------------------*/
+
