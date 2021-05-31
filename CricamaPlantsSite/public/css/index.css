@@ -254,6 +254,13 @@ footer{
     justify-content: center;
 }
 
+.footerContact a{
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #F5E078;
+}
+
 .iconContact{
     margin: 0px 2px;
     width: 20px;
@@ -287,11 +294,11 @@ footer{
     }
 
     .mainNav{
-        
         display: flex;
         list-style: none;
         width: 45vw;
         justify-content: space-between;
+        position: relative;
     }
 
     .mainNav a{
@@ -301,6 +308,7 @@ footer{
         font-size: 1.1em;
         font-weight: 350;
     }
+
 
     .iconsNav{
         display: flex;
