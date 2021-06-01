@@ -133,11 +133,16 @@ header{
     padding-top: 10vh;
 }
 
+fieldset{
+    border: none;
+}
+
 input{
     border: none;
     background-color: #30544E;
     border-bottom: 1px solid #F5E078;
     padding-bottom: none;
+    border-radius: 0px;
 }
 
 ::placeholder{

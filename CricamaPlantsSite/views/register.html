@@ -46,20 +46,20 @@
     <main>
         <form action = "" method = "POST" class = "form">
             <h2 id="title">Completa tus datos!</h2>
-            <div class="">
-                <input type="text" name="completeName" placeholder="Nombre completo">
-            </div>
-            <div class="">
-                <input type="email" name="email" placeholder="E-mail">
-            </div>
-            <div class="">
-                <input type="date" name="DateOfBirth" placeholder="Fecha de nacimiento">
-            </div>
-            <div class="">
-                <input type="password" name="password" placeholder="Contraseña" >
-            </div>
-            <div>
-                <select name="province">
+            <fieldset class="">
+                <input type="text" name="completeName" required minlength="8" placeholder="Nombre completo">
+            </fieldset>
+            <fieldset class="">
+                <input type="email" name="email" required placeholder="E-mail">
+            </fieldset>
+            <fieldset class="">
+                <input type="date" name="DateOfBirth" required placeholder="Fecha de nacimiento">
+            </fieldset>
+            <fieldset class="">
+                <input type="password" name="password" required minlength="10" placeholder="Contraseña" >
+            </fieldset>
+            <fieldset>
+                <select name="province" required>
                     <option value="buenosAires">Buenos Aires</option>
                     <option value="catamarca">Catamarca</option>
                     <option value="chaco">Chaco</option>
@@ -85,19 +85,19 @@
                     <option value="tierraDelFuego">Tierra Del Fuego</option>
                     <option value="tucuman">Tucuman</option>
                 </select>
-            </div>
-            <div class="">
-                <input type="text" name="neighbourhood" placeholder="Localidad">
-            </div>
-            <div class="">
-                <input type="text" name="adress" placeholder="Direccion">
-            </div>
-            <div class="">
-                <input type="text" name="uf" placeholder="Departamento">
-            </div>
-            <div class="">
-                <input type="text" name="zipCode" placeholder="Codigo postal">
-            </div>
+            </fieldset>
+            <fieldset class="">
+                <input type="text" name="neighbourhood" required minlength="6" placeholder="Localidad">
+            </fieldset>
+            <fieldset class="">
+                <input type="text" name="adress" required minlength="12" placeholder="Direccion">
+            </fieldset>
+            <fieldset class="">
+                <input type="text" name="uf" required minlength="2" maxlength="3" placeholder="Departamento">
+            </fieldset>
+            <fieldset class="">
+                <input type="text" name="zipCode" required minlength="4" maxlength="4" placeholder="Codigo postal">
+            </fieldset>
                 <button class = "button" type="submit">ENVIAR</button>
         </form>
     </main>
