@@ -20,6 +20,7 @@
     display: flex;
     justify-content: center;
     padding-top: 10vh;
+    color: #F5E078;
 }
 
 fieldset{
@@ -32,9 +33,17 @@ input{
     border-bottom: 1px solid #F5E078;
     padding-bottom: none;
     border-radius: 0px;
+    /****color white *****/
+    color: white;
 }
 
+
 .search *{
+    background-color: white;
+}
+
+fieldset > input:focus {
+    outline: none;
     background-color: white;
 }
 
@@ -64,7 +73,10 @@ input:valid{
     width: 40vw;
     border-radius: 4px;
     margin-top: 14px;
+    text-decoration: none;
+    text-align: center;
 }
+
 
 
 /*********************************************** TABLET ***********************************************/

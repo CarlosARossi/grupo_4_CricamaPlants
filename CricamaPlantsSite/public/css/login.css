@@ -23,6 +23,7 @@ fieldset{
     display: flex;
     justify-content: center;
     padding-top: 10vh;
+    color: #F5E078;
 }
 
 input{
@@ -34,6 +35,11 @@ input{
 }
 
 .search *{
+    background-color: white;
+}
+
+fieldset > input:focus {
+    outline: none;
     background-color: white;
 }
 
@@ -62,6 +68,8 @@ input:valid{
     display: inline-block;
     width: 40vw;
     border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
 }
 
 .list{
@@ -76,7 +84,7 @@ input:valid{
 
 .list a{
     text-decoration: none;
-    color: black;
+    color: #F5E078;
     margin: 0;
     padding: 0;
 }
@@ -164,7 +172,7 @@ input:valid{
         transition: all 100ms;
     }
     .list a:hover{
-        color: #F5E078;
+        color: #FAD7C5;
     }
     
 }
