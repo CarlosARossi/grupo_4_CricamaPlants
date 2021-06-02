@@ -22,17 +22,19 @@
 
 .box-detail{
     display: flex;
-    flex-wrap: wrap;
     margin: 10px;
     justify-content: space-around;
+    background-color: #E2E7E6;
 }
 
 .box-description{
     display: flex;
+    border: solid 2px #30544E;
     margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
     flex-direction: column;
-    justify-content: space-around;
-    line-height: 25px;
+    line-height: 20px;
 }
 
 .box-description1 p{
@@ -41,18 +43,35 @@
 }
 
 .box-imagen img{
-    margin: 20%;
-    width: 65%;
+    margin: 10%;
+    width: 50%;
+    margin: auto;
 }
 
 .box-imagen{
-    width: 100%;
+    width: 80%;
+    display: flex;
 }
 
 .comprar-button{
-    padding: 5px;
-    margin-top: 15px;
+    color: #30544E;
+    font-size: 12px;
+    background-color: #F5E078;
+    border: 1px solid #30544E;
+    width: 30vw;
+    border-radius: 4px;
+    margin: auto;
+    padding: 2px;
+    transition: all 100ms;
 }
+
+.comprar-button:hover{
+        background-color: #30544E;
+        color: #F5E078;
+        border: solid 1px #F5E078;
+        font-size: 12px;
+        box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+    }
 
 .icon{
     font-size: 35px;
@@ -65,13 +84,33 @@
     /*********************** MAIN TABLET ***********************/
 
     .box-imagen{
-        width: 55%;
+        width: 36%;
+    }
+
+    .box-detail{
+        align-items: center;
     }
 
     .box-imagen img{
         margin: 15px;
         width: 90%;
     }
+
+    .box-description{  
+        height: 20%;
+    }
+
+    .comprar-button{
+        width: 45%;
+        margin: auto;
+        padding: 4px;
+        font-size: 13px;
+    }
+
+    .comprar-button:hover{
+        font-size: 13px;
+    }
+    
 }
 
 /*********************************************** DESKTOP ***********************************************/
@@ -80,7 +119,19 @@
     /*********************** MAIN DESKTOP ***********************/
 
     .box-description{
-        width: 40%;
+        width: 50%;
+    }
+
+    .box-description1 p{
+        font-size: 16px;
+    }
+
+    .comprar-button{
+        font-size: 16px;
+    }
+
+    .comprar-button:hover{
+        font-size: 16px;
     }
 
 }
