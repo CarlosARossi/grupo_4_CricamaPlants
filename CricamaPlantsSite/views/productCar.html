@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CriCaMa Plants</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/productCar.css">
+    
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <header>
+        <a href='/'><img class='logo' src="/img/Logo-F5E078.png" alt="Logo CriCaMa"></a>
+
+        <ul class='mainNav'>
+            <li><a href=''>Plantas</a></li>
+            <li><a href=''>Insumos</a></li>
+            <li><a href=''>Macetas</a></li>
+            <li><a href=''>Conocenos</a></li>
+            <li><a href=''>Contacto</a></li>
+        </ul>
+
+        <ul class='iconsNav'>
+            <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href='/login'><i class="fas fa-user"></i></a></li>
+        </ul>
+
+        <form action="/search" method="POST" class="search">    
+            <i class="fas fa-search"></i><input type="text" name="precio" placeholder="Buscar productos, marcas" class="searchBar">
+        </form>
+
+        <i class="fas fa-bars burgerMenu"></i>
+
+    </header>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+
+    <main>
+
+        <h2>Carrito de compras</h2>
+        <hr>
+
+        <div class="box-imagen">
+
+            <div class="box-imagen1">
+                <img src="/img/plantas/plantaInterior1.jpg" alt="">
+            </div>
+
+            <div class="box-imagen2">
+                <div class="box-producto">
+                    <div>
+                        <h3>Producto</h3>
+                    </div>
+                    <div>
+                        <h4>Ficus elástica</h4>
+                    </div>
+                </div>
+                
+                <div class="box-precio">
+                    <h4>Subtotal</h4><h4>$850</h4>
+                </div>
+
+                <div class="box-cantidad">
+                    <input type="number" placeholder="Cantidad" class="cantidad"><i class="fas fa-trash-alt"></i>
+                </div>
+            </div>
+            
+        </div>
+        
+        <hr>
+
+        <div class="box-subtotal">
+            <h4>SUBTOTAL (sin envío)</h4><h4>$850</h4>
+        </div>
+
+        <hr>
+
+        <div class="box-envio">
+            <div>
+                <i class="fas fa-truck"></i><a href="">Seleccioná la forma de envío</a>    
+            </div>
+
+            <div class="postal-button">
+                <input type="text" placeholder="Ingresá tu codigo postal" class="cantidad"><button class="cantidad">Calcular</button> 
+            </div>
+        </div>
+
+
+        <div class="box-total">
+            <div>
+                <h5>Total $850 ó hasta 3 cuotas sin interés de $283.33</h5>
+            </div>
+
+            <button class="comprar-button">COMPRAR</button>
+        </div>
+
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <footer>
+        <section class="footerContent">
+            <p id="brandFooter">Cricama Plants</p>
+        </section>
+
+        <section class="footerContent">
+            <h2 class='footerTitle'>Navegación</h2>
+
+            <ul class='footerNav'>
+                <li><a href=''>Plantas</a></li>
+                <li><a href=''>Insumos</a></li>
+                <li><a href=''>Macetas</a></li>
+                <li><a href=''>Conocenos</a></li>
+                <li><a href=''>Contacto</a></li>
+            </ul>
+        </section>
+
+        <section class="footerContent">
+            <h2 class='footerTitle'>Contactanos</h2>
+            <ul class='footerContact'>
+                <li><i class="fas fa-mobile-alt iconContact"></i> <a href="https://api.whatsapp.com/send?phone=+5491133907970">011-3390-7970</a></li>
+                <li><i class="fas fa-map-marker-alt iconContact"></i> <p>Avenida Siempreviva 742</p></li>
+                <li><i class="fas fa-envelope iconContact"></i> <a href="mailto:cricamaplants@gmail.com?Subject=Consulta%20vía%20web">cricamaplants@gmail.com</a></li>
+                <li><i class="fas fa-clock iconContact"></i> <p>Lun a Vie 9:30 a 18:30hs</p></li>
+            </ul>
+        </section>
+
+        <section class="footerContent">
+            <h2 class='footerTitle'>Medios de pago</h2>
+            <ul class=iconPay>    
+                <li><i class="fab fa-cc-visa"></i></li>
+                <li><i class="fab fa-cc-mastercard"></i></li>
+                <li><i class="fab fa-cc-paypal"></i></li>
+            </ul>
+        </section>
+
+        <section class="footerContent">
+            <h2 class='footerTitle'>Redes sociales</h2>
+            <ul class=iconSocial>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-facebook-square"></i></li>
+                <li><i class="fab fa-youtube"></i></li>
+            </ul>    
+        </section>
+    
+    <p id='copyright'>Copyright © 2021-2021 CriCaMa Plants</p>
+
+    </footer>
+
+</body>
+</html>

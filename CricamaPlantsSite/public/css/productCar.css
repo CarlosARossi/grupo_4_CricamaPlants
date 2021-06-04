@@ -1,0 +1,119 @@
+.paletteColor{
+    color:  #30544E
+            #F5E078
+            #FAD7C5
+            #A78B48
+            #000000
+            #E2E7E6
+            #FFFFFF
+}
+
+/*********************************************** MOBILE ***********************************************/
+
+/*********************** MAIN ***********************/
+
+main{
+    margin: 20px 40px;
+}
+
+main h2{
+    margin-bottom: 3px;
+}
+
+.box-imagen{
+    display: flex;
+    flex-wrap: wrap;
+    height: 55%;
+    justify-content: space-between;
+}
+
+.box-imagen1{
+    width: 55%;
+    height: 60%;
+}
+
+.box-imagen1 img{
+    margin: 20px;
+    width: 95%;
+}
+
+.box-imagen2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    height: 60%;
+}
+
+.box-producto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    width: 89%;
+    align-items: center;
+}
+
+.box-precio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    align-items: center;
+    width: 89%;
+}
+
+.box-cantidad{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px;
+    align-items: center;
+    width: 90%;
+}
+
+.cantidad{
+    padding: 5px;
+}
+
+.box-subtotal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+
+.box-envio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+
+.box-total{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+
+.comprar-button{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+
+/*********************************************** TABLET ***********************************************/
+@media (min-width: 768px){
+    
+
+}
+
+/*********************************************** DESKTOP ***********************************************/
+@media (min-width: 1021px){
+   
+}
+
