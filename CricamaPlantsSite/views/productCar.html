@@ -73,56 +73,47 @@
 
         <section class="box-imagen">
 
-            <img src="/img/plantas/plantaInterior1.jpg" alt="">
+            <figure>
+                <img src="/img/plantas/plantaInterior1.jpg" alt="">
+            </figure>
 
-            <div class="box-imagen2">
-                <div class="texto1"><p>Producto</p><p>Subtotal</p></div>
-                <div class="texto2"><p>Ficus Elástica</p><p>$850</p></div>
+            <section class="box-imagen2">
 
-                <div class="box-cantidad">
-                    <label for="cantidadFicus">Cantidad:</label>
-
-                    <select name="cantidadFicus" id="cantidadFicus ">
-                        <option value="">---</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>    
-            </div>
-
-            
+                <article><p class="texto1">Producto</p><p class="texto1">Subtotal</p></article>
+                <article><p class="texto2">Ficus Elástica</p><p class="texto2">$850</p></article>
                 
-        
+                <article class="box-cantidad">
+                    <label for="cantidadFicus">Cantidad:</label>
+                    <input id="cantidadFicus" value="1" type="number" name="cantidadFicus">
+                </article>
+
+            </section>
+
         </section>
         
         <hr>
 
-        <div class="box-subtotal">
+        <article class="box-subtotal">
             <h4>SUBTOTAL (sin envío)</h4><h4>$850</h4>
-        </div>
+        </article>
 
         <hr>
 
         <section class="box-envio">
 
-            <i class="fas fa-truck"></i><a href="">Seleccioná la forma de envío</a>    
+            <i class="fas fa-truck"></i> <p>Seleccioná la forma de envío</p>
 
-            <div class="postal-button">
+            <article class="postal-button">
                 <input type="text" placeholder="Ingresá tu codigo postal" class="cantidad"><button class="cantidad">Calcular</button> 
-            </div>
-        </section>
+            </article>
 
 
-        <div class="box-total">
-            <div>
+            <article class="box-total">
                 <h5>Total $850 ó hasta 3 cuotas sin interés de $283.33</h5>
-            </div>
+            </article>
 
             <button class="comprar-button">COMPRAR</button>
-        </div>
+        </section>
 
     </main>
 

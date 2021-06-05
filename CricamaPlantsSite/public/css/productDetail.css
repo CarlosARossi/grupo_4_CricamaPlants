@@ -14,15 +14,21 @@
 /************************ MAIN ************************/
 
 .box-first{
-    display: flex;
-    flex-wrap: wrap;
     margin: 20px;
-    align-items: center;
+}
+
+.box-first p{
+    color: #30544E;
+    font-size: 1.1em;
+}
+
+.titulo{
+    text-transform: uppercase;
 }
 
 .box-detail{
     display: flex;
-    margin: 10px;
+    margin: 15px;
     justify-content: space-around;
     background-color: #E2E7E6;
 }
@@ -38,14 +44,15 @@
 }
 
 .box-description1 p{
-    font-size: 14px;
+    font-size: 0.9rem;
     font-style: italic;
 }
 
 .box-imagen img{
     margin: 10%;
-    width: 50%;
+    width: 90%;
     margin: auto;
+    border-radius: 10px;
 }
 
 .box-imagen{
@@ -55,13 +62,13 @@
 
 .comprar-button{
     color: #30544E;
-    font-size: 12px;
+    font-size: 1rem;
     background-color: #F5E078;
     border: 1px solid #30544E;
-    width: 30vw;
+    width: 25vw;
     border-radius: 4px;
     margin: auto;
-    padding: 2px;
+    padding: 4px;
     transition: all 100ms;
 }
 
@@ -69,14 +76,9 @@
         background-color: #30544E;
         color: #F5E078;
         border: solid 1px #F5E078;
-        font-size: 12px;
+        font-size: 1rem;
         box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
     }
-
-.icon{
-    font-size: 35px;
-}
-
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
@@ -101,14 +103,14 @@
     }
 
     .comprar-button{
-        width: 45%;
+        width: 54%;
         margin: auto;
         padding: 4px;
-        font-size: 13px;
+        font-size: 1.1rem;
     }
 
     .comprar-button:hover{
-        font-size: 13px;
+        font-size: 1.1rem;
     }
     
 }
@@ -123,15 +125,15 @@
     }
 
     .box-description1 p{
-        font-size: 16px;
+        font-size: 1.1rem;
     }
 
     .comprar-button{
-        font-size: 16px;
+        font-size: 1.3rem;
     }
 
     .comprar-button:hover{
-        font-size: 16px;
+        font-size: 1.3rem;
     }
 
 }
