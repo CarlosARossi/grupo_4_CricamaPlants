@@ -20,24 +20,43 @@
     <header>
         <a href='/'><img class='logo' src="/img/Logo-F5E078.png" alt="Logo CriCaMa"></a>
 
-        <ul class='mainNav'>
-            <li><a href=''>Plantas</a></li>
-            <li><a href=''>Insumos</a></li>
-            <li><a href=''>Macetas</a></li>
-            <li><a href=''>Conocenos</a></li>
-            <li><a href=''>Contacto</a></li>
-        </ul>
+        <section id='menuNav'>
+            <ul class='mainNav'>
+                <li><a href=''>Plantas</a>
+                    <ul>
+                        <li><a href=''>Interior</a></li>
+                        <li><a href=''>Exterior</a></li>
+                    </ul>
+                </li>
+                <li><a href=''>Insumos</a>
+                    <ul>
+                        <li><a href=''>Herramientas</a></li>
+                        <li><a href=''>Fertilizantes</a></li>
+                    </ul>
+                </li>
+                <li><a href=''>Macetas</a>
+                    <ul>
+                        <li><a href=''>Cuadradas</a></li>
+                        <li><a href=''>Redondas</a></li>
+                    </ul>
+                </li>
+                <li><a href=''>Conocenos</a></li>
+                <li><a href=''>Contacto</a></li>
+            </ul>
 
-        <ul class='iconsNav'>
-            <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href='/login'><i class="fas fa-user"></i></a></li>
-        </ul>
+            <ul class='iconsNav'>
+                <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href='/login'><i class="fas fa-user"></i></a></li>
+            </ul>
+
+            <a href='/'><i class="fas fa-times exitMenu"></i></a>
+        </section>
 
         <form action="/search" method="POST" class="search">    
             <i class="fas fa-search"></i><input type="text" name="precio" placeholder="Buscar productos, marcas" class="searchBar">
         </form>
 
-        <i class="fas fa-bars burgerMenu"></i>
+        <a href='#menuNav'><i class="fas fa-bars burgerMenu"></i></a>
 
     </header>
 

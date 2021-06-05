@@ -33,6 +33,13 @@ h2 {
     margin-bottom: 5px;
 }
 
+ul{
+    list-style: none;
+  }
+
+  a{
+    text-decoration:none;
+}
 
 /*********************************************** MOBILE ***********************************************/
 
@@ -72,22 +79,17 @@ header{
     width: 85%;
 }
 
-
-.mainNav{
-    visibility:hidden;
-    width: 0%;
-}
-
 .mainNav a:hover{
     color: #A78B48;
 }
 
-.iconsNav{
-    display: none;
-}
-
 .iconsNav a:hover{
     color: #A78B48;
+}
+
+#menuNav{
+    display: none;
+    transition: all 0.5s ease-out;
 }
 
 .burgerMenu{
@@ -105,17 +107,78 @@ header{
     align-items: center;
 }
 
+.exitMenu{
+    font-size: 6vw;
+    background-color: #F5E078;
+    border: solid #F5E078 1px;
+    border-radius: 100%;
+    color: #30544E;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3.5vh;
+    right: 1vw;
+}
+
 .burgerMenu:hover{
     background-color: #A78B48;
     border: solid #A78B48 1px;
     transition: all 0.25s;
-
 }
 
-/* .burgerMenu:hover > .mainNav{
-    visibility: visible;
-    width: 30%;
+#menuNav:target{
+    font-size: 1.75em;
+    display: flex;
+    position: fixed;
+    width: 79vw; 
+    height: 100vh;
+    background-color: #30544EE6 ;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+
+#menuNav:target .burgerMenu{
+    visibility: hidden;
+}
+
+#menuNav:target .iconsNav{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    font-size: 1.5em;
+    top: 4vh;
+}
+
+#menuNav:target .iconsNav a{
+    color:#F5E078;
+    margin: 0 4vw;
+}
+
+#menuNav:target .mainNav li{
+    font-weight: bold;
+    color:#F5E078
+}
+
+#menuNav:target .mainNav li ul li{
+    font-weight: normal;
+    list-style: inside;
+    color:#F5E078
+}
+#menuNav:target .mainNav a{
+    color:#F5E078
+}
+
+/* a[href='#mainNav'] {
+    background-color: black;
 } */
+
 
 /*********************** MAIN ***********************/
 
@@ -227,7 +290,6 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    list-style: none;
     height: 50px;
     width: auto;
     justify-content: space-evenly;
@@ -255,7 +317,6 @@ footer{
 .footerContact{
     display: flex;
     flex-direction: column;
-    list-style: none;
     width: auto;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -288,7 +349,6 @@ footer{
     justify-content: space-evenly;
     font-size: 2em; 
     margin-bottom: 15px;
-    list-style: none;
 }
 
 .iconSocial{
@@ -297,7 +357,6 @@ footer{
     justify-content: space-evenly;
     font-size: 2.5em; 
     margin-bottom: 15px;
-    list-style: none;
 }
 
 #copyright{
@@ -315,27 +374,64 @@ footer{
         width: 100px;
     }
 
-    .mainNav{
-        visibility: visible;
-        display: flex;
-        list-style: none;
-        width: 45vw;
-        justify-content: space-between;
-        position: relative;
+    #menuNav:target{
+        display: none;
     }
 
-    .mainNav a{
-        text-decoration: none;
+    #menuNav{
+        display: contents;
+    }
+
+    .exitMenu{
+        display: none;
+    }
+
+    .mainNav{
+        width: 45vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .mainNav li>a{
         color: #F5E078;
+        text-decoration: none;
         padding: 5px 0;
         font-size: 1.1em;
         font-weight: 350;
+        position: relative;
     }
 
+/*     .mainNav li>a:hover{
+        background-color: #30544E;
+    } */
+    .mainNav>li{
+        float: left;
+        text-align:left
+    }
+
+    .mainNav>li>ul{
+        display: none;
+    }
+
+    .mainNav>li:hover>ul {
+        height: 10vh;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(51, 109, 75, 0.6);
+        padding: 0px 10px;
+        border-radius: 5px;
+    }
+
+    .mainNav>li>ul>li>a{
+        margin: 0px;
+    }
 
     .iconsNav{
         display: flex;
-        list-style: none;
         justify-content: space-around;
         width: 10vw;
         margin-right: -6vw;
@@ -440,8 +536,8 @@ footer{
         justify-content: space-around;
     }
 
-    .mainNav a{
-        font-size: 1.5em;
+    .mainNav li>a{
+        font-size: 1.4em;
     }
     
     .iconsNav{
