@@ -52,32 +52,32 @@
         <h2>Carrito de compras</h2>
         <hr>
 
-        <div class="box-imagen">
+        <section class="box-imagen">
 
-            <div class="box-imagen1">
-                <img src="/img/plantas/plantaInterior1.jpg" alt="">
-            </div>
+            <img src="/img/plantas/plantaInterior1.jpg" alt="">
 
             <div class="box-imagen2">
-                <div class="box-producto">
-                    <div>
-                        <h3>Producto</h3>
-                    </div>
-                    <div>
-                        <h4>Ficus elástica</h4>
-                    </div>
-                </div>
-                
-                <div class="box-precio">
-                    <h4>Subtotal</h4><h4>$850</h4>
-                </div>
+                <div class="texto1"><p>Producto</p><p>Subtotal</p></div>
+                <div class="texto2"><p>Ficus Elástica</p><p>$850</p></div>
 
                 <div class="box-cantidad">
-                    <input type="number" placeholder="Cantidad" class="cantidad"><i class="fas fa-trash-alt"></i>
-                </div>
+                    <label for="cantidadFicus">Cantidad:</label>
+
+                    <select name="cantidadFicus" id="cantidadFicus ">
+                        <option value="">---</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>    
             </div>
+
             
-        </div>
+                
+        
+        </section>
         
         <hr>
 
@@ -87,15 +87,14 @@
 
         <hr>
 
-        <div class="box-envio">
-            <div>
-                <i class="fas fa-truck"></i><a href="">Seleccioná la forma de envío</a>    
-            </div>
+        <section class="box-envio">
+
+            <i class="fas fa-truck"></i><a href="">Seleccioná la forma de envío</a>    
 
             <div class="postal-button">
                 <input type="text" placeholder="Ingresá tu codigo postal" class="cantidad"><button class="cantidad">Calcular</button> 
             </div>
-        </div>
+        </section>
 
 
         <div class="box-total">
