@@ -558,6 +558,14 @@ footer{
         max-width: 22%;
     }
 
+    .description{
+        font-size: 1.2vw;
+    }
+
+    .quotes{
+        font-size: 1.2vw;
+    }
+
     /*********************** FOOTER DESKTOP ***********************/
 
     footer{
