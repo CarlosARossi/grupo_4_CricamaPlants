@@ -62,7 +62,7 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
-        <form action = "" method = "POST" class = "form">
+        <form action = "/" method = "GET" enctype = "multipart/form-data" class = "form">
             <h2 id="title">Completa tus datos!</h2>
             <fieldset class="">
                 <input type=text name="completeName" required minlength=8 placeholder="Nombre completo">
@@ -76,7 +76,7 @@
             <fieldset class="">
                 <input type=password name="repeatPassword" required minlength="10" placeholder="Reingrese la contraseña">
             </fieldset>
-                <a href="/" class="button">ENVIAR</a>
+                <a href='/'><button type="submit" class="button">ENVIAR</button></a>
         </form>
     </main>
 
