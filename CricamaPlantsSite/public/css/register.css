@@ -47,13 +47,13 @@ fieldset > input:focus {
     background-color: white;
 }
 
-::placeholder{
-    opacity: 1;
-}/**resolver este tema**/
-
-input:valid{
-    font-style: italic;
-}/**revisar esto, bajarlo a desktop**/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+  }
+::-moz-placeholder { /* Firefox 19+ */
+    color: black;
+  }
+  
 
 .form *{
     display: flex;
