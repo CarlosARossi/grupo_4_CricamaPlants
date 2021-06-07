@@ -33,8 +33,6 @@ input{
     border-bottom: 1px solid #F5E078;
     padding-bottom: none;
     border-radius: 0px;
-    /****color white *****/
-    color: white;
 }
 
 
@@ -50,6 +48,7 @@ fieldset > input:focus {
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: black;
   }
+  
 ::-moz-placeholder { /* Firefox 19+ */
     color: black;
   }

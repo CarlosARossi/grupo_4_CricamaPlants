@@ -154,6 +154,14 @@ main p{
     line-height: 20px;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+  }
+
+::-moz-placeholder { /* Firefox 19+ */
+color: black;
+}
+
 .postal-button{
     display: flex;
     flex-wrap: wrap;
