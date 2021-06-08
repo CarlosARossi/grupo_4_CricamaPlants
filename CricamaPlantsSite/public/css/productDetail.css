@@ -27,9 +27,7 @@
 }
 
 .box-detail{
-    display: flex;
     margin: 15px;
-    justify-content: space-around;
     background-color: #E2E7E6;
 }
 
@@ -58,6 +56,7 @@
 .box-imagen{
     width: 80%;
     display: flex;
+    margin: auto;
 }
 
 .comprar-button{
@@ -90,6 +89,7 @@
     }
 
     .box-detail{
+        display: flex;
         align-items: center;
     }
 

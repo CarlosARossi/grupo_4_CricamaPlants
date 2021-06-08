@@ -22,19 +22,16 @@ main h2{
 }
 
 .box-imagen{
-    display: flex;
-    flex-wrap: wrap;
     height: 55%;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 15px;
 }
 
-main figure{
-    width: 40%;
+.box-imagen figure{
+    text-align: center;
 }
 
 figure img{
-    width: 40%;
+    width: 70%;
     margin: 10px;
     border-radius: 10px;
 }
@@ -42,10 +39,10 @@ figure img{
 .box-imagen2{
     display: flex;
     flex-wrap: wrap;
-    width: 48%;
+    width: 60%;
     height: 60%;
     border: solid 2px #30544E;
-    margin: 20px;
+    margin: auto;
     padding: 10px;
     border-radius: 8px;
     line-height: 40px;
@@ -159,7 +156,7 @@ main p{
   }
 
 ::-moz-placeholder { /* Firefox 19+ */
-color: black;
+    color: black;
 }
 
 .postal-button{
@@ -202,11 +199,17 @@ color: black;
 @media (min-width: 768px){
     
     main img{
-        width: 40%;
+        width: 50%;
     }
 
     .box-imagen{
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
+    }
+
+    .box-imagen figure{
+       width: 50%;
     }
 
     .box-imagen label{
