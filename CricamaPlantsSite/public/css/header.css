@@ -1,0 +1,264 @@
+.paletteColor{
+    color:  #30544E
+            #F5E078
+            #FAD7C5
+            #A78B48
+            #000000
+            #E2E7E6
+            #FFFFFF
+}
+
+/*********************** GENERAL ***********************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E2E7E6;
+    position: relative;
+    max-width: 100vw;
+    overflow-x:hidden;
+}
+
+p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration:none;
+}
+
+/*********************************************** HEADER MOBILE ***********************************************/
+
+header{
+    background-color: #30544E;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    padding: 5px;
+}
+
+.logo{
+    padding: 2px;
+    width: 20vw;   
+}
+
+.search { 
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color:#30544E;
+    width: 50vw;
+    margin: auto;
+}
+
+.search > input:focus {
+    outline: none;
+}
+
+.searchBar{
+    color: #F5E078;
+    border: none;
+    padding:5px 10px;
+    width: 85%;
+}
+
+.mainNav a:hover{
+    color: #A78B48;
+}
+
+.iconsNav a:hover{
+    color: #A78B48;
+}
+
+#menuNav{
+    display: none;
+    transition: all 0.5s ease-out;
+}
+
+.burgerMenu{
+    font-size: 6vw;
+    color: #30544E;
+    width: 10vw;
+    height: 10vw;
+    text-align: center;
+    margin: auto;
+    background-color: #F5E078;
+    border: solid #F5E078 1px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exitMenu{
+    font-size: 6vw;
+    background-color: #F5E078;
+    border: solid #F5E078 1px;
+    border-radius: 100%;
+    color: #30544E;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3.5vh;
+    right: 1vw;
+}
+
+.burgerMenu:hover{
+    background-color: #A78B48;
+    border: solid #A78B48 1px;
+    transition: all 0.25s;
+}
+
+#menuNav:target{
+    font-size: 1.75em;
+    display: flex;
+    position: fixed;
+    width: 79vw; 
+    height: 100vh;
+    background-color: #30544EE6 ;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+
+#menuNav:target .burgerMenu{
+    visibility: hidden;
+}
+
+#menuNav:target .iconsNav{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    font-size: 1.5em;
+    top: 4vh;
+}
+
+#menuNav:target .iconsNav a{
+    color:#F5E078;
+    margin: 0 4vw;
+}
+
+#menuNav:target .mainNav li{
+    font-weight: bold;
+    color:#F5E078
+}
+
+#menuNav:target .mainNav li ul li{
+    font-weight: normal;
+    list-style: inside;
+    color:#F5E078
+}
+#menuNav:target .mainNav a{
+    color:#F5E078
+}
+
+/* a[href='#mainNav'] {
+    background-color: black;
+} */
+
+/*********************************************** TABLET ***********************************************/
+@media (min-width: 768px){
+
+    /*********************** HEADER TABLET ***********************/    
+    .logo {
+        width: 100px;
+    }
+
+    #menuNav:target{
+        display: none;
+    }
+
+    #menuNav{
+        display: contents;
+    }
+
+    .exitMenu{
+        display: none;
+    }
+
+    .mainNav{
+        width: 45vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .mainNav li>a{
+        color: #F5E078;
+        text-decoration: none;
+        padding: 5px 0;
+        font-size: 1.1em;
+        font-weight: 350;
+        position: relative;
+    }
+
+/*     .mainNav li>a:hover{
+        background-color: #30544E;
+    } */
+    .mainNav>li{
+        float: left;
+        text-align:left
+    }
+
+    .mainNav>li>ul{
+        display: none;
+    }
+
+    .mainNav>li:hover>ul {
+        height: 10vh;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(51, 109, 75, 0.6);
+        padding: 0px 10px;
+        border-radius: 5px;
+    }
+
+    .mainNav>li>ul>li>a{
+        margin: 0px;
+    }
+
+    .iconsNav{
+        display: flex;
+        justify-content: space-around;
+        width: 10vw;
+        margin-right: -6vw;
+    }
+    
+    .iconsNav a{
+        font-size: 150%;
+        color: #F5E078;
+    }
+
+    .search {
+        width: 20%;
+        margin: 5px;
+    }
+    .burgerMenu{
+        display: none;
+    }
+}
