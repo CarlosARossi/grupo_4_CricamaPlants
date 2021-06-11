@@ -17,48 +17,7 @@
 </head>
 <body>
     <!---------------------------------------- HEADER ---------------------------------------->
-    <header>
-        <a href='/'><img class='logo' src="/img/Logo-F5E078.png" alt="Logo CriCaMa"></a>
-
-        <section id='menuNav'>
-            <ul class='mainNav'>
-                <li><a href=''>Plantas</a>
-                    <ul>
-                        <li><a href=''>Interior</a></li>
-                        <li><a href=''>Exterior</a></li>
-                    </ul>
-                </li>
-                <li><a href=''>Insumos</a>
-                    <ul>
-                        <li><a href=''>Herramientas</a></li>
-                        <li><a href=''>Fertilizantes</a></li>
-                    </ul>
-                </li>
-                <li><a href=''>Macetas</a>
-                    <ul>
-                        <li><a href=''>Cuadradas</a></li>
-                        <li><a href=''>Redondas</a></li>
-                    </ul>
-                </li>
-                <li><a href=''>Conocenos</a></li>
-                <li><a href=''>Contacto</a></li>
-            </ul>
-
-            <ul class='iconsNav'>
-                <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href='/login'><i class="fas fa-user"></i></a></li>
-            </ul>
-
-            <a href=''><i class="fas fa-times exitMenu"></i></a>
-        </section>
-
-        <form action="/search" method="POST" class="search">    
-            <i class="fas fa-search"></i><input type="text" name="precio" placeholder="Buscar productos, marcas" class="searchBar">
-        </form>
-
-        <a href='#menuNav'><i class="fas fa-bars burgerMenu"></i></a>
-
-    </header>
+    <%- include('../includes/header') %>
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
@@ -80,55 +39,8 @@
         </form>
     </main>
 
-     <!---------------------------------------- FOOTER ---------------------------------------->
-    <footer>
-        <section class="footerContent">
-            <p id="brandFooter">Cricama Plants</p>
-        </section>
-
-        <section class="footerContent">
-            <h2 class='footerTitle'>Navegación</h2>
-
-            <ul class='footerNav'>
-                <li><a href=''>Plantas</a></li>
-                <li><a href=''>Insumos</a></li>
-                <li><a href=''>Macetas</a></li>
-                <li><a href=''>Conocenos</a></li>
-                <li><a href=''>Contacto</a></li>
-            </ul>
-        </section>
-
-        <section class="footerContent">
-            <h2 class='footerTitle'>Contactanos</h2>
-            <ul class='footerContact'>
-                <li><i class="fas fa-mobile-alt iconContact"></i> <a href="https://api.whatsapp.com/send?phone=+5491133907970">011-3390-7970</a></li>
-                <li><i class="fas fa-map-marker-alt iconContact"></i> <p>Avenida Siempreviva 742</p></li>
-                <li><i class="fas fa-envelope iconContact"></i> <a href="mailto:cricamaplants@gmail.com?Subject=Consulta%20vía%20web">cricamaplants@gmail.com</a></li>
-                <li><i class="fas fa-clock iconContact"></i> <p>Lun a Vie 9:30 a 18:30hs</p></li>
-            </ul>
-        </section>
-
-        <section class="footerContent">
-            <h2 class='footerTitle'>Medios de pago</h2>
-            <ul class=iconPay>    
-                <li><i class="fab fa-cc-visa"></i></li>
-                <li><i class="fab fa-cc-mastercard"></i></li>
-                <li><i class="fab fa-cc-paypal"></i></li>
-            </ul>
-        </section>
-
-        <section class="footerContent">
-            <h2 class='footerTitle'>Redes sociales</h2>
-            <ul class=iconSocial>
-                <li><i class="fab fa-instagram"></i></li>
-                <li><i class="fab fa-facebook-square"></i></li>
-                <li><i class="fab fa-youtube"></i></li>
-            </ul>    
-        </section>
-    
-    <p id='copyright'>Copyright © 2021-2021 CriCaMa Plants</p>
-
-    </footer>
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
 
 </body>
 </html>
