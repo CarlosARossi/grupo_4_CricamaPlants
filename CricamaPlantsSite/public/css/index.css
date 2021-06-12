@@ -43,143 +43,6 @@ a{
 
 /*********************************************** MOBILE ***********************************************/
 
-/*********************** HEADER ***********************/
-header{
-    background-color: #30544E;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:space-between;
-    padding: 5px;
-}
-
-.logo{
-    padding: 2px;
-    width: 20vw;   
-}
-
-.search { 
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px 10px;
-    color:#30544E;
-    width: 50vw;
-    margin: auto;
-}
-
-.search > input:focus {
-    outline: none;
-  }
-
-.searchBar{
-    color: #F5E078;
-    border: none;
-    padding:5px 10px;
-    width: 85%;
-}
-
-.mainNav a:hover{
-    color: #A78B48;
-}
-
-.iconsNav a:hover{
-    color: #A78B48;
-}
-
-#menuNav{
-    display: none;
-    transition: all 0.5s ease-out;
-}
-
-.burgerMenu{
-    font-size: 6vw;
-    color: #30544E;
-    width: 10vw;
-    height: 10vw;
-    text-align: center;
-    margin: auto;
-    background-color: #F5E078;
-    border: solid #F5E078 1px;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.exitMenu{
-    font-size: 6vw;
-    background-color: #F5E078;
-    border: solid #F5E078 1px;
-    border-radius: 100%;
-    color: #30544E;
-    width: 10vw;
-    height: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 3.5vh;
-    right: 1vw;
-}
-
-.burgerMenu:hover{
-    background-color: #A78B48;
-    border: solid #A78B48 1px;
-    transition: all 0.25s;
-}
-
-#menuNav:target{
-    font-size: 1.75em;
-    display: flex;
-    position: fixed;
-    width: 79vw; 
-    height: 100vh;
-    background-color: #30544EE6 ;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center; 
-}
-
-#menuNav:target .burgerMenu{
-    visibility: hidden;
-}
-
-#menuNav:target .iconsNav{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    font-size: 1.5em;
-    top: 4vh;
-}
-
-#menuNav:target .iconsNav a{
-    color:#F5E078;
-    margin: 0 4vw;
-}
-
-#menuNav:target .mainNav li{
-    font-weight: bold;
-    color:#F5E078
-}
-
-#menuNav:target .mainNav li ul li{
-    font-weight: normal;
-    list-style: inside;
-    color:#F5E078
-}
-#menuNav:target .mainNav a{
-    color:#F5E078
-}
-
-/* a[href='#mainNav'] {
-    background-color: black;
-} */
-
-
 /*********************** MAIN ***********************/
 
 main {
@@ -248,7 +111,7 @@ main {
     margin: 2%;
 }
 
-.iconCart{
+#iconCart{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -261,201 +124,21 @@ main {
     right: 10px;
 }
 
-.iconCart:hover{
+#iconCart:hover{
     background-color: #30544E;
     color: #F5E078;
     border: solid #F5E078 2px;
     transition: all 0.5s;
 }
 
-
-/*********************** FOOTER ***********************/
-
-footer{
-    background-color: #30544E;
-    text-align: left;
-    width: 100vw;
-    height: fit-content;
-    color: #F5E078;
-    padding-top: 10px;
-}
-
-#brandFooter{
-    font-size: 1.7em;
-    font-weight: bolder;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.footerNav{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 50px;
-    width: auto;
-    justify-content: space-evenly;
-    margin: auto;
-    align-content: space-around;
-    margin-bottom: 15px;
-}
-
-.footerNav a:hover{
-    color: #A78B48;
-}
-
-.footerNav a{
-    text-decoration: none;
-    color:#F5E078;
-    padding: 20px;
-}
-
-.footerTitle {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.footerContact{
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    align-items: center;
-}
-
-.footerContact li{
-    display: flex;
-    flex-direction: row;
-    width: 200px;
-    justify-content: center;
-}
-
-.footerContact a{
-    text-decoration: none;
-    font-size: 12px;
-    margin-bottom: 10px;
-    color: #F5E078;
-}
-
-.iconContact{
-    margin: 0px 2px;
-    width: 20px;
-    text-align: center
-}
-
-.iconPay{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-size: 2em; 
-    margin-bottom: 15px;
-}
-
-.iconSocial{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-size: 2.5em; 
-    margin-bottom: 15px;
-}
-
-#copyright{
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    width: 100vw;
-}
-
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
- 
-    /*********************** HEADER TABLET ***********************/    
-    .logo {
-        width: 100px;
-    }
-
-    #menuNav:target{
-        display: none;
-    }
-
-    #menuNav{
-        display: contents;
-    }
-
-    .exitMenu{
-        display: none;
-    }
-
-    .mainNav{
-        width: 45vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-content: center;
-    }
-
-    .mainNav li>a{
-        color: #F5E078;
-        text-decoration: none;
-        padding: 5px 0;
-        font-size: 1.1em;
-        font-weight: 350;
-        position: relative;
-    }
-
-/*     .mainNav li>a:hover{
-        background-color: #30544E;
-    } */
-    .mainNav>li{
-        float: left;
-        text-align:left
-    }
-
-    .mainNav>li>ul{
-        display: none;
-    }
-
-    .mainNav>li:hover>ul {
-        height: 10vh;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        background-color: rgba(51, 109, 75, 0.6);
-        padding: 0px 10px;
-        border-radius: 5px;
-    }
-
-    .mainNav>li>ul>li>a{
-        margin: 0px;
-    }
-
-    .iconsNav{
-        display: flex;
-        justify-content: space-around;
-        width: 10vw;
-        margin-right: -6vw;
-    }
-    
-    .iconsNav a{
-        font-size: 150%;
-        color: #F5E078;
-    }
-
-    .search {
-        width: 20%;
-        margin: 5px;
-    }
-    .burgerMenu{
-        display: none;
-    }
-
     /*********************** MAIN TABLET ***********************/
     
     main {
         margin-top: 0vw;
     }
-  
+
     .articleMain{
         margin-inline: 4vw;
         max-width: 39vw;
@@ -476,81 +159,16 @@ footer{
         border-radius: 5px;
         padding: 5px;
     }
-
-
-    /*********************** FOOTER TABLET ***********************/
-    footer{
-        padding: 0px;
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: 10px;
-    }
-
-    .footerTitle {
-        text-align: left;
-    }
-
-    #brandFooter {
-        width: 68%;
-        text-align: left;
-        margin-left: 10px;
-    }
-
-
-    .footerContent{
-        width: 20vw;
-    }
-
-    .footerNav{
-        width: auto;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        height: auto;
-    }
-
-    .footerNav a {
-        padding: 0px;
-    }
-
-    .footerContact {
-        align-items: flex-start
-    }
-
-    .footerContact li {
-        justify-content: left;
-    }
-    
 }
 
 /*********************************************** DESKTOP ***********************************************/
 @media (min-width: 1021px){
-   
-    /*********************** HEADER DESKTOP ***********************/
-    header{
-        /* width: 1366px; */
-        margin: auto;
-    }
-
-    .mainNav{
-        width: 50%;
-        justify-content: space-around;
-    }
-
-    .mainNav li>a{
-        font-size: 1.4em;
-    }
-    
-    .iconsNav{
-        margin: 0px;
-        width: 10%;
-    }
-
     /*********************** MAIN DESKTOP ***********************/
 
     .generalArticles{
        /*  width: 1366px; */
         margin: auto;
-     }
+    }
 
 
     .articleMain{
@@ -565,19 +183,11 @@ footer{
     .quotes{
         font-size: 1.2vw;
     }
-
-    /*********************** FOOTER DESKTOP ***********************/
-
-    footer{
-       /* width: 1366px; */
-       margin: auto;
-    }
-
-    .footerContent{
-        width: 20%;
-    }
 }
 
-@media (max-width: 1023px){
-
+@media (min-width: 1200px){
+    .generalArticles {
+        margin: auto;
+        max-width: 90vw;
+    }
 }

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Header</title>
 
     <!-- Fuentes -->
@@ -13,8 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/index.css">
-    
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
     <!---------------------------------------- HEADER ---------------------------------------->
@@ -50,14 +51,14 @@
                 <li><a href='/login'><i class="fas fa-user"></i></a></li>
             </ul>
 
-            <a href=''><i class="fas fa-times exitMenu"></i></a>
+            <a href='' id='exitMenu'><i class="fas fa-times"></i></a>
         </section>
 
         <form action="/search" method="POST" class="search">    
             <i class="fas fa-search"></i><input type="text" name="precio" placeholder="Buscar productos, marcas" class="searchBar">
         </form>
 
-        <a href='#menuNav'><i class="fas fa-bars burgerMenu"></i></a>
+        <a href='#menuNav' id='burgerMenu'><i class="fas fa-bars"></i></a>
 
     </header>
     

@@ -1,3 +1,12 @@
+.paletteColor{
+    color:  #30544E
+            #F5E078
+            #FAD7C5
+            #A78B48
+            #000000
+            #E2E7E6
+            #FFFFFF
+}
 
 /*********************** MAIN ***********************/
 
@@ -27,7 +36,7 @@ fieldset{
     border: none;
 }
 
-input{
+.form input{
     border: none;
     background-color: #30544E;
     border-bottom: 1px solid #F5E078;
@@ -36,23 +45,18 @@ input{
 }
 
 
-.search *{
-    background-color: white;
-}
-
-fieldset > input:focus {
+.form fieldset > input:focus {
     outline: none;
     background-color: white;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: black;
-  }
-  
-::-moz-placeholder { /* Firefox 19+ */
+}
+
+.form ::-moz-placeholder { /* Firefox 19+ */
     color: black;
-  }
-  
+}
 
 .form *{
     display: flex;
@@ -80,7 +84,6 @@ fieldset > input:focus {
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
- 
     
     /*********************** MAIN TABLET ***********************/
     
@@ -144,7 +147,8 @@ fieldset > input:focus {
     input{
         transition: all 100ms;
     }
-    input:hover{
+
+    .form input:hover{
         background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
         border: solid 1px #F5E078;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
@@ -153,6 +157,7 @@ fieldset > input:focus {
     .button{
         transition: all 100ms;
     }
+    
     .button:hover{
         background-color: #30544E;
         color: #F5E078;
