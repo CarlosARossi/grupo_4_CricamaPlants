@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+        <form action = "/" method = "GET" enctype = "multipart/form-data" class = "form">
+            <h2 id="title">Formulario de carga y edición de productos</h2>
+
+            <fieldset class="">
+                <label for="name">Nombre del producto</label>
+                <input type=text name="name" required>
+            </fieldset>
+
+            <fieldset class="">
+                <label for="description">Descripción del producto</label>
+                <textarea name="description" id="" cols="30" rows="10"></textarea>
+            </fieldset>
+
+            <fieldset class="">
+                <label for="image">Imagen</label>
+                <input type=file name="image" required>
+            </fieldset>
+
+            <fieldset class="">
+                <label for="category">Categoría</label>
+                <input type=text name="category" required>
+            </fieldset>
+
+            <fieldset class="">
+                <label for="size">Tamaño</label>
+                <input type=text name="size" required>
+            </fieldset>
+
+            <fieldset class="">
+                <label for="price">Precio</label>
+                <input type=text name="price" required>
+            </fieldset>
+
+                <a href='/'><button type="submit" class="button">ENVIAR</button></a>
+        </form>
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

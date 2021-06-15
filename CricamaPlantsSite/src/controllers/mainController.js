@@ -5,7 +5,8 @@ const mainController = {
     login:(req,res) => res.render('users/login'),
     register:(req,res) => res.render('users/register'),
     productCar:(req,res) => res.render('products/productCar'),
-    productDetail:(req,res) => res.render('products/productDetail')
+    productDetail:(req,res) => res.render('products/productDetail'),
+    productLoad:(req,res) => res.render('users/productLoad')
 }
 
 module.exports = mainController;
