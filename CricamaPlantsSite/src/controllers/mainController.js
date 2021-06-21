@@ -6,7 +6,7 @@ const mainController = {
     register:(req,res) => res.render('users/register'),
     productCar:(req,res) => res.render('products/productCar'),
     productDetail:(req,res) => res.render('products/productDetail'),
-    productLoad:(req,res) => res.render('users/productLoad')
+    productLoad:(req,res) => res.render('products/productLoad')
 }
 
 module.exports = mainController;
