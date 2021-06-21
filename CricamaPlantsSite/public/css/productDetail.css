@@ -13,11 +13,11 @@
 
 /************************ MAIN ************************/
 
-.box-first{
+.boxFirst{
     margin: 20px;
 }
 
-.box-first p{
+.boxFirst p{
     color: #30544E;
     font-size: 1.1em;
 }
@@ -26,12 +26,12 @@
     text-transform: uppercase;
 }
 
-.box-detail{
+.boxDetail{
     margin: 15px;
     background-color: #E2E7E6;
 }
 
-.box-description{
+.boxDescription{
     display: flex;
     border: solid 2px #30544E;
     margin: 20px;
@@ -41,25 +41,25 @@
     line-height: 20px;
 }
 
-.box-description1 p{
+.boxDescription1 p{
     font-size: 0.9rem;
     font-style: italic;
 }
 
-.box-imagen img{
+.boxImagen{
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+
+.boxImagen img{
     margin: 10%;
     width: 90%;
     margin: auto;
     border-radius: 10px;
 }
 
-.box-imagen{
-    width: 80%;
-    display: flex;
-    margin: auto;
-}
-
-.comprar-button{
+.comprarButton{
     color: #30544E;
     font-size: 1rem;
     background-color: #F5E078;
@@ -71,7 +71,7 @@
     transition: all 100ms;
 }
 
-.comprar-button:hover{
+.comprarButton:hover{
         background-color: #30544E;
         color: #F5E078;
         border: solid 1px #F5E078;
@@ -84,32 +84,32 @@
  
     /*********************** MAIN TABLET ***********************/
 
-    .box-imagen{
+    .boxImagen{
         width: 36%;
     }
 
-    .box-detail{
-        display: flex;
-        align-items: center;
-    }
-
-    .box-imagen img{
+    .boxImagen img{
         margin: 15px;
         width: 90%;
     }
 
-    .box-description{  
+    .boxDetail{
+        display: flex;
+        align-items: center;
+    }
+
+    .boxDescription{  
         height: 20%;
     }
 
-    .comprar-button{
+    .comprarButton{
         width: 54%;
         margin: auto;
         padding: 4px;
         font-size: 1.1rem;
     }
 
-    .comprar-button:hover{
+    .comprarButton:hover{
         font-size: 1.1rem;
     }
     
@@ -120,19 +120,19 @@
 
     /*********************** MAIN DESKTOP ***********************/
 
-    .box-description{
+    .boxDescription{
         width: 50%;
     }
 
-    .box-description1 p{
+    .boxDescription1 p{
         font-size: 1.1rem;
     }
 
-    .comprar-button{
+    .comprarButton{
         font-size: 1.3rem;
     }
 
-    .comprar-button:hover{
+    .comprarButton:hover{
         font-size: 1.3rem;
     }
 
