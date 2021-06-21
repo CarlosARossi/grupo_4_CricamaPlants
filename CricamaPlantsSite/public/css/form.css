@@ -37,6 +37,7 @@ fieldset{
 }
 
 .form input{
+    line-height: 25px;
     border: none;
     background-color: #30544E;
     border-bottom: 1px solid #F5E078;
@@ -67,6 +68,7 @@ fieldset{
 }
 
 .button{
+    line-height: 20px;
     color: #30544E;
     font-size: 12px;
     background-color:#F5E078;
@@ -156,9 +158,11 @@ fieldset{
     }
 
     .form input:hover{
+        line-height: 25px;
         background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
-        border: solid 1px #F5E078;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+        /*border: solid 1px #F5E078;*/
+        /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);*/
+        box-shadow: 0px 0px 5px #F5E078d0;
     }
 
     .button{
