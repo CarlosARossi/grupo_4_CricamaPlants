@@ -17,3 +17,22 @@ Discusiones sin sentido que no aportaban al proyecto o no era el momento de pone
 ### 5. Dejar de hacer:
 Al ser el primer sprint no tuvimos demasiadas actividades, por lo cual todas las realizadas aportaron valor al objetivo final.
 
+
+## Sprint 2 (estrella de mar)
+
+### 1. Comenzar a hacer:
+Al margen de que la dinámica de trabajo es muy buena y la comunicacion entre nosotros es constante, para este sprint sería positivo comenzar a documentar las reuniones que tenemos regularmente en un archivo weekly.md. También estaría bueno comenzar el sprint leyendo en equipo la restrospectiva para poder trabajar y mejorar sobre los pilares que plantea esta ceremonia.
+
+### 2. Hacer más:
+Continuar agregando críticas constructivas a las distintas tareas. A medida que vamos ganando confianza entre nosotros podemos proponer nuevas ideas y discrepancias en la tarea que esta llevando adelante el compañero. Esto ayuda a que el proyecto quede cada vez mejor y podamos crecer todos en nuestras habilidades como programadores.
+
+### 3. Continuar haciendo:
+Continuar con la buena comunicación y predisposición que tenemos entre nosotros, asi como la organización que nos caracteriza, van a ser claves para que continuemos cumpliendo con las entregas de los sprints en tiempo y forma.
+
+### 4. Hacer menos:
+Avanzar en decisiones que podrían ser grupales de manera individual.
+
+### 5. Dejar de hacer:
+Consideramos que no hay ninguna actividad o acitud que haya que cambiar por completo.
+
+
