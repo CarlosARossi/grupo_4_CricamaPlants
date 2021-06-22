@@ -21,22 +21,29 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
-        <form action = "/" method = "GET" enctype = "multipart/form-data" class = "form">
-            <h2 id="title">Completa tus datos!</h2>
-            <fieldset class="">
-                <input type=text name="completeName" required minlength=8 placeholder="Nombre completo">
-            </fieldset>
-            <fieldset class="">
-                <input type=email name="email" required placeholder="E-mail">
-            </fieldset>
-            <fieldset class="">
-                <input type=password name="password" required minlength="10" placeholder="Contraseña" >
-            </fieldset>
-            <fieldset class="">
-                <input type=password name="repeatPassword" required minlength="10" placeholder="Reingrese la contraseña">
-            </fieldset>
-                <a href='/'><button type="submit" class="button">ENVIAR</button></a>
-        </form>
+        
+        <a href='/'><img class='banner' src="/img/bannerKit.jpg" alt="Banner Kit"></a>
+
+        <section class="generalArticles">
+            
+            <article class="articleMain">
+                <a href='/productLoad'>
+                    <section class="box-article">
+                        <p class="description">Cargá un nuevo producto!</p>
+                    </section>
+                </a>
+            </article>
+
+            <article class="articleMain">
+                <a href='/productEdit'>
+                    <section class="box-article">
+                        <p class="description">Edición de producto</p>
+                    </section>
+                </a>
+            </article>
+
+        </section>
+
     </main>
 
     <!---------------------------------------- FOOTER ---------------------------------------->

@@ -21,12 +21,12 @@ main h2{
     margin-bottom: 3px;
 }
 
-.box-imagen{
+.boxImagen{
     height: 55%;
     margin-bottom: 15px;
 }
 
-.box-imagen figure{
+.boxImagen figure{
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ figure img{
     border-radius: 10px;
 }
 
-.box-imagen2{
+.boxImagen2{
     display: flex;
     flex-wrap: wrap;
     width: 60%;
@@ -55,54 +55,36 @@ main p{
     text-align: center;
 }
 
-.box-imagen2 i{
+.boxImagen2 i{
     margin: 5px;
-}
-
-.box-producto{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px;
-    width: 80%;
-    align-items: center;
 }
 
 .texto1{
     width: 44%;
 }
 
-.box-precio{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px;
-    align-items: center;
-    width: 80%;
-}
-
-.box-cantidad{
+.boxCantidad{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.box-cantidad input{
+.boxCantidad input{
     width: 25%;
     height: 70%;
     margin: 7px;
 }
 
-.box-imagen label{
+.boxImagen label{
     margin-left: 10px;
 }
 
-.box-imagen select{
+.boxImagen select{
     width: 33%;
 }
 
-.box-subtotal{
+.boxSubtotal{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -110,24 +92,24 @@ main p{
     align-items: center;
 }
 
-.box-envio{
+.boxEnvio{
     display: grid;
     margin: 10px;
     align-items: center;
 }
 
-.box-envio p{
+.boxEnvio p{
     font-size: 1rem;
     text-align: left;
 }
 
-.box-total{
+.boxTotal{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.comprar-button{
+.comprarButton{
     color: #30544E;
     font-size: 0.8rem;
     background-color: #F5E078;
@@ -139,7 +121,7 @@ main p{
     margin-left: 8px;
 }
 
-.comprar-button:hover{
+.comprarButton:hover{
     background-color: #30544E;
     color: #F5E078;
     border: solid 1px #F5E078;
@@ -147,7 +129,7 @@ main p{
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
-.article-envio{
+.articleEnvio{
     line-height: 20px;
 }
 
@@ -159,18 +141,18 @@ main p{
     color: black;
 }
 
-.postal-button{
+.postalButton{
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
-.postal-button input{
+.postalButton input{
     padding: 4px;
     margin-right: 5px;
 }
 
-.postal-button button{
+.postalButton button{
     display: flex;
     flex-wrap: wrap;
     color: #30544E;
@@ -186,7 +168,7 @@ main p{
     align-items: center;
 }
 
-.postal-button button:hover{
+.postalButton button:hover{
     background-color: #30544E;
     color: #F5E078;
     border: solid 1px #F5E078;
@@ -202,21 +184,21 @@ main p{
         width: 50%;
     }
 
-    .box-imagen{
+    .boxImagen{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
 
-    .box-imagen figure{
+    .boxImagen figure{
        width: 50%;
     }
 
-    .box-imagen label{
+    .boxImagen label{
         margin-left: 0px;
     }
 
-    .box-imagen2{
+    .boxImagen2{
         font-size: 16px;
         display: flex;
         justify-content: space-around;

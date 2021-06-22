@@ -22,19 +22,38 @@
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
         <form action = "/" method = "GET" enctype = "multipart/form-data" class = "form">
-            <h2 id="title">Completa tus datos!</h2>
+            <h2 id="title">Formulario de carga y edición de productos</h2>
+
             <fieldset class="">
-                <input type=text name="completeName" required minlength=8 placeholder="Nombre completo">
+                <input type=text name="name" required placeholder="Nombre del producto">
             </fieldset>
+
             <fieldset class="">
-                <input type=email name="email" required placeholder="E-mail">
+                <textarea name="description" id="" cols="30" rows="10" placeholder="Descripción del producto"></textarea>
             </fieldset>
+
+            <fieldset id="loadPicture">
+                <label for="fotos">Fotos:</label>
+                <input type=file name="image" accept=".png, .jpg, .jpeg" required>
+            </fieldset>
+
             <fieldset class="">
-                <input type=password name="password" required minlength="10" placeholder="Contraseña" >
+                <label for="categoria">Categoría:</label>
+                <select>
+                    <option>PLANTAS</option>
+                    <option>INSUMOS</option>
+                    <option>MACETAS</option>
+                </select>
             </fieldset>
+
             <fieldset class="">
-                <input type=password name="repeatPassword" required minlength="10" placeholder="Reingrese la contraseña">
+                <input type=text name="size" required placeholder="Tamaño">
             </fieldset>
+
+            <fieldset class="">
+                <input type=number name="price" required placeholder="Precio">
+            </fieldset>
+
                 <a href='/'><button type="submit" class="button">ENVIAR</button></a>
         </form>
     </main>

@@ -24,38 +24,51 @@
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
-#title{
-    font-size: 1em;
-    display: flex;
-    justify-content: center;
-    padding-top: 10vh;
-    color: #F5E078;
-}
-
 fieldset{
     border: none;
 }
 
-.form input{
+label{
+    color: #F5E078;
+    font-size: 1.3em !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#title{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+    color: #F5E078;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.form input, textarea, select{
+    line-height: 25px;
     border: none;
     background-color: #30544E;
     border-bottom: 1px solid #F5E078;
     padding-bottom: none;
-    border-radius: 0px;
+    border-radius: 2px;
+    color: #F5E078;
 }
 
 
-.form fieldset > input:focus {
+.form fieldset > input:focus, textarea:focus, select:focus {
     outline: none;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #F5E078;
+    border-radius: 5px;
 }
 
 .form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: black;
+    color: #A78B48;
 }
-
 .form ::-moz-placeholder { /* Firefox 19+ */
-    color: black;
+    color: #A78B48;
 }
 
 .form *{
@@ -68,6 +81,7 @@ fieldset{
 }
 
 .button{
+    line-height: 20px;
     color: #30544E;
     font-size: 12px;
     background-color:#F5E078;
@@ -75,16 +89,31 @@ fieldset{
     display: inline-block;
     width: 40vw;
     border-radius: 4px;
-    margin-top: 14px;
     text-decoration: none;
     text-align: center;
 }
 
+.list{
+    display: flex;
+}
+
+.list ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list a{
+    text-decoration: none;
+    color: #F5E078;
+    margin: 0;
+    padding: 0;
+}
 
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
-    
+
     /*********************** MAIN TABLET ***********************/
     
     main {
@@ -108,7 +137,6 @@ fieldset{
         font-size: 14px;
         width: 25vw;
         border-radius: 6px;
-        margin-top: 16px;
     }
 
 }
@@ -118,11 +146,13 @@ fieldset{
 
     /*********************** MAIN DESKTOP ***********************/
     
+    /*********************** MAIN DESKTOP ***********************/
+    
+
     .form{
         width: 50vw;
         padding-bottom: 5vh;
         border-radius: 16px;
-        padding: 20px 0;
     }
 
     #title{
@@ -133,31 +163,38 @@ fieldset{
     .form *{
         font-size: 16px;
         width: 35vw;
-        padding: 18px;
+        padding: 15px;
     }   
+
+    input, textarea, select{
+        transition: all 100ms;
+    }
+
+    .form input:hover, textarea:hover, select:hover{
+        line-height: 25px;
+        background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
+        /*border: solid 1px #F5E078;*/
+        /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);*/
+        box-shadow: 0px 0px 5px #F5E078d0;
+    }
+    .form textarea:hover{
+        line-height: 18px;
+        background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
+        /*border: solid 1px #F5E078;*/
+        /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);*/
+        box-shadow: 0px 0px 5px #F5E078d0;
+    }
 
     .button{
         font-size: 18px;
         width: 15vw;
         border-radius: 8px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    input{
-        transition: all 100ms;
-    }
-
-    .form input:hover{
-        background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
-        border: solid 1px #F5E078;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
     }
 
     .button{
         transition: all 100ms;
     }
-    
+
     .button:hover{
         background-color: #30544E;
         color: #F5E078;
@@ -170,7 +207,11 @@ fieldset{
         transition: all 100ms;
     }
     .list a:hover{
-        color: #F5E078;
+        color: #A78B48;
     }
+    
 }
 
+
+
+    
