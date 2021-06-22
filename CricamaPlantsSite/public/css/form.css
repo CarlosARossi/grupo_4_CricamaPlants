@@ -30,7 +30,7 @@ fieldset{
 
 label{
     color: #F5E078;
-    font-size: 20px;
+    font-size: 1.3em !important;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -44,6 +44,7 @@ label{
     text-transform: uppercase;
     text-align: center;
 }
+
 
 .form input, textarea, select{
     line-height: 25px;
@@ -206,7 +207,7 @@ label{
         transition: all 100ms;
     }
     .list a:hover{
-        color: #FAD7C5;
+        color: #A78B48;
     }
     
 }
