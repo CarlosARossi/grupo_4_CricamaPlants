@@ -36,7 +36,7 @@ fieldset{
     color: #F5E078;
 }
 
-.form input{
+.form input, textarea, select{
     line-height: 25px;
     border: none;
     background-color: #30544E;
@@ -46,7 +46,7 @@ fieldset{
 }
 
 
-.form fieldset > input:focus {
+.form fieldset > input:focus, textarea:focus, select:focus {
     outline: none;
     background-color: white;
 }
@@ -153,12 +153,19 @@ fieldset{
         padding: 20px;
     }   
 
-    input{
+    input, textarea, select{
         transition: all 100ms;
     }
 
-    .form input:hover{
+    .form input:hover, textarea:hover, select:hover{
         line-height: 25px;
+        background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
+        /*border: solid 1px #F5E078;*/
+        /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);*/
+        box-shadow: 0px 0px 5px #F5E078d0;
+    }
+    .form textarea:hover{
+        line-height: 18px;
         background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
         /*border: solid 1px #F5E078;*/
         /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);*/
