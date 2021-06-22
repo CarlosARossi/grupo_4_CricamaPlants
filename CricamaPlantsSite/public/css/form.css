@@ -28,12 +28,21 @@ fieldset{
     border: none;
 }
 
+label{
+    color: #F5E078;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 #title{
-    font-size: 1em;
+    font-size: 1.5em;
     display: flex;
     justify-content: center;
     padding-top: 10vh;
     color: #F5E078;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .form input, textarea, select{
@@ -42,20 +51,23 @@ fieldset{
     background-color: #30544E;
     border-bottom: 1px solid #F5E078;
     padding-bottom: none;
-    border-radius: 0px;
+    border-radius: 2px;
+    color: #F5E078;
 }
 
 
 .form fieldset > input:focus, textarea:focus, select:focus {
     outline: none;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #F5E078;
+    border-radius: 5px;
 }
 
 .form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: black;
+    color: #A78B48;
 }
 .form ::-moz-placeholder { /* Firefox 19+ */
-    color: black;
+    color: #A78B48;
 }
 
 .form *{
@@ -150,7 +162,7 @@ fieldset{
     .form *{
         font-size: 16px;
         width: 35vw;
-        padding: 20px;
+        padding: 15px;
     }   
 
     input, textarea, select{

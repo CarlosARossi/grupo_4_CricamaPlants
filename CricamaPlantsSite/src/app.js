@@ -18,6 +18,10 @@ app.set("views",path.resolve(__dirname,"./views"));
 //Routes App
 const main = require('./routes/mainRouter');
 app.use(main);
+const user = require('./routes/userRouter');
+app.use(user);
+const product = require('./routes/productRouter');
+app.use(product);
 
 
 /* app.get('/', (req, res) => {
