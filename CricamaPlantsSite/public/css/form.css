@@ -177,13 +177,11 @@ label{
         /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);*/
         box-shadow: 0px 0px 5px #F5E078d0;
     }
-    .form textarea:hover{
+/*     .form textarea:hover{
         line-height: 18px;
-        background-color: #30544E; /**hacer que este color sea igual pero mas claro**/
-        /*border: solid 1px #F5E078;*/
-        /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);*/
+        background-color: #30544E;
         box-shadow: 0px 0px 5px #F5E078d0;
-    }
+    } */
 
     .button{
         font-size: 18px;
@@ -211,7 +209,3 @@ label{
     }
     
 }
-
-
-
-    
