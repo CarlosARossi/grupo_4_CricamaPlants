@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../includes/head') %>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
@@ -12,26 +12,17 @@
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
         
-        <a href='/'><img class='banner' src="/img/bannerAdmin.jpg" alt="Banner Admin"></a>
+        <img class='banner' src="/img/bannerAdmin.jpg" alt="Banner Admin">
 
-        <section class="generalArticles">
-            
-            <article class="articleMain">
-                <a href='/productLoad'>
-                    <section class="box-article">
-                        <p class="name">Cargá un nuevo producto!</p>
-                    </section>
-                </a>
-            </article>
-
-            <article class="articleMain">
-                <a href='/productEdit'>
-                    <section class="box-article">
-                        <p class="name">Edición de producto</p>
-                    </section>
-                </a>
-            </article>
-
+        <section>
+            <ul id='menuAdmin'>
+                <li><a href='/productLoad'><i class="fas fa-upload iconAdmin"></i> Cargá un nuevo producto!</a></li>
+                <li><a href='/productEdit'><i class="fas fa-edit iconAdmin"></i> Edición de producto</a></li>
+                <li><a href='/productEdit'><i class="fas fa-trash iconAdmin"></i> Borrá un producto</a></li>
+                <li><a href='/userLoad'><i class="fas fa-user-plus iconAdmin"></i> Registrá a un nuevo usuario</a></li>
+                <li><a href='/userEdit'><i class="fas fa-user-plus iconAdmin"></i> Editá a un usuario</a></li>
+                <li><a href='/productEdit'><i class="fas fa-user-slash iconAdmin"></i> Borrá un usuario</a></li>
+            </ul>
         </section>
 
     </main>
