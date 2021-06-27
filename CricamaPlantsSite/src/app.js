@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const method = require('method-override');
 
 //Server Start
 app.set("port",process.env.PORT || 3000);
@@ -15,6 +16,10 @@ app.use(public);
 app.set("view engine","ejs");
 app.set("views",path.resolve(__dirname,"./views"));
 
+//Data Configuration
+app.use(express.urlencoded({extended:false})) // Not fund req.body
+app.use(method("_method")) // ?_method=PUT
+
 //Routes App
 const main = require('./routes/mainRouter');
 app.use(main);
@@ -22,24 +27,3 @@ const user = require('./routes/userRouter');
 app.use(user);
 const product = require('./routes/productRouter');
 app.use(product);
-
-
-/* app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'src/views','index.html') )
-});
-
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname,'views','register.html') )
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname,'views','login.html') )
-});
-
-app.get('/productCar', (req, res) => {
-    res.sendFile(path.join(__dirname,'views','productCar.html') )
-});
-
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.join(__dirname,'views','productDetail.html') )
-}); */

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+
+        <section class="generalArticles">
+            <% list.forEach(product => { %>
+
+            <article class="articleMain">
+                <a href='/'>
+                    <!-- <figure>
+                        <img class='image' src="/img/plantas/plantaInterior1.jpg" alt="plantaInterior1">
+                    </figure> -->
+                    <section class="box-article">
+                        <p class="price">$<%= product.price %></p>
+                        <p class="name"><%= product.name %></p>
+                    </section>
+                </a>
+            </article>
+
+            <% }) %>
+        </section>
+            
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

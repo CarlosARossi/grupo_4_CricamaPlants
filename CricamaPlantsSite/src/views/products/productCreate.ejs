@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+        <form action = "/save" method = "post" enctype = "multipart/form-data" class = "form">
+            <h2 id="title">Creación de productos</h2>
+
+            <fieldset class="">
+                <input type=text name="name" required placeholder="Nombre del producto">
+            </fieldset>
+
+            <fieldset class="">
+                <textarea name="description" id="" cols="30" rows="10" placeholder="Descripción del producto"></textarea>
+            </fieldset>
+
+            <fieldset id="loadPicture">
+                <label for="fotos">Fotos:</label>
+                <input type=file name="image" accept=".png, .jpg, .jpeg">
+            </fieldset>
+
+            <fieldset class="">
+                <label for="categoria">Categoría:</label>
+                <select name="category">
+                    <option value="plants">PLANTAS</option>
+                    <option value="supplies">INSUMOS</option>
+                    <option value="pots">MACETAS</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="">
+                <input type=text name="size" required placeholder="Tamaño">
+            </fieldset>
+
+            <fieldset class="">
+                <input type=number name="price" required placeholder="Precio">
+            </fieldset>
+
+            <fieldset>
+                <button type="submit" name="save" class="button">ENVIAR</button>
+            </fieldset>
+            
+        </form>
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>
