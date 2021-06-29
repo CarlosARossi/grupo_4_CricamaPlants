@@ -1,6 +1,9 @@
+//Requiere
 const path = require('path');
 const product = require('../models/productModel');
 
+
+//Functions
 const productController = {
     productCar:(req,res) => res.render('products/productCar'),
     productDetail:(req,res) => res.render('products/productDetail'),

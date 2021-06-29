@@ -1,6 +1,6 @@
 //Requiere
-let express = require('express')
-let router = express.Router();
+const express = require('express')
+const router = express.Router();
 const productController = require('../controllers/productController');
 const path = require('path');
 const multer = require('multer');
@@ -21,7 +21,6 @@ const upload = multer({storage:dest});
 
 
 //Routes
-
 router.get("/productCar",productController.productCar);
 router.get("/productDetail",productController.productDetail);
 
@@ -30,7 +29,7 @@ router.get("/products",productController.list);
 
 //Create product
 router.get("/productCreate",productController.create);
-router.post("/save",productController.save);
+router.post("/save",[upload.single("image")],productController.save);
 
 //Edit product
 router.get("/productEdit",productController.productEdit);

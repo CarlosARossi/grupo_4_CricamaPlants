@@ -1,90 +1,88 @@
 [
   {
     "id": 1,
-    "name": "Chlamydosaurus kingii",
+    "name": "ANTHURIUM X MACROLOBIUM",
     "description": "integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede",
-    "image": "product1.jpg",
+    "image": "plantaInterior1.jpg",
     "category": "plantas",
     "size": "XL",
-    "price": 1626
+    "price": 6000
   },
   {
     "id": 2,
-    "name": "Diomedea irrorata",
+    "name": "POTUS MARBLE QUEEN",
     "description": "justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id",
-    "image": "product2.jpg",
+    "image": "plantaInteriorPotus.jpg",
     "category": "plantas",
     "size": "XL",
-    "price": 4998
+    "price": 1500
   },
   {
     "id": 3,
-    "name": "Tenrec ecaudatus",
+    "name": "MACETA CILINDRO CEMENTO",
     "description": "mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis",
-    "image": "product3.jpg",
-    "category": "plantas",
-    "size": "XS",
-    "price": 1696
+    "image": "macetaCilindro.jpg",
+    "category": "macetas",
+    "size": "-",
+    "price": 600
   },
   {
     "id": 4,
-    "name": "Ursus americanus",
+    "name": "MACETA TERRACOTA",
     "description": "euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin",
-    "image": "product4.jpg",
-    "category": "plantas",
-    "size": "2XL",
-    "price": 467
+    "image": "macetaTerracota.jpg",
+    "category": "macetas",
+    "size": "-",
+    "price": 300
   },
   {
     "id": 5,
-    "name": "Macropus robustus",
+    "name": "FERTILIZANTE GENERAL",
     "description": "sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in",
-    "image": "product5.jpg",
+    "image": "insumoFertilizante.jpg",
     "category": "insumos",
-    "size": "L",
-    "price": 9736
+    "size": "-",
+    "price": 450
   },
   {
     "id": 6,
-    "name": "Sarcophilus harrisii",
+    "name": "JABÓN POTÁSICO PURO",
     "description": "magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed",
-    "image": "product6.jpg",
+    "image": "insumoJabon.jpg",
     "category": "insumos",
-    "size": "2XL",
-    "price": 2916
+    "size": "-",
+    "price": 450
   },
   {
     "id": 7,
-    "name": "Sarcophilus harrisii",
+    "name": "PALITA PLÁSTICA ANCHA",
     "description": "vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt",
-    "image": "product7.jpg",
-    "category": "insumos",
-    "size": "XL",
-    "price": 8279
+    "image": "herramientaPala.jpg",
+    "category": "herramientas",
+    "size": "-",
+    "price": 450
   },
   {
     "id": 8,
-    "name": "Anthropoides paradisea",
+    "name": "PULVERIZADOR GIBER",
     "description": "ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et",
-    "image": "product8.jpg",
-    "category": "cricama",
+    "image": "herramientaPulverizador.jpg",
+    "category": "herramientas",
     "size": "XL",
-    "price": 8927
+    "price": 2550
   },
   {
     "id": 9,
     "name": "Tragelaphus strepsiceros",
     "description": "ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac",
-    "image": "product9.jpg",
     "category": "cricama",
     "size": "XS",
     "price": 8270
   },
   {
     "id": 10,
-    "name": "Cyrtodactylus louisiadensis",
+    "name": "Cyrtodactylus louisi",
     "description": "metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet",
-    "image": "product10.jpg",
     "category": "cricama",
     "size": "S",
     "price": 257
@@ -93,7 +91,6 @@
     "id": 11,
     "name": "Ovis dalli stonei",
     "description": "lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis",
-    "image": "product11.jpg",
     "category": "cricama",
     "size": "3XL",
     "price": 1193
@@ -102,9 +99,16 @@
     "id": 12,
     "name": "Macropus eugenii",
     "description": "nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim",
-    "image": "product12.jpg",
     "category": "cricama",
     "size": "3XL",
     "price": 4466
+  },
+  {
+    "id": 13,
+    "name": "PRUEBA 1",
+    "description": "Prueba 1",
+    "category": "plants",
+    "size": "XL",
+    "price": "123"
   }
 ]

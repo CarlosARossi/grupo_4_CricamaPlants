@@ -16,7 +16,7 @@ const model = {
             id: productos.length > 0 ? productos[productos.length -1].id + 1: 1,
             name: data.name,
             description: data.description,
-            /* image: file.image, */
+            image: file.filename,
             category: data.category,
             size: data.size,
             price: data.price           

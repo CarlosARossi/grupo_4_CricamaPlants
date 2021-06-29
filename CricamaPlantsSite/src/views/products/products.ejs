@@ -16,9 +16,11 @@
 
             <article class="articleMain">
                 <a href='/'>
-                    <!-- <figure>
-                        <img class='image' src="/img/plantas/plantaInterior1.jpg" alt="plantaInterior1">
-                    </figure> -->
+                    <% if (product.image) { %>
+                        <figure><img class='image' src="/uploads/products/<%= product.image%>" alt=""></figure>
+                    <% } else { %>
+                        <figure><img class='image' src="/img/products/productDefault.jpg" alt=""></figure>
+                    <% } %>
                     <section class="box-article">
                         <p class="price">$<%= product.price %></p>
                         <p class="name"><%= product.name %></p>
