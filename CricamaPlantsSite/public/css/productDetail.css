@@ -8,6 +8,11 @@
             #FFFFFF
 }
 
+a{
+    text-decoration:none;
+    color: inherit;
+}
+
 /*********************************************** MOBILE ***********************************************/
 
 
@@ -45,10 +50,10 @@
 
 .boxDescription{
     display: flex;
-    border: solid 2px #30544E;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 8px;
+    /* border: solid 2px #30544E; */
+    margin: 15px;
+    /* padding: 10px;
+    border-radius: 8px; */
     flex-direction: column;
     line-height: 20px;
 }
@@ -97,7 +102,7 @@
     /*********************** MAIN TABLET ***********************/
 
     .image{
-        width: 36%;
+        width: 40vw;
     }
 
     .image img{
@@ -107,7 +112,7 @@
 
     .boxDetail{
         display: flex;
-        align-items: center;
+       /*  align-items: center; */
     }
 
     .boxDescription{  

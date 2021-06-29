@@ -15,7 +15,7 @@
             <% list.forEach(product => { %>
 
             <article class="articleMain">
-                <a href='/'>
+                <a href='/productDetail/<%= product.id%>'>
                     <% if (product.image) { %>
                         <figure><img class='image' src="/uploads/products/<%= product.image%>" alt=""></figure>
                     <% } else { %>
