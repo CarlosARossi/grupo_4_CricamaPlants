@@ -23,20 +23,22 @@ const upload = multer({storage:dest});
 //Routes
 router.get("/productCar",productController.productCar);
 
+//Product Detail
 router.get("/productDetail/:id",productController.productDetail);
 
 //List of all products
-router.get("/products",productController.list);
+router.get("/products/:category?",productController.list);
 
-//List of products by category
-router.get("/products/:category",productController.category);
+/* //List of products by category
+router.get("/products/:category",productController.category); */
 
 //Create product
 router.get("/productCreate",productController.create);
 router.post("/save",[upload.single("image")],productController.save);
 
 //Edit product
-router.get("/productEdit",productController.productEdit);
+router.get("/productEdit/:id",productController.productEdit);
+router.put("/saveEdition/:id",[upload.single("image")],productController.saveEdition);
 
 //Delete product
 

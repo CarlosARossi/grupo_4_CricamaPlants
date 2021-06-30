@@ -4,7 +4,7 @@
     "name": "ANTHURIUM X MACROLOBIUM",
     "description": "integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede",
     "image": "plantaInterior1.jpg",
-    "category": "plantas",
+    "category": "plants",
     "size": "XL",
     "price": 6000
   },
@@ -13,7 +13,7 @@
     "name": "POTUS MARBLE QUEEN",
     "description": "justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id",
     "image": "plantaInteriorPotus.jpg",
-    "category": "plantas",
+    "category": "plants",
     "size": "XL",
     "price": 1500
   },
@@ -22,7 +22,7 @@
     "name": "MACETA CILINDRO CEMENTO",
     "description": "mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis",
     "image": "macetaCilindro.jpg",
-    "category": "macetas",
+    "category": "pots",
     "size": "-",
     "price": 600
   },
@@ -31,7 +31,7 @@
     "name": "MACETA TERRACOTA",
     "description": "euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin",
     "image": "macetaTerracota.jpg",
-    "category": "macetas",
+    "category": "pots",
     "size": "-",
     "price": 300
   },
@@ -40,7 +40,7 @@
     "name": "FERTILIZANTE GENERAL",
     "description": "sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in",
     "image": "insumoFertilizante.jpg",
-    "category": "insumos",
+    "category": "supplies",
     "size": "-",
     "price": 450
   },
@@ -49,7 +49,7 @@
     "name": "JABÓN POTÁSICO PURO",
     "description": "magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed",
     "image": "insumoJabon.jpg",
-    "category": "insumos",
+    "category": "supplies",
     "size": "-",
     "price": 450
   },
@@ -58,7 +58,7 @@
     "name": "PALITA PLÁSTICA ANCHA",
     "description": "vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt",
     "image": "herramientaPala.jpg",
-    "category": "herramientas",
+    "category": "supplies",
     "size": "-",
     "price": 450
   },
@@ -67,7 +67,7 @@
     "name": "PULVERIZADOR GIBER",
     "description": "ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et",
     "image": "herramientaPulverizador.jpg",
-    "category": "herramientas",
+    "category": "supplies",
     "size": "XL",
     "price": 2550
   },
@@ -75,7 +75,7 @@
     "id": 9,
     "name": "Tragelaphus strepsiceros",
     "description": "ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac",
-    "category": "cricama",
+    "category": "plants",
     "size": "XS",
     "price": 8270
   },
@@ -83,7 +83,7 @@
     "id": 10,
     "name": "Cyrtodactylus louisi",
     "description": "metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet",
-    "category": "cricama",
+    "category": "plants",
     "size": "S",
     "price": 257
   },
@@ -91,7 +91,7 @@
     "id": 11,
     "name": "Ovis dalli stonei",
     "description": "lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis",
-    "category": "cricama",
+    "category": "plants",
     "size": "3XL",
     "price": 1193
   },
@@ -99,7 +99,7 @@
     "id": 12,
     "name": "Macropus eugenii",
     "description": "nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim",
-    "category": "cricama",
+    "category": "supplies",
     "size": "3XL",
     "price": 4466
   },
@@ -110,5 +110,22 @@
     "category": "plants",
     "size": "XL",
     "price": "123"
+  },
+  {
+    "id": 14,
+    "name": "PRUEBA 2 - EDITADO",
+    "description": "PRUEBA 2 - EDITADO",
+    "image": "image-1625096209263.jpg",
+    "size": "M",
+    "price": "123123"
+  },
+  {
+    "id": 15,
+    "name": "PRUEBA 4",
+    "description": "ASDASD",
+    "image": "image-1625093208976.jpg",
+    "category": "plantas",
+    "size": "XL",
+    "price": "1500"
   }
 ]

@@ -34,7 +34,25 @@ const model = {
         let productos = this.all();
         let resultado = productos.filter(producto => producto.category == category)
         return resultado;
-    }
+    },
+    edit: function (data,file,id) {
+        const directory = path.resolve(__dirname,"../data","products.json")
+        let productos = this.all();
+        productos.map(producto => {
+            if(producto.id == id ){
+                producto.name = data.name,
+                producto.description = data.description,
+                producto.image = file.filename,
+                producto.category = data.category,
+                producto.size = data.size
+                
+                return producto
+            }
+            return producto
+        })
+        fs.writeFileSync(directory,JSON.stringify(productos,null,2));
+        return true;
+    },
 }
 
 module.exports = model;

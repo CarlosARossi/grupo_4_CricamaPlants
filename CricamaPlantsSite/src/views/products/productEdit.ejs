@@ -11,20 +11,21 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
-        <form action = "/" method = "GET" enctype = "multipart/form-data" class = "form">
+        <form action="/saveEdition/<%= product.id %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
             <h2 id="title">Edición de productos</h2>
 
             <fieldset class="">
-                <input type=text name="name" required placeholder="Nombre del producto">
+                <input type=text name="name" required value="<%= product.name %>">
             </fieldset>
 
             <fieldset class="">
-                <textarea name="description" id="" cols="30" rows="10" placeholder="Descripción del producto"></textarea>
+                <textarea name="description" id="" cols="30" rows="10" placeholder="Descripción del producto" value="<%= product.description %>"></textarea>
             </fieldset>
 
+            <figure><img src="/uploads/products/<%=product.image%>" alt=""></figure>
             <fieldset id="loadPicture">
                 <label for="fotos">Fotos:</label>
-                <input type=file name="image" accept=".png, .jpg, .jpeg" required>
+                <input type="file" name="image" accept=".png, .jpg, .jpeg" required>
             </fieldset>
 
             <fieldset class="">
@@ -37,11 +38,11 @@
             </fieldset>
 
             <fieldset class="">
-                <input type=text name="size" required placeholder="Tamaño">
+                <input type=text name="size" required value="<%= product.size %>">
             </fieldset>
 
             <fieldset class="">
-                <input type=number name="price" required placeholder="Precio">
+                <input type=number name="price" required placeholder="Precio" value="<%= product.price %>">
             </fieldset>
 
                 <a href='/'><button type="submit" class="button">ENVIAR</button></a>
