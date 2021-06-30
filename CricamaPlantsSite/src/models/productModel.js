@@ -30,6 +30,11 @@ const model = {
         let resultado = productos.find(producto => producto.id == id)
         return resultado;
     },//Search in products.json for a product whose id is equal to the requested id
+    category: function (category) {
+        let productos = this.all();
+        let resultado = productos.filter(producto => producto.category == category)
+        return resultado;
+    }
 }
 
 module.exports = model;

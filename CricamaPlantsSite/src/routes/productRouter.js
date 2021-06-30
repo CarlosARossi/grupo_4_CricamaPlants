@@ -22,10 +22,14 @@ const upload = multer({storage:dest});
 
 //Routes
 router.get("/productCar",productController.productCar);
-router.get("/productDetail",productController.productDetail);
+
+router.get("/productDetail/:id",productController.productDetail);
 
 //List of all products
 router.get("/products",productController.list);
+
+//List of products by category
+router.get("/products/:category",productController.category);
 
 //Create product
 router.get("/productCreate",productController.create);

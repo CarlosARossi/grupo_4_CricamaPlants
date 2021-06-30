@@ -19,16 +19,17 @@
 
         <section class="boxDetail">
 
-            <figure class="image">
-                <img src="/img/products/samples/plantaInteriorPotus.jpg" alt="">
-            </figure>
+            <% if (product.image) { %>
+                <figure class="image"><img src="/uploads/products/<%= product.image%>" alt=""></figure>
+            <% } else { %>
+                <figure class="image"><img src="/img/products/productDefault.jpg" alt=""></figure>
+            <% } %>
             
             <article class="boxDescription">
 
-                <p class="name">POTUS MARBLE QUEEN</p>
-                <p class="price">$1500</p>
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nobis illo libero, inventore voluptatem odit non mollitia ratione modi laboriosam quia vero ipsam tenetur adipisci quo numquam repellendus. Numquam, perferendis!</p>
-                <p>Stock: 7 unidades</p>
+                <p class="name"><%= product.name %></p>
+                <p class="price">$<%= product.price %></p>
+                <p class="description"><%= product.description %></p>
                 <p class="quotes">Hasta 3 cuotas sin interés</p>
                 <p class="discount">Descuento por transferencia o pago en efectivo</p>  
                 
