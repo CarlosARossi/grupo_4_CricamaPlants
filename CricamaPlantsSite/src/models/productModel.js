@@ -16,7 +16,7 @@ const model = {
             id: productos.length > 0 ? productos[productos.length -1].id + 1: 1,
             name: data.name,
             description: data.description,
-            image: file.filename,
+            image: typeof file === 'undefined' ? null : file.filename,
             category: data.category,
             size: data.size,
             price: data.price           
@@ -42,10 +42,10 @@ const model = {
             if(producto.id == id ){
                 producto.name = data.name,
                 producto.description = data.description,
-                producto.image = file.filename,
+                producto.image = typeof file === 'undefined' ? null : file.filename,
                 producto.category = data.category,
-                producto.size = data.size
-                
+                producto.size = data.size,
+                producto.price = data.price
                 return producto
             }
             return producto
@@ -53,6 +53,17 @@ const model = {
         fs.writeFileSync(directory,JSON.stringify(productos,null,2));
         return true;
     },
+    delete: function (id) {
+        const directory = path.resolve(__dirname,"../data","products.json")
+        let productos = this.all();
+        let deleted = this.search(id);
+        if (deleted.image) {
+            fs.unlinkSync(path.resolve(__dirname,"../../public/uploads/products",deleted.image))
+        };//If there is an image, it deletes it
+        productos = productos.filter(producto => producto.id != deleted.id )//Filter the product to delete 
+        fs.writeFileSync(directory,JSON.stringify(productos,null,2));
+        return true;
+    }
 }
 
 module.exports = model;

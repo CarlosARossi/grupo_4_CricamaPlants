@@ -131,6 +131,26 @@ main {
     transition: all 0.5s;
 }
 
+#newProduct{
+    font-size: 4em;
+    background-color: #30544E;
+    border: solid #30544E 1px;
+    border-radius: 100%;
+    color: #F5E078;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+
+#newProduct:hover{
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+}
+
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
     /*********************** MAIN TABLET ***********************/

@@ -26,11 +26,8 @@ router.get("/productCar",productController.productCar);
 //Product Detail
 router.get("/productDetail/:id",productController.productDetail);
 
-//List of all products
+//List of all products and products by category
 router.get("/products/:category?",productController.list);
-
-/* //List of products by category
-router.get("/products/:category",productController.category); */
 
 //Create product
 router.get("/productCreate",productController.create);
@@ -41,5 +38,6 @@ router.get("/productEdit/:id",productController.productEdit);
 router.put("/saveEdition/:id",[upload.single("image")],productController.saveEdition);
 
 //Delete product
+router.delete("/productDelete/:id",productController.delete)
 
 module.exports = router;

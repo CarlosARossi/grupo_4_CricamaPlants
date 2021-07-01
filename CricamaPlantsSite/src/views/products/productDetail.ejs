@@ -14,7 +14,7 @@
     <main>
 
         <section class="boxFirst">
-            <p><a href='/'>Inicio</a> / <a href='/products'>Productos</a> / <%= product.category %> / <%= product.name %></p>
+            <p><a href='/'>Inicio</a> / <a href='/products'>Productos</a> / <a href='/products/<%= product.category %>'><%= product.category %></a> / <%= product.name %></p>
         </section>
 
         <section class="boxDetail">
@@ -34,6 +34,14 @@
                 <p class="discount">Descuento por transferencia o pago en efectivo</p>  
                 
                 <button class="cartButton">Agregar al carrito</button>
+
+                <ul>
+                    <li><a href='/productEdit/<%= product.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
+                    <li><form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">
+                        <button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button>
+                    </form></li>
+                </ul>
+
 
             </article>
 
