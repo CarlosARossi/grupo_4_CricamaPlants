@@ -1,14 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "ANTHURIUM X MACROLOBIUM",
-    "description": "integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede",
-    "image": "plantaInterior1.jpg",
-    "category": "plantas",
-    "size": "XL",
-    "price": 6000
-  },
-  {
     "id": 2,
     "name": "POTUS MARBLE QUEEN",
     "description": "justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id",
@@ -68,14 +59,6 @@
     "category": "insumos",
     "size": "XL",
     "price": 2550
-  },
-  {
-    "id": 9,
-    "name": "Tragelaphus strepsiceros",
-    "description": "ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac",
-    "category": "plantas",
-    "size": "XS",
-    "price": 8270
   },
   {
     "id": 11,
