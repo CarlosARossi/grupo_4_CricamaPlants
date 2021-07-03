@@ -37,9 +37,9 @@
 
                 <ul id="adminButtons">
                     <li><a href='/productEdit/<%= product.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
-                    <li><form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">
-                        <button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button>
-                    </form></li>
+                    <form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">
+                        <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
+                    </form>
                 </ul>
 
 

@@ -99,7 +99,7 @@ a{
     color: #30544E;
 }
 
-#adminButtons li button:hover{
+#adminButtons li:hover>button{
     color: #F5E078;
 }
 
