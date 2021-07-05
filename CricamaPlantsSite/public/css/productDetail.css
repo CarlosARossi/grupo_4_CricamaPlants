@@ -8,22 +8,30 @@
             #FFFFFF
 }
 
+a{
+    text-decoration:none;
+    color: inherit;
+}
+
 /*********************************************** MOBILE ***********************************************/
 
 
 /************************ MAIN ************************/
 
-.boxFirst{
-    margin: 20px;
-}
-
-.boxFirst p{
-    color: #30544E;
-    font-size: 1.1em;
-}
-
-.titulo{
+.name{
     text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 3vh;
+}
+
+.price{
+    font-size: 1.8em;
+    margin-bottom: 3vh;
+}
+
+.description{
+    font-size: 1.1em;
+    margin-bottom: 3vh;
 }
 
 .boxDetail{
@@ -33,35 +41,31 @@
 
 .boxDescription{
     display: flex;
-    border: solid 2px #30544E;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 8px;
+    /* border: solid 2px #30544E; */
+    margin: 15px;
+    /* padding: 10px;
+    border-radius: 8px; */
     flex-direction: column;
     line-height: 20px;
 }
 
-.boxDescription1 p{
-    font-size: 0.9rem;
-    font-style: italic;
-}
 
-.boxImagen{
+.image{
     width: 80%;
     display: flex;
     margin: auto;
 }
 
-.boxImagen img{
+.image img{
     margin: 10%;
     width: 90%;
     margin: auto;
     border-radius: 10px;
 }
 
-.comprarButton{
+.cartButton{
     color: #30544E;
-    font-size: 1rem;
+    font-size: 1em;
     background-color: #F5E078;
     border: 1px solid #30544E;
     width: 25vw;
@@ -71,7 +75,7 @@
     transition: all 100ms;
 }
 
-.comprarButton:hover{
+.cartButton:hover{
         background-color: #30544E;
         color: #F5E078;
         border: solid 1px #F5E078;
@@ -79,40 +83,82 @@
         box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
     }
 
+#adminButtons li button{
+    border: none;
+    background-color: inherit;
+    color: #30544E;
+}
+
+#adminButtons li:hover>button{
+    color: #F5E078;
+}
+
+
+#adminButtons{
+    line-height: 20px;
+    font-size: 1em;
+    display: inline-block;
+    width: 20vw;
+    text-decoration: none;
+    text-align: center;
+}
+
+#adminButtons li{
+    color: #30544E;
+    border: 1px solid #30544E;
+    background-color:#F5E078;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#adminButtons li:hover{
+    background-color: #30544E;
+    color: #F5E078;
+    border: solid 1px #F5E078;
+    font-size: 1em;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+}
+
+
+
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
- 
+
     /*********************** MAIN TABLET ***********************/
 
-    .boxImagen{
-        width: 36%;
+    .image{
+        width: 40vw;
     }
 
-    .boxImagen img{
+    .image img{
         margin: 15px;
         width: 90%;
     }
 
     .boxDetail{
         display: flex;
-        align-items: center;
+       /*  align-items: center; */
     }
 
     .boxDescription{  
         height: 20%;
+        width: 50vw;
     }
 
-    .comprarButton{
+    .cartButton{
         width: 54%;
         margin: auto;
         padding: 4px;
         font-size: 1.1rem;
     }
 
-    .comprarButton:hover{
+    .cartButton:hover{
         font-size: 1.1rem;
     }
     
+    #adminButtons{
+        width: 15vw;
+    }
 }
 
 /*********************************************** DESKTOP ***********************************************/
@@ -124,16 +170,20 @@
         width: 50%;
     }
 
-    .boxDescription1 p{
+/*     .boxDescription1 p{
         font-size: 1.1rem;
-    }
+    } */
 
-    .comprarButton{
+    .cartButton{
         font-size: 1.3rem;
     }
 
-    .comprarButton:hover{
+    .cartButton:hover{
         font-size: 1.3rem;
+    }
+
+    #adminButtons{
+        width: 8vw;
     }
 
 }

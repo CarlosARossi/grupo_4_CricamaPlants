@@ -1,11 +1,46 @@
-let express = require('express')
-let router = express.Router();
+//Requiere
+const express = require('express')
+const router = express.Router();
 const productController = require('../controllers/productController');
 const path = require('path');
+const multer = require('multer');
+
+//Route for images
+let dest = multer.diskStorage({
+    destination: function (req, file, cb) {
+        let extension = path.extname(file.originalname);
+        if(extension.indexOf("jpg") > 0){
+            cb(null, path.resolve(__dirname,"../../public/uploads","products"))
+        }
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now()+ path.extname(file.originalname))
+    }
+})
+const upload = multer({storage:dest});
+
 
 //Routes
 router.get("/productCar",productController.productCar);
-router.get("/productDetail",productController.productDetail);
-router.get("/productLoad",productController.productLoad);
+
+//Product Detail
+router.get("/productDetail/:id",productController.productDetail);
+
+//List of all products and products by category
+router.get("/products/:category?",productController.list);
+
+//Search a product by name
+router.post("/searchProduct",productController.searchProduct);
+
+//Create product
+router.get("/productCreate",productController.create);
+router.post("/save",[upload.single("image")],productController.save);
+
+//Edit product
+router.get("/productEdit/:id",productController.productEdit);
+router.put("/saveEdition/:id",[upload.single("image")],productController.saveEdition);
+
+//Delete product
+router.delete("/productDelete/:id",productController.delete)
 
 module.exports = router;

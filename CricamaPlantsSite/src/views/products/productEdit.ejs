@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+        <form action="/saveEdition/<%= product.id %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
+            <h2 id="title">Edición de productos</h2>
+
+            <fieldset class="">
+                <input type=text name="name" required value="<%= product.name %>">
+            </fieldset>
+
+            <fieldset class="">
+                <textarea name="description" id="" cols="30" rows="10" placeholder="Descripción del producto" ><%= product.description %></textarea>
+            </fieldset>
+
+            <figure><img class='image' src="/uploads/products/<%=product.image%>" alt=""></figure>
+            <fieldset id="loadPicture">
+                <label for="fotos">Fotos:</label>
+                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+            </fieldset>
+
+            <fieldset class="">
+                <label for="categoria">Categoría:</label>
+                <select value=<%= product.category %>>
+                    <% if (product.category=='plantas') { %>
+                        <option selected>PLANTAS</option>
+                        <option >INSUMOS</option>
+                        <option >MACETAS</option>
+                    <% } %>
+                    <% if (product.category=='insumos') { %>
+                        <option >PLANTAS</option>
+                        <option selected>INSUMOS</option>
+                        <option >MACETAS</option>
+                    <% } %>
+                    <% if (product.category=='macetas') { %>
+                        <option >PLANTAS</option>
+                        <option >INSUMOS</option>
+                        <option selected>MACETAS</option>
+                    <% } %>
+                </select>
+            </fieldset>
+
+            <fieldset class="">
+                <input type="text" name="size" required value="<%= product.size %>">
+            </fieldset>
+
+            <fieldset class="">
+                <input type="number" name="price" required placeholder="Precio" value="<%= product.price %>">
+            </fieldset>
+
+                <button type="submit" class="button">ENVIAR</button>
+        </form>
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

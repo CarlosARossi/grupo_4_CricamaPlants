@@ -1,66 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!---------------------------------------- HEADER ---------------------------------------->
+<header>
+    <a href='/'><img class='logo' src="/img/designs/Logo-F5E078.png" alt="Logo CriCaMa"></a>
 
-    <title>Header</title>
+    <section id='menuNav'>
+        <ul class='mainNav'>
+            <li><a href='/products/plantas'>Plantas</a>
+                <ul>
+                    <li><a href=''>Interior</a></li>
+                    <li><a href=''>Exterior</a></li>
+                </ul>
+            </li>
+            <li><a href='/products/insumos'>Insumos</a>
+                <ul>
+                    <li><a href=''>Herramientas</a></li>
+                    <li><a href=''>Fertilizantes</a></li>
+                </ul>
+            </li>
+            <li><a href='/products/macetas'>Macetas</a>
+                <ul>
+                    <li><a href=''>Cuadradas</a></li>
+                    <li><a href=''>Redondas</a></li>
+                </ul>
+            </li>
+            <li><a href='/products'>Productos</a></li>
+            <li><a href=''>Contacto</a></li>
+        </ul>
 
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
-    <!-- Iconos -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/header.css">
-</head>
-<body>
-    <!---------------------------------------- HEADER ---------------------------------------->
-    <header>
-        <a href='/'><img class='logo' src="/img/Logo-F5E078.png" alt="Logo CriCaMa"></a>
+        <ul class='iconsNav'>
+            <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href='/login'><i class="fas fa-user"></i></a></li>
+        </ul>
 
-        <section id='menuNav'>
-            <ul class='mainNav'>
-                <li><a href=''>Plantas</a>
-                    <ul>
-                        <li><a href=''>Interior</a></li>
-                        <li><a href=''>Exterior</a></li>
-                    </ul>
-                </li>
-                <li><a href=''>Insumos</a>
-                    <ul>
-                        <li><a href=''>Herramientas</a></li>
-                        <li><a href=''>Fertilizantes</a></li>
-                    </ul>
-                </li>
-                <li><a href=''>Macetas</a>
-                    <ul>
-                        <li><a href=''>Cuadradas</a></li>
-                        <li><a href=''>Redondas</a></li>
-                    </ul>
-                </li>
-                <li><a href=''>Conocenos</a></li>
-                <li><a href=''>Contacto</a></li>
-            </ul>
+        <a href='' id='exitMenu'><i class="fas fa-times"></i></a>
+    </section>
 
-            <ul class='iconsNav'>
-                <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href='/login'><i class="fas fa-user"></i></a></li>
-            </ul>
+    <form action="/searchProduct" method="post" class="search">    
+        <i class="fas fa-search"></i><input type="text" name="search" placeholder="Buscar productos, marcas" class="searchBar">
+    </form>
 
-            <a href='' id='exitMenu'><i class="fas fa-times"></i></a>
-        </section>
+    <a href='#menuNav' id='burgerMenu'><i class="fas fa-bars"></i></a>
 
-        <form action="/search" method="POST" class="search">    
-            <i class="fas fa-search"></i><input type="text" name="precio" placeholder="Buscar productos, marcas" class="searchBar">
-        </form>
-
-        <a href='#menuNav' id='burgerMenu'><i class="fas fa-bars"></i></a>
-
-    </header>
-    
-</body>
-</html>
+</header>

@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CriCaMa Plants</title>
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
-    <!-- Iconos -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
@@ -22,26 +12,17 @@
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
         
-        <a href='/'><img class='banner' src="/img/bannerKit.jpg" alt="Banner Kit"></a>
+        <img class='banner' src="/img/designs/bannerAdmin.jpg" alt="Banner Admin">
 
-        <section class="generalArticles">
-            
-            <article class="articleMain">
-                <a href='/productLoad'>
-                    <section class="box-article">
-                        <p class="description">Cargá un nuevo producto!</p>
-                    </section>
-                </a>
-            </article>
-
-            <article class="articleMain">
-                <a href='/productEdit'>
-                    <section class="box-article">
-                        <p class="description">Edición de producto</p>
-                    </section>
-                </a>
-            </article>
-
+        <section>
+            <ul id='menuAdmin'>
+                <li><a href='/productCreate'><i class="fas fa-upload iconAdmin"></i> Cargá un nuevo producto!</a></li>
+                <li><a href='/productEdit'><i class="fas fa-edit iconAdmin"></i> Edición de producto</a></li>
+                <li><a href='/productDelete'><i class="fas fa-trash iconAdmin"></i> Borrá un producto</a></li>
+                <li><a href='/userLoad'><i class="fas fa-user-plus iconAdmin"></i> Registrá a un nuevo usuario</a></li>
+                <li><a href='/userEdit'><i class="fas fa-user-plus iconAdmin"></i> Editá a un usuario</a></li>
+                <li><a href='/userDelete'><i class="fas fa-user-slash iconAdmin"></i> Borrá un usuario</a></li>
+            </ul>
         </section>
 
     </main>

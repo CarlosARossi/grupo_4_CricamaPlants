@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CriCaMa Plants</title>
-    
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
-    <!-- Iconos -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="/css/normalize.css">
+    <%- include('../includes/head') %>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/productDetail.css">
     
@@ -27,28 +14,36 @@
     <main>
 
         <section class="boxFirst">
-            <p>Inicio / Productos / Potus</p>
+            <p><a href='/'>Inicio</a> / <a href='/products'>Productos</a> / <a href='/products/<%= product.category %>'><%= product.category %></a> / <%= product.name %></p>
         </section>
 
         <section class="boxDetail">
 
-            <figure class="boxImagen">
-                <img src="/img/plantas/plantaInteriorPotus.jpg" alt="">
-            </figure>
+            <% if (product.image) { %>
+                <figure class="image"><img src="/uploads/products/<%= product.image%>" alt=""></figure>
+            <% } else { %>
+                <figure class="image"><img src="/img/products/productDefault.jpg" alt=""></figure>
+            <% } %>
             
-            <div class="boxDescription">
+            <article class="boxDescription">
 
-                <article class="boxDescription1">
-                    <p class="titulo">Potus mediano 30 cm.</p>
-                    <p>$900</p>
-                    <p>Stock: 7 unidades</p>
-                    <p>Hasta 3 cuotas sin interés</p>
-                    <p>Descuento por transferencia o pago en efectivo</p>  
-                </article>
+                <p class="name"><%= product.name %></p>
+                <p class="price">$<%= product.price %></p>
+                <p class="description"><%= product.description %></p>
+                <p class="quotes">Hasta 3 cuotas sin interés</p>
+                <p class="discount">Descuento por transferencia o pago en efectivo</p>  
                 
-                <button class="comprarButton">Agregar al carrito</button>
-    
-            </div>
+                <button class="cartButton">Agregar al carrito</button>
+
+                <ul id="adminButtons">
+                    <li><a href='/productEdit/<%= product.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
+                    <form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">
+                        <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
+                    </form>
+                </ul>
+
+
+            </article>
 
         </section>
 
