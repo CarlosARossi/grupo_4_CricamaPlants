@@ -95,5 +95,14 @@
     "category": "macetas",
     "size": "GRANDE",
     "price": "500"
+  },
+  {
+    "id": 14,
+    "name": "PRUEBA FINAL",
+    "description": "ESTO ES UNA PRUEBA FINAL",
+    "image": "image-1625504310536.jpg",
+    "category": "macetas",
+    "size": "XL",
+    "price": "50000"
   }
 ]

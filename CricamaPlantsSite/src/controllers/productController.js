@@ -12,7 +12,7 @@ const productController = {
         let result = product.edit(req.body,req.file,req.params.id)
         return result == true ? res.redirect("/products") : res.send("Error al cargar la informacion") 
     },
-    list:(req,res) => res.render("products/products",{list: req.params.category ? product.category(req.params.category) : product.all()}),//list of all products
+    list:(req,res) => res.render("products/products",{list: req.params.category ? product.category(req.params.category) : product.all(), category: req.params.category ? req.params.category : null}),//list of all products
     create: (req,res) => res.render("products/productCreate"),//form for product creation
     save: (req,res) => {
         let result = product.save(req.body,req.file)
@@ -22,7 +22,7 @@ const productController = {
         let result = product.delete(req.params.id);
         return result == true ? res.redirect("/products") : res.send("Error al cargar la informacion") 
     },//delete a product on products.json
-    searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body)})//search for a product by name
+    searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body), keyword: req.body ? req.body.search : null, category: req.params.category ? req.params.category : null})//search for a product by name
 }
 
 module.exports = productController;
