@@ -36,3 +36,19 @@ Avanzar en decisiones que podrían ser grupales de manera individual.
 Consideramos que no hay ninguna actividad o acitud que haya que cambiar por completo.
 
 
+## Sprint 3 (estrella de mar)
+
+### 1. Comenzar a hacer:
+Realizar las retrospectivas antes, o al mismo tiempo, del inicio del siguiente sprint. Así se podrán obtener reflexiones más frescas sobre el sprint a analizar. Además, sería bueno comenzar a realizar las retros de manera grupal.
+ 
+### 2. Hacer más:
+Aumentar el énfasis sobre el diseño de la página para lograr una misma línea de arte. De esta manera podremos generar que el usuario al que esté destinada la web tenga una transición más fluida entre pantallas.
+ 
+### 3. Continuar haciendo:
+Mantener la división equitativa de tareas y la buena comunicación entre todos los que componemos el grupo de trabajo. 
+ 
+### 4. Hacer menos:
+Adelantar tareas previa división de las mismas, para así generar una mayor participación de todos los integrantes en los diferentes desafíos que vayan apareciendo. 
+ 
+### 5. Dejar de hacer:
+Durante el desarrollo del sprint no se observaron acciones que se deban dejar de hacer en su totalidad individualmente, ni grupalmente. 

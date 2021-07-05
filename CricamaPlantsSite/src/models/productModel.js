@@ -63,6 +63,11 @@ const model = {
         productos = productos.filter(producto => producto.id != deleted.id )//Filter the product to delete 
         fs.writeFileSync(directory,JSON.stringify(productos,null,2));
         return true;
+    },
+    searchProduct: function (data) {
+        let productos = this.all();
+        let resultado = productos.filter(element =>{return (element.name.toLowerCase().includes(data.search)||element.description.toLowerCase().includes(data.search))});
+        return resultado;   
     }
 }
 

@@ -29,6 +29,9 @@ router.get("/productDetail/:id",productController.productDetail);
 //List of all products and products by category
 router.get("/products/:category?",productController.list);
 
+//Search a product by name
+router.post("/searchProduct",productController.searchProduct);
+
 //Create product
 router.get("/productCreate",productController.create);
 router.post("/save",[upload.single("image")],productController.save);

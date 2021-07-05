@@ -10,6 +10,11 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
+
+        <section class="boxFirst">
+            <p><a href='/'>Inicio</a> / <a href='/products'>Productos</a> / <a href='/products/<%= list.category %>'><%= list.category %></a></p>
+        </section>
+
         <section class="generalArticles">
             <% list.forEach(product => { %>
 

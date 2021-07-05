@@ -22,6 +22,7 @@ const productController = {
         let result = product.delete(req.params.id);
         return result == true ? res.redirect("/products") : res.send("Error al cargar la informacion") 
     },//delete a product on products.json
+    searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body)})//search for a product by name
 }
 
 module.exports = productController;
