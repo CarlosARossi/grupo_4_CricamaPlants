@@ -11,21 +11,39 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
-        <form action = "/" method = "GET" enctype = "multipart/form-data" class = "form">
+        <form action = "/users/register" method = "post" class = "form" enctype="multipart/form-data">
+
             <h2 id="title">Completa tus datos!</h2>
+
             <fieldset class="">
-                <input type=text name="completeName" required minlength=8 placeholder="Nombre completo">
+                <input type=text name="firstName" required placeholder="Nombre">
             </fieldset>
+
+            <fieldset class="">
+                <input type=text name="lastName" required placeholder="Apellido">
+            </fieldset>
+
             <fieldset class="">
                 <input type=email name="email" required placeholder="E-mail">
             </fieldset>
+
+            <fieldset id="loadPicture">
+                <label for="image">Fotos:</label>
+                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+            </fieldset>
+
             <fieldset class="">
                 <input type=password name="password" required minlength="10" placeholder="Contraseña" >
             </fieldset>
+
             <fieldset class="">
                 <input type=password name="repeatPassword" required minlength="10" placeholder="Reingrese la contraseña">
             </fieldset>
-                <a href='/'><button type="submit" class="button">ENVIAR</button></a>
+
+            <fieldset>
+                <button type="submit" name="register" class="button">Registrate!</button>
+            </fieldset>
+
         </form>
     </main>
 
