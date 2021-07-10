@@ -27,3 +27,8 @@ const user = require('./routes/userRouter');
 app.use(user);
 const product = require('./routes/productRouter');
 app.use(product);
+
+
+app.use((req, res, next) => {
+    res.status(404).render('not-found');
+    })

@@ -15,15 +15,19 @@
         <form action="/" method="GET" enctype="multipart/form-data" class="form">
             <h2 id="title">INGRESA!</h2>
             <fieldset>
-                <input type = e-mail name = “email” required placeholder = E-mail>
+                <input type = "e-mail" name = “email” required placeholder = E-mail>
             </fieldset>
             <fieldset>
-                <input type = password name = “contrasena” required minlength="8" placeholder = Contraseña>
+                <input type = "password" name = “contrasena” required minlength="8" placeholder = Contraseña>
             </fieldset>
-                <ul class="list">
-                    <li><a href = '/login'>Olvide mi contraseña</a></li>
-                    <li><a href = '/register'>No tenes cuenta? Registrate!</a></li>
-                </ul>
+            <fieldset id="checkbox">
+                <input type= "checkbox" name="remember" value="">
+                <label for="electro">Recordame!</label>
+            </fieldset>
+            <ul class="list">
+                <li><a href = '/login'>Olvide mi contraseña</a></li>
+                <li><a href = '/register'>No tenes cuenta? Registrate!</a></li>
+            </ul>
             <a href='/'><button type="submit" class="button">INGRESAR</button></a>
         </form>
     </main>

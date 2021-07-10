@@ -110,6 +110,23 @@ label{
     padding: 0;
 }
 
+#checkbox{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#checkbox input, label {
+    width: fit-content;
+    text-transform: initial;
+    color: #A78B48;
+    font-size: 1em !important;
+}
+
+/* #checkbox input[type="checkbox"]:checked{
+    background-color: red !important;
+} */
+
+
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
