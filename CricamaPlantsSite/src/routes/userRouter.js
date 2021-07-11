@@ -19,12 +19,22 @@ let dest = multer.diskStorage({
 const upload = multer({storage:dest});
 
 //Routes
+
+//Login User
 router.get("/login",userController.login);
+
+//List of all users
 router.get("/users/:id?",userController.list);
 
 //Create user
 router.get("/register",userController.registerForm);
 router.post("/register",[upload.single("image")],userController.register);
+
+//Edit user
+router.get("/userEdit/:id",userController.userEdit);
+/* router.put("/userSave/:id",[upload.single("image")],userController.userSave); */
+
+//Admin Profile
 router.get("/admin",userController.admin);
 
 module.exports = router;

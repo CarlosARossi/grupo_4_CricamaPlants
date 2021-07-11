@@ -18,7 +18,8 @@ const model = {
             lastName: data.lastName,
             email: data.email,
             password: data.password,
-            image: typeof file === 'undefined' ? null : file.filename,         
+            image: typeof file === 'undefined' ? null : file.filename,
+            type: 'normal'         
         }    
         users.push(nuevo)
         fs.writeFileSync(directory,JSON.stringify(users,null,2));
@@ -28,7 +29,12 @@ const model = {
         let usuarios = this.all();
         let resultado = usuarios.filter(user => user.id == id)
         return resultado;
-    }//Filter of users by id
+    },//Filter of users by id
+    search: function (id) {
+        let usuarios = this.all();
+        let resultado = usuarios.find(usuario => usuario.id == id)
+        return resultado;
+    }//Search in users.json for a user whose id is equal to the requested id
 }
 
 module.exports = model;

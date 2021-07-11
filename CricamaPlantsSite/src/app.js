@@ -24,12 +24,12 @@ app.use(method("_method")) // ?_method=PUT
 const main = require('./routes/mainRouter');
 app.use(main);
 const user = require('./routes/userRouter');
-app.use("/users", user);
+app.use(user);
 const product = require('./routes/productRouter');
 const { urlencoded } = require('body-parser');
 app.use(product);
 
-
+//404 Not Found
 app.use((req, res, next) => {
     res.status(404).render('not-found');
     })

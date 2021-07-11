@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+        <form action="/saveEdition/<%= user.id %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
+            <h2 id="title">Edición de usuarios</h2>
+
+            <fieldset class="">
+                <input type=text name="firstName" required value="<%= user.firstName %>">
+            </fieldset>
+
+            <fieldset class="">
+                <input type=text name="lastName" required value="<%= user.lastName %>">
+            </fieldset>
+
+            <fieldset class="">
+                <input type=email name="email" required placeholder="<%= user.email %>">
+            </fieldset>
+
+            <figure><img class='image' src="/uploads/users/<%=user.image%>" alt=""></figure>
+            <fieldset id="loadPicture">
+                <label for="fotos">Foto:</label>
+                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+            </fieldset>
+
+            <fieldset class="">
+                <label for="categoria">Tipo de usuario:</label>
+                <select value=<%= user.type %>>
+                    <% if (user.type=='admin') { %>
+                        <option selected>ADMIN</option>
+                        <option >NORMAL</option>
+                    <% } %>
+                    <% if (user.type=='normal') { %>
+                        <option >ADMIN</option>
+                        <option selected>NORMAL</option>
+                    <% } %>
+                </select>
+            </fieldset>
+
+            <fieldset class="">
+                <input type=password name="password" required minlength="10" placeholder="<%= user.password %>" >
+            </fieldset>
+
+                <button type="submit" name="save" class="button">GUARDAR</button>
+        </form>
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

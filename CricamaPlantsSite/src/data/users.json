@@ -1,27 +1,30 @@
 [
   {
     "id": 1,
-    "firstName": "Cameron",
-    "lastName": "Cashford",
-    "email": "ccashford0@elegantthemes.com",
+    "firstName": "Carlos",
+    "lastName": "Rossi",
+    "email": "carlos91rossi@gmail.com",
     "password": "oKkEsh",
-    "image": "avatar1.jpg"
+    "image": null,
+    "type": "admin"
   },
   {
     "id": 2,
-    "firstName": "Berty",
-    "lastName": "Knottley",
+    "firstName": "Cristian",
+    "lastName": "Leiva",
     "email": "bknottley1@sun.com",
     "password": "edYmiJbP",
-    "image": "avatar2.jpg"
+    "image": null,
+    "type": "admin"
   },
   {
     "id": 3,
-    "firstName": "Raffarty",
-    "lastName": "Bailes",
-    "email": "rbailes2@mac.com",
-    "password": "sAdra",
-    "image": "avatar3.jpg"
+    "firstName": "Manuel Ivan",
+    "lastName": "Nacht",
+    "email": "mlqlknf@hipis.com",
+    "password": "mmmmmmmmmmm",
+    "image": "image-1625958155620.jpg",
+    "type": "admin"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "lastName": "Calladine",
     "email": "acalladine3@e-recht24.de",
     "password": "taEKok",
-    "image": "avatar4.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "lastName": "Serfati",
     "email": "qserfati4@ocn.ne.jp",
     "password": "5CBIxJUd",
-    "image": "avatar5.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "lastName": "Bruyntjes",
     "email": "sbruyntjes5@zimbio.com",
     "password": "teI895Yi8TdP",
-    "image": "avatar6.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "lastName": "Rabson",
     "email": "arabson6@abc.net.au",
     "password": "mb8NuNn",
-    "image": "avatar7.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "lastName": "Fraschetti",
     "email": "mfraschetti7@hugedomains.com",
     "password": "0vNONb",
-    "image": "avatar8.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "lastName": "Gwillyam",
     "email": "vgwillyam8@twitpic.com",
     "password": "mE8e3JF",
-    "image": "avatar9.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "lastName": "Eliasen",
     "email": "aeliasen9@hp.com",
     "password": "fzWrDqV3iW0Z",
-    "image": "avatar10.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "lastName": "Tabner",
     "email": "ptabnera@t.co",
     "password": "nJwCtMHHc",
-    "image": "avatar11.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 12,
@@ -93,14 +104,24 @@
     "lastName": "Silverwood",
     "email": "gsilverwoodb@slashdot.org",
     "password": "2PXu9zaiM",
-    "image": "avatar12.jpg"
+    "image": null,
+    "type": "normal"
   },
   {
     "id": 13,
-    "firstName": "Manuel Ivan",
-    "lastName": "Nacht",
-    "email": "mlqlknf@hipis.com",
-    "password": "mmmmmmmmmmm",
-    "image": "image-1625958155620.jpg"
+    "firstName": "Jose",
+    "lastName": "Perez",
+    "email": "josepere@prueba.com",
+    "password": "contraseña",
+    "image": "image-1626028176973.jpg"
+  },
+  {
+    "id": 14,
+    "firstName": "Raul",
+    "lastName": "Portal",
+    "email": "raulportal@email.com",
+    "password": "contraseña",
+    "image": null,
+    "type": "normal"
   }
 ]

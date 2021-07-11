@@ -129,6 +129,7 @@ main {
     width: 96%;
     border-radius: 10px;
     margin: 2%;
+    height: 294px;
 }
 
 #iconCart{
@@ -203,6 +204,10 @@ main {
         padding-top: 10px;
     }
 
+    .image{
+        height: 38vw;
+    }
+
     .quotes {
         display: block;
         font-size: 16px;
@@ -222,10 +227,13 @@ main {
         margin: auto;
     }
 
-
     .articleMain{
         margin-inline: 1vw;
         max-width: 22%;
+    }
+
+    .image{
+        height: 19vw;
     }
 
     .name{

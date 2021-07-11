@@ -21,6 +21,8 @@ const upload = multer({storage:dest});
 
 
 //Routes
+
+//Product Car
 router.get("/productCar",productController.productCar);
 
 //Product Detail
