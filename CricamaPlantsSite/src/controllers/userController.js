@@ -13,6 +13,7 @@ const userController = {
         let result = users.register(req.body,req.file)
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion") 
     },//save new user on products.json
+    list:(req,res) => res.render('users/users', {list: req.params.id ? user.id(req.params.id) : user.all(), id: req.params.id ? req.params.id : null})//List of all users
 }
 
 module.exports = userController;

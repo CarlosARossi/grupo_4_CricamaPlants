@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+
+        <p><a href='/'>Inicio</a> <a href='/users'>/ Usuarios</a>
+
+        <h2>Usuarios registrados</h2>
+
+
+        <section class="boxFirst">
+
+                <% if(id) {%> 
+                    <a href='/users/<%= id %>'>/ <%= id %></a>
+                <% } %> 
+            </p> 
+        </section>
+
+        <section class="generalArticles">
+            <% if(list.length > 0){ %>
+                <% list.forEach(user => { %>
+
+                <article class="articleMain">
+                    <%= user.id%>
+                        <% if (user.image) { %>
+                            <figure><img class='image' src="/uploads/users/<%= user.image%>" alt=""></figure>
+                        <% } else { %>
+                            <figure><img class='image' src="/img/users/userDefault.jpg" alt=""></figure>
+                        <% } %>
+                        <section class="box-article">
+                            <p class="price">$<%= user.firstName %></p>
+                            <p class="name"><%= user.lastName %></p>
+                        </section>
+                    </a>
+                </article>
+
+                <% }) %>
+            <% }else{ %>
+                <h2>No se encontraron usuarios que contengan "<%= keyword %>"</h2>
+            <% } %> 
+        </section>
+
+        
+
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

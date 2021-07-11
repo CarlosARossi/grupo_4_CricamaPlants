@@ -24,6 +24,11 @@ const model = {
         fs.writeFileSync(directory,JSON.stringify(users,null,2));
         return true;    
     },//Save in users.json a new user from the usersCreate form
+    id: function (id) {
+        let usuarios = this.all();
+        let resultado = usuarios.filter(user => user.id == id)
+        return resultado;
+    }//Filter of users by id
 }
 
 module.exports = model;

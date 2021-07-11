@@ -20,11 +20,11 @@ const upload = multer({storage:dest});
 
 //Routes
 router.get("/login",userController.login);
+router.get("/users/:id?",userController.list);
 
 //Create user
 router.get("/register",userController.registerForm);
 router.post("/register",[upload.single("image")],userController.register);
-
 router.get("/admin",userController.admin);
 
 module.exports = router;
