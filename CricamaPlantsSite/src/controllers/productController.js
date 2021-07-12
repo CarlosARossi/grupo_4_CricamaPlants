@@ -11,7 +11,7 @@ const productController = {
     saveEdition: (req,res) =>{
         let result = product.edit(req.body,req.file,req.params.id)
         return result == true ? res.redirect("/products") : res.send("Error al cargar la informacion") 
-    },
+    },//save the edition of a product
     list:(req,res) => res.render("products/products",{list: req.params.category ? product.category(req.params.category) : product.all(), category: req.params.category ? req.params.category : null}),//list of all products
     create: (req,res) => res.render("products/productCreate"),//form for product creation
     save: (req,res) => {

@@ -23,6 +23,9 @@ const upload = multer({storage:dest});
 //Login User
 router.get("/login",userController.login);
 
+//User Profile
+router.get("/userProfile/:id",userController.userProfile);
+
 //List of all users
 router.get("/users/:id?",userController.list);
 
@@ -32,7 +35,10 @@ router.post("/register",[upload.single("image")],userController.register);
 
 //Edit user
 router.get("/userEdit/:id",userController.userEdit);
-/* router.put("/userSave/:id",[upload.single("image")],userController.userSave); */
+router.put("/userSave/:id",[upload.single("image")],userController.userSave);
+
+//Delete user
+router.delete("/userDelete/:id",userController.userDelete)
 
 //Admin Profile
 router.get("/admin",userController.admin);

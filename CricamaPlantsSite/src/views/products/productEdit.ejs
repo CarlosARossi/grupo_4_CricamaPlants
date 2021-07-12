@@ -30,21 +30,21 @@
 
             <fieldset class="">
                 <label for="categoria">Categoría:</label>
-                <select value=<%= product.category %>>
+                <select name="category">
                     <% if (product.category=='plantas') { %>
-                        <option selected>PLANTAS</option>
-                        <option >INSUMOS</option>
-                        <option >MACETAS</option>
+                        <option value="plantas" selected>PLANTAS</option>
+                        <option value="insumos">INSUMOS</option>
+                        <option value="macetas">MACETAS</option>
                     <% } %>
                     <% if (product.category=='insumos') { %>
-                        <option >PLANTAS</option>
-                        <option selected>INSUMOS</option>
-                        <option >MACETAS</option>
+                        <option value="plantas">PLANTAS</option>
+                        <option value="insumos" selected>INSUMOS</option>
+                        <option value="macetas">MACETAS</option>
                     <% } %>
                     <% if (product.category=='macetas') { %>
-                        <option >PLANTAS</option>
-                        <option >INSUMOS</option>
-                        <option selected>MACETAS</option>
+                        <option value="plantas">PLANTAS</option>
+                        <option value="insumos">INSUMOS</option>
+                        <option value="macetas" selected>MACETAS</option>
                     <% } %>
                 </select>
             </fieldset>

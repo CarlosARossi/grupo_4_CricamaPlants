@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+
+        <h2 id="title">Perfil de usuarios</h2>
+
+        <section class="boxDetail">
+
+            <% if (user.image) { %>
+                <figure class="imageDetail"><img src="/uploads/users/<%= user.image%>" alt=""></figure>
+            <% } else { %>
+                <figure class="imageDetail"><img src="/img/users/userDefault.jpg" alt=""></figure>
+            <% } %>
+            
+            <article class="boxDescription">
+
+                <p class="name"><%= user.firstName %></p>
+                <p class="name"><%= user.lastName %></p>
+                <p class="price"><%= user.email %></p>
+                <p class="description"><%= user.type %></p>
+            
+
+                <ul id="adminButtons">
+                    <li><a href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
+                    <form action="/userDelete/<%= user.id %>?_method=DELETE" method="post">
+                        <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
+                    </form>
+                </ul>
+
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

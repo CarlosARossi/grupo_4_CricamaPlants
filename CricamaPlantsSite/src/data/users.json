@@ -28,12 +28,11 @@
   },
   {
     "id": 4,
-    "firstName": "Athene",
-    "lastName": "Calladine",
-    "email": "acalladine3@e-recht24.de",
-    "password": "taEKok",
-    "image": null,
-    "type": "normal"
+    "firstName": "Atenas",
+    "lastName": "Calante",
+    "email": "atenas@hotmail.com",
+    "password": "nuevapasss",
+    "image": null
   },
   {
     "id": 5,
@@ -41,8 +40,7 @@
     "lastName": "Serfati",
     "email": "qserfati4@ocn.ne.jp",
     "password": "5CBIxJUd",
-    "image": null,
-    "type": "normal"
+    "image": null
   },
   {
     "id": 6,
@@ -106,14 +104,6 @@
     "password": "2PXu9zaiM",
     "image": null,
     "type": "normal"
-  },
-  {
-    "id": 13,
-    "firstName": "Jose",
-    "lastName": "Perez",
-    "email": "josepere@prueba.com",
-    "password": "contraseña",
-    "image": "image-1626028176973.jpg"
   },
   {
     "id": 14,

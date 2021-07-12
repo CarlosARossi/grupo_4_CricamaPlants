@@ -25,7 +25,7 @@
                 <% list.forEach(user => { %>
 
                 <article class="articleMain">
-                    <a href='/userEdit/<%= user.id%>'>
+                    <a href='/userProfile/<%= user.id%>'>
                         <% if (user.image) { %>
                             <figure><img class='image' src="/uploads/users/<%= user.image%>" alt=""></figure>
                         <% } else { %>

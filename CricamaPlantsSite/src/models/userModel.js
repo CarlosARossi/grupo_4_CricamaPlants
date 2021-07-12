@@ -34,7 +34,36 @@ const model = {
         let usuarios = this.all();
         let resultado = usuarios.find(usuario => usuario.id == id)
         return resultado;
-    }//Search in users.json for a user whose id is equal to the requested id
+    },//Search in users.json for a user whose id is equal to the requested id
+    userSave: function (data,file,id) {
+        const directory = path.resolve(__dirname,"../data","users.json")
+        let usuarios = this.all();
+        usuarios.map(usuario => {
+            if(usuario.id == id ){
+                usuario.firstName = data.firstName,
+                usuario.lastName = data.lastName,
+                usuario.email = data.email,
+                usuario.password = data.password,
+                usuario.image = typeof file === 'undefined' ? null : file.filename,
+                usuario.type = data.type
+                return usuario
+            }
+            return usuario
+        })
+        fs.writeFileSync(directory,JSON.stringify(usuarios,null,2));
+        return true;
+    },
+    delete: function (id) {
+        const directory = path.resolve(__dirname,"../data","users.json")
+        let usuarios = this.all();
+        let deleted = this.search(id);
+        if (deleted.image) {
+            fs.unlinkSync(path.resolve(__dirname,"../../public/uploads/users",deleted.image))
+        };//If there is an image, it deletes it
+        usuarios = usuarios.filter(usuario => usuario.id != deleted.id )//Filter the user to delete 
+        fs.writeFileSync(directory,JSON.stringify(usuarios,null,2));
+        return true;
+    },
 }
 
 module.exports = model;

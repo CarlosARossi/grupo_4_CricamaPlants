@@ -50,13 +50,13 @@ a{
 }
 
 
-.image{
+.imageDetail{
     width: 80%;
     display: flex;
     margin: auto;
 }
 
-.image img{
+.imageDetail img{
     margin: 10%;
     width: 90%;
     margin: auto;
@@ -126,11 +126,11 @@ a{
 
     /*********************** MAIN TABLET ***********************/
 
-    .image{
+    .imageDetail{
         width: 40vw;
     }
 
-    .image img{
+    .imageDetail img{
         margin: 15px;
         width: 90%;
     }

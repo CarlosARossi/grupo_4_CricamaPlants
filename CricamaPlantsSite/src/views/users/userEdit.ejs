@@ -11,19 +11,19 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
-        <form action="/saveEdition/<%= user.id %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
+        <form action="/userSave/<%= user.id %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
             <h2 id="title">Edición de usuarios</h2>
 
             <fieldset class="">
-                <input type=text name="firstName" required value="<%= user.firstName %>">
+                <input type=text name="firstName" required value="<%= user.firstName %>" placeholder="Nombre">
             </fieldset>
 
             <fieldset class="">
-                <input type=text name="lastName" required value="<%= user.lastName %>">
+                <input type=text name="lastName" required value="<%= user.lastName %>" placeholder="Apellido">
             </fieldset>
 
             <fieldset class="">
-                <input type=email name="email" required placeholder="<%= user.email %>">
+                <input type=email name="email" required value="<%= user.email %>" placeholder = 'E-mail'>
             </fieldset>
 
             <figure><img class='image' src="/uploads/users/<%=user.image%>" alt=""></figure>
@@ -34,20 +34,20 @@
 
             <fieldset class="">
                 <label for="categoria">Tipo de usuario:</label>
-                <select value=<%= user.type %>>
+                <select name='type'>
                     <% if (user.type=='admin') { %>
-                        <option selected>ADMIN</option>
-                        <option >NORMAL</option>
+                        <option value="admin" selected>ADMIN</option>
+                        <option value="normal">NORMAL</option>
                     <% } %>
                     <% if (user.type=='normal') { %>
-                        <option >ADMIN</option>
-                        <option selected>NORMAL</option>
+                        <option value="admin">ADMIN</option>
+                        <option value="normal" selected>NORMAL</option>
                     <% } %>
                 </select>
             </fieldset>
 
             <fieldset class="">
-                <input type=password name="password" required minlength="10" placeholder="<%= user.password %>" >
+                <input type='password' name="password" required minlength="10" value="<%= user.password %>" placeholder="Contraseña" >
             </fieldset>
 
                 <button type="submit" name="save" class="button">GUARDAR</button>
