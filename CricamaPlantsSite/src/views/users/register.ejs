@@ -11,33 +11,73 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
+
         <form action = "/register" method = "post" class = "form" enctype="multipart/form-data">
 
             <h2 id="title">Completa tus datos!</h2>
 
+            <!-- FIRSTNAME -->
             <fieldset class="">
-                <input type='text' name="firstName" required placeholder="Nombre">
+                <input 
+                    type='text' 
+                    name="firstName" 
+                    placeholder="Nombre" 
+                    class= '<%= locals.errors && errors.firstName ? 'pendiente' : null %>'
+                    value= '<%= locals.oldData ? oldData.firstName : null %>' 
+                >
             </fieldset>
-
+            <% if (locals.errors && errors.firstName) { %>
+                <p class="feedbackError">
+                    <%= errors.firstName.msg %> 
+                </p>
+            <% } %>
+            <!-- LASTNAME -->
             <fieldset class="">
-                <input type='text' name="lastName" required placeholder="Apellido">
+                <input 
+                    type='text' 
+                    name="lastName" 
+                    placeholder="Apellido" 
+                    class= '<%= locals.errors && errors.lastName ? 'pendiente' : null %>'
+                    value= '<%= locals.oldData ? oldData.lastName : null %>' 
+                >
             </fieldset>
-
+            <% if (locals.errors && errors.lastName) { %>
+                <p class="feedbackError">
+                    <%= errors.lastName.msg %> 
+                </p>
+            <% } %>
+            <!-- EMAIL -->
             <fieldset class="">
-                <input type='email' name="email" required placeholder="E-mail">
+                <input 
+                    type='email' 
+                    name="email" 
+                    placeholder="E-mail" 
+                    class= '<%= locals.errors && errors.email ? 'pendiente' : null %>'
+                    value= '<%= locals.oldData ? oldData.email : null%>' 
+                >
             </fieldset>
-
+            <% if (locals.errors && errors.email) { %>
+                <p class="feedbackError">
+                    <%= errors.email.msg %> 
+                </p>
+            <% } %>
+            <!-- IMAGE -->
             <fieldset id="loadPicture">
                 <label for="image">Fotos:</label>
                 <input type="file" name="image" accept=".png, .jpg, .jpeg">
             </fieldset>
-
+            <!-- PASSWORD -->
             <fieldset class="">
-                <input type='password' name="password" required minlength="10" placeholder="Contraseña" >
+                <input type='password' name="password" minlength="10" placeholder="Contraseña" >
             </fieldset>
+            <% if (locals.errors && errors.password) { %>
+                <p class="feedbackError">
+                    <%= errors.password.msg %> 
+                </p>
+            <% } %>
 
             <fieldset class="">
-                <input type='password' name="repeatPassword" required minlength="10" placeholder="Reingrese la contraseña">
+                <input type='password' name="repeatPassword" minlength="10" placeholder="Reingrese la contraseña">
             </fieldset>
 
             <fieldset>
