@@ -31,6 +31,7 @@
                     <%= errors.firstName.msg %> 
                 </p>
             <% } %>
+
             <!-- LASTNAME -->
             <fieldset class="">
                 <input 
@@ -46,6 +47,7 @@
                     <%= errors.lastName.msg %> 
                 </p>
             <% } %>
+
             <!-- EMAIL -->
             <fieldset class="">
                 <input 
@@ -61,14 +63,32 @@
                     <%= errors.email.msg %> 
                 </p>
             <% } %>
+
             <!-- IMAGE -->
             <fieldset id="loadPicture">
                 <label for="image">Fotos:</label>
-                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                <input 
+                    type='file' 
+                    name="image"  
+                    class= '<%= locals.errors && errors.image ? 'pendiente' : null %>'
+                    value= '<%= locals.oldData ? oldData.image : null%>' 
+                >
             </fieldset>
+            <% if (locals.errors && errors.image) { %>
+                <p class="feedbackError">
+                    <%= errors.image.msg %> 
+                </p>
+            <% } %>
+
             <!-- PASSWORD -->
             <fieldset class="">
-                <input type='password' name="password" minlength="10" placeholder="Contraseña" >
+                <input 
+                    type='password' 
+                    name="password"
+                    placeholder="Contraseña"  
+                    class= '<%= locals.errors && errors.password ? 'pendiente' : null %>'
+                    value= '<%= locals.oldData ? oldData.password : null%>' 
+                >
             </fieldset>
             <% if (locals.errors && errors.password) { %>
                 <p class="feedbackError">
@@ -76,9 +96,21 @@
                 </p>
             <% } %>
 
+            <!-- PASSWORD CONFIRM -->
             <fieldset class="">
-                <input type='password' name="repeatPassword" minlength="10" placeholder="Reingrese la contraseña">
+                <input 
+                    type='password' 
+                    name="passwordConfirm"
+                    placeholder="Reingrese la contraseña"  
+                    class= '<%= locals.errors && errors.passwordConfirm ? 'pendiente' : null %>'
+                    value= '<%= locals.oldData ? oldData.passwordConfirm : null%>' 
+                >
             </fieldset>
+            <% if (locals.errors && errors.passwordConfirm) { %>
+                <p class="feedbackError">
+                    <%= errors.passwordConfirm.msg %> 
+                </p>
+            <% } %>
 
             <fieldset>
                 <button type="submit" name="register" class="button">Registrate!</button>

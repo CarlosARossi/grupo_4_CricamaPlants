@@ -113,5 +113,14 @@
     "password": "contraseña",
     "image": null,
     "type": "normal"
+  },
+  {
+    "id": 15,
+    "firstName": "Jose",
+    "lastName": "Fernandez",
+    "email": "jfernandez@gmail.com",
+    "password": "1234567",
+    "image": "image-1626228830008.jpg",
+    "type": "normal"
   }
 ]

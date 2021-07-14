@@ -23,7 +23,7 @@ const userController = {
         }
 
         let result = users.register(req.body,req.file)
-        return result == true ? res.redirect("/") : res.send("Error al cargar la informacion") 
+        return result == true ? res.redirect("/users") : res.send("Error al cargar la informacion") 
     },//save new user on products.json
 
     list:(req,res) => res.render('users/users', {list: req.params.id ? users.id(req.params.id) : users.all(), id: req.params.id ? req.params.id : null}),//List of all users
