@@ -17,12 +17,8 @@
 
         <section class="boxDetail">
 
-            <% if (user.image) { %>
-                <figure class="imageDetail"><img src="/uploads/users/<%= user.image%>" alt=""></figure>
-            <% } else { %>
-                <figure class="imageDetail"><img src="/img/users/userDefault.jpg" alt=""></figure>
-            <% } %>
-            
+            <figure><img class='imageDetail' src="/<%= user.image%>" alt=""></figure>
+
             <article class="boxDescription">
 
                 <p class="name"><%= user.firstName %></p>

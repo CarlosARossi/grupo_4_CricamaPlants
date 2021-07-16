@@ -116,6 +116,7 @@ header{
 #menuNav:target .iconsNav{
     display: flex;
     flex-direction: row;
+    align-items: center;
     position: absolute;
     font-size: 1.5em;
     top: 4vh;
@@ -138,6 +139,15 @@ header{
 }
 #menuNav:target .mainNav a{
     color:#F5E078
+}
+
+.avatar{
+    width: 2em;
+    border-radius: 100%;   
+}
+
+.iconsNav>li>ul{
+    display: none;
 }
 
 /* a[href='#mainNav'] {
@@ -196,7 +206,7 @@ header{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        background-color: rgba(51, 109, 75, 0.6);
+        background-color: rgba(51, 109, 75, 0.75);
         padding: 0px 10px;
         border-radius: 5px;
         z-index: 1;
@@ -209,6 +219,7 @@ header{
     .iconsNav{
         display: flex;
         justify-content: space-around;
+        align-items: center;
         width: 10vw;
         margin-right: -6vw;
     }
@@ -225,6 +236,27 @@ header{
     #burgerMenu{
         display: none;
     }
+
+    .avatar{
+        width: 50px;
+    }
+
+    .iconsNav>li:hover>ul {
+        height: 10vh;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(51, 109, 75, 0.75);
+        padding: 0px 10px;
+        border-radius: 5px;
+        z-index: 1;
+    }
+
+    .iconsNav>li>ul>li>a{
+        font-size: 1.2em;
+    }
+
 }
 
 

@@ -126,6 +126,18 @@ label{
     background-color: red !important;
 } */
 
+.feedbackError{
+    font-size: 0.85em !important;
+    color: tomato;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: -20px;
+}
+
+.inputError{
+    border: solid 1px tomato !important;
+    border-radius: 10px !important; 
+}
 
 
 /*********************************************** TABLET ***********************************************/

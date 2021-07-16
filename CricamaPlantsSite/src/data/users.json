@@ -2,19 +2,19 @@
   {
     "id": 1,
     "firstName": "Carlos",
-    "lastName": "Rossi",
+    "lastName": "Ross",
     "email": "carlos91rossi@gmail.com",
-    "password": "$2a$10$r9muxwWd.AUYQRIBqfXU5uZteGf9//Y4nbEXL2EVn7h1PMRD96wpW",
-    "image": "image-1626445847665.jpg",
-    "type": "admin"
+    "password": "$2a$10$/V9QZjn/kn5.DldOQ.S9GueEmjlbgi8rr5tx2spFPHAfrfclqqCMK",
+    "image": "uploads/users/image-1626463046931.jpg",
+    "type": "normal"
   },
   {
     "id": 2,
     "firstName": "Cristian",
     "lastName": "Leiva",
     "email": "bknottley1@sun.com",
-    "password": "edYmiJbP",
-    "image": null,
+    "password": "$2a$10$4xwMa/l0B9w0H7h72Xcdhu30/Zg8/0rzUGJqltzZ1ZZvHEvOAPS.y",
+    "image": "uploads/users/image-1626468699377.jpg",
     "type": "admin"
   },
   {
@@ -23,7 +23,7 @@
     "lastName": "Nacht",
     "email": "mlqlknf@hipis.com",
     "password": "mmmmmmmmmmm",
-    "image": "image-1625958155620.jpg",
+    "image": "uploads/users/image-1625958155620.jpg",
     "type": "admin"
   },
   {
@@ -32,7 +32,7 @@
     "lastName": "Calante",
     "email": "atenas@hotmail.com",
     "password": "nuevapasss",
-    "image": null
+    "image": "img/users/userDefault.png"
   },
   {
     "id": 5,
@@ -40,7 +40,7 @@
     "lastName": "Serfati",
     "email": "qserfati4@ocn.ne.jp",
     "password": "5CBIxJUd",
-    "image": null
+    "image": "img/users/userDefault.png"
   },
   {
     "id": 6,
@@ -48,7 +48,7 @@
     "lastName": "Bruyntjes",
     "email": "sbruyntjes5@zimbio.com",
     "password": "teI895Yi8TdP",
-    "image": null,
+    "image": "img/users/userDefault.png",
     "type": "normal"
   },
   {
@@ -57,7 +57,7 @@
     "lastName": "Rabson",
     "email": "arabson6@abc.net.au",
     "password": "mb8NuNn",
-    "image": null,
+    "image": "img/users/userDefault.png",
     "type": "normal"
   },
   {
@@ -66,7 +66,7 @@
     "lastName": "Fraschetti",
     "email": "mfraschetti7@hugedomains.com",
     "password": "0vNONb",
-    "image": null,
+    "image": "img/users/userDefault.png",
     "type": "normal"
   },
   {
@@ -75,7 +75,7 @@
     "lastName": "Gwillyam",
     "email": "vgwillyam8@twitpic.com",
     "password": "mE8e3JF",
-    "image": null,
+    "image": "img/users/userDefault.png",
     "type": "normal"
   },
   {
@@ -84,7 +84,7 @@
     "lastName": "Eliasen",
     "email": "aeliasen9@hp.com",
     "password": "fzWrDqV3iW0Z",
-    "image": null,
+    "image": "img/users/userDefault.png",
     "type": "normal"
   },
   {
@@ -93,7 +93,7 @@
     "lastName": "Tabner",
     "email": "ptabnera@t.co",
     "password": "nJwCtMHHc",
-    "image": null,
+    "image": "img/users/userDefault.png",
     "type": "normal"
   },
   {
@@ -102,25 +102,7 @@
     "lastName": "Silverwood",
     "email": "gsilverwoodb@slashdot.org",
     "password": "2PXu9zaiM",
-    "image": null,
-    "type": "normal"
-  },
-  {
-    "id": 14,
-    "firstName": "Raul",
-    "lastName": "Portal",
-    "email": "raulportal@email.com",
-    "password": "contraseña",
-    "image": null,
-    "type": "normal"
-  },
-  {
-    "id": 15,
-    "firstName": "Jose",
-    "lastName": "Fernandez",
-    "email": "jfernandez@gmail.com",
-    "password": "$2a$10$7GIAjorj3cbD2q1Wez3jUuF56fqn6zGeElp15mF2eYmtk4O1jHM/S",
-    "image": "image-1626396273863.jpg",
+    "image": "img/users/userDefault.png",
     "type": "normal"
   }
 ]

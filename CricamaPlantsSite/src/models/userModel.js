@@ -18,7 +18,7 @@ const model = {
             lastName: data.lastName,
             email: data.email,
             password: bcryptjs.hashSync(data.password,10),
-            image: typeof file === 'undefined' ? null : file.filename,
+            image: file == undefined ? "/img/users/userDefault.png" : "uploads/users/" + file.filename,
             type: 'normal'         
         }    
         users.push(nuevo)
@@ -32,23 +32,23 @@ const model = {
     },//Filter of users by id
     search: function (id) {
         let users = this.all();
-        let result = users.find(usuario => usuario.id == id)
+        let result = users.find(user => user.id == id)
         return result;
     },//Search in users.json for a user whose id is equal to the requested id
     userSave: function (data,file,id) {
         const directory = path.resolve(__dirname,"../data","users.json")
         let users = this.all();
-        users.map(usuario => {
-            if(usuario.id == id ){
-                usuario.firstName = data.firstName,
-                usuario.lastName = data.lastName,
-                usuario.email = data.email,
-                usuario.password = bcryptjs.hashSync(data.password,10),
-                usuario.image = typeof file === 'undefined' ? null : file.filename,
-                usuario.type = data.type
-                return usuario
+        users.map(user => {
+            if(user.id == id ){
+                user.firstName = data.firstName,
+                user.lastName = data.lastName,
+                user.email = data.email,
+                user.password = bcryptjs.hashSync(data.password,10),
+                user.image = file == undefined ? user.image : "uploads/users/" + file.filename,
+                user.type = data.type
+                return user
             }
-            return usuario
+            return user
         })
         fs.writeFileSync(directory,JSON.stringify(users,null,2));
         return true;
@@ -57,10 +57,10 @@ const model = {
         const directory = path.resolve(__dirname,"../data","users.json")
         let users = this.all();
         let deleted = this.search(id);
-        if (deleted.image) {
-            fs.unlinkSync(path.resolve(__dirname,"../../public/uploads/users",deleted.image))
+        if (deleted.image!="/img/users/userDefault.png") {
+            fs.unlinkSync(path.resolve(__dirname,"../../public",deleted.image))
         };//If there is an image, it deletes it
-        users = users.filter(usuario => usuario.id != deleted.id )//Filter the user to delete 
+        users = users.filter(user => user.id != deleted.id )//Filter the user to delete 
         fs.writeFileSync(directory,JSON.stringify(users,null,2));
         return true;
     },

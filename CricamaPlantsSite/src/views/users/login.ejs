@@ -20,7 +20,7 @@
                     type="email" 
                     name="email" 
                     placeholder = E-mail
-                    class= '<%= locals.errors && errors.email ? 'pendiente' : null %>'
+                    class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.email : null%>' 
                 >
             </fieldset>
@@ -36,7 +36,7 @@
                     type = "password" 
                     name = "password" 
                     placeholder = Contraseña
-                    class= '<%= locals.errors && errors.email ? 'pendiente' : null %>'
+                    class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
                 >
             </fieldset>
             <% if (locals.errors && errors.password) { %>

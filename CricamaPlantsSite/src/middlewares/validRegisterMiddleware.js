@@ -30,7 +30,7 @@ module.exports =  [
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
-        if (!file){
+        if (file == undefined){
             throw new Error ('Dale! Subi una foto...');
         } else{
             let extension = path.extname(file.originalname);

@@ -26,11 +26,7 @@
 
                 <article class="articleMain">
                     <a href='/userProfile/<%= user.id%>'>
-                        <% if (user.image) { %>
-                            <figure><img class='image' src="/uploads/users/<%= user.image%>" alt=""></figure>
-                        <% } else { %>
-                            <figure><img class='image' src="/img/users/userDefault.png" alt=""></figure>
-                        <% } %>
+                        <figure><img class='image' src="<%= user.image%>" alt=""></figure>
                         <section class="box-article">
                             <p class="price">ID: <%= user.id%></p>
                             <p class="name">Nombre: <%= user.firstName %></p>
