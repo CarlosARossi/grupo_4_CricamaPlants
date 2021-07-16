@@ -5,8 +5,18 @@ const { validationResult } = require('express-validator');
 
 //Functions
 const userController = {
-    login:(req,res) => res.render('users/login'),
+    login: (req,res) => res.render('users/login'),
     
+    access: (req,res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()){
+            return res.render("users/login", { errors: errors.mapped(), oldData: req.body });
+        }else{
+            let user = users.findByField ('email', req.body.email);
+            res.redirect("/userProfile/"+user.id)
+        }
+    },
+
     admin:(req,res) => res.render('users/admin'),
     
     userProfile:(req,res) => res.render('users/userProfile',{user:users.search(req.params.id)}),
@@ -21,7 +31,6 @@ const userController = {
                 oldData: req.body
             });
         }
-
         let result = users.register(req.body,req.file)
         return result == true ? res.redirect("/users") : res.send("Error al cargar la informacion") 
     },//save new user on products.json

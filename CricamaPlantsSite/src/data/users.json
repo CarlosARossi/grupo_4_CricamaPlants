@@ -4,8 +4,8 @@
     "firstName": "Carlos",
     "lastName": "Rossi",
     "email": "carlos91rossi@gmail.com",
-    "password": "oKkEsh",
-    "image": null,
+    "password": "$2a$10$r9muxwWd.AUYQRIBqfXU5uZteGf9//Y4nbEXL2EVn7h1PMRD96wpW",
+    "image": "image-1626445847665.jpg",
     "type": "admin"
   },
   {
@@ -119,8 +119,8 @@
     "firstName": "Jose",
     "lastName": "Fernandez",
     "email": "jfernandez@gmail.com",
-    "password": "1234567",
-    "image": "image-1626228830008.jpg",
+    "password": "$2a$10$7GIAjorj3cbD2q1Wez3jUuF56fqn6zGeElp15mF2eYmtk4O1jHM/S",
+    "image": "image-1626396273863.jpg",
     "type": "normal"
   }
 ]

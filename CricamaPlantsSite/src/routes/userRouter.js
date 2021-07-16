@@ -9,11 +9,13 @@ const { body } = require ('express-validator');
 //Middlewares
 const validRegister = require("../middlewares/validRegisterMiddleware");
 const uploadFile = require("../middlewares/uploadFileMiddleware");
+const validLogin = require("../middlewares/validLoginMiddleware");
 
 //Routes
 
 //Login User
 router.get("/login",userController.login);
+router.post("/access",validLogin,userController.access)
 //User Profile
 router.get("/userProfile/:id",userController.userProfile);
 //List of all users

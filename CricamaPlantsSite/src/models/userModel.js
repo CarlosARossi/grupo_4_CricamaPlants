@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const bcryptjs = require('bcryptjs');
 
 const model = {
     all: function() {
@@ -17,7 +17,7 @@ const model = {
             firstName: data.firstName,
             lastName: data.lastName,
             email: data.email,
-            password: data.password,
+            password: bcryptjs.hashSync(data.password,10),
             image: typeof file === 'undefined' ? null : file.filename,
             type: 'normal'         
         }    
@@ -26,45 +26,52 @@ const model = {
         return true;    
     },//Save in users.json a new user from the usersCreate form
     id: function (id) {
-        let usuarios = this.all();
-        let resultado = usuarios.filter(user => user.id == id)
-        return resultado;
+        let users = this.all();
+        let result = users.filter(user => user.id == id)
+        return result;
     },//Filter of users by id
     search: function (id) {
-        let usuarios = this.all();
-        let resultado = usuarios.find(usuario => usuario.id == id)
-        return resultado;
+        let users = this.all();
+        let result = users.find(usuario => usuario.id == id)
+        return result;
     },//Search in users.json for a user whose id is equal to the requested id
     userSave: function (data,file,id) {
         const directory = path.resolve(__dirname,"../data","users.json")
-        let usuarios = this.all();
-        usuarios.map(usuario => {
+        let users = this.all();
+        users.map(usuario => {
             if(usuario.id == id ){
                 usuario.firstName = data.firstName,
                 usuario.lastName = data.lastName,
                 usuario.email = data.email,
-                usuario.password = data.password,
+                usuario.password = bcryptjs.hashSync(data.password,10),
                 usuario.image = typeof file === 'undefined' ? null : file.filename,
                 usuario.type = data.type
                 return usuario
             }
             return usuario
         })
-        fs.writeFileSync(directory,JSON.stringify(usuarios,null,2));
+        fs.writeFileSync(directory,JSON.stringify(users,null,2));
         return true;
     },
     delete: function (id) {
         const directory = path.resolve(__dirname,"../data","users.json")
-        let usuarios = this.all();
+        let users = this.all();
         let deleted = this.search(id);
         if (deleted.image) {
             fs.unlinkSync(path.resolve(__dirname,"../../public/uploads/users",deleted.image))
         };//If there is an image, it deletes it
-        usuarios = usuarios.filter(usuario => usuario.id != deleted.id )//Filter the user to delete 
-        fs.writeFileSync(directory,JSON.stringify(usuarios,null,2));
+        users = users.filter(usuario => usuario.id != deleted.id )//Filter the user to delete 
+        fs.writeFileSync(directory,JSON.stringify(users,null,2));
         return true;
     },
+    findByField: function (field, text) {
+        let allUsers = this.all();
+        let userFound = allUsers.find(oneUser => oneUser[field] === text);
+        return userFound;
+    }
 }
 
 module.exports = model;
+
+/* console.log(model.findByField('lastName','Rossi')) */
 

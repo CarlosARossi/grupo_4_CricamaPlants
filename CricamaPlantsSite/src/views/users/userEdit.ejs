@@ -26,10 +26,10 @@
                 <input type=email name="email" required value="<%= user.email %>" placeholder = 'E-mail'>
             </fieldset>
 
-            <figure><img class='image' src="/uploads/users/<%=user.image%>" alt=""></figure>
+            <figure><img class='image' src="/uploads/users/<%=user.image%>"  alt=""></figure>
             <fieldset id="loadPicture">
                 <label for="fotos">Foto:</label>
-                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                <input type="file" name="image" accept=".png, .jpg, .jpeg" value="/uploads/users/<%=user.image%>">
             </fieldset>
 
             <fieldset class="">
