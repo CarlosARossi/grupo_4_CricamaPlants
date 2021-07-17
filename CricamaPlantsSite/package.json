@@ -6,7 +6,7 @@
     "test": "clear && nodemon src/app.js -e css,html,js,mjs,json",
     "start": "node src/app.js"
   },
-  "author": "Rossi-Leiva-Natch",
+  "author": "Rossi-Leiva-Nacht",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
