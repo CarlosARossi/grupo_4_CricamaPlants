@@ -3,7 +3,7 @@
 <head>
     <%- include('../includes/head') %>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/userProfile.css">
     
 </head>
 <body>
@@ -13,7 +13,7 @@
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
 
-        <h2 id="title">Perfil de usuarios</h2>
+        <h2 id="title">Perfil de usuario: ¡Hola <%= user.firstName %>!</h2>
 
         <section class="boxDetail">
 
@@ -28,7 +28,10 @@
             
 
                 <ul id="adminButtons">
-                    <li><a href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
+                    <form action="/userEdit/<%= user.id %>?_method=GET" method="get">
+                        <li><button href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</button></li>
+                    </form>
+                    
                     <form action="/userDelete/<%= user.id %>?_method=DELETE" method="post">
                         <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
                     </form>

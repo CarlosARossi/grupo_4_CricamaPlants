@@ -18,15 +18,6 @@
     "type": "admin"
   },
   {
-    "id": 3,
-    "firstName": "Manuel Ivan",
-    "lastName": "Nacht",
-    "email": "mlqlknf@hipis.com",
-    "password": "mmmmmmmmmmm",
-    "image": "uploads/users/image-1625958155620.jpg",
-    "type": "admin"
-  },
-  {
     "id": 4,
     "firstName": "Atenas",
     "lastName": "Calante",
@@ -112,6 +103,15 @@
     "email": "cristiannacht@gmail.com",
     "password": "$2a$10$QeP8tk9s7z9xL4fEAyjlyOWaBMVf/tygajC3wk0VDFTk2Z48l9JLC",
     "image": "uploads/users/image-1626547482850.jpg",
+    "type": "normal"
+  },
+  {
+    "id": 14,
+    "firstName": "Manuel Ivan",
+    "lastName": "Nacht",
+    "email": "mlqlknf@hipis.com",
+    "password": "$2a$10$9uGvMGRQNuxsYo8OSjs/.OUTeqYJXDDPfzUxHuA7mvGVGeKf30bru",
+    "image": "uploads/users/image-1626904089092.jpg",
     "type": "normal"
   }
 ]

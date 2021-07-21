@@ -1,0 +1,165 @@
+.paletteColor{
+    color:  #30544E
+            #F5E078
+            #FAD7C5
+            #A78B48
+            #000000
+            #E2E7E6
+            #FFFFFF
+}
+
+a{
+    text-decoration:none;
+    color: inherit;
+}
+
+/*********************************************** MOBILE ***********************************************/
+
+
+/************************ MAIN ************************/
+main{
+    margin: 4vh;
+}
+main *{
+    margin: 4vh;
+}
+.name{
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 3vh;
+}
+
+.price{
+    font-size: 1.8em;
+    margin-bottom: 3vh;
+}
+
+.description{
+    font-size: 1.1em;
+    margin-bottom: 3vh;
+}
+
+.boxDetail{
+    margin: 15px;
+    background-color: #E2E7E6;
+    
+}
+.boxDetail *{
+    margin: auto;
+}
+
+.boxDescription{
+    display: flex;
+    /* border: solid 2px #30544E; */
+    margin: auto;
+    padding: 5vh;
+    /* padding: 10px;
+    border-radius: 8px; */
+    flex-direction: column;
+    line-height: 20px;
+}
+
+.boxDescription *{
+    margin: 1vh;
+}
+
+
+.imageDetail{
+    width: 80%;
+    display: flex;
+    border-radius: 3%;
+    border: solid black 1px;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+
+}
+
+.imageDetail img{
+    margin: 10%;
+    width: 90%;
+    margin: auto;
+}
+
+
+#adminButtons li button{
+    border: none;
+    background-color: inherit;
+    color: #30544E;
+}
+
+#adminButtons li:hover>button{
+    color: #F5E078;
+}
+
+
+#adminButtons{
+    line-height: 20px;
+    font-size: 1em;
+    display: flex;
+    width: 20vw;
+    text-decoration: none;
+    text-align: center;
+}
+
+#adminButtons li{
+    color: #30544E;
+    border: 1px solid #30544E;
+    background-color:#F5E078;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#adminButtons li:hover{
+    background-color: #30544E;
+    color: #F5E078;
+    border: solid 1px #F5E078;
+    font-size: 1em;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+}
+
+
+
+/*********************************************** TABLET ***********************************************/
+@media (min-width: 768px){
+
+    /*********************** MAIN TABLET ***********************/
+
+    .imageDetail{
+        width: 40vw;
+    }
+
+    .imageDetail img{
+        margin: 15px;
+        width: 90%;
+    }
+
+    .boxDescription{  
+        height: 20%;
+        width: 50vw;
+    }
+
+    #adminButtons{
+        width: 15vw;
+    }
+}
+
+/*********************************************** DESKTOP ***********************************************/
+@media (min-width: 1021px){
+
+    /*********************** MAIN DESKTOP ***********************/
+
+    .boxDescription{
+        width: 50%;
+    }
+
+/*     .boxDescription1 p{
+        font-size: 1.1rem;
+    } */
+
+
+    #adminButtons{
+        width: 8vw;
+    }
+
+}
+
+

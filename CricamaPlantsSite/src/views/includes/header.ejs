@@ -27,16 +27,18 @@
         </ul>
 
         <ul class='iconsNav'>
+            
             <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
-
-            <li><a href='/users'><img class='avatar' src="/img/users/userDefault.png" alt="avatar"></a>
-                <ul>
-                    <li><a href='/userProfile'><i class="fas fa-address-card"></i> Mi Perfil</a></li>
-                    <li><a href=''><i class="fas fa-sign-out-alt"></i> Salir</a></li>
-                </ul>
-            </li>
-
-            <li><a href='/login'><i class="fas fa-user"></i></a></li>
+            <% if(isLogged){ %> 
+                <li><a href='/userProfile/<%=isLogged?isLogged.id:null%>'>
+                    <img class='avatar' src="/img/users/userDefault.png" alt="avatar"></a>
+                </li>
+                <li>
+                    <a href='/logout'><i class="fas fa-sign-out-alt"></i></a>
+                </li>
+            <% }else{ %> 
+                <li><a href='/login'><i class="fas fa-user"></i></a></li>
+            <% } %> 
         </ul>
 
         <a href='' id='exitMenu'><i class="fas fa-times"></i></a>
@@ -49,3 +51,4 @@
     <a href='#menuNav' id='burgerMenu'><i class="fas fa-bars"></i></a>
 
 </header>
+

@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const method = require('method-override');
+const session = require("express-session")
+const cookies = require("cookie-parser")
+
 
 //Server Start
 app.set("port",process.env.PORT || 3000);
@@ -16,6 +19,19 @@ app.use(public);
 app.set("view engine","ejs");
 app.set("views",path.resolve(__dirname,"./views"));
 
+//initialize session:
+app.use(session({
+    secret: "it's a secret",
+    resave: false,
+    saveUninitialized: false
+}))
+
+//app.use(cookies())
+
+//global middlewares
+const userLoggedMiddleware = require("../src/middlewares/userLoggedMiddleware")
+app.use(userLoggedMiddleware)
+
 //Data Configuration
 app.use(express.urlencoded({extended:false})) // add req.body
 app.use(method("_method")) // ?_method=PUT
@@ -26,8 +42,9 @@ app.use(main);
 const user = require('./routes/userRouter');
 app.use(user);
 const product = require('./routes/productRouter');
-const { urlencoded } = require('body-parser');
 app.use(product);
+
+
 
 //404 Not Found
 app.use((req, res, next) => {

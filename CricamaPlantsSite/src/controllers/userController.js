@@ -5,7 +5,9 @@ const { validationResult } = require('express-validator');
 
 //Functions
 const userController = {
-    login: (req,res) => res.render('users/login'),
+    login: (req,res) => {
+        res.render('users/login')
+    },
     
     access: (req,res) => {
         const errors = validationResult(req);
@@ -13,13 +15,20 @@ const userController = {
             return res.render("users/login", { errors: errors.mapped(), oldData: req.body });
         }else{
             let user = users.findByField ('email', req.body.email);
+            req.session.userLogged = user
             res.redirect("/userProfile/"+user.id)
         }
     },
 
-    admin:(req,res) => res.render('users/admin'),
+    admin:(req,res) => {
+        res.render('users/admin')
+    },
     
-    userProfile:(req,res) => res.render('users/userProfile',{user:users.search(req.params.id)}),
+    userProfile:(req,res) => {
+        res.render('users/userProfile',{
+            user:req.session.userLogged
+        })
+    },
     
     registerForm: (req,res) => res.render("users/register"),//form for user registration
     
@@ -48,6 +57,11 @@ const userController = {
         let result = users.delete(req.params.id);
         return result == true ? res.redirect("/users") : res.send("Error al cargar la informacion") 
     },//delete a user on users.json
+
+    logout: (req, res) => {
+        req.session.destroy()
+        return res.redirect("/")
+    }
 }
 
 module.exports = userController;
