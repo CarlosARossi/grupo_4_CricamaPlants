@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const method = require('method-override');
-const session = require("express-session")
-const cookies = require("cookie-parser")
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 
 //Server Start
@@ -26,7 +26,8 @@ app.use(session({
     saveUninitialized: false
 }))
 
-//app.use(cookies())
+//Cookie-parser
+app.use(cookies())
 
 //global middlewares
 const userLoggedMiddleware = require("../src/middlewares/userLoggedMiddleware")
@@ -42,6 +43,7 @@ app.use(main);
 const user = require('./routes/userRouter');
 app.use(user);
 const product = require('./routes/productRouter');
+const cookieParser = require('cookie-parser');
 app.use(product);
 
 

@@ -1,4 +1,4 @@
-//Requiere
+//Require
 const path = require('path');
 const users = require('../models/userModel');
 const { validationResult } = require('express-validator');
@@ -16,6 +16,11 @@ const userController = {
         }else{
             let user = users.findByField ('email', req.body.email);
             req.session.userLogged = user
+
+            if(req.body.remember){
+                res.cookie('userEmail', req.body.email, { maxAge: 30000 })
+            }
+
             res.redirect("/userProfile/"+user.id)
         }
     },
@@ -29,7 +34,7 @@ const userController = {
             user:req.session.userLogged
         })
     },
-    
+
     registerForm: (req,res) => res.render("users/register"),//form for user registration
     
     register: (req,res) => {
@@ -42,7 +47,7 @@ const userController = {
         }
         let result = users.register(req.body,req.file)
         return result == true ? res.redirect("/users") : res.send("Error al cargar la informacion") 
-    },//save new user on products.json
+    },//save new user on users.json
 
     list:(req,res) => res.render('users/users', {list: req.params.id ? users.id(req.params.id) : users.all(), id: req.params.id ? req.params.id : null}),//List of all users
     
@@ -59,6 +64,7 @@ const userController = {
     },//delete a user on users.json
 
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy()
         return res.redirect("/")
     }
