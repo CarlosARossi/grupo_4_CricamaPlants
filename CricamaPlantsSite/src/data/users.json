@@ -113,5 +113,23 @@
     "password": "$2a$10$9uGvMGRQNuxsYo8OSjs/.OUTeqYJXDDPfzUxHuA7mvGVGeKf30bru",
     "image": "uploads/users/image-1626904089092.jpg",
     "type": "normal"
+  },
+  {
+    "id": 15,
+    "firstName": "Joaquin",
+    "lastName": "Nacht",
+    "email": "joaconacht@gmail.com",
+    "password": "$2a$10$UXodnv9fyqENfdXvTUF27.cwNpf.B1zGzAlnnOPOgEFgbxGpay.ca",
+    "image": "uploads/users/image-1627175111421.png",
+    "type": "normal"
+  },
+  {
+    "id": 16,
+    "firstName": "Manuel Ivan",
+    "lastName": "Nacht",
+    "email": "manivanac@gmail.com",
+    "password": "$2a$10$6x5kKBpPBt1PQlHX3m7ecu.gCigIpx/7obMgfJZxcCR0dsJ306v1y",
+    "image": "uploads/users/image-1627175774138.png",
+    "type": "normal"
   }
 ]
