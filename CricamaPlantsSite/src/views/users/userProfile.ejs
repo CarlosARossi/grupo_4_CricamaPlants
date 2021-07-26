@@ -13,7 +13,7 @@
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
 
-        <h2 id="title">Perfil de usuario: ¡Hola <%= user.firstName %>!</h2>
+        <h2 id="title">¡Hola <%= user.firstName %>!</h2>
 
         <section class="boxDetail">
 
@@ -21,25 +21,43 @@
 
             <article class="boxDescription">
 
-                <p class="name"><%= user.firstName %></p>
-                <p class="name"><%= user.lastName %></p>
+                <p class="name"><%= user.firstName %> <%= user.lastName %></p>
                 <p class="price"><%= user.email %></p>
                 <p class="description"><%= user.type %></p>
             
 
                 <ul id="adminButtons">
                     <form action="/userEdit/<%= user.id %>?_method=GET" method="get">
-                        <li><button href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</button></li>
+                        <li><button href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar Perfil</button></li>
                     </form>
-                    
-                    <form action="/userDelete/<%= user.id %>?_method=DELETE" method="post">
-                        <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
-                    </form>
+                    <a href='#deleteOption'>
+                        <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar Perfil</button></li>
+                    </a>
+                    <% if(isLogged && user.type == "admin"){ %> 
+                    <a href='/productCreate'> 
+                        <li><i class="fas fa-upload iconAdmin"></i> Cargá un nuevo producto!</li>
+                    </a>
+                    <a href='/users'>
+                        <li><i class="fas fa-user-plus iconAdmin"></i> Editá a un usuario</li>
+                    </a>
+                    <% } %>  
                 </ul>
 
-
             </article>
-
+        </section>
+        
+        <section id="deleteOption">
+            <article id="deleteProfile">
+                <p>¿Queres borrar tu perfil?</p>
+                <ul>
+                    <form action="/userDelete/<%= user.id %>?_method=DELETE" method="post">
+                        <li><button type="submit">Si</button></li>
+                    </form>
+                    <a href="">
+                        <li><button type="submit">No</button></li>
+                    </a>
+                </ul>
+            </article>
         </section>
 
     </main>

@@ -1,13 +1,13 @@
 //Requiere
 const path = require('path');
 const product = require('../models/productModel');
-
+const users = require('../models/userModel');
 
 //Functions
 const productController = {
     productCar:(req,res) => res.render('products/productCar'),
 
-    productDetail:(req,res) => res.render('products/productDetail',{product:product.search(req.params.id)}),
+    productDetail:(req,res) => res.render('products/productDetail',{product:product.search(req.params.id), user:req.session.userLogged}),
 
     productEdit:(req,res) => res.render('products/productEdit',{product:product.search(req.params.id)}),//edit a product by id
 

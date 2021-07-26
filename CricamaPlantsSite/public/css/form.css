@@ -35,6 +35,27 @@ label{
     text-transform: uppercase;
 }
 
+.inputData{
+    position: relative;
+}
+
+.floatingLabel{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    pointer-events: none;
+    position: absolute;
+    left: 18px;
+    top: -22px;
+    transition: all 0.25s ease;
+}
+
+.inputData:focus .floatingLabel, .inputData:not(:focus):valid .floatingLabel{
+    left: 18px;
+    top: 20px;
+    
+}
+
 #title{
     font-size: 1.5em;
     display: flex;
@@ -59,7 +80,6 @@ label{
 
 .form fieldset > input:focus, textarea:focus, select:focus {
     outline: none;
-    background-color: rgba(0, 0, 0, 0.1);
     color: #F5E078;
     border-radius: 5px;
 }
@@ -138,6 +158,7 @@ label{
     border: solid 1px tomato !important;
     border-radius: 10px !important; 
 }
+
 
 
 /*********************************************** TABLET ***********************************************/

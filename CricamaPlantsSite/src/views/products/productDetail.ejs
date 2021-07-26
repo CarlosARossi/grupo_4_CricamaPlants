@@ -35,7 +35,7 @@
                 
                 <button class="cartButton">Agregar al carrito</button>
 
-                <% if(isLogged){ %> 
+                <% if(isLogged && user.type == "admin"){ %> 
                 <ul id="adminButtons">
                     <li><a href='/productEdit/<%= product.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
                     <form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">

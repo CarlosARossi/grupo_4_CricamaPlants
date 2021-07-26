@@ -10,7 +10,6 @@ const cookies = require('cookie-parser');
 app.set("port",process.env.PORT || 3000);
 app.listen(app.get("port"), () => console.log("Server Start in http://localhost:"+app.get("port"))); 
 
-
 //Public Access
 const public = express.static(path.resolve(__dirname,'../public'))
 app.use(public);
@@ -45,8 +44,6 @@ app.use(user);
 const product = require('./routes/productRouter');
 const cookieParser = require('cookie-parser');
 app.use(product);
-
-
 
 //404 Not Found
 app.use((req, res, next) => {

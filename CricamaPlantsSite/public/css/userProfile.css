@@ -20,9 +20,9 @@ a{
 main{
     margin: 4vh;
 }
-main *{
+/* main *{
     margin: 4vh;
-}
+} */
 .name{
     text-transform: uppercase;
     font-size: 2em;
@@ -117,6 +117,45 @@ main *{
 }
 
 
+#deleteOption{
+    display: none;
+}
+
+#deleteOption:target{
+    display: contents;
+    margin: auto;
+}
+
+#deleteProfile{
+    background-color: rgba(51, 109, 75, 0.85);
+    position: absolute;
+    left: 25vw;
+    top: 50vh;
+    width: 50vw;
+    height: 90px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#deleteProfile p{
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #F5E078;
+}
+    
+
+#deleteProfile ul{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+height: 55px;
+}
+
+#deleteProfile ul li button{
+    width: 20vw;
+    height: 30px;
+}
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
@@ -124,7 +163,7 @@ main *{
     /*********************** MAIN TABLET ***********************/
 
     .imageDetail{
-        width: 40vw;
+        width: 20vw;
     }
 
     .imageDetail img{
@@ -139,6 +178,10 @@ main *{
 
     #adminButtons{
         width: 15vw;
+    }
+
+    #deleteProfile p{
+        font-size: 1.5em;
     }
 }
 

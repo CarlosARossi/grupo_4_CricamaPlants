@@ -15,14 +15,15 @@
         <form action="/access" method="post" class="form">
             <h2 id="title">INGRESA!</h2>
             <!-- EMAIL -->
-            <fieldset>
+            <fieldset class="inputData">
                 <input 
                     type="email" 
                     name="email" 
-                    placeholder = E-mail
+                    autofocus
                     class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.email : null%>' 
-                >
+                />
+                <label class="floatingLabel" for="email">Email</label>
             </fieldset>
             <% if (locals.errors && errors.email) { %>
                 <p class="feedbackError">
@@ -31,13 +32,13 @@
             <% } %>
 
             <!-- PASSWORD -->
-            <fieldset>
+            <fieldset class="inputData">
                 <input 
-                    type = "password" 
-                    name = "password" 
-                    placeholder = Contraseña
+                    type="password" 
+                    name="password" 
                     class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
-                >
+                />
+                <label class="floatingLabel" for="password">Contraseña</label>
             </fieldset>
             <% if (locals.errors && errors.password) { %>
                 <p class="feedbackError">

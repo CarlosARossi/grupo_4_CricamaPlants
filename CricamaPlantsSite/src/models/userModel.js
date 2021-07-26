@@ -73,5 +73,5 @@ const model = {
 
 module.exports = model;
 
-/* console.log(model.findByField('lastName','Rossi')) */
+
 
