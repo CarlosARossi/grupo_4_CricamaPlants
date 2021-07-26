@@ -104,14 +104,5 @@
     "password": "$2a$10$9uGvMGRQNuxsYo8OSjs/.OUTeqYJXDDPfzUxHuA7mvGVGeKf30bru",
     "image": "uploads/users/image-1626904089092.jpg",
     "type": "normal"
-  },
-  {
-    "id": 15,
-    "firstName": "Cristian",
-    "lastName": "Nacht",
-    "email": "cristiannacht@gmail.com",
-    "password": "$2a$10$UK.KjMLSmryfqw36Y.sUq.Va317gSJFQ8vagGAk9c31ijtEzzQ1KK",
-    "image": "uploads/users/image-1627249085516.png",
-    "type": "normal"
   }
 ]
