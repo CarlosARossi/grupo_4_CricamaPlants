@@ -52,3 +52,40 @@ Adelantar tareas previa división de las mismas, para así generar una mayor par
  
 ### 5. Dejar de hacer:
 Durante el desarrollo del sprint no se observaron acciones que se deban dejar de hacer en su totalidad individualmente, ni grupalmente. 
+
+
+## Sprint 4 (estrella de mar)
+
+### 1. Comenzar a hacer:
+Realizar las retrospectivas al inicio del siguiente sprint, para así tener un feedback mas fresco sobre lo que se abordó en el sprint pasado.
+Generar una lista de acciones pendientes (por fuera de las tareas propias del sprint) para consultar en clase o con el profesor. 
+ 
+### 2. Hacer más:
+Agregar mas cantidad de comentarios para luego poder recordar mas facilmente que funcion cumple cada linea de código. 
+Aumentar el seguimiento sobre el tablero de trabajo (Trello).
+ 
+### 3. Continuar haciendo:
+Seguir con la energía y la dinámica que venimos trabajando. 
+ 
+### 4. Hacer menos:
+A esta altura del curso creemos haber mejorado el trabajo en equipo y los errores cometidos en lo sprints anteriores.
+ 
+### 5. Dejar de hacer:
+Consideramos que no hay ninguna actividad o acitud que haya que cambiar por completo.
+
+
+## Sprint 5 (estrella de mar)
+
+### 1. Comenzar a hacer:
+
+ 
+### 2. Hacer más:
+
+ 
+### 3. Continuar haciendo:
+ 
+ 
+### 4. Hacer menos:
+ 
+ 
+### 5. Dejar de hacer:

@@ -16,7 +16,6 @@ const userController = {
         }else{
             let user = users.findByField ('email', req.body.email);
             req.session.userLogged = user
-
             if(req.body.remember){
                 res.cookie('userEmail', req.body.email, { maxAge: 1000 * 300 })
             }

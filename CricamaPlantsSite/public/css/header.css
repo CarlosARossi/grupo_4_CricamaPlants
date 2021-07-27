@@ -142,7 +142,7 @@ header{
 }
 
 .avatar{
-    width: 2em;
+    width: 1.5em;
     border-radius: 100%;   
 }
 
@@ -238,8 +238,8 @@ header{
     }
 
     .avatar{
-        max-width: 40px;
-        max-height: 40px;
+        width: 2em;
+        height: 2em;
     }
 
     .iconsNav>li:hover>ul {

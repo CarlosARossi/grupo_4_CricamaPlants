@@ -17,14 +17,15 @@
             <h2 id="title">Completa tus datos!</h2>
 
             <!-- FIRSTNAME -->
-            <fieldset class="">
+            <fieldset class="inputData">
                 <input 
                     type='text' 
                     name="firstName" 
-                    placeholder="Nombre" 
+                    autofocus
                     class= '<%= locals.errors && errors.firstName ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.firstName : null %>' 
                 >
+                <label class="floatingLabel" for="firstName">Nombre</label>
             </fieldset>
             <% if (locals.errors && errors.firstName) { %>
                 <p class="feedbackError">
@@ -33,14 +34,14 @@
             <% } %>
 
             <!-- LASTNAME -->
-            <fieldset class="">
+            <fieldset class="inputData">
                 <input 
                     type='text' 
-                    name="lastName" 
-                    placeholder="Apellido" 
+                    name="lastName"
                     class= '<%= locals.errors && errors.lastName ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.lastName : null %>' 
                 >
+                <label class="floatingLabel" for="lastName">Apellido</label>
             </fieldset>
             <% if (locals.errors && errors.lastName) { %>
                 <p class="feedbackError">
@@ -49,14 +50,14 @@
             <% } %>
 
             <!-- EMAIL -->
-            <fieldset class="">
+            <fieldset class="inputData">
                 <input 
                     type='email' 
                     name="email" 
-                    placeholder="E-mail" 
                     class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.email : null%>' 
                 >
+                <label class="floatingLabel" for="email">E-mail</label>
             </fieldset>
             <% if (locals.errors && errors.email) { %>
                 <p class="feedbackError">
@@ -81,14 +82,14 @@
             <% } %>
 
             <!-- PASSWORD -->
-            <fieldset class="">
+            <fieldset class="inputData">
                 <input 
                     type='password' 
-                    name="password"
-                    placeholder="Contraseña"  
+                    name="password" 
                     class= '<%= locals.errors && errors.password ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.password : null%>' 
                 >
+                <label class="floatingLabel" for="password">Contraseña</label>
             </fieldset>
             <% if (locals.errors && errors.password) { %>
                 <p class="feedbackError">
@@ -97,14 +98,14 @@
             <% } %>
 
             <!-- PASSWORD CONFIRM -->
-            <fieldset class="">
+            <fieldset class="inputData">
                 <input 
                     type='password' 
-                    name="passwordConfirm"
-                    placeholder="Reingrese la contraseña"  
+                    name="passwordConfirm" 
                     class= '<%= locals.errors && errors.passwordConfirm ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.passwordConfirm : null%>' 
                 >
+                <label class="floatingLabel" for="passwordConfirm">Reingrese la contraseña</label>
             </fieldset>
             <% if (locals.errors && errors.passwordConfirm) { %>
                 <p class="feedbackError">
