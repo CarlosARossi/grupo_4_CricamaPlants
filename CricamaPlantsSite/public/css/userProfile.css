@@ -17,98 +17,53 @@ a{
 
 
 /************************ MAIN ************************/
-main{
-    margin: 4vh;
-}
-/* main *{
-    margin: 4vh;
-} */
-.name{
-    text-transform: uppercase;
-    font-size: 2em;
-    margin-bottom: 3vh;
-}
-
-.price{
-    font-size: 1.8em;
-    margin-bottom: 3vh;
-}
-
-.description{
-    font-size: 1.1em;
-    margin-bottom: 3vh;
-}
-
-.boxDetail{
-    margin: 15px;
-    background-color: #E2E7E6;
-    
-}
-.boxDetail *{
-    margin: auto;
-}
-
-.boxDescription{
+main, .form{
     display: flex;
-    /* border: solid 2px #30544E; */
-    margin: auto;
-    padding: 5vh;
-    /* padding: 10px;
-    border-radius: 8px; */
     flex-direction: column;
-    line-height: 20px;
+    align-items: center;
+    height: 70vh;
+    justify-content: space-around;
 }
 
-.boxDescription *{
-    margin: 1vh;
+main h2{
+    text-align: left;
+    margin-bottom: 15px;
 }
 
-
-.imageDetail{
-    width: 80%;
-    display: flex;
-    border-radius: 3%;
-    border: solid black 1px;
+.avatarProfile{
+    width: 50vw;
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
-
+    border-radius: 15px;
 }
 
-.imageDetail img{
-    margin: 10%;
-    width: 90%;
-    margin: auto;
+.userData, .userOption{
+    align-items: left;
+    text-align: left;
+    width: 50vw;
 }
 
-
-#adminButtons li button{
-    border: none;
-    background-color: inherit;
-    color: #30544E;
+.data{
+    font-size: 1.3em;
+    font-weight: 500;
 }
 
-#adminButtons li:hover>button{
-    color: #F5E078;
-}
-
-
-#adminButtons{
-    line-height: 20px;
-    font-size: 1em;
-    display: flex;
-    width: 20vw;
-    text-decoration: none;
-    text-align: center;
-}
-
-#adminButtons li{
+.userButtons li{
     color: #30544E;
     border: 1px solid #30544E;
     background-color:#F5E078;
     border-radius: 5px;
     margin: 10px;
+    padding: 5px;
+    text-align: center;
 }
 
-#adminButtons li:hover{
+.userButtons li button{
+    border: none;
+    background-color: inherit;
+    color: #30544E;
+}
+
+.userButtons li:hover{
     background-color: #30544E;
     color: #F5E078;
     border: solid 1px #F5E078;
@@ -116,6 +71,9 @@ main{
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
+.userButtons li:hover>button{
+    color: #F5E078;
+}
 
 #deleteOption{
     display: none;
@@ -162,22 +120,34 @@ height: 55px;
 
     /*********************** MAIN TABLET ***********************/
 
-    .imageDetail{
-        width: 20vw;
+    main, .form{
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px;
+    height: 65vh;
+    align-items: baseline;
     }
 
-    .imageDetail img{
-        margin: 15px;
-        width: 90%;
+    main h2{
+        margin-bottom: 30px;
     }
 
-    .boxDescription{  
-        height: 20%;
-        width: 50vw;
+    .avatarProfile{
+        width: 25vw;
     }
 
-    #adminButtons{
+    .userData, .userOption{
+        width: 25vw;
+    }
+
+    .userData p{
         width: 15vw;
+        margin-left: 7vw;
+    }
+
+    .userButtons li{
+        width: 15vw;
+        margin-left: 7vw;
     }
 
     #deleteProfile p{
@@ -189,18 +159,8 @@ height: 55px;
 @media (min-width: 1021px){
 
     /*********************** MAIN DESKTOP ***********************/
-
-    .boxDescription{
-        width: 50%;
-    }
-
-/*     .boxDescription1 p{
-        font-size: 1.1rem;
-    } */
-
-
-    #adminButtons{
-        width: 8vw;
+    .avatarProfile{
+        width: 360px;
     }
 
 }

@@ -13,20 +13,30 @@
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
 
-        <h2 id="title">¡Hola <%= user.firstName %>!</h2>
+        <section class="userAvatar">
 
-        <section class="boxDetail">
+            <h1 id="title">¡Hola <%= user.firstName %>!</h1>
 
-            <figure><img class='imageDetail' src="/<%= user.image%>" alt=""></figure>
+            <figure><img class='avatarProfile' src="/<%= user.image%>" alt=""></figure>
 
-            <article class="boxDescription">
+        </section>
 
-                <p class="name"><%= user.firstName %> <%= user.lastName %></p>
-                <p class="price"><%= user.email %></p>
-                <p class="description"><%= user.type %></p>
+        <section class="userData">
+
+            <h2>Mis datos:</h2>
+
+            <p>Nombre y apellido:</p>
+            <p class="data">    <%= user.firstName %> <%= user.lastName %></p>
+            <p>E-mail:</p>
+            <p class="data">    <%= user.email %></p>
             
+        </section>
 
-                <ul id="adminButtons">
+        <section class="userOption">
+
+            <h2>Opciones:</h2>
+
+            <ul class="userButtons">
                     <form action="/userEdit/<%= user.id %>?_method=GET" method="get">
                         <li><button href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar Perfil</button></li>
                     </form>
@@ -41,9 +51,8 @@
                         <li><i class="fas fa-user-plus iconAdmin"></i> Editá a un usuario</li>
                     </a>
                     <% } %>  
-                </ul>
+            </ul>
 
-            </article>
         </section>
         
         <section id="deleteOption">
