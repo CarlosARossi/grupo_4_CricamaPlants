@@ -77,15 +77,16 @@ Consideramos que no hay ninguna actividad o acitud que haya que cambiar por comp
 ## Sprint 5 (estrella de mar)
 
 ### 1. Comenzar a hacer:
-
+Consideramos que no hay propuestas o acciones que tengamos que comenzar a hacer en función de los resultados del sprint pasado.
  
 ### 2. Hacer más:
-
+Estar mas pendientes del trello para manejar los tiempos mas eficientemente y no hacer tareas que no nos correspondan.
  
 ### 3. Continuar haciendo:
- 
+Seguir trabajando en equipo y con una comunicación activa. Pidiendo ayuda y con predisposición para ayudar a los demas. También continuar llevando a cabo todas las tareas opcionales del sprint.
  
 ### 4. Hacer menos:
- 
+A lo largo del proyecto corregimos muchos de los errores y ajustamos al mínimo lo que nos llevaba a equivocarnos. Vamos por buen camino.
  
 ### 5. Dejar de hacer:
+Consideramos que no hay ninguna actividad o acitud que haya que cambiar por completo.
