@@ -78,7 +78,7 @@ const userController = {
             });
         }
         let result = users.userSave(req.body,req.file,req.params.id)
-        return result == true ? res.redirect("/users") : res.send("Error al cargar la informacion") 
+        return result == true ? res.render('users/userProfile',{user:req.session.userLogged}) : res.send("Error al cargar la informacion") 
     },//save the edition of a user
     
     userDelete: (req,res) => {

@@ -9,9 +9,9 @@ module.exports =  [
     body('email')
         .notEmpty().withMessage('Tenes que escribir tu email').bail()
         .isEmail().withMessage('Formato de mail inválido').bail()
-        .custom((req,value,res) => {
-            let emailCookie = req.session;
-            console.log(emailCookie);
+        .custom(( { req }, value) => {
+            /* let emailCookie = req.session.email;
+            console.log(emailCookie); */
             let registered = userModel.findByField('email', value);
 
             if (registered) {
@@ -34,9 +34,15 @@ module.exports =  [
     body('image').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
-        let extension = path.extname(file.originalname);
-        if  (!acceptedExtensions.includes(extension) && file != null) {
-            throw new Error(`Solo aceptamos archivos ${acceptedExtensions.join(', ')}`);//REVISAR
+        
+        if (file == undefined){
+            return true;
+        } else{
+            let extension = path.extname(file.originalname);
+            if  (!acceptedExtensions.includes(extension)) {
+                throw new Error(`Solo aceptamos archivos ${acceptedExtensions.join(', ')}`);//REVISAR
+            }
         }
+        return true;
     })
 ]

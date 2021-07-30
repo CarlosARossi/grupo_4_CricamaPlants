@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "firstName": "Carlos",
+    "firstName": "Carlos A",
     "lastName": "Rossi",
     "email": "carlos91rossi@gmail.com",
-    "password": "$2a$10$MSF9LUvoxcshiUcrbAeSQO6iyqeZiLfKxH7VoBAKQ4meZNkHY86xW",
-    "image": "uploads/users/image-1627602782650.jpg",
+    "password": "$2a$10$QsXH/ynuFyL7e5PgYJ4hUu94wZDEZRNUbSNIDg.q8KlSMV5U/JxmW",
+    "image": "uploads/users/image-1627681292318.jpg",
     "type": "admin"
   },
   {
