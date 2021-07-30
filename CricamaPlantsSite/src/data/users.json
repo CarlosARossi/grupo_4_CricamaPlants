@@ -4,8 +4,8 @@
     "firstName": "Carlos",
     "lastName": "Rossi",
     "email": "carlos91rossi@gmail.com",
-    "password": "$2a$10$JNevHzALbJodNo/QcRznf.5cojnq0R/RKapOgxIlav90.AWQXmohq",
-    "image": "uploads/users/image-1627152097497.jpg",
+    "password": "$2a$10$MSF9LUvoxcshiUcrbAeSQO6iyqeZiLfKxH7VoBAKQ4meZNkHY86xW",
+    "image": "uploads/users/image-1627602782650.jpg",
     "type": "admin"
   },
   {
@@ -110,8 +110,7 @@
     "firstName": "Cristian",
     "lastName": "Nacht",
     "email": "cristiannacht@gmail.com",
-    "password": "$2a$10$kCSDlB.uC9StWHfcd.2SSebiERHC8Y6It2pk6eOxfc4YNoLYCxYNq",
-    "image": "uploads/users/image-1627335156763.png",
-    "type": "normal"
+    "password": "$2a$10$MSF9LUvoxcshiUcrbAeSQO6iyqeZiLfKxH7VoBAKQ4meZNkHY86xW",
+    "image": "uploads/users/image-1627335156763.png"
   }
 ]

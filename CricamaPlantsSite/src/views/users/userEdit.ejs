@@ -3,7 +3,8 @@
 <head>
     <%- include('../includes/head') %>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/userProfile.css">
+    <link rel="stylesheet" href="/css/formV2.css">
 </head>
 <body>
     <!---------------------------------------- HEADER ---------------------------------------->
@@ -11,48 +12,162 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
+
         <form action="/userSave/<%= user.id %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
-            <h2 id="title">Edición de usuarios</h2>
+            <section class="userAvatar">
 
-            <fieldset class="">
-                <input type=text name="firstName" required value="<%= user.firstName %>" placeholder="Nombre">
-            </fieldset>
+                <h1 id="title">Edición de usuarios</h1>
 
-            <fieldset class="">
-                <input type=text name="lastName" required value="<%= user.lastName %>" placeholder="Apellido">
-            </fieldset>
+                <!-- IMAGE -->
+                <figure><img class='avatarProfile' src="/<%=user.image%>"  alt=""></figure>
 
-            <fieldset class="">
-                <input type=email name="email" required value="<%= user.email %>" placeholder = 'E-mail'>
-            </fieldset>
-
-            <figure><img class='imageDetail' src="/<%=user.image%>"  alt=""></figure>
-            <fieldset id="loadPicture">
-                <label for="fotos">Foto:</label>
-                <input type="file" name="image" accept=".png, .jpg, .jpeg">
-            </fieldset>
-
-            <% if(isLogged && user.type == "admin"){ %> 
-                <fieldset class="">
-                    <label for="categoria">Tipo de usuario:</label>
-                    <select name='type'>
-                        <% if (user.type=='admin') { %>
-                            <option value="admin" selected>ADMIN</option>
-                            <option value="normal">NORMAL</option>
-                        <% } %>
-                        <% if (user.type=='normal') { %>
-                            <option value="admin">ADMIN</option>
-                            <option value="normal" selected>NORMAL</option>
-                        <% } %>
-                    </select>
+                <fieldset id="loadPicture">
+                    <label for="image">Avatar:</label>
+                    <input 
+                        type='file' 
+                        name="image"  
+                        class= '<%= locals.errors && errors.image ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.image : null%>' 
+                    >
                 </fieldset>
-            <% } %> 
+                <% if (locals.errors && errors.image) { %>
+                    <p class="feedbackError">
+                        <%= errors.image.msg %> 
+                    </p>
+                <% } %>
+            
+            </section>
 
-            <fieldset class="">
-                <input type='password' name="password" required minlength="10" value="<%= user.password %>" placeholder="Contraseña" >
-            </fieldset>
+            <section class="userData">
 
-                <button type="submit" name="save" class="button">GUARDAR</button>
+                <h2>Mis datos:</h2>
+
+                <!-- FIRSTNAME -->
+                <fieldset class="inputData">
+                    <label class="" for="firstName">Nombre:</label>
+                    
+                    <input 
+                        type='text' 
+                        name="firstName" 
+                        autofocus
+                        class= '<%= locals.errors && errors.firstName ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.firstName : user.firstName %>'
+                    >
+                    
+                </fieldset>
+                <% if (locals.errors && errors.firstName) { %>
+                    <p class="feedbackError">
+                        <%= errors.firstName.msg %> 
+                    </p>
+                <% } %>
+
+
+                <!-- LASTNAME -->
+                <fieldset class="inputData">
+                    <label class="" for="lastName">Apellido:</label>
+
+                    <input 
+                        type='text' 
+                        name="lastName"
+                        class= '<%= locals.errors && errors.lastName ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.lastName : user.lastName %>' 
+                    >
+                    
+                </fieldset>
+                <% if (locals.errors && errors.lastName) { %>
+                    <p class="feedbackError">
+                        <%= errors.lastName.msg %> 
+                    </p>
+                <% } %>
+
+
+                <!-- EMAIL -->
+                <fieldset class="inputData">
+                    <label class="" for="email">e-mail:</label>
+
+                    <input 
+                        type='email' 
+                        name="email" 
+                        class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.email :  user.email %>' 
+                    >
+                    
+                </fieldset>
+                <% if (locals.errors && errors.email) { %>
+                    <p class="feedbackError">
+                        <%= errors.email.msg %> 
+                    </p>
+                <% } %>
+
+
+                <% if(isLogged && user.type == "admin"){ %> 
+                    <fieldset class="">
+                        <label for="categoria">Tipo de usuario:</label>
+                        <select name='type'>
+                            <% if (user.type=='admin') { %>
+                                <option value="admin" selected>ADMIN</option>
+                                <option value="normal">NORMAL</option>
+                            <% } %>
+                            <% if (user.type=='normal') { %>
+                                <option value="admin">ADMIN</option>
+                                <option value="normal" selected>NORMAL</option>
+                            <% } %>
+                        </select>
+                    </fieldset>
+                <% } %> 
+
+
+                <!-- PASSWORD -->
+                <fieldset class="inputData">
+                    <label class="" for="password">Contraseña:</label>
+
+                    <input 
+                        type='password' 
+                        name="password" 
+                        class= '<%= locals.errors && errors.password ? 'inputError' : null %>'
+                        value='<%= locals.oldData ? oldData.password : null%>'
+                    >
+                    
+                </fieldset>
+                <% if (locals.errors && errors.password) { %>
+                    <p class="feedbackError">
+                        <%= errors.password.msg %> 
+                    </p>
+                <% } %>
+
+
+                <!-- PASSWORD CONFIRM -->
+                <fieldset class="inputData">
+                    <label class="" for="passwordConfirm">Reingrese la contraseña:</label>
+
+                    <input 
+                        type='password' 
+                        name="passwordConfirm" 
+                        class= '<%= locals.errors && errors.passwordConfirm ? 'inputError' : null %>'
+                        value='<%= locals.oldData ? oldData.passwordConfirm : null%>' 
+                    >
+                    
+                </fieldset>
+                <% if (locals.errors && errors.passwordConfirm) { %>
+                    <p class="feedbackError">
+                        <%= errors.passwordConfirm.msg %> 
+                    </p>
+                <% } %>
+
+            </section>
+
+            <section class="userOption">
+                <ul class="userButtons">
+                    <li><button type="submit" name="save">GUARDAR</button></li>
+                    <a href='/userProfile/<%= user.id  %> '> 
+                        <li>DESCARTAR</li>
+                    </a>
+
+                </ul>
+                
+            </section>
+            
+    
         </form>
     </main>
 

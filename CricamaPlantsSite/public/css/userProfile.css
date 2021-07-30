@@ -21,7 +21,6 @@ main, .form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 70vh;
     justify-content: space-around;
 }
 
@@ -36,10 +35,16 @@ main h2{
     border-radius: 15px;
 }
 
+.userAvatar{
+    text-align: center;
+    margin: 20px;
+}
+
 .userData, .userOption{
     align-items: left;
     text-align: left;
     width: 50vw;
+    margin: 20px;
 }
 
 .data{
@@ -123,8 +128,8 @@ height: 55px;
     main, .form{
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 30px;
-    height: 65vh;
     align-items: baseline;
     }
 
@@ -133,17 +138,22 @@ height: 55px;
     }
 
     .avatarProfile{
-        width: 25vw;
+        width: 240px;
+    }
+
+    .userAvatar{
+        text-align: center;
+        width: 75vw;
     }
 
     .userData, .userOption{
         width: 25vw;
     }
 
-    .userData p{
+  /*   .userData p{
         width: 15vw;
         margin-left: 7vw;
-    }
+    } */
 
     .userButtons li{
         width: 15vw;
@@ -159,8 +169,17 @@ height: 55px;
 @media (min-width: 1021px){
 
     /*********************** MAIN DESKTOP ***********************/
+    main, .form{
+        margin-bottom: 100px;
+        /* height: 65vh; */
+    }
+
+    .userAvatar{
+        width: 25vw;
+    }
+
     .avatarProfile{
-        width: 360px;
+        width: 240px;
     }
 
 }

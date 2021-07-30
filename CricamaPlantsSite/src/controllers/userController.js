@@ -34,7 +34,9 @@ const userController = {
         })
     },
 
-    registerForm: (req,res) => res.render("users/register"),//form for user registration
+    registerForm: (req,res) => {
+        res.render("users/register")
+    },//form for user registration
     
     register: (req,res) => {
         const resultValidation = validationResult(req);
@@ -58,11 +60,23 @@ const userController = {
         /* return result == true ? res.redirect("/userProfile/"+user.id) : res.send("Error al cargar la informacion")  */
     },//save new user on users.json
 
-    list:(req,res) => res.render('users/users', {list: req.params.id ? users.id(req.params.id) : users.all(), id: req.params.id ? req.params.id : null}),//List of all users
+    list:(req,res) => {
+        res.render('users/users', {list: req.params.id ? users.id(req.params.id) : users.all(), id: req.params.id ? req.params.id : null})
+    },//List of all users
     
-    userEdit:(req,res) => res.render('users/userEdit',{user:users.search(req.params.id)}),//edit a user by id
+    userEdit:(req,res) => {
+        res.render('users/userEdit',{user:users.search(req.params.id)})
+    },//edit a user by id
     
     userSave: (req,res) =>{
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0){
+            return res.render('users/userEdit', {
+                user:users.search(req.params.id),
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
         let result = users.userSave(req.body,req.file,req.params.id)
         return result == true ? res.redirect("/users") : res.send("Error al cargar la informacion") 
     },//save the edition of a user
