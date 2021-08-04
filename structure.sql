@@ -22,6 +22,7 @@ CREATE TABLE products (
     description TEXT,
     image VARCHAR,
   	price INTEGER,
+	category_id INTEGER,
 	PRIMARY KEY (id),
 	FOREIGN KEY (category_id) REFERENCES categories (id)
 )
@@ -30,11 +31,13 @@ CREATE TABLE users_products (
 	id AUTO_INCREMENT,
   	created_at TIMESTAMP,
   	updated_at TIMESTAMP,
-    user_id FOREIGN KEY INTEGER,
-    product_id FOREIGN KEY INTEGER,
+    user_id INTEGER,
+    product_id INTEGER,
   	quantity INTEGER,
   	price INTEGER,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES users (id),
+	FOREIGN KEY (product_id) REFERENCES products (id) 
 )
 
 CREATE TABLE users_types (
