@@ -1,7 +1,7 @@
 CREATE DATABASE cricama;
 
 CREATE TABLE users (
-	id PRIMARY KEY AUTO_INCREMENT,
+	id AUTO_INCREMENT,
   	created_at TIMESTAMP,
   	updated_at TIMESTAMP,
   	first_name VARCHAR,
@@ -9,40 +9,46 @@ CREATE TABLE users (
     email VARCHAR,
     password VARCHAR,
     image VARCHAR,
-    user_type_id FOREIGN KEY INTEGER
+	user_type_id INTEGER,
+	PRIMARY KEY (id),
+    FOREIGN KEY (user_type_id) REFERENCES user_type (id) 
 )
 
 CREATE TABLE products (
-	id PRIMARY KEY AUTO_INCREMENT,
+	id AUTO_INCREMENT,
   	created_at TIMESTAMP,
   	updated_at TIMESTAMP,
     name VARCHAR,
     description TEXT,
     image VARCHAR,
   	price INTEGER,
-    category_id FOREIGN KEY INTEGER
+	PRIMARY KEY (id),
+	FOREIGN KEY (category_id) REFERENCES categories (id)
 )
 
 CREATE TABLE users_products (
-	id PRIMARY KEY AUTO_INCREMENT,
+	id AUTO_INCREMENT,
   	created_at TIMESTAMP,
   	updated_at TIMESTAMP,
     user_id FOREIGN KEY INTEGER,
     product_id FOREIGN KEY INTEGER,
   	quantity INTEGER,
-  	price INTEGER
+  	price INTEGER,
+	PRIMARY KEY (id)
 )
 
 CREATE TABLE users_types (
-	id PRIMARY KEY AUTO_INCREMENT,
+	id AUTO_INCREMENT,
   	created_at TIMESTAMP,
   	updated_at TIMESTAMP,
-  	type VARCHAR
+  	type VARCHAR,
+	PRIMARY KEY (id)
 )
 
 CREATE TABLE categories (
-	id PRIMARY KEY AUTO_INCREMENT,
+	id AUTO_INCREMENT,
   	created_at TIMESTAMP,
   	updated_at TIMESTAMP,
-  	category VARCHAR
+  	category VARCHAR,
+	PRIMARY KEY (id)
 )
