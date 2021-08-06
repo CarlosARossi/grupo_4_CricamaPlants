@@ -15,7 +15,8 @@ const userController = {
             return res.render("users/login", { errors: errors.mapped(), oldData: req.body });
         }else{
             let user = users.findByField ('email', req.body.email);
-            req.session.userLogged = user
+            delete user.password; //Borro la password por seguridad
+            req.session.userLogged = user;
             if(req.body.remember){
                 res.cookie('userEmail', req.body.email, { maxAge: 1000 * 300 })
             }

@@ -146,7 +146,7 @@ label{
     border-radius: 10px !important; 
 }
 
-.inputData{
+/* .inputData{
     position: relative;
 }
 
@@ -164,7 +164,7 @@ label{
 .inputData:focus .floatingLabel{
     left: 18px;
     top: 20px;
-}
+} */
 
 
 /*********************************************** TABLET ***********************************************/
