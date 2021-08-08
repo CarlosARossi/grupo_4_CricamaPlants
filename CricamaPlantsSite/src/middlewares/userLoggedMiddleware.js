@@ -1,7 +1,7 @@
 const user = require ('../models/userModel');
 
 function userLoggedMiddleware (req, res, next){
-    res.locals.isLogged = null
+    res.locals.isLogged = false;
 
     let emailCookie = req.cookies.userEmail;
     let userCookie = user.findByField('email', emailCookie);
@@ -11,7 +11,8 @@ function userLoggedMiddleware (req, res, next){
     }
 
     if(req.session!=undefined && req.session.userLogged){
-        res.locals.isLogged = req.session.userLogged
+        res.locals.isLogged = true
+        res.locals.userLogged = req.session.userLogged
     }
 
     next()

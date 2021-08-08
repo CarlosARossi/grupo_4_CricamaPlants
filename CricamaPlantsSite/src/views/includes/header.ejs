@@ -30,9 +30,9 @@
             
             <li><a href='/productCar'><i class="fas fa-shopping-cart"></i></a></li>
             <% if(isLogged){ %> 
-                <li><img class='avatar' src="/<%=isLogged.image%>" alt="avatar">
+                <li><img class='avatar' src="/<%=userLogged.image%>" alt="avatar">
                     <ul>
-                        <li><a href='/userProfile/<%=isLogged?isLogged.id:null%>'><i class="fas fa-address-card"></i> Mi Perfil</a></li>
+                        <li><a href='/userProfile/<%=isLogged ? userLogged.id : null%>'><i class="fas fa-address-card"></i> Mi Perfil</a></li>
                         <li><a href='/logout'><i class="fas fa-sign-out-alt"></i> Salir</a></li>
                     </ul>
                 </li>

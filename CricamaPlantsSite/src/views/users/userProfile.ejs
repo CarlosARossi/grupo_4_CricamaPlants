@@ -37,9 +37,11 @@
             <h2>Opciones:</h2>
 
             <ul class="userButtons">
+                    <a href="/userEdit/<%= user.id %>?_method=GET">
                     <form action="/userEdit/<%= user.id %>?_method=GET" method="get">
                         <li><button href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar Perfil</button></li>
                     </form>
+                    </a>
                     <a href='#deleteOption'>
                         <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar Perfil</button></li>
                     </a>

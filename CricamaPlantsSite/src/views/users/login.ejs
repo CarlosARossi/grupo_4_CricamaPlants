@@ -16,6 +16,7 @@
             <h2 id="title">INGRESA!</h2>
             <!-- EMAIL -->
             <fieldset class="inputData">
+                <label class="floatingLabel" for="email">Email</label>
                 <input 
                     type="email" 
                     name="email" 
@@ -23,7 +24,6 @@
                     class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.email : null%>' 
                 />
-                <label class="floatingLabel" for="email">Email</label>
             </fieldset>
             <% if (locals.errors && errors.email) { %>
                 <p class="feedbackError">
@@ -33,12 +33,12 @@
 
             <!-- PASSWORD -->
             <fieldset class="inputData">
+                <label class="floatingLabel" for="password">Contraseña</label>
                 <input 
                     type="password" 
                     name="password" 
                     class= '<%= locals.errors && errors.email ? 'inputError' : null %>'
                 />
-                <label class="floatingLabel" for="password">Contraseña</label>
             </fieldset>
             <% if (locals.errors && errors.password) { %>
                 <p class="feedbackError">
