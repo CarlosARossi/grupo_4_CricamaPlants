@@ -1,57 +1,103 @@
-CREATE DATABASE cricama;
+DROP DATABASE IF EXISTS cricama;
+CREATE DATABASE IF NOT EXISTS cricama;
+USE cricama;
 
+DROP TABLE IF EXISTS user_type;
+CREATE TABLE user_type (
+	id_user_type	SMALLINT(4) UNSIGNED NOT NULL,
+	created_at 		TIMESTAMP NULL DEFAULT NULL,
+	updated_at		TIMESTAMP NULL DEFAULT NULL,
+	type			VARCHAR(10),
+	PRIMARY KEY (id_user_type)
+)ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES user_type WRITE;
+INSERT INTO user_type VALUES 
+	(1,NULL,NULL,'admin'),
+    (2,NULL,NULL,'normal');
+UNLOCK TABLES;
+
+
+
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-	id AUTO_INCREMENT,
-	created_at TIMESTAMP,
-	updated_at TIMESTAMP,
-	first_name VARCHAR,
-	last_name VARCHAR,
-    email VARCHAR,
-    password VARCHAR,
-    image VARCHAR,
-	user_type_id INTEGER,
-	PRIMARY KEY (id),
-    FOREIGN KEY (user_type_id) REFERENCES user_type (id) 
-)
+	id_user			SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+	created_at 		TIMESTAMP NULL DEFAULT NULL,
+	updated_at 		TIMESTAMP NULL DEFAULT NULL,
+	first_name 		VARCHAR(100),
+	last_name	 	VARCHAR(100),
+    email	 		VARCHAR(100),
+    password 		VARCHAR(255),
+    image			VARCHAR(255),
+	id_user_type 	SMALLINT(4) UNSIGNED NOT NULL,
+	PRIMARY KEY (id_user),
+	INDEX (id_user_type),
+	FOREIGN KEY (id_user_type) REFERENCES user_type (id_user_type) 
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE products (
-	id AUTO_INCREMENT,
-	created_at TIMESTAMP,
-	updated_at TIMESTAMP,
-    name VARCHAR,
-    description TEXT,
-    image VARCHAR,
-	price INTEGER,
-	category_id INTEGER,
-	PRIMARY KEY (id),
-	FOREIGN KEY (category_id) REFERENCES categories (id)
-)
+LOCK TABLES users WRITE;
+INSERT INTO users VALUES 
+	(1,NULL,NULL,'Carlos','Rossi','carlos91rossi@gmail.com','$2a$10$QsXH/ynuFyL7e5PgYJ4hUu94wZDEZRNUbSNIDg.q8KlSMV5U/JxmW','uploads/users/image-1627681292318.jpg',1),
+    (2,NULL,NULL,'Cristian','Leiva','cristian.leivalot@gmail.com','$2a$10$QsXH/ynuFyL7e5PgYJ4hUu94wZDEZRNUbSNIDg.q8KlSMV5U/JxmW','uploads/users/image-1626904089092.jpg',1),
+    (3,NULL,NULL,'Manuel','Nacht','mlqlknf@hipis.com','$2a$10$9uGvMGRQNuxsYo8OSjs/.OUTeqYJXDDPfzUxHuA7mvGVGeKf30bru','uploads/users/image-1627335156763.png',2);
+UNLOCK TABLES;
 
-CREATE TABLE users_products (
-	id AUTO_INCREMENT,
-	created_at TIMESTAMP,
-	updated_at TIMESTAMP,
-    user_id INTEGER,
-    product_id INTEGER,
-	quantity INTEGER,
-	price INTEGER,
-	PRIMARY KEY (id),
-	FOREIGN KEY (user_id) REFERENCES users (id),
-	FOREIGN KEY (product_id) REFERENCES products (id) 
-)
 
-CREATE TABLE users_types (
-	id AUTO_INCREMENT,
-	created_at TIMESTAMP,
-	updated_at TIMESTAMP,
-	type VARCHAR,
-	PRIMARY KEY (id)
-)
 
+DROP TABLE IF EXISTS categories;
 CREATE TABLE categories (
-	id AUTO_INCREMENT,
-	created_at TIMESTAMP,
-	updated_at TIMESTAMP,
-	category VARCHAR,
-	PRIMARY KEY (id)
-)
+	id_category		SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+	created_at 		TIMESTAMP NULL DEFAULT NULL,
+	updated_at 		TIMESTAMP NULL DEFAULT NULL,
+	category 		VARCHAR(10),
+	PRIMARY KEY (id_category)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES categories WRITE;
+INSERT INTO categories VALUES 
+	(1,NULL,NULL,'insumos'),
+    (2,NULL,NULL,'macetas'),
+    (3,NULL,NULL,'plantas');
+UNLOCK TABLES;
+
+
+
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+	id_product 		SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+	created_at 		TIMESTAMP NULL DEFAULT NULL,
+	updated_at 		TIMESTAMP NULL DEFAULT NULL,
+    name 			VARCHAR(100),
+    description 	TEXT,
+    image 			VARCHAR(255),
+	price 			DECIMAL(6,2),
+	id_category 	SMALLINT(6) UNSIGNED NOT NULL,
+	PRIMARY KEY (id_product),
+	INDEX (id_category),
+	FOREIGN KEY (id_category) REFERENCES categories (id_category)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES products WRITE;
+INSERT INTO products VALUES 
+	(1,NULL,NULL,'ANTHURIUM X MACROLOBIUM','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',NULL,2000,3),
+    (2,NULL,NULL,'MACETA CILINDRO CEMENTO','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',NULL,500,2),
+    (3,NULL,NULL,'FERTILIZANTE GENERAL','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',NULL,99.99,1);
+UNLOCK TABLES;
+
+
+
+DROP TABLE IF EXISTS users_products;
+CREATE TABLE users_products (
+	id_user_products 	SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+	created_at 			TIMESTAMP NULL DEFAULT NULL,
+	updated_at 			TIMESTAMP NULL DEFAULT NULL,
+    id_user 			SMALLINT(6) UNSIGNED NOT NULL,
+    id_product 			SMALLINT(6) UNSIGNED NOT NULL,
+	quantity 			INTEGER,
+	price 				DECIMAL(6,2),
+	PRIMARY KEY (id_user_products),
+	INDEX (id_user),
+	FOREIGN KEY (id_user) REFERENCES users (id_user),
+	INDEX (id_product),
+	FOREIGN KEY (id_product) REFERENCES products (id_product) 
+);
