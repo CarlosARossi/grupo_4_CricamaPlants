@@ -1,18 +1,18 @@
-DROP DATABASE IF EXISTS cricama;
-CREATE DATABASE IF NOT EXISTS cricama;
-USE cricama;
+DROP DATABASE IF EXISTS cricama_db;
+CREATE DATABASE IF NOT EXISTS cricama_db;
+USE cricama_db;
 
-DROP TABLE IF EXISTS user_type;
-CREATE TABLE user_type (
+DROP TABLE IF EXISTS userTypes;
+CREATE TABLE userTypes (
 	id_user_type	SMALLINT(4) UNSIGNED NOT NULL,
 	created_at 		TIMESTAMP NULL DEFAULT NULL,
 	updated_at		TIMESTAMP NULL DEFAULT NULL,
-	type			VARCHAR(10),
+	type			VARCHAR(100),
 	PRIMARY KEY (id_user_type)
 )ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-LOCK TABLES user_type WRITE;
-INSERT INTO user_type VALUES 
+LOCK TABLES userTypes WRITE;
+INSERT INTO userTypes VALUES 
 	(1,NULL,NULL,'admin'),
     (2,NULL,NULL,'normal');
 UNLOCK TABLES;
@@ -32,7 +32,7 @@ CREATE TABLE users (
 	id_user_type 	SMALLINT(4) UNSIGNED NOT NULL,
 	PRIMARY KEY (id_user),
 	INDEX (id_user_type),
-	FOREIGN KEY (id_user_type) REFERENCES user_type (id_user_type) 
+	FOREIGN KEY (id_user_type) REFERENCES userTypes (id_user_type) 
 )ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 LOCK TABLES users WRITE;
@@ -49,7 +49,7 @@ CREATE TABLE categories (
 	id_category		SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
 	created_at 		TIMESTAMP NULL DEFAULT NULL,
 	updated_at 		TIMESTAMP NULL DEFAULT NULL,
-	category 		VARCHAR(10),
+	category 		VARCHAR(100),
 	PRIMARY KEY (id_category)
 )ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -70,7 +70,7 @@ CREATE TABLE products (
     name 			VARCHAR(100),
     description 	TEXT,
     image 			VARCHAR(255),
-	price 			DECIMAL(6,2),
+	price 			DECIMAL(10,2),
 	id_category 	SMALLINT(6) UNSIGNED NOT NULL,
 	PRIMARY KEY (id_product),
 	INDEX (id_category),
@@ -86,15 +86,15 @@ UNLOCK TABLES;
 
 
 
-DROP TABLE IF EXISTS users_products;
-CREATE TABLE users_products (
+DROP TABLE IF EXISTS userProducts;
+CREATE TABLE userProducts (
 	id_user_products 	SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
 	created_at 			TIMESTAMP NULL DEFAULT NULL,
 	updated_at 			TIMESTAMP NULL DEFAULT NULL,
     id_user 			SMALLINT(6) UNSIGNED NOT NULL,
     id_product 			SMALLINT(6) UNSIGNED NOT NULL,
 	quantity 			INTEGER,
-	price 				DECIMAL(6,2),
+	price 				DECIMAL(10,2),
 	PRIMARY KEY (id_user_products),
 	INDEX (id_user),
 	FOREIGN KEY (id_user) REFERENCES users (id_user),
