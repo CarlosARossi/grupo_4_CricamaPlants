@@ -38,7 +38,8 @@ module.exports = {
                /* unique: true */
             },
             image:{
-
+               type: Sequelize.STRING,
+               allowNull: false
             },
             id_user_type:{
                type: Sequelize.INTEGER,

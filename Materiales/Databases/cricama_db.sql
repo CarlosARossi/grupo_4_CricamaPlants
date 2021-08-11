@@ -32,7 +32,7 @@ CREATE TABLE users (
 	id_user_type 	SMALLINT(4) UNSIGNED NOT NULL,
 	PRIMARY KEY (id_user),
 	INDEX (id_user_type),
-	FOREIGN KEY (id_user_type) REFERENCES user_type (id_user_type) 
+	FOREIGN KEY (id_user_type) REFERENCES userTypes (id_user_type) 
 )ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 LOCK TABLES users WRITE;
@@ -87,7 +87,7 @@ UNLOCK TABLES;
 
 
 DROP TABLE IF EXISTS userProducts;
-CREATE TABLE userPproducts (
+CREATE TABLE userProducts (
 	id_user_products 	SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
 	created_at 			TIMESTAMP NULL DEFAULT NULL,
 	updated_at 			TIMESTAMP NULL DEFAULT NULL,

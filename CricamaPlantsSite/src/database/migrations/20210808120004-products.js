@@ -24,15 +24,15 @@ module.exports = {
           allowNull: false,
         },
         description:{
-          type: Sequelize.STRING,
+          type: Sequelize.TEXT,
           allowNull: false,
         },
         image:{
-          type: Sequelize.INTEGER,
+          type: Sequelize.STRING,
           allowNull: false,
         },
         price:{
-          type: Sequelize.INTEGER,
+          type: Sequelize.DECIMAL(10, 2),
           allowNull: false,
         },
         id_category:{

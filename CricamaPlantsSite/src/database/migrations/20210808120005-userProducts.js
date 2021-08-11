@@ -19,6 +19,12 @@ module.exports = {
           allowNull: false,
           defaulValue: Sequelize.NOW
         },
+        quantity:{
+          type: Sequelize.INTEGER,
+        },
+        price:{
+          type: Sequelize.DECIMAL(10, 2),
+        },
         id_user:{
           type: Sequelize.INTEGER,
           allowNull: false,
@@ -33,23 +39,17 @@ module.exports = {
           references:{
             model: "products",
             key: "id_product"
-          },
-          quantity:{
-            type: Sequelize.INTEGER
-          },
-          price:{
-            type: Sequelize.INTEGER,
           }
-        },
-
-      })
+        }
+      }
+    )
 
       //await queryInterface.addIndex("Users-products", "idx-users", ["Users"])
       //await queryInterface.addIndex("Users-products", "idx-products", ["Products"])
 
-        }catch (error){
-          throw error;
-          }
+    }catch (error){
+      throw error;
+    }
   },
 
   down: async (queryInterface, Sequelize) => {
