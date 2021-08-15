@@ -1,4 +1,4 @@
-//Requiere
+//Require
 const express = require('express')
 const router = express.Router();
 const productController = require('../controllers/productController');
@@ -36,3 +36,15 @@ router.put("/saveEdition/:id",[upload.single("image")],productController.saveEdi
 router.delete("/productDelete/:id",productController.delete)
 
 module.exports = router;
+
+
+/*
+//Creación de productos
+
+router.get('/create', productController.create);
+router.post("/save",[upload.single("image")],productController.save);
+router.get('/productDetail/:id', productController.productDetail);
+
+
+module.exports = router;
+*/
