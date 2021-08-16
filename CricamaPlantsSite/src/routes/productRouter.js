@@ -33,7 +33,7 @@ router.get("/productEdit/:id",productController.productEdit);
 router.put("/saveEdition/:id",[upload.single("image")],productController.saveEdition);
 
 //Delete product
-router.delete("/productDelete/:id",productController.delete)
+router.delete("/productDelete/:id",productController.delete);
 
 module.exports = router;
 
@@ -44,6 +44,11 @@ module.exports = router;
 router.get('/create', productController.create);
 router.post("/save",[upload.single("image")],productController.save);
 router.get('/productDetail/:id', productController.productDetail);
+router.get("/productEdit/:id",productController.productEdit);
+router.put("/saveEdition/:id",[upload.single("image")],productController.saveEdition);
+router.delete("/productDelete/:id",productController.delete);
+
+
 
 
 module.exports = router;

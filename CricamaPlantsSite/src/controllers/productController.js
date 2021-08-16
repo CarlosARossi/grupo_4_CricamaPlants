@@ -42,7 +42,7 @@ const productController = {
         });
     },
     save: function (req, res) {
-        db.Products.creation({
+        db.Products.create({
             id: req.body.id,
             created_at: //GETDATE,
             updated_at: //GETDATE,
@@ -61,10 +61,49 @@ const productController = {
             })
     },
     productDetail: function (req, res) {
-        db.Products.findByPk(req,params.id)
+        db.Products.findByPk(req,params.id, {
+            include: [{association: "category"}]
+        })
             .then(function(producto) {
                 res.render('productDetail', {producto:producto});
             })
+    },
+    productEdit: function (req, res) {
+        let pedidoProduct = db.Products.findByPk(req.params.id);
+
+        let pedidoCategory = db.category.findAll();
+
+        Promise.all([pedidoProduct, pedidoCategory])
+            .then(function ([producto, categoria]) {
+                res.render('productEdit', {producto:producto, categoria:categoria});
+            })
+    },
+    saveEdition: function (req, res) {
+        db.Products.update({
+            id: req.body.id,
+            created_at: //GETDATE,
+            updated_at: //GETDATE,
+            name: req.body.name,
+            description: req.body.description,
+            image: ,
+            price: req.body.precio,
+            id_category: db.findByPk(??)
+                .then(??)
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.redirect('/products/' + req.params.id)
+    },
+    delete: function (req, res) {
+        db.Products.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.redirect('/products');
+    }
     }
 
 

@@ -38,15 +38,15 @@ module.exports = function (sequelize, dataTypes) {
         id_user_type: {
             type: dataTypes.SMALLINT(4),
             unsigned: true,
-            notNull: true, //??
-            index: true, //??,
+            notNull: true,
             foreignKey: true
         }
     }
 
     let config = {
         tableName: "users",
-        timestamps: true
+        timestamps: true,
+        underscored: true
     }
 
     let Users = sequelize.define (alias, cols, config);
