@@ -1,17 +1,17 @@
 'use strict';
 
-const products = require("../CricamaPlantsSite/src/models/productModel")
+const products = require("../../models/productModel")
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     
-     await queryInterface.bulkInsert('Products', products.all(), {})
-     
+    await queryInterface.bulkInsert('Products', products.all(), {})
+    
   },
 
   down: async (queryInterface, Sequelize) => {
     
-      await queryInterface.bulkDelete('Products', null, {});
-     
+    await queryInterface.bulkDelete('Products', null, {});
+    
   }
 };

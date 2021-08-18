@@ -1,16 +1,23 @@
 'use strict';
 
-const categories = require("../CricamaPlantsSite/src/models/categoriesModel")
+const categories = require("../../models/productModel")
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-     await queryInterface.bulkInsert('Categories', categories.all(), {})
-     
+    
+    let products = productModel.all()
+    ​
+    let categories = products.map(user => product.category)
+    ​
+    categories = categories.filter((item,index,array) =>  array.indexOf(item) == index)
+
+    await queryInterface.bulkInsert('Categories', categories.all(), {})
+    
   },
 
   down: async (queryInterface, Sequelize) => {
     
-      await queryInterface.bulkDelete('Categories', null, {});
-     
+    await queryInterface.bulkDelete('Categories', null, {});
+    
   }
 };
