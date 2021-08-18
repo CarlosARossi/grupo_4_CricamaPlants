@@ -32,15 +32,15 @@ module.exports = function (sequelize, dataTypes) {
         id_category: {
             type: dataTypes.SMALLINT(6),
             unsigned: true,
-            notNull: true, //??
-            index: true, //??,
+            notNull: true,
             foreignKey: true
         }
     }
 
     let config = {
         tableName: "products",
-        timestamps: true
+        timestamps: true,
+        underscored: true
     }
 
     let Products = sequelize.define (alias, cols, config);

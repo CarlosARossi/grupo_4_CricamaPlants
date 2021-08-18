@@ -1,7 +1,8 @@
-//Requiere
+//Require
 const path = require('path');
 const product = require('../models/productModel');
 const users = require('../models/userModel');
+const db = require('../database/models');
 
 //Functions
 const productController = {
@@ -29,7 +30,85 @@ const productController = {
         return result == true ? res.redirect("/products") : res.send("Error al cargar la informacion") 
     },//delete a product on products.json
     
-    searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body), keyword: req.body ? req.body.search : null, category: req.params.category ? req.params.category : null})//search for a product by name
+    searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body), keyword: req.body ? req.body.search : null, category: req.params.category ? req.params.category : null}),//search for a product by name
+
+    /*
+
+    //Databases
+    create: (req, res) => {
+        db.Products.findAll()
+        .then(function(productos) {
+            return res.render('productCreate', {productos:productos});
+        });
+    },
+    save: function (req, res) {
+        db.Products.create({
+            id: req.body.id,
+            created_at: //GETDATE,
+            updated_at: //GETDATE,
+            name: req.body.name,
+            description: req.body.description,
+            image: ,
+            price: req.body.precio,
+            id_category: db.findByPk(??)
+                .then(??)
+        });
+    },
+    list: function (req, res) {
+        db.Products.findAll()
+            .then(function(productos) {
+                res.render('products', {productos:productos})
+            })
+    },
+    productDetail: function (req, res) {
+        db.Products.findByPk(req,params.id, {
+            include: [{association: "category"}]
+        })
+            .then(function(producto) {
+                res.render('productDetail', {producto:producto});
+            })
+    },
+    productEdit: function (req, res) {
+        let pedidoProduct = db.Products.findByPk(req.params.id);
+
+        let pedidoCategory = db.category.findAll();
+
+        Promise.all([pedidoProduct, pedidoCategory])
+            .then(function ([producto, categoria]) {
+                res.render('productEdit', {producto:producto, categoria:categoria});
+            })
+    },
+    saveEdition: function (req, res) {
+        db.Products.update({
+            id: req.body.id,
+            created_at: //GETDATE,
+            updated_at: //GETDATE,
+            name: req.body.name,
+            description: req.body.description,
+            image: ,
+            price: req.body.precio,
+            id_category: db.findByPk(??)
+                .then(??)
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.redirect('/products/' + req.params.id)
+    },
+    delete: function (req, res) {
+        db.Products.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.redirect('/products');
+    }
+    }
+
+
+    */
+
 }
 
 module.exports = productController;

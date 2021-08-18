@@ -28,7 +28,7 @@ app.use(session({
 //Cookie-parser
 app.use(cookies())
 
-//global middlewares
+//Global middlewares
 const userLoggedMiddleware = require("../src/middlewares/userLoggedMiddleware")
 app.use(userLoggedMiddleware)
 
@@ -42,8 +42,11 @@ app.use(main);
 const user = require('./routes/userRouter');
 app.use(user);
 const product = require('./routes/productRouter');
-const cookieParser = require('cookie-parser');
 app.use(product);
+const cookieParser = require('cookie-parser');
+app.use(cookieParser);
+const Productos = require('./routes/Products');
+app.use(Productos);
 
 //404 Not Found
 app.use((req, res, next) => {
