@@ -23,7 +23,8 @@
     "lastName": "Calante",
     "email": "atenas@hotmail.com",
     "password": "nuevapasss",
-    "image": "img/users/userDefault.png"
+    "image": "img/users/userDefault.png",
+    "type": "admin"
   },
   {
     "id": 5,
@@ -31,7 +32,8 @@
     "lastName": "Serfati",
     "email": "qserfati4@ocn.ne.jp",
     "password": "5CBIxJUd",
-    "image": "img/users/userDefault.png"
+    "image": "img/users/userDefault.png",
+    "type": "admin"
   },
   {
     "id": 6,
@@ -111,6 +113,7 @@
     "lastName": "Nacht",
     "email": "cristiannacht@gmail.com",
     "password": "$2a$10$MSF9LUvoxcshiUcrbAeSQO6iyqeZiLfKxH7VoBAKQ4meZNkHY86xW",
-    "image": "uploads/users/image-1627335156763.png"
+    "image": "uploads/users/image-1627335156763.png",
+    "type": "admin"
   }
 ]

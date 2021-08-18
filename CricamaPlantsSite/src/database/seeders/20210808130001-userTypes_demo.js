@@ -2,25 +2,17 @@
 
 const userModel = require("../../models/userModel")
 
-let users = userModel.all()
-      ​let types = users.map(user => user.type)
-      ​
-          types = types.filter((item,index,array) =>  array.indexOf(item) == index)
-          console.log(types)
-      
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-     try {
-      
-          await queryInterface.bulkInsert('userTypes', [{
-            type: "admin",
-          },{
-          type: "user"
-        }])
-          
+    try {
+        let users = userModel.all().map(user => user.type)//mapea el JSON de users y devuelve un array con todos los tipos
+        let filter = users.filter((item,index,array) =>  array.indexOf(item) == index)//filtra todos los tipos, eliminando los duplicados
+        let types = filter.map(type => Object({type:type}))//convierte el array en un objeto literal
+        
+        await queryInterface.bulkInsert('userTypes', types)
+        
     } catch (error) {
-      console.log(error)
+        console.log(error)
     }
     
     
@@ -32,7 +24,3 @@ module.exports = {
 
   }
 };
-
-
-​
-​

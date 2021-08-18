@@ -6,6 +6,7 @@ const db = require('../database/models');
 
 //Functions
 const productController = {
+    //CRUD JSON
     productCar:(req,res) => res.render('products/productCar'),
 
     productDetail:(req,res) => res.render('products/productDetail',{product:product.search(req.params.id), user:req.session.userLogged}),
@@ -34,7 +35,7 @@ const productController = {
 
     /*
 
-    //Databases
+    //CRUD Databases
     create: (req, res) => {
         db.Products.findAll()
         .then(function(productos) {
@@ -44,11 +45,11 @@ const productController = {
     save: function (req, res) {
         db.Products.create({
             id: req.body.id,
-            created_at: //GETDATE,
-            updated_at: //GETDATE,
+            created_at: new Date(),//REVISAR
+            updated_at: new Date(),
             name: req.body.name,
             description: req.body.description,
-            image: ,
+            image: typeof file === 'undefined' ? null : file.filename,
             price: req.body.precio,
             id_category: db.findByPk(??)
                 .then(??)
