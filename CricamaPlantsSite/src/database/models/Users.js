@@ -1,7 +1,7 @@
 module.exports = function (sequelize, dataTypes) {
 
     let alias = "Users";
-
+    
     let cols = {
         id_user: {
             type: dataTypes.SMALLINT(6),
@@ -57,6 +57,13 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey: "id_user_type"
         });
     }
-
+    Users.associate = function (models) {
+        Users.belongsTo(models.UserProducts, {
+            as: "userProducts",
+            foreignKey: "id_product"
+        });
+    }
+    
     return Users;
+    
 }

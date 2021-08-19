@@ -46,15 +46,15 @@ module.exports = function (sequelize, dataTypes) {
         underscored: true
     }
 
-    let userProducts = sequelize.define (alias, cols, config);
+    let UserProducts = sequelize.define (alias, cols, config);
 
-    userProducts.associate = function (models) {
-        userProducts.belongsTo(models.Users, {
+    UserProducts.associate = function (models) {
+        UserProducts.belongsTo(models.Users, {
             as: "users",
             foreignKey: "id_user"
         });
 
-        userProducts.belongsTo(models.Products, {
+        UserProducts.belongsTo(models.Products, {
             as: "products",
             foreignKey: "id_product"
         });

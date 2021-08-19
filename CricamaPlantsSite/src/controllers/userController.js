@@ -95,3 +95,74 @@ const userController = {
 }
 
 module.exports = userController;
+
+
+/*
+
+//CRUD Users Database
+registerForm: (req, res) => {
+    db.Users.findAll()
+        .then(function(usuarios) {
+        return res.render('register', {usuarios:usuarios});
+    });
+},
+register: function (req, res) {
+    db.Users.create({
+        created_at: new Date(),//REVISAR
+        updated_at: new Date(),
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+        image: file == undefined ? user.image : "uploads/users/" + file.filename,
+        id_category: db.findByPk(??)
+            .then(??) //revisar
+    });
+},
+userEdit: function (req, res) {
+    let pedidoUser = db.Users.findByPk(req.params.id);
+
+    let pedidoTypes = db.UserTypes.findAll();
+
+    Promise.all([pedidoUser, pedidoTypes])
+        .then(function ([usuario, tipo]) {
+            res.render('userEdit', {usuario:usuario, tipo:tipo});
+        })
+},
+userSave: function (req, res) {
+    db.Users.update({
+        created_at: new Date(),
+        updated_at: new Date(),
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+        image: file == undefined ? user.image : "uploads/users/" + file.filename,    
+    });
+    res.redirect('/users/' + req.params.id)
+},
+list: function (req, res) {
+    db.Users.findAll()
+        .then(function(usuarios) {
+            res.render('users', {usuarios:usuarios})
+        })
+},
+userProfile: function (req, res) {
+    db.Users.findByPk(req,params.id, {
+        include: [{association: "userTypes"}, {association: "userProducts"}]
+    })
+        .then(function(usuario) {
+            res.render('userProfile', {usuario:usuario});
+        })
+},
+userDelete: function (req, res) {
+    db.Users.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    res.redirect('/users');
+}
+}
+
+*/

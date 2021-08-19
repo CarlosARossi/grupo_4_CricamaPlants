@@ -33,9 +33,14 @@ const productController = {
     
     searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body), keyword: req.body ? req.body.search : null, category: req.params.category ? req.params.category : null}),//search for a product by name
 
-    /*
+}
 
-    //CRUD Databases
+module.exports = productController;  
+
+
+/*
+
+    //CRUD Product Database
     create: (req, res) => {
         db.Products.findAll()
         .then(function(productos) {
@@ -44,16 +49,40 @@ const productController = {
     },
     save: function (req, res) {
         db.Products.create({
-            id: req.body.id,
             created_at: new Date(),//REVISAR
             updated_at: new Date(),
             name: req.body.name,
             description: req.body.description,
-            image: typeof file === 'undefined' ? null : file.filename,
+            image: typeof file === 'undefined' ? null : file.filename,//REVISAR
+            price: req.body.precio,
+        });
+    },
+    productEdit: function (req, res) {
+        let pedidoProduct = db.Products.findByPk(req.params.id);
+
+        let pedidoCategory = db.Category.findAll();
+
+        Promise.all([pedidoProduct, pedidoCategory])
+            .then(function ([producto, categoria]) {
+                res.render('productEdit', {producto:producto, categoria:categoria});
+            })
+    },
+    saveEdition: function (req, res) {
+        db.Products.update({
+            created_at: new Date(),
+            updated_at: new Date(),
+            name: req.body.name,
+            description: req.body.description,
+            image: typeof file === 'undefined' ? null : file.filename,//REVISAR
             price: req.body.precio,
             id_category: db.findByPk(??)
                 .then(??)
+        }, {
+            where: {
+                id: req.params.id
+            }
         });
+        res.redirect('/products/' + req.params.id)
     },
     list: function (req, res) {
         db.Products.findAll()
@@ -69,35 +98,7 @@ const productController = {
                 res.render('productDetail', {producto:producto});
             })
     },
-    productEdit: function (req, res) {
-        let pedidoProduct = db.Products.findByPk(req.params.id);
-
-        let pedidoCategory = db.category.findAll();
-
-        Promise.all([pedidoProduct, pedidoCategory])
-            .then(function ([producto, categoria]) {
-                res.render('productEdit', {producto:producto, categoria:categoria});
-            })
-    },
-    saveEdition: function (req, res) {
-        db.Products.update({
-            id: req.body.id,
-            created_at: //GETDATE,
-            updated_at: //GETDATE,
-            name: req.body.name,
-            description: req.body.description,
-            image: ,
-            price: req.body.precio,
-            id_category: db.findByPk(??)
-                .then(??)
-        }, {
-            where: {
-                id: req.params.id
-            }
-        });
-        res.redirect('/products/' + req.params.id)
-    },
-    delete: function (req, res) {
+    productDelete: function (req, res) {
         db.Products.destroy({
             where: {
                 id: req.params.id
@@ -106,10 +107,5 @@ const productController = {
         res.redirect('/products');
     }
     }
-
-
+    
     */
-
-}
-
-module.exports = productController;
