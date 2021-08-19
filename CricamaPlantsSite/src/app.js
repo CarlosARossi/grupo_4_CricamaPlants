@@ -45,8 +45,8 @@ const product = require('./routes/productRouter');
 app.use(product);
 const cookieParser = require('cookie-parser');
 app.use(cookieParser);
-const Productos = require('./routes/Products');
-app.use(Productos);
+/* const Productos = require('./routes/Products');
+app.use(Productos); */
 
 //404 Not Found
 app.use((req, res, next) => {

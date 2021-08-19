@@ -4,24 +4,24 @@ module.exports = function (sequelize, dataTypes) {
 
     let cols = {
         id_category: {
-            type: dataTypes.SMALLINT,
+            type: dataTypes.INTEGER,
             unsigned: true, 
             null: true,
             autoIncrement: true,
             primaryKey: true,
         },
         created_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: null
         },
         updated_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: null
         },
         category: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
         }
     }
 

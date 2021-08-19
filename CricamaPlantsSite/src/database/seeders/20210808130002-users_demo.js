@@ -22,6 +22,7 @@ module.exports = {
         image: "",
         type: ""
       }]
+
       for (let i = 0; i < id_user.length; i++) {
         users[i] = {
           id_user: id_user[i],
@@ -34,7 +35,9 @@ module.exports = {
         }
         
       }
+
       console.log(users)
+      
       await queryInterface.bulkInsert('Users', users)
       
   } catch (error) {

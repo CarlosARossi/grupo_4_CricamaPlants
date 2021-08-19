@@ -11,12 +11,12 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
         },
         created_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: true
         },
         updated_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: true
         },
@@ -33,7 +33,7 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey: true
         },
         quantity: {
-            data: dataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         price: {
             type: dataTypes.DECIMAL(10,2)
@@ -60,5 +60,5 @@ module.exports = function (sequelize, dataTypes) {
         });
     }
 
-    return userProducts;
+    return UserProducts;
 }

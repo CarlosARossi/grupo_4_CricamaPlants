@@ -11,29 +11,29 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
         },
         created_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: null
         },
         updated_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: null
         },
         first_name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
         },
         last_name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
         },
         email: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
         },
         password: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
         },
         image: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
         },
         id_user_type: {
             type: dataTypes.SMALLINT(4),

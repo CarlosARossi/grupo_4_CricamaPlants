@@ -10,17 +10,17 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true
         },
         created_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: null
         },
         updated_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true,
             default: null
         },
         type: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
         }
     }
 
@@ -33,7 +33,7 @@ module.exports = function (sequelize, dataTypes) {
     let UserTypes = sequelize.define (alias, cols, config);
 
     UserTypes.associate = function (models) {
-        UserTypes.belongsToMany(models.Users, {
+        UserTypes.hasMany(models.Users, {
             as: "users",
             foreignKey: "id_users"
         });

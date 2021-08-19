@@ -4,30 +4,30 @@ module.exports = function (sequelize, dataTypes) {
 
     let cols = {
         id_product: {
-            type: dataTypes.SMALLINT,
+            type: dataTypes.INTEGER,
             unsigned: true,
             autoIncrement: true,
             primaryKey: true,
         },
         created_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true
         },
         updated_at: {
-            type: dataTypes.TIMESTAMP,
+            type: dataTypes.DATE,
             null: true
         },
         name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
         },
         description: {
             type: dataTypes.TEXT,
         },
         image: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
         },
         price: {
-            type: dataTypes.DECIMAL(10,2),
+            type: dataTypes.INTEGER,
         },
         id_category: {
             type: dataTypes.SMALLINT(6),
@@ -46,7 +46,7 @@ module.exports = function (sequelize, dataTypes) {
     let Products = sequelize.define (alias, cols, config);
 
     Products.associate = function (models) {
-        Products.belongsTo(models.Categories, {
+        Products.belongsTo(models.Category, {
             as: "category",
             foreignKey: "id_category"
         });
