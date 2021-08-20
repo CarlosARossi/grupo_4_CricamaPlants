@@ -7,32 +7,39 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER,
             unsigned: true,
             autoIncrement: true,
+            allowNull: false,
             primaryKey: true,
         },
         created_at: {
             type: dataTypes.DATE,
-            null: true
+            allowNull: false,
+            default: dataTypes.NOW
         },
         updated_at: {
             type: dataTypes.DATE,
-            null: true
+            allowNull: false,
+            default: dataTypes.NOW
         },
         name: {
             type: dataTypes.STRING,
+            allowNull: false,
         },
         description: {
             type: dataTypes.TEXT,
+            allowNull: false,
         },
         image: {
             type: dataTypes.STRING,
+            allowNull: false,
         },
         price: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.DECIMAL(10, 2),
+            allowNull: false,
         },
         id_category: {
-            type: dataTypes.SMALLINT(6),
+            type: dataTypes.INTEGER,
             unsigned: true,
-            notNull: true,
+            allowNull: false,
             foreignKey: true
         }
     }

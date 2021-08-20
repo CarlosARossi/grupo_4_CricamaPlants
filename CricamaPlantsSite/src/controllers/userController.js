@@ -1,9 +1,13 @@
 //Require
 const path = require('path');
 const users = require('../models/userModel');
+const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
-//Functions
+
+//Functions for JSON
+/* 
+
 const userController = {
     login: (req,res) => {
         res.render('users/login')
@@ -58,7 +62,7 @@ const userController = {
         }else{
             res.send("Error al cargar la informacion")
         }
-        /* return result == true ? res.redirect("/userProfile/"+user.id) : res.send("Error al cargar la informacion")  */
+        //return result == true ? res.redirect("/userProfile/"+user.id) : res.send("Error al cargar la informacion")
     },//save new user on users.json
 
     list:(req,res) => {
@@ -95,74 +99,107 @@ const userController = {
 }
 
 module.exports = userController;
+ */
 
+//Functions for Databases
+const userController = {
 
-/*
+    login: (req,res) => {
+        res.render('users/login')
+    },
 
-//CRUD Users Database
-registerForm: (req, res) => {
-    db.Users.findAll()
-        .then(function(usuarios) {
-        return res.render('register', {usuarios:usuarios});
-    });
-},
-register: function (req, res) {
-    db.Users.create({
-        created_at: new Date(),//REVISAR
-        updated_at: new Date(),
-        first_name: req.body.firstName,
-        last_name: req.body.lastName,
-        email: req.body.email,
-        password: req.body.password,
-        image: file == undefined ? user.image : "uploads/users/" + file.filename,
-        id_category: db.findByPk(??)
-            .then(??) //revisar
-    });
-},
-userEdit: function (req, res) {
-    let pedidoUser = db.Users.findByPk(req.params.id);
-
-    let pedidoTypes = db.UserTypes.findAll();
-
-    Promise.all([pedidoUser, pedidoTypes])
-        .then(function ([usuario, tipo]) {
-            res.render('userEdit', {usuario:usuario, tipo:tipo});
-        })
-},
-userSave: function (req, res) {
-    db.Users.update({
-        created_at: new Date(),
-        updated_at: new Date(),
-        first_name: req.body.firstName,
-        last_name: req.body.lastName,
-        email: req.body.email,
-        password: req.body.password,
-        image: file == undefined ? user.image : "uploads/users/" + file.filename,    
-    });
-    res.redirect('/users/' + req.params.id)
-},
-list: function (req, res) {
-    db.Users.findAll()
-        .then(function(usuarios) {
-            res.render('users', {usuarios:usuarios})
-        })
-},
-userProfile: function (req, res) {
-    db.Users.findByPk(req,params.id, {
-        include: [{association: "userTypes"}, {association: "userProducts"}]
-    })
-        .then(function(usuario) {
-            res.render('userProfile', {usuario:usuario});
-        })
-},
-userDelete: function (req, res) {
-    db.Users.destroy({
-        where: {
-            id: req.params.id
+    access: (req,res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()){
+            return res.render("users/login", { errors: errors.mapped(), oldData: req.body });
+        }else{
+            let user = users.findByField ('email', req.body.email);
+            delete user.password; //Borro la password por seguridad
+            req.session.userLogged = user;
+            if(req.body.remember){
+                res.cookie('userEmail', req.body.email, { maxAge: 1000 * 300 })
+            }
         }
-    });
-    res.redirect('/users');
-}
+    },
+
+    admin:(req,res) => {
+        res.render('users/admin')
+    },
+
+    registerForm: (req,res) => {
+        db.Users.findAll()
+            .then(function(usuarios) {
+                return res.render('register', {usuarios:usuarios});
+        });
+    },
+
+    register: function (req, res) {
+        db.Users.create({
+            created_at: new Date(),//REVISAR
+            updated_at: new Date(),
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            image: file == undefined ? user.image : "uploads/users/" + file.filename,
+            /* id_category: db.findByPk(??)
+                .then(??) //revisar */
+        });
+    },
+
+    userEdit: function (req, res) {
+        let pedidoUser = db.Users.findByPk(req.params.id);
+        let pedidoTypes = db.UserTypes.findAll();
+
+        Promise.all([pedidoUser, pedidoTypes])
+            .then(function ([usuario, tipo]) {
+                res.render('userEdit', {usuario:usuario, tipo:tipo});
+            })
+    },
+
+    userSave: function (req, res) {
+        db.Users.update({
+            created_at: new Date(),
+            updated_at: new Date(),
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            image: file == undefined ? user.image : "uploads/users/" + file.filename,    
+        });
+        res.redirect('/users/' + req.params.id)
+    },
+    
+    list: function (req, res) {
+        db.Users.findAll()
+            .then(function(usuarios) {
+                res.render('users', {usuarios:usuarios})
+            })
+    },
+
+    userProfile: function (req, res) {
+        db.Users.findByPk(req,params.id, {
+            include: [{association: "userTypes"}, {association: "userProducts"}]
+        })
+            .then(function(usuario) {
+                res.render('userProfile', {usuario:usuario});
+            })
+    },
+
+    userDelete: function (req, res) {
+        db.Users.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.redirect('/users');
+    },
+
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy()
+        return res.redirect("/")
+    }
 }
 
-*/
+module.exports = userController;

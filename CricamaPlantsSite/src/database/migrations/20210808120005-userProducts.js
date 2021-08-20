@@ -9,7 +9,7 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true 
         },
-        cretaed_at:{
+        created_at:{
           type: Sequelize.DATE,
           allowNull: false,
           defaulValue: Sequelize.NOW

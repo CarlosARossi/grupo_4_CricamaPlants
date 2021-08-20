@@ -13,9 +13,7 @@
 
         <section class="boxFirst">
             <p><a href='/'>Inicio</a> <a href='/products'>/ Productos</a>
-                <% if(category) {%> 
-                    <a href='/products/<%= category %>'>/ <%= category %></a>
-                <% } %> 
+                
             </p> 
         </section>
 
@@ -38,9 +36,7 @@
                 </article>
 
                 <% }) %>
-            <% }else{ %>
-                <h2>No se encontraron articulos que contengan "<%= keyword %>"</h2>
-            <% } %> 
+          
         </section>
 
         <!-- <a id='newProduct' href='/productCreate'><i class="fas fa-plus"></i></a> -->

@@ -7,9 +7,10 @@ module.exports = {
         id_category: {
           type: Sequelize.INTEGER,
           primaryKey: true,
+          allowNull: false,
           autoIncrement: true 
         },
-        cretaed_at:{
+        created_at:{
           type: Sequelize.DATE,
           allowNull: false,
           defaulValue: Sequelize.NOW

@@ -4,40 +4,41 @@ module.exports = function (sequelize, dataTypes) {
 
     let cols = {
         id_user_products: {
-            type: dataTypes.SMALLINT(6),
+            type: dataTypes.INTEGER,
             unsigned: true,
-            notNull: true,
+            allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
         created_at: {
             type: dataTypes.DATE,
-            null: true,
-            default: true
+            allowNull: false,
+            default: dataTypes.NOW
         },
         updated_at: {
             type: dataTypes.DATE,
-            null: true,
-            default: true
-        },
-        id_user: {
-            type: dataTypes.SMALLINT(6),
-            unsigned: true,
-            notNull: true,
-            foreignKey: true
-        },
-        id_prduct: {
-            type: dataTypes.SMALLINT(6),
-            unsigned: true,
-            notNull: true,
-            foreignKey: true
+            allowNull: false,
+            default: dataTypes.NOW
         },
         quantity: {
             type: dataTypes.INTEGER
         },
         price: {
             type: dataTypes.DECIMAL(10,2)
+        },
+        id_user: {
+            type: dataTypes.INTEGER,
+            unsigned: true,
+            allowNull: false,
+            foreignKey: true
+        },
+        id_product: {
+            type: dataTypes.INTEGER,
+            unsigned: true,
+            allowNull: false,
+            foreignKey: true
         }
+        
     }
 
     let config = {

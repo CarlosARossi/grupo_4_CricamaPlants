@@ -4,41 +4,47 @@ module.exports = function (sequelize, dataTypes) {
     
     let cols = {
         id_user: {
-            type: dataTypes.SMALLINT(6),
+            type: dataTypes.INTEGER,
             unsigned: true,
-            notNull: true,
+            allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
         created_at: {
             type: dataTypes.DATE,
             null: true,
-            default: null
+            default: dataTypes.NOW
         },
         updated_at: {
             type: dataTypes.DATE,
             null: true,
-            default: null
+            default: dataTypes.NOW
         },
         first_name: {
             type: dataTypes.STRING,
+            allowNull: false
         },
         last_name: {
             type: dataTypes.STRING,
+            allowNull: false
         },
         email: {
             type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         password: {
             type: dataTypes.STRING,
+            allowNull: false
         },
         image: {
             type: dataTypes.STRING,
+            allowNull: false
         },
         id_user_type: {
-            type: dataTypes.SMALLINT(4),
+            type: dataTypes.INTEGER,
             unsigned: true,
-            notNull: true,
+            allowNull: false,
             foreignKey: true
         }
     }

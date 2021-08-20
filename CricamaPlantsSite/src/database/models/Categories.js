@@ -13,12 +13,12 @@ module.exports = function (sequelize, dataTypes) {
         created_at: {
             type: dataTypes.DATE,
             null: true,
-            default: null
+            default: dataTypes.NOW
         },
         updated_at: {
             type: dataTypes.DATE,
             null: true,
-            default: null
+            default: dataTypes.NOW
         },
         category: {
             type: dataTypes.STRING,
