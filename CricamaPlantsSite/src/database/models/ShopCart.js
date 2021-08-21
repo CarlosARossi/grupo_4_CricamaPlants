@@ -1,9 +1,9 @@
 module.exports = function (sequelize, dataTypes) {
 
-    let alias = "UserProducts";
+    let alias = "ShopCart";
 
     let cols = {
-        id_user_products: {
+        id_shop: {
             type: dataTypes.INTEGER,
             unsigned: true,
             allowNull: false,
@@ -43,23 +43,23 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
         tableName: "user_products",
-        timestamps: true,
+        timestamps: false,
         underscored: true
     }
 
-    let UserProducts = sequelize.define (alias, cols, config);
+    let ShopCart = sequelize.define (alias, cols, config);
 
-    UserProducts.associate = function (models) {
-        UserProducts.belongsTo(models.Users, {
-            as: "users",
+    ShopCart.associate = function (models) {
+        ShopCart.belongsTo(models.User, {
+            as: "user",
             foreignKey: "id_user"
         });
 
-        UserProducts.belongsTo(models.Products, {
-            as: "products",
+        ShopCart.belongsTo(models.Product, {
+            as: "product",
             foreignKey: "id_product"
         });
     }
 
-    return UserProducts;
+    return ShopCart;
 }

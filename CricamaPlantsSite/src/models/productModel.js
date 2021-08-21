@@ -16,7 +16,7 @@ const model = {
             id: products.length > 0 ? products[products.length -1].id + 1: 1,
             name: data.name,
             description: data.description,
-            image: typeof file === 'undefined' ? null : file.filename,
+            image: file == undefined ? "/img/products/productDefault.png" : "uploads/products/" + file.filename,
             category: data.category,
             size: data.size,
             price: data.price           
@@ -42,7 +42,7 @@ const model = {
             if(product.id == id ){
                 product.name = data.name,
                 product.description = data.description,
-                product.image = typeof file === 'undefined' ? null : file.filename,
+                product.image = file == undefined ? product.image : "uploads/products/" + file.filename,
                 product.category = data.category,
                 product.size = data.size,
                 product.price = data.price

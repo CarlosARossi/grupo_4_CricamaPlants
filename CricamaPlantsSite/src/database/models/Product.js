@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes) {
 
-    let alias = "Products";
+    let alias = "Product";
 
     let cols = {
         id_product: {
@@ -46,18 +46,18 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
         tableName: "products",
-        timestamps: true,
+        timestamps: false,
         underscored: true
     }
 
-    let Products = sequelize.define (alias, cols, config);
+    let Product = sequelize.define (alias, cols, config);
 
-    Products.associate = function (models) {
-        Products.belongsTo(models.Category, {
+    Product.associate = function (models) {
+        Product.belongsTo(models.Category, {
             as: "category",
             foreignKey: "id_category"
         });
     }
 
-    return Products;
+    return Product;
 }

@@ -43,6 +43,37 @@ module.exports = productController;   */
 const productController = {
 
     productCar:(req,res) => res.render('products/productCar'),
+
+    list: async (req, res) => {
+        try{
+            let products = await db.Product.findAll({include: [{association: "category"}]})
+            let category = await db.Category.findOne()
+            /* return res.send(products) */
+            res.render('products/products', {
+                list: products,
+                category: category
+            })
+            }catch (error){
+                return res.send(error)
+            }
+            /* list: req.params.category ? product.category(req.params.category) : product.all(), 
+            category: req.params.category ? req.params.category : null */
+    },
+
+    productDetail: async (req, res) => {
+        try{
+            let products = await db.Product.findByPk(req.params.id, {include: [{association: "category"}]})
+            
+            res.render('products/productDetail', {
+                product: products,
+                user: req.session.userLogged
+            })
+            }catch (error){
+                return res.send(error)
+            }
+    },
+
+
     
     create: (req, res) => {
         db.Products.findAll()
@@ -90,22 +121,9 @@ const productController = {
         res.redirect('/products/' + req.params.id)
     },
 
-    list: function (req, res) {
-        
-        db.Products.findAll()
-            .then(function(productos) {
-                res.render('products/products', {list:productos})
-            })
-    },
+    
 
-    productDetail: function (req, res) {
-        db.Products.findByPk(req,params.id, {
-            include: [{association: "category"}]
-        })
-            .then(function(producto) {
-                res.render('productDetail', {producto:producto});
-            })
-    },
+    
 
     delete: function (req, res) {
         db.Products.destroy({

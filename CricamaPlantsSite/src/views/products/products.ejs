@@ -13,7 +13,9 @@
 
         <section class="boxFirst">
             <p><a href='/'>Inicio</a> <a href='/products'>/ Productos</a>
-                
+                <% if(category) {%> 
+                    <a href='/products/<%= category %>'>/ <%= category %></a>
+                <% }%> 
             </p> 
         </section>
 
@@ -22,12 +24,8 @@
                 <% list.forEach(product => { %>
 
                 <article class="articleMain">
-                    <a href='/productDetail/<%= product.id%>'>
-                        <% if (product.image) { %>
-                            <figure><img class='image' src="/uploads/products/<%= product.image%>" alt=""></figure>
-                        <% } else { %>
-                            <figure><img class='image' src="/img/products/productDefault.jpg" alt=""></figure>
-                        <% } %>
+                    <a href='/productDetail/<%= product.id_product %>'>
+                        <figure><img class='image' src="<%= product.image%>" alt=""></figure>
                         <section class="box-article">
                             <p class="price">$<%= product.price %></p>
                             <p class="name"><%= product.name %></p>
@@ -36,7 +34,10 @@
                 </article>
 
                 <% }) %>
-          
+                <% }else{ %>
+                    <h2>No se encontraron articulos que contengan "<%= locals.keyword ? keywords : null %>"</h2>
+            <% } %>
+
         </section>
 
         <!-- <a id='newProduct' href='/productCreate'><i class="fas fa-plus"></i></a> -->

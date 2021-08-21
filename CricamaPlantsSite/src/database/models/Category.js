@@ -27,18 +27,18 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
         tableName: "categories",
-        timestamps: true,
+        timestamps: false,
         underscored: true
     }
 
-    let Categories = sequelize.define (alias, cols, config);
+    let Category = sequelize.define (alias, cols, config);
 
-    Categories.associate = function (models) {
-        Categories.hasMany(models.Products, {
-            as: "products",
+    Category.associate = function (models) {
+        Category.hasMany(models.Product, {
+            as: "product",
             foreignKey: "id_category"
         });
     }
 
-    return Categories;
+    return Category;
 }

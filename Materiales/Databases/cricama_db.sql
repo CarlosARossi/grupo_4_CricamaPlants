@@ -79,25 +79,28 @@ CREATE TABLE products (
 
 LOCK TABLES products WRITE;
 INSERT INTO products VALUES 
-	(1,NULL,NULL,'ANTHURIUM X MACROLOBIUM','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',NULL,2000,3),
-    (2,NULL,NULL,'MACETA CILINDRO CEMENTO','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',NULL,500,2),
-    (3,NULL,NULL,'FERTILIZANTE GENERAL','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',NULL,99.99,1);
+	(1,NULL,NULL,'ANTHURIUM X MACROLOBIUM','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',"img/products/productDefault.jpg",2000,13),
+    (2,NULL,NULL,'MACETA CILINDRO CEMENTO','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat','uploads/products/image-1626129993039.jpg',500,2),
+    (3,NULL,NULL,'FERTILIZANTE GENERAL','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat','uploads/products/insumoFertilizante.jpg',99.99,3),
+	(4,NULL,NULL,'POTUS MARBLE QUEEN','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',"uploads/products/plantaInteriorPotus.jpg",1500,1),
+    (5,NULL,NULL,'MACETA TERRACOTA','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat','uploads/products/image-1626129504246.jpg',300,2),
+    (6,NULL,NULL,'PALITA PLÁSTICA ANCHA','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat','uploads/products/herramientaPala.jpg',450.00,3);
 UNLOCK TABLES;
 
 
 
-DROP TABLE IF EXISTS userProducts;
-CREATE TABLE userProducts (
-	id_user_products 	SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS shopCart;
+CREATE TABLE shopCart (
+	id_shop 			SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
 	created_at 			TIMESTAMP NULL DEFAULT NULL,
 	updated_at 			TIMESTAMP NULL DEFAULT NULL,
     id_user 			SMALLINT(6) UNSIGNED NOT NULL,
     id_product 			SMALLINT(6) UNSIGNED NOT NULL,
 	quantity 			INTEGER,
 	price 				DECIMAL(10,2),
-	PRIMARY KEY (id_user_products),
+	PRIMARY KEY (id_shop),
 	INDEX (id_user),
 	FOREIGN KEY (id_user) REFERENCES users (id_user),
 	INDEX (id_product),
 	FOREIGN KEY (id_product) REFERENCES products (id_product) 
-);
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

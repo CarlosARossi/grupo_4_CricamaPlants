@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes) {
 
-    let alias = "UserTypes";
+    let alias = "UserType";
 
     let cols = {
         id_user_type: {
@@ -26,19 +26,19 @@ module.exports = function (sequelize, dataTypes) {
     }
 
     let config = {
-        tableName: "products",
-        timestamps: true,
+        tableName: "userTypes",
+        timestamps: false,
         underscored: true
     }
 
-    let UserTypes = sequelize.define (alias, cols, config);
+    let UserType = sequelize.define (alias, cols, config);
 
-    UserTypes.associate = function (models) {
-        UserTypes.hasMany(models.Users, {
-            as: "users",
-            foreignKey: "id_users"
+    UserType.associate = function (models) {
+        UserType.hasMany(models.User, {
+            as: "user",
+            foreignKey: "id_user"
         });
     }
 
-    return UserTypes;
+    return UserType;
 }

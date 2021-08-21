@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes) {
 
-    let alias = "Users";
+    let alias = "User";
     
     let cols = {
         id_user: {
@@ -41,7 +41,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING,
             allowNull: false
         },
-        id_user_type: {
+        id_shop: {
             type: dataTypes.INTEGER,
             unsigned: true,
             allowNull: false,
@@ -51,25 +51,23 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
         tableName: "users",
-        timestamps: true,
+        timestamps: false,
         underscored: true
     }
 
-    let Users = sequelize.define (alias, cols, config);
+    let User = sequelize.define (alias, cols, config);
 
-    Users.associate = function (models) {
-        Users.belongsTo(models.UserTypes, {
-            as: "userTypes",
+    User.associate = function (models) {
+        User.belongsTo(models.UserType, {
+            as: "userType",
             foreignKey: "id_user_type"
         });
-    }
-    Users.associate = function (models) {
-        Users.belongsTo(models.UserProducts, {
-            as: "userProducts",
+        User.belongsTo(models.ShopCart, {
+            as: "shopCart",
             foreignKey: "id_product"
         });
     }
     
-    return Users;
+    return User;
     
 }

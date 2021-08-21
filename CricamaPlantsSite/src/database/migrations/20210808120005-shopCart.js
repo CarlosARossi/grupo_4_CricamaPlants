@@ -3,8 +3,8 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     try{
-      await queryInterface.createTable('userProducts', { 
-        id_user_products: {
+      await queryInterface.createTable('shopCart', { 
+        id_shop: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true 
@@ -54,7 +54,7 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
     try{
-      await queryInterface.dropTable('userProducts');
+      await queryInterface.dropTable('shopCart');
     }catch(error){
       throw error;
     }  
