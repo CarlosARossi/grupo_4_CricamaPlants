@@ -18,7 +18,7 @@ const model = {
             lastName: data.lastName,
             email: data.email,
             password: bcryptjs.hashSync(data.password,10),
-            image: file == undefined ? "/img/users/userDefault.png" : "uploads/users/" + file.filename,
+            image: file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + file.filename,
             type: 'normal'         
         }    
         users.push(nuevo)
@@ -44,7 +44,7 @@ const model = {
                 user.lastName = data.lastName,
                 user.email = data.email,
                 user.password = bcryptjs.hashSync(data.password,10),
-                user.image = file == undefined ? user.image : "uploads/users/" + file.filename,
+                user.image = file == undefined ? user.image : "/uploads/users/" + file.filename,
                 user.type = data.type
                 return user
             }

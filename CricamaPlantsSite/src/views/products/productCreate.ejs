@@ -14,35 +14,90 @@
         <form action="/save" method="post"  class="form" enctype ="multipart/form-data">
             <h2 id="title">Creación de productos</h2>
 
+            <!-- NAME -->
             <fieldset class="">
-                <input type=text name="name" required placeholder="Nombre del producto">
+                <input 
+                    type=text 
+                    name="name" 
+                    autofocus
+                    required placeholder="Nombre del producto"
+                    class= '<%= locals.errors && errors.name ? 'inputError' : null %>'
+                    value= '<%= locals.oldData ? oldData.name : null %>' 
+                >
             </fieldset>
 
+            <% if (locals.errors && errors.name) { %>
+                <p class="feedbackError">
+                    <%= errors.name.msg %> 
+                </p>
+            <% } %>
+
+            <!-- DESCRIPTION -->
             <fieldset class="">
-                <textarea name="description" id="" cols="30" rows="10" placeholder="Descripción del producto"></textarea>
+                <textarea 
+                    name="description" 
+                    id="" 
+                    cols="30" 
+                    rows="10" 
+                    placeholder="Descripción del producto"
+                    class= '<%= locals.errors && errors.description ? 'inputError' : null %>'
+                    value= '<%= locals.oldData ? oldData.description : null %>'
+                ></textarea>
             </fieldset>
 
+            <% if (locals.errors && errors.description) { %>
+                <p class="feedbackError">
+                    <%= errors.description.msg %> 
+                </p>
+            <% } %>
+
+            <!-- IMAGE -->
             <fieldset id="loadPicture">
                 <label for="image">Fotos:</label>
-                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                <input 
+                    type="file" 
+                    name="image" 
+                    accept=".png, .jpg, .jpeg"
+                    class= '<%= locals.errors && errors.image ? 'inputError' : null %>'
+                    value= '<%= locals.oldData ? oldData.image : null%>'
+                >
             </fieldset>
 
+            <% if (locals.errors && errors.image) { %>
+                <p class="feedbackError">
+                    <%= errors.image.msg %> 
+                </p>
+            <% } %>
+
+            <!-- CATEGORY -->
             <fieldset class="">
                 <label for="categoria">Categoría:</label>
                 <select name="category">
-                    <option value="plantas">PLANTAS</option>
-                    <option value="insumos">INSUMOS</option>
-                    <option value="macetas">MACETAS</option>
+                    <% for( let i = 0; i < categories.length; i++ ) { %>
+                        <option value="<%= categories[i].id_category %> ">
+                            <%= categories[i].category  %> 
+                        </option>
+                    <% } %>
                 </select>
             </fieldset>
 
+            <!-- PRICE -->
             <fieldset class="">
-                <input type=text name="size" required placeholder="Tamaño">
+                <input 
+                    type=number 
+                    name="price" 
+                    required placeholder="Precio"
+                    class= '<%= locals.errors && errors.price ? 'inputError' : null %>'
+                    value= '<%= locals.oldData ? oldData.price : null %>'
+                >
             </fieldset>
 
-            <fieldset class="">
-                <input type=number name="price" required placeholder="Precio">
-            </fieldset>
+            <% if (locals.errors && errors.price) { %>
+                <p class="feedbackError">
+                    <%= errors.price.msg %> 
+                </p>
+            <% } %>
+
 
             <fieldset>
                 <button type="submit" name="save" class="button">ENVIAR</button>

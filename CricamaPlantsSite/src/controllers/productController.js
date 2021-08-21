@@ -20,6 +20,7 @@ const productController = {
     },//save the edition of a product
 
     list:(req,res) => res.render("products/products",{list: req.params.category ? product.category(req.params.category) : product.all(), category: req.params.category ? req.params.category : null}),//list of all products
+    
     create: (req,res) => res.render("products/productCreate"),//form for product creation
 
     save: (req,res) => {
@@ -73,24 +74,33 @@ const productController = {
             }
     },
 
+    create: async (req, res) => {
+        try{
+            let categories = await db.Category.findAll()
 
-    
-    create: (req, res) => {
-        db.Products.findAll()
-        .then(function(productos) {
-            return res.render('productCreate', {productos:productos});
-        });
+            return res.render('products/productCreate', {categories:categories});
+
+        }catch (error){
+            return res.send(error)
+        }
     },
 
-    save: function (req, res) {
-        db.Products.create({
-            created_at: new Date(),//REVISAR
-            updated_at: new Date(),
-            name: req.body.name,
-            description: req.body.description,
-            image: typeof file === 'undefined' ? null : file.filename,//REVISAR
-            price: req.body.precio,
-        });
+    save: async (req, res) => {
+        try{
+            let newProduct = await db.Product.create({
+                    created_at: new Date(),//REVISAR
+                    updated_at: new Date(),
+                    name: req.body.name,
+                    description: req.body.description,
+                    image: file == undefined ? "/img/products/productDefault.png" : "/uploads/products/" + file.filename,
+                    price: req.body.price,
+                    id_category: req.body.category
+                    });
+        
+        return newProduct == true ? res.redirect("/products") : res.send("Error al cargar la informacion") 
+        }catch (error){
+            return res.send(error)
+        }
     },
 
     productEdit: function (req, res) {

@@ -25,22 +25,21 @@
             <article class="boxDescription">
 
                 <p class="name"><%= product.name %></p>
-                <p class="price">$<%= product.price %> <%= product.image %></p>
+                <p class="price">$<%= product.price %></p>
                 <p class="description"><%= product.description %></p>
                 <p class="quotes">Hasta 3 cuotas sin interés</p>
                 <p class="discount">Descuento por transferencia o pago en efectivo</p>  
                 
                 <button class="cartButton">Agregar al carrito</button>
 
-                <% if(isLogged && user.type == "admin"){ %> 
+                <%/*  if(isLogged && user.type == "admin"){ */ %> 
                 <ul id="adminButtons">
                     <li><a href='/productEdit/<%= product.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
                     <form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">
                         <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
                     </form>
                 </ul>
-                <% }else{ %>
-                <% } %>  
+                <%/*  }  */%>  
 
 
             </article>
