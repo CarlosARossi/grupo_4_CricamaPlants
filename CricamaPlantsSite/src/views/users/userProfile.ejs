@@ -15,7 +15,7 @@
 
         <section class="userAvatar">
 
-            <h1 id="title">¡Hola <%= user.firstName %>!</h1>
+            <h1 id="title">¡Hola <%= user.first_name %>!</h1>
 
             <figure><img class='avatarProfile' src="/<%= user.image%>" alt=""></figure>
 
@@ -26,7 +26,7 @@
             <h2>Mis datos:</h2>
 
             <p>Nombre y apellido:</p>
-            <p class="data">    <%= user.firstName %> <%= user.lastName %></p>
+            <p class="data">    <%= user.first_name %> <%= user.last_name %></p>
             <p>E-mail:</p>
             <p class="data">    <%= user.email %></p>
             
@@ -37,15 +37,15 @@
             <h2>Opciones:</h2>
 
             <ul class="userButtons">
-                    <a href="/userEdit/<%= user.id %>?_method=GET">
-                    <form action="/userEdit/<%= user.id %>?_method=GET" method="get">
-                        <li><button href='/userEdit/<%= user.id %>'><i class="fas fa-edit iconAdmin"></i> Editar Perfil</button></li>
+                    <a href="/userEdit/<%= user.id_user %>?_method=GET">
+                    <form action="/userEdit/<%= user.id_user %>?_method=GET" method="get">
+                        <li><button href='/userEdit/<%= user.id_user %>'><i class="fas fa-edit iconAdmin"></i> Editar Perfil</button></li>
                     </form>
                     </a>
                     <a href='#deleteOption'>
                         <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar Perfil</button></li>
                     </a>
-                    <% if(isLogged && user.type == "admin"){ %> 
+                    <% if(isLogged && user.userType.type == "admin"){ %> 
                     <a href='/productCreate'> 
                         <li><i class="fas fa-upload iconAdmin"></i> Cargá un nuevo producto!</li>
                     </a>
@@ -61,7 +61,7 @@
             <article id="deleteProfile">
                 <p>¿Queres borrar tu perfil?</p>
                 <ul>
-                    <form action="/userDelete/<%= user.id %>?_method=DELETE" method="post">
+                    <form action="/userDelete/<%= user.id_user %>?_method=DELETE" method="post">
                         <li><button type="submit">Si</button></li>
                     </form>
                     <a href="">

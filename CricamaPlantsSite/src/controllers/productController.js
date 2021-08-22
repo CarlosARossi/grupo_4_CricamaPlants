@@ -51,7 +51,7 @@ const productController = {
             let category = await db.Category.findOne({where:{ category: req.params.category}})
             let products = await db.Product.findAll({where:{ id_category: category.id_category}})
             let productsAll = await db.Product.findAll()
-            console.log(category)
+            /* console.log(category) */
             /* return res.send(products) */
             res.render('products/products', {
                 list: req.params.category ? products : productsAll, 
@@ -59,9 +59,9 @@ const productController = {
                 /* list: products,
                 category: category */
             })
-            }catch (error){
-                return res.send(error)
-            }
+        }catch (error){
+            return res.send(error)
+        }
             /* list: req.params.category ? product.category(req.params.category) : products, 
             category: req.params.category ? req.params.category : null */
     },

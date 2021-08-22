@@ -41,7 +41,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING,
             allowNull: false
         },
-        id_shop: {
+        id_user_type: {
             type: dataTypes.INTEGER,
             unsigned: true,
             allowNull: false,
@@ -62,10 +62,10 @@ module.exports = function (sequelize, dataTypes) {
             as: "userType",
             foreignKey: "id_user_type"
         });
-        User.belongsTo(models.ShopCart, {
+      /*   User.belongsTo(models.ShopCart, {
             as: "shopCart",
-            foreignKey: "id_product"
-        });
+            foreignKey: "id_shop"
+        }); */
     }
     
     return User;

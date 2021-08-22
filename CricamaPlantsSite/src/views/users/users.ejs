@@ -25,13 +25,13 @@
                 <% list.forEach(user => { %>
 
                 <article class="articleMain">
-                    <a href='/userProfile/<%= user.id%>'>
+                    <a href='/userProfile/<%= user.id_user%>'>
                         <figure><img class='image' src="<%= user.image%>" alt=""></figure>
                         <section class="box-article">
-                            <p class="price">ID: <%= user.id%></p>
-                            <p class="name">Nombre: <%= user.firstName %></p>
-                            <p class="name">Apellido: <%= user.lastName %></p>
-                            <p class="name">Tipo: <%= user.type %></p>
+                            <p class="price">ID: <%= user.id_user%></p>
+                            <p class="name">Nombre: <%= user.first_name %></p>
+                            <p class="name">Apellido: <%= user.last_name %></p>
+                            <p class="name">Tipo: <%= user.userType.type %></p>
                         </section>
                     </a>
                 </article>

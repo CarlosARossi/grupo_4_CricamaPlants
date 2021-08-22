@@ -51,7 +51,7 @@
                         name="firstName" 
                         autofocus
                         class= '<%= locals.errors && errors.firstName ? 'inputError' : null %>'
-                        value= '<%= locals.oldData ? oldData.firstName : user.firstName %>'
+                        value= '<%= locals.oldData ? oldData.firstName : user.first_name %>'
                     >
                     
                 </fieldset>
@@ -70,7 +70,7 @@
                         type='text' 
                         name="lastName"
                         class= '<%= locals.errors && errors.lastName ? 'inputError' : null %>'
-                        value= '<%= locals.oldData ? oldData.lastName : user.lastName %>' 
+                        value= '<%= locals.oldData ? oldData.lastName : user.last_name %>' 
                     >
                     
                 </fieldset>
@@ -154,12 +154,31 @@
                     </p>
                 <% } %>
 
+                <!-- TYPE -->
+                <fieldset class="inputData">
+                    <label class="" for="type">Tipo de usuario:</label>
+                    <select name="type">
+                        <% for( let i = 0; i < type.length; i++ ) { %>
+                            <% if (type[i].id_user_type == user.id_user_type) { %>
+                                <option value="<%= type[i].id_user_type %>" selected>
+                                    <%= type[i].type  %> 
+                                </option>
+                            <% } else{ %>
+                                <option value="<%= type[i].id_user_type %>">
+                                    <%= type[i].type  %> 
+                                </option>
+                                <% } %>
+                        <% } %>
+                    </select>
+                </fieldset>
+                
+
             </section>
 
             <section class="userOption">
                 <ul class="userButtons">
                     <li><button type="submit" name="save">GUARDAR</button></li>
-                    <a href='/userProfile/<%= user.id  %> '> 
+                    <a href='/userProfile/<%= user.id_user  %> '> 
                         <li>DESCARTAR</li>
                     </a>
 
