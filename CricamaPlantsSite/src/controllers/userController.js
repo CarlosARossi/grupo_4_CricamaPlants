@@ -177,16 +177,17 @@ const userController = {
 
     userSave: async (req, res) => {
         try{
-            db.Users.update({
-                first_name: req.body.firstName,
-                last_name: req.body.lastName,
-                email: req.body.email,
-                password: req.body.password,
-                image: file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + file.filename,    
-            },{
-                where: {id: req.params.id}
-            });
-            res.redirect('/users/' + req.params.id)
+            let user = await db.User.update({
+                    first_name: req.body.firstName,
+                    last_name: req.body.lastName,
+                    email: req.body.email,
+                    password: req.body.password,
+                    image: file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + file.filename, 
+                    id_user_type: type   
+                },{
+                    where: {id: req.params.id}
+                });
+            return res.redirect("userProfile/"+user.id_user)
         }catch (error){
             return res.send(error)
         }
@@ -204,27 +205,31 @@ const userController = {
         }
     },
 
-    register: function (req, res) {
-        db.Users.create({
-            created_at: new Date(),//REVISAR
-            updated_at: new Date(),
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            image: file == undefined ? user.image : "uploads/users/" + file.filename,
-            /* id_category: db.findByPk(??)
-                .then(??) //revisar */
-        });
+    register:async (req, res) => {
+        try{
+            let user = await db.Users.create({
+                /* created_at: new Date(),//REVISAR
+                updated_at: new Date(), */
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                email: req.body.email,
+                password: req.body.password,
+                image: file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + file.filename,
+                id_user_type: type
+            });
+            return res.redirect("userProfile/"+user.id_user)
+        }catch (error){
+            return res.send(error)
+        }
     },
 
     userDelete: function (req, res) {
-        db.Users.destroy({
+        db.User.destroy({
             where: {
                 id: req.params.id
             }
         });
-        res.redirect('/users');
+        return res.redirect("/")
     },
 
     logout: (req, res) => {

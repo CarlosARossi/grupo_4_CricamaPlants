@@ -49,12 +49,12 @@ const productController = {
         try{
             /* let products = await db.Product.findAll({include: [{association: "category"}]}) */
             let category = await db.Category.findOne({where:{ category: req.params.category}})
-            let products = await db.Product.findAll({where:{ id_category: category.id_category}})
+            let products = await db.Product.findAll(req.params.category ? {where:{ id_category: category.id_category}} : null)
             let productsAll = await db.Product.findAll()
             /* console.log(category) */
             /* return res.send(products) */
-            res.render('products/products', {
-                list: req.params.category ? products : productsAll, 
+            return res.render('products/products', {
+                list: products, 
                 category: category
                 /* list: products,
                 category: category */
@@ -62,15 +62,13 @@ const productController = {
         }catch (error){
             return res.send(error)
         }
-            /* list: req.params.category ? product.category(req.params.category) : products, 
-            category: req.params.category ? req.params.category : null */
     },
 
     productDetail: async (req, res) => {
         try{
             let products = await db.Product.findByPk(req.params.id, {include: [{association: "category"}]})
             
-            res.render('products/productDetail', {
+            return res.render('products/productDetail', {
                 product: products,
                 user: req.session.userLogged
             })
@@ -153,7 +151,18 @@ const productController = {
         }
     },
 
-    searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body), keyword: req.body ? req.body.search : null, category: req.params.category ? req.params.category : null}),//search for a product by name
+    searchProduct: async (req, res) => {
+        try{
+            let product = await db.Product.findAll({where:{ name: req.body}})
+            res.render("products/products",{
+                list: product, 
+                keyword: req.body ? req.body.search : null, 
+                category: req.params.category ? req.params.category : null
+            })
+        }catch (error){
+            return res.send(error)
+        }
+    },//search for a product by name
 
 }
     
