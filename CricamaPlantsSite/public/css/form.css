@@ -40,6 +40,15 @@
     margin: auto;
 }
 
+.imageDetail{
+    margin: 10%;
+    width: 90%;
+    width: 80%;
+    display: flex;
+    margin: auto;
+    border-radius: 10px;
+}
+
 
 fieldset{
     border: none;
@@ -179,6 +188,12 @@ select, option{
     main {
         margin-top: 0vw;
     }
+
+    .imageDetail{
+        width: 30vw;
+        margin: auto;
+    }
+
     .form{
         width: 75vw;
         padding-bottom: 8vh;
@@ -208,6 +223,10 @@ select, option{
     
     /*********************** MAIN DESKTOP ***********************/
     
+    .imageDetail{
+        width: 20vw !important;
+        text-align: center;
+    }
 
     .form{
         width: 50vw;

@@ -34,8 +34,8 @@
 
                 <%/*  if(isLogged && user.type == "admin"){ */ %> 
                 <ul id="adminButtons">
-                    <li><a href='/productEdit/<%= product.id %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
-                    <form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">
+                    <li><a href='/productEdit/<%= product.id_product %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
+                    <form action="/productDelete/<%= product.id_product %>?_method=DELETE" method="post">
                         <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
                     </form>
                 </ul>

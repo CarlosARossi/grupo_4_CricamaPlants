@@ -47,17 +47,22 @@ const productController = {
 
     list: async (req, res) => {
         try{
-            let products = await db.Product.findAll({include: [{association: "category"}]})
-            let category = await db.Category.findOne()
+            /* let products = await db.Product.findAll({include: [{association: "category"}]}) */
+            let category = await db.Category.findOne({where:{ category: req.params.category}})
+            let products = await db.Product.findAll({where:{ id_category: category.id_category}})
+            let productsAll = await db.Product.findAll()
+            console.log(category)
             /* return res.send(products) */
             res.render('products/products', {
-                list: products,
+                list: req.params.category ? products : productsAll, 
                 category: category
+                /* list: products,
+                category: category */
             })
             }catch (error){
                 return res.send(error)
             }
-            /* list: req.params.category ? product.category(req.params.category) : product.all(), 
+            /* list: req.params.category ? product.category(req.params.category) : products, 
             category: req.params.category ? req.params.category : null */
     },
 
@@ -78,7 +83,9 @@ const productController = {
         try{
             let categories = await db.Category.findAll()
 
-            return res.render('products/productCreate', {categories:categories});
+            return res.render('products/productCreate', {
+                categories:categories
+            });
 
         }catch (error){
             return res.send(error)
@@ -88,60 +95,62 @@ const productController = {
     save: async (req, res) => {
         try{
             let newProduct = await db.Product.create({
-                    created_at: new Date(),//REVISAR
-                    updated_at: new Date(),
+                    /* created_at: new Date(),//REVISAR
+                    updated_at: new Date(), */
                     name: req.body.name,
                     description: req.body.description,
                     image: file == undefined ? "/img/products/productDefault.png" : "/uploads/products/" + file.filename,
                     price: req.body.price,
-                    id_category: req.body.category
+                    /* id_category: req.body.category */
                     });
-        
-        return newProduct == true ? res.redirect("/products") : res.send("Error al cargar la informacion") 
+        console.log(newProduct)
+        return res.redirect("/products")
         }catch (error){
             return res.send(error)
         }
     },
 
-    productEdit: function (req, res) {
-        let pedidoProduct = db.Products.findByPk(req.params.id);
-        let pedidoCategory = db.Category.findAll();
-        
-        Promise.all([pedidoProduct, pedidoCategory])
-            .then(function ([producto, categoria]) {
-                res.render('productEdit', {producto:producto, categoria:categoria});
-            })
+    productEdit: async (req, res) => {
+        try{
+            let product = await db.Product.findByPk(req.params.id);
+            let category = await db.Category.findAll();
+
+            return res.render('products/productEdit', {
+                product:product, 
+                category:category
+            });
+            
+        }catch (error){
+            return res.send(error)
+        }
     },
 
-    saveEdition: function (req, res) {
-        db.Products.update({
-            created_at: new Date(),
-            updated_at: new Date(),
-            name: req.body.name,
-            description: req.body.description,
-            image: typeof file === 'undefined' ? null : file.filename,//REVISAR
-            price: req.body.precio,
-            /* id_category: db.findByPk(??)
-                .then(??) */
-        }, {
-            where: {
-                id: req.params.id
-            }
-        });
-        res.redirect('/products/' + req.params.id)
+    saveEdition: async (req, res) => {
+        try{
+            let productEdit = await db.Product.update({
+                /* created_at: new Date(),
+                updated_at: new Date(), */
+                name: req.body.name,
+                description: req.body.description,
+                image: file == undefined ? "/img/products/productDefault.png" : "/uploads/products/" + file.filename,
+                price: req.body.price,
+            }, {
+                where: {id: req.params.id}
+                }
+            );
+            return res.redirect('products/productDetail/' + req.params.id)
+        }catch (error){
+            return res.send(error)
+        }
     },
 
-    
-
-    
-
-    delete: function (req, res) {
-        db.Products.destroy({
-            where: {
-                id: req.params.id
-            }
-        });
-        res.redirect('/products');
+    delete: async (req, res) => {
+        try{
+            db.Product.destroy({where: {id: req.params.id}});
+            return res.redirect('products/products');
+        }catch (error){
+            return res.send(error)
+        }
     },
 
     searchProduct:(req,res) => res.render("products/products",{list: product.searchProduct(req.body), keyword: req.body ? req.body.search : null, category: req.params.category ? req.params.category : null}),//search for a product by name

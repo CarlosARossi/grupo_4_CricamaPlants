@@ -11,50 +11,69 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
-        <form action="/saveEdition/<%= product.id %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
+        <form action="/saveEdition/<%= product.id_product %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
+            
             <h2 id="title">Edición de productos</h2>
 
+            <!-- NAME -->
             <fieldset class="">
-                <input type=text name="name" required value="<%= product.name %>">
+                <input 
+                    type=text 
+                    name="name" 
+                    autofocus
+                    required 
+                    value="<%= product.name %>">
             </fieldset>
 
+            <!-- DESCRIPTION -->
             <fieldset class="">
-                <textarea name="description" id="" cols="30" rows="10" placeholder="Descripción del producto" ><%= product.description %></textarea>
+                <textarea 
+                    name="description" 
+                    id="" 
+                    cols="30" 
+                    rows="10" 
+                    placeholder="Descripción del producto" 
+                    ><%= product.description %>
+                </textarea>
             </fieldset>
 
-            <figure><img class='imageDetail' src="/uploads/products/<%=product.image%>" alt=""></figure>
+            <!-- IMAGE -->
+            <figure><img class='imageDetail' src="<%=product.image%>" alt=""></figure>
             <fieldset id="loadPicture">
-                <label for="fotos">Fotos:</label>
-                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                <label for="image">Fotos:</label>
+                <input 
+                    type="file" 
+                    name="image" 
+                    accept=".png, .jpg, .jpeg"
+                >
             </fieldset>
 
+            <!-- CATEGORY -->
             <fieldset class="">
                 <label for="categoria">Categoría:</label>
                 <select name="category">
-                    <% if (product.category=='plantas') { %>
-                        <option value="plantas" selected>PLANTAS</option>
-                        <option value="insumos">INSUMOS</option>
-                        <option value="macetas">MACETAS</option>
-                    <% } %>
-                    <% if (product.category=='insumos') { %>
-                        <option value="plantas">PLANTAS</option>
-                        <option value="insumos" selected>INSUMOS</option>
-                        <option value="macetas">MACETAS</option>
-                    <% } %>
-                    <% if (product.category=='macetas') { %>
-                        <option value="plantas">PLANTAS</option>
-                        <option value="insumos">INSUMOS</option>
-                        <option value="macetas" selected>MACETAS</option>
+                    <% for( let i = 0; i < category.length; i++ ) { %>
+                        <% if (category[i].id_category == product.id_category) { %>
+                            <option value="<%= category[i].id_category %>" selected>
+                                <%= category[i].category  %> 
+                            </option>
+                        <% } else{ %>
+                            <option value="<%= category[i].id_category %>">
+                                <%= category[i].category  %> 
+                            </option>
+                            <% } %>
                     <% } %>
                 </select>
             </fieldset>
 
+            <!-- PRICE -->
             <fieldset class="">
-                <input type="text" name="size" required value="<%= product.size %>">
-            </fieldset>
-
-            <fieldset class="">
-                <input type="number" name="price" required placeholder="Precio" value="<%= product.price %>">
+                <input 
+                    type="number" 
+                    name="price" 
+                    placeholder="Precio" 
+                    value="<%= product.price %>"
+                >
             </fieldset>
 
                 <button type="submit" class="button">ENVIAR</button>
