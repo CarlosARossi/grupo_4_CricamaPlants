@@ -50,14 +50,11 @@ const productController = {
             /* let products = await db.Product.findAll({include: [{association: "category"}]}) */
             let category = await db.Category.findOne({where:{ category: req.params.category}})
             let products = await db.Product.findAll(req.params.category ? {where:{ id_category: category.id_category}} : null)
-            let productsAll = await db.Product.findAll()
-            /* console.log(category) */
             /* return res.send(products) */
             return res.render('products/products', {
                 list: products, 
                 category: category
-                /* list: products,
-                category: category */
+                
             })
         }catch (error){
             return res.send(error)
@@ -93,13 +90,13 @@ const productController = {
     save: async (req, res) => {
         try{
             let newProduct = await db.Product.create({
-                    /* created_at: new Date(),//REVISAR
+                    /* created_at: new Date(),
                     updated_at: new Date(), */
                     name: req.body.name,
                     description: req.body.description,
                     image: file == undefined ? "/img/products/productDefault.png" : "/uploads/products/" + file.filename,
                     price: req.body.price,
-                    /* id_category: req.body.category */
+                    id_category: req.body.category
                     });
         console.log(newProduct)
         return res.redirect("/products")
