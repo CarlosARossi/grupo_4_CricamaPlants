@@ -1,6 +1,7 @@
 const { body } = require("express-validator");
 const path = require('path');
-const userModel = require("../models/userModel")
+const userModel = require("../models/userModel");
+const db = require('../database/models');
 
 module.exports =  [
     body('firstName').notEmpty().withMessage('Tenes que escribir tu nombre'),
@@ -8,8 +9,10 @@ module.exports =  [
     body('email')
         .notEmpty().withMessage('Tenes que escribir tu email').bail()
         .isEmail().withMessage('Formato de mail inválido').bail()
-        .custom(value => {
-            let registered = userModel.findByField('email', value);
+        .custom(async value => {
+            /* let registered = userModel.findByField('email', value); */
+            let registered = await db.User.findOne({where:{ email: value}});
+
             if (registered) {
                 return Promise.reject('Ya estas registrado');
             }

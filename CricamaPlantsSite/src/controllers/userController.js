@@ -1,6 +1,7 @@
 //Require
 const path = require('path');
 const users = require('../models/userModel');
+const bcryptjs = require('bcryptjs');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
@@ -134,8 +135,12 @@ const userController = {
         try{
             const errors = validationResult(req);
             if (!errors.isEmpty()){
-                return res.render("users/login", { errors: errors.mapped(), oldData: req.body });
+                return res.render("users/login", { 
+                    errors: errors.mapped(), 
+                    oldData: req.body 
+                });
             }else{
+                console.log(req.body.email)
                 let user = await db.User.findOne({include: [{association: "userType"}]},{where:{ email: req.body.email}})
                 delete user.password; //Borro la password por seguridad
                 req.session.userLogged = user;
@@ -177,18 +182,32 @@ const userController = {
 
     userSave: async (req, res) => {
         try{
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0){
+                let user = await db.User.findByPk(req.params.id);
+                let type = await db.UserType.findAll();
+                return res.render('users/userEdit', {
+                    user:user,
+                    type:type,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
             let user = await db.User.update({
+                    created_at: new Date(),
+                    updated_at: new Date(),
                     first_name: req.body.firstName,
                     last_name: req.body.lastName,
                     email: req.body.email,
-                    password: req.body.password,
-                    image: file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + file.filename, 
-                    id_user_type: type   
+                    password: bcryptjs.hashSync(req.body.password,10),
+                    image: req.file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + req.file.filename, 
+                    id_user_type: req.body.type   
                 },{
-                    where: {id: req.params.id}
+                    where: {id_user: req.params.id}
                 });
-            return res.redirect("userProfile/"+user.id_user)
+            return res.redirect("/userProfile/" + req.params.id)
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
@@ -207,29 +226,42 @@ const userController = {
 
     register:async (req, res) => {
         try{
-            let user = await db.Users.create({
-                /* created_at: new Date(),//REVISAR
-                updated_at: new Date(), */
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0){
+                let user = await db.User.findByPk(req.params.id);
+                let type = await db.UserType.findAll();
+                return res.render('users/register', {
+                    user:user,
+                    type:type,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
+            let user = await db.User.create({
+                created_at: new Date(),
+                updated_at: new Date(),
                 first_name: req.body.firstName,
                 last_name: req.body.lastName,
                 email: req.body.email,
-                password: req.body.password,
-                image: file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + file.filename,
-                id_user_type: type
+                password: bcryptjs.hashSync(req.body.password,10),
+                image: req.file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + req.file.filename,
+                id_user_type: req.body.type
             });
-            return res.redirect("userProfile/"+user.id_user)
+            return res.redirect("/userProfile/" + user.id_user)
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
 
-    userDelete: function (req, res) {
-        db.User.destroy({
-            where: {
-                id: req.params.id
-            }
-        });
-        return res.redirect("/")
+    userDelete: async (req, res) => {
+        try{
+            let userDelete = await db.User.destroy({where: {id_user: req.params.id}});
+            return res.redirect("/")
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
     },
 
     logout: (req, res) => {

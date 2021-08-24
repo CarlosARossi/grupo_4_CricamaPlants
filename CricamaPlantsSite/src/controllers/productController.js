@@ -88,19 +88,21 @@ const productController = {
     },
 
     save: async (req, res) => {
+
         try{
             let newProduct = await db.Product.create({
-                    /* created_at: new Date(),
-                    updated_at: new Date(), */
+                    created_at: new Date(),
+                    updated_at: new Date(),
                     name: req.body.name,
                     description: req.body.description,
-                    image: file == undefined ? "/img/products/productDefault.png" : "/uploads/products/" + file.filename,
+                    image: req.file == undefined ? "/img/products/productDefault.jpg" : "/uploads/products/" + req.file.filename,
                     price: req.body.price,
                     id_category: req.body.category
                     });
-        console.log(newProduct)
-        return res.redirect("/products")
+                    console.log(newProduct)
+        return res.redirect('/productDetail/' + newProduct.id_product)
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
@@ -116,6 +118,7 @@ const productController = {
             });
             
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
@@ -123,27 +126,31 @@ const productController = {
     saveEdition: async (req, res) => {
         try{
             let productEdit = await db.Product.update({
-                /* created_at: new Date(),
-                updated_at: new Date(), */
+                created_at: new Date(),
+                updated_at: new Date(),
                 name: req.body.name,
                 description: req.body.description,
-                image: file == undefined ? "/img/products/productDefault.png" : "/uploads/products/" + file.filename,
+                image: req.file == undefined ? "/img/products/productDefault.jpg" : "/uploads/products/" + req.file.filename,
                 price: req.body.price,
+                id_category: req.body.category
             }, {
-                where: {id: req.params.id}
+                where: {id_product: req.params.id}
                 }
             );
-            return res.redirect('products/productDetail/' + req.params.id)
+            
+            return res.redirect('/productDetail/' + req.params.id)
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
 
     delete: async (req, res) => {
         try{
-            db.Product.destroy({where: {id: req.params.id}});
-            return res.redirect('products/products');
+            let productDelete = await db.Product.destroy({where: {id_product: req.params.id}});
+            return res.redirect('/');
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
