@@ -37,9 +37,9 @@ CREATE TABLE users (
 
 LOCK TABLES users WRITE;
 INSERT INTO users VALUES 
-	(1,NULL,NULL,'Carlos','Rossi','carlos91rossi@gmail.com','$2a$10$QsXH/ynuFyL7e5PgYJ4hUu94wZDEZRNUbSNIDg.q8KlSMV5U/JxmW','uploads/users/image-1627681292318.jpg',1),
-    (2,NULL,NULL,'Cristian','Leiva','cristian.leivalot@gmail.com','$2a$10$QsXH/ynuFyL7e5PgYJ4hUu94wZDEZRNUbSNIDg.q8KlSMV5U/JxmW','uploads/users/image-1626904089092.jpg',1),
-    (3,NULL,NULL,'Manuel','Nacht','mlqlknf@hipis.com','$2a$10$9uGvMGRQNuxsYo8OSjs/.OUTeqYJXDDPfzUxHuA7mvGVGeKf30bru','uploads/users/image-1627335156763.png',2);
+	(1,NULL,NULL,'Carlos','Rossi','carlos91rossi@gmail.com','$2a$10$QsXH/ynuFyL7e5PgYJ4hUu94wZDEZRNUbSNIDg.q8KlSMV5U/JxmW','/uploads/users/image-1627681292318.jpg',1),
+    (2,NULL,NULL,'Cristian','Leiva','cristian.leivalot@gmail.com','$2a$10$QsXH/ynuFyL7e5PgYJ4hUu94wZDEZRNUbSNIDg.q8KlSMV5U/JxmW','/uploads/users/image-1626904089092.jpg',1),
+    (3,NULL,NULL,'Manuel','Nacht','mlqlknf@hipis.com','$2a$10$9uGvMGRQNuxsYo8OSjs/.OUTeqYJXDDPfzUxHuA7mvGVGeKf30bru','/uploads/users/image-1627335156763.png',2);
 UNLOCK TABLES;
 
 

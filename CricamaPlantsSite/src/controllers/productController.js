@@ -47,16 +47,20 @@ const productController = {
 
     list: async (req, res) => {
         try{
-            /* let products = await db.Product.findAll({include: [{association: "category"}]}) */
-            let category = await db.Category.findOne({where:{ category: req.params.category}})
-            let products = await db.Product.findAll(req.params.category ? {where:{ id_category: category.id_category}} : null)
-            /* return res.send(products) */
+                if (req.params.category){
+                var category = await db.Category.findOne({where:{ category: req.params.category}})
+                var products = await db.Product.findAll({where:{ id_category: category.id_category}})
+            }else{
+                var category = ""
+                var products = await db.Product.findAll()
+            }
             return res.render('products/products', {
                 list: products, 
                 category: category
                 
             })
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
@@ -125,12 +129,13 @@ const productController = {
 
     saveEdition: async (req, res) => {
         try{
-            let productEdit = await db.Product.update({
+            let productEdit = await db.Product.findByPk(req.params.id)
+            let product = await db.Product.update({
                 created_at: new Date(),
                 updated_at: new Date(),
                 name: req.body.name,
                 description: req.body.description,
-                image: req.file == undefined ? "/img/products/productDefault.jpg" : "/uploads/products/" + req.file.filename,
+                image: req.file == undefined ? productEdit.image : "/uploads/products/" + req.file.filename,
                 price: req.body.price,
                 id_category: req.body.category
             }, {

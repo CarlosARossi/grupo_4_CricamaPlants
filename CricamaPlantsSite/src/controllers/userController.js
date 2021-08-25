@@ -140,8 +140,7 @@ const userController = {
                     oldData: req.body 
                 });
             }else{
-                console.log(req.body.email)
-                let user = await db.User.findOne({include: [{association: "userType"}]},{where:{ email: req.body.email}})
+                let user = await db.User.findOne({include: [{association: "userType"}],where:{ email: req.body.email}})
                 delete user.password; //Borro la password por seguridad
                 req.session.userLogged = user;
                 if(req.body.remember){
@@ -150,6 +149,7 @@ const userController = {
                 return res.redirect("userProfile/"+user.id_user)
             }
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
@@ -157,7 +157,6 @@ const userController = {
     userProfile: async (req, res) => {
         try{
             let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]})
-            
             return res.render('users/userProfile', {
                 user: req.session.userLogged.userType.type == "admin" ? user : req.session.userLogged ////Habilita el acceso al perfil de otros usuarios si userLogged es admin
             });
@@ -193,6 +192,7 @@ const userController = {
                     oldData: req.body
                 });
             }
+            let userEdit = await db.User.findByPk(req.params.id);
             let user = await db.User.update({
                     created_at: new Date(),
                     updated_at: new Date(),
@@ -200,11 +200,9 @@ const userController = {
                     last_name: req.body.lastName,
                     email: req.body.email,
                     password: bcryptjs.hashSync(req.body.password,10),
-                    image: req.file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + req.file.filename, 
+                    image: req.file == undefined ? userEdit.image : "/uploads/users/" + req.file.filename, 
                     id_user_type: req.body.type   
-                },{
-                    where: {id_user: req.params.id}
-                });
+                },{include: [{association: "userType"}],where: {id_user: req.params.id}});
             return res.redirect("/userProfile/" + req.params.id)
         }catch (error){
             console.log(error)
