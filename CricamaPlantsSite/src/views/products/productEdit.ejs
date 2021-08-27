@@ -3,7 +3,8 @@
 <head>
     <%- include('../includes/head') %>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
     <!---------------------------------------- HEADER ---------------------------------------->
@@ -11,72 +12,123 @@
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
+
         <form action="/saveEdition/<%= product.id_product %>?_method=PUT" method="post" enctype = "multipart/form-data" class = "form">
+            <section class="imageSection">
+
+                <h1 id="title">Edición de productos</h1>
+
+                <!-- IMAGE -->
+                <figure><img class='imageEdit' src="<%=product.image%>"  alt=""></figure>
+
+                <fieldset id="loadPicture">
+                    <label for="image">Foto:</label>
+                    <input 
+                        type='file' 
+                        name="image"  
+                        accept=".png, .jpg, .jpeg"
+                        class= '<%= locals.errors && errors.image ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.image : null%>' 
+                    >
+                </fieldset>
+                <% if (locals.errors && errors.image) { %>
+                    <p class="feedbackError">
+                        <%= errors.image.msg %> 
+                    </p>
+                <% } %>
             
-            <h2 id="title">Edición de productos</h2>
+            </section>
 
-            <!-- NAME -->
-            <fieldset class="">
-                <input 
-                    type=text 
-                    name="name" 
-                    autofocus
-                    required 
-                    value="<%= product.name %>">
-            </fieldset>
+            <section class="dataSection">
 
-            <!-- DESCRIPTION -->
-            <fieldset class="">
-                <textarea 
-                    name="description" 
-                    id="" 
-                    cols="30" 
-                    rows="10" 
-                    placeholder="Descripción del producto" 
-                    ><%= product.description %>
-                </textarea>
-            </fieldset>
+                <h2>Información:</h2>
 
-            <!-- IMAGE -->
-            <figure><img class='imageDetail' src="<%=product.image%>" alt=""></figure>
-            <fieldset id="loadPicture">
-                <label for="image">Fotos:</label>
-                <input 
-                    type="file" 
-                    name="image" 
-                    accept=".png, .jpg, .jpeg"
-                >
-            </fieldset>
+                <!-- NAME -->
+                <fieldset class="inputData">
+                    <label class="" for="name">Nombre:</label>
+                    
+                    <input 
+                        type='text' 
+                        name="name" 
+                        autofocus
+                        class= '<%= locals.errors && errors.name ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.name : product.name %>'
+                    >
+                    
+                </fieldset>
+                <% if (locals.errors && errors.name) { %>
+                    <p class="feedbackError">
+                        <%= errors.name.msg %> 
+                    </p>
+                <% } %>
 
-            <!-- CATEGORY -->
-            <fieldset class="">
-                <label for="categoria">Categoría:</label>
-                <select name="category">
-                    <% for( let i = 0; i < category.length; i++ ) { %>
-                        <% if (category[i].id_category == product.id_category) { %>
-                            <option value="<%= category[i].id_category %>" selected>
-                                <%= category[i].category  %> 
-                            </option>
-                        <% } else{ %>
-                            <option value="<%= category[i].id_category %>">
-                                <%= category[i].category  %> 
-                            </option>
-                            <% } %>
-                    <% } %>
-                </select>
-            </fieldset>
 
-            <!-- PRICE -->
-            <fieldset class="">
-                <input 
-                    type="number" 
-                    name="price" 
-                    placeholder="Precio" 
-                    value="<%= product.price %>"
-                >
-            </fieldset>
+                <!-- DESCRIPTION -->
+                <fieldset class="inputData">
+                    <label class="" for="description">Descripción:</label>
+                    <textarea 
+                        name="description" 
+                        cols="30" 
+                        rows="10" 
+                        class= '<%= locals.errors && errors.description ? 'inputError' : null %>'
+                        placeholder="Descripción del producto" 
+                    ><%= product.description %></textarea>
+                    
+                </fieldset>
+                <% if (locals.errors && errors.description) { %>
+                    <p class="feedbackError">
+                        <%= errors.description.msg %> 
+                    </p>
+                <% } %>
 
-                <button type="submit" class="button">ENVIAR</button>
+
+                <!-- PRICE -->
+                <fieldset class="inputData">
+                    <label class="" for="price">Precio:</label>
+                    <input 
+                        type='number' 
+                        name="price" 
+                        class= '<%= locals.errors && errors.price ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.price :  product.price %>' 
+                    >
+                </fieldset>
+                <% if (locals.errors && errors.price) { %>
+                    <p class="feedbackError">
+                        <%= errors.price.msg %> 
+                    </p>
+                <% } %>
+
+                <!-- CATEGORY -->
+                <fieldset class="inputData">
+                    <label class="" for="type">Categoría:</label>
+                    <select name="category">
+                        <% for( let i = 0; i < category.length; i++ ) { %>
+                            <% if (category[i].id_category == product.id_category) { %>
+                                <option value="<%= category[i].id_category %>" selected>
+                                    <%= category[i].category  %> 
+                                </option>
+                            <% } else{ %>
+                                <option value="<%= category[i].id_category %>">
+                                    <%= category[i].category  %> 
+                                </option>
+                                <% } %>
+                        <% } %>
+                    </select>
+                </fieldset>
+            
+            </section>
+
+            <section class="buttonSection">
+                <ul class="adminButtons">
+                    <li><button type="submit" name="save">GUARDAR</button></li>
+                    <a href='/productDetail/<%= product.id_product  %> '> 
+                        <li>DESCARTAR</li>
+                    </a>
+
+                </ul>
+                
+            </section>
+        
         </form>
     </main>
 

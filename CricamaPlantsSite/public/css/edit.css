@@ -149,7 +149,7 @@ label{
 
     #title{
         font-size: 1.5em;
-        padding-top: 8vh;
+        /* padding-top: 8vh; */
     }
 
     .button{
@@ -169,7 +169,7 @@ label{
 
     #title{
         font-size: 2em;
-        padding-top: 5vh;
+        /* padding-top: 5vh; */
     }  
 
     input, textarea, select{

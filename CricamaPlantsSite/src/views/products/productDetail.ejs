@@ -19,8 +19,9 @@
 
         <section class="boxDetail">
 
-
-            <figure><img class='imageDetail' src='<%= product.image %>' alt=""></figure>
+            <article>
+                <figure><img class='imageDetail' src='<%= product.image %>' alt=""></figure>
+            </article>  
             
             <article class="boxDescription">
 
@@ -32,14 +33,14 @@
                 
                 <button class="cartButton">Agregar al carrito</button>
 
-                <%/*  if(isLogged && user.type == "admin"){ */ %> 
-                <ul id="adminButtons">
+                <% if(isLogged && user.userType.type == "admin"){ %> 
+                <ul class="adminButtons">
                     <li><a href='/productEdit/<%= product.id_product %>'><i class="fas fa-edit iconAdmin"></i> Editar</a></li>
                     <form action="/productDelete/<%= product.id_product %>?_method=DELETE" method="post">
                         <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar</button></li>
                     </form>
                 </ul>
-                <%/*  }  */%>  
+                <% } %>  
 
 
             </article>

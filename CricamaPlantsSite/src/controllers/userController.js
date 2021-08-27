@@ -167,7 +167,7 @@ const userController = {
 
     userEdit: async (req, res) => {
         try{
-            let user = await db.User.findByPk(req.params.id);
+            let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]});
             let type = await db.UserType.findAll();
 
             return res.render('users/userEdit', {
@@ -215,7 +215,8 @@ const userController = {
             let type = await db.UserType.findAll()
             
             return res.render('users/register', {
-                type:type
+                type:type,
+                user: req.session.userLogged
             });
         }catch (error){
             return res.send(error)

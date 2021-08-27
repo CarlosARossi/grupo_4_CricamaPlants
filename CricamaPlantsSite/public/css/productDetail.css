@@ -17,6 +17,12 @@ a{
 
 
 /************************ MAIN ************************/
+.boxDetail, .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .name{
     text-transform: uppercase;
@@ -34,21 +40,17 @@ a{
     margin-bottom: 3vh;
 }
 
-.boxDetail{
+/* .boxDetail{
     margin: 15px;
     background-color: #E2E7E6;
-}
+} */
 
 .boxDescription{
     display: flex;
-    /* border: solid 2px #30544E; */
     margin: 15px;
-    /* padding: 10px;
-    border-radius: 8px; */
     flex-direction: column;
     line-height: 20px;
 }
-
 
 .imageDetail{
     margin: 10%;
@@ -60,7 +62,6 @@ a{
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
-
 .cartButton{
     color: #30544E;
     font-size: 1em;
@@ -69,7 +70,7 @@ a{
     width: 25vw;
     border-radius: 4px;
     margin: auto;
-    padding: 4px;
+    padding: 5px;
     transition: all 100ms;
 }
 
@@ -81,7 +82,38 @@ a{
         box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
     }
 
-#adminButtons li button{
+
+    .adminButtons li{
+        color: #30544E;
+        border: 1px solid #30544E;
+        background-color: #F5E078;
+        border-radius: 5px;
+        margin: auto;
+        margin-top: 10px;
+        padding: 5px;
+        text-align: center;
+        width: 25vw;
+    }
+    
+    .adminButtons li button{
+        border: none;
+        background-color: inherit;
+        color: #30544E;
+    }
+    
+    .adminButtons li:hover{
+        background-color: #30544E;
+        color: #F5E078;
+        border: solid 1px #F5E078;
+        font-size: 1em;
+        box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+    }
+    
+    .adminButtons li:hover>button{
+        color: #F5E078;
+    }
+
+/* #adminButtons li button{
     border: none;
     background-color: inherit;
     color: #30544E;
@@ -115,24 +147,50 @@ a{
     border: solid 1px #F5E078;
     font-size: 1em;
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+} */
+
+.imageEdit{
+    width: 50vw;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+    border-radius: 15px;
 }
 
+.imageSection{
+    text-align: center;
+    margin: 20px;
+}
+
+.dataSection, .buttonSection{
+    align-items: left;
+    text-align: left;
+    width: 50vw;
+    margin: 20px;
+}
 
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
 
     /*********************** MAIN TABLET ***********************/
+    .boxDetail, .form{
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        /* margin: 30px; */
+        align-items: flex-start;
+        }
 
     .imageDetail{
         width: 40vw;
         margin: 15px;
     }
 
-    .boxDetail{
+    /* .boxDetail{
         display: flex;
-       /*  align-items: center; */
-    }
+        width: 90vw;
+        justify-content: space-evenly;
+        align-items: center;
+    } */
 
     .boxDescription{  
         height: 20%;
@@ -149,16 +207,41 @@ a{
     .cartButton:hover{
         font-size: 1.1rem;
     }
-    
-    #adminButtons{
+
+    .adminButtons li{
         width: 15vw;
+        margin-left: auto;
+        margin-right: auto;
     }
+    
+    /* #adminButtons{
+        width: 15vw;
+    } */
+
+    .imageEdit{
+        width: 240px;
+    }
+
+    .imageSection{
+        text-align: center;
+        width: 75vw;
+    }
+
+    .dataSection, .buttonSection{
+        width: 25vw;
+    }
+    
 }
 
 /*********************************************** DESKTOP ***********************************************/
 @media (min-width: 1021px){
 
     /*********************** MAIN DESKTOP ***********************/
+
+    .boxDetail, .form{
+        margin-bottom: 100px;
+        /* height: 65vh; */
+    }
 
     .imageDetail{
         width: 30vw;
@@ -168,10 +251,6 @@ a{
         width: 50%;
     }
 
-/*     .boxDescription1 p{
-        font-size: 1.1rem;
-    } */
-
     .cartButton{
         font-size: 1.3rem;
     }
@@ -180,8 +259,12 @@ a{
         font-size: 1.3rem;
     }
 
-    #adminButtons{
+   /*  #adminButtons{
         width: 8vw;
+    } */
+
+    .imageSection{
+        width: 25vw;
     }
 
 }

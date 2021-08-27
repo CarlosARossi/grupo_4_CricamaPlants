@@ -4,7 +4,7 @@
     <%- include('../includes/head') %>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/userProfile.css">
-    <link rel="stylesheet" href="/css/userEdit.css">
+    <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
     <!---------------------------------------- HEADER ---------------------------------------->
@@ -155,22 +155,24 @@
                 <% } %>
 
                 <!-- TYPE -->
-                <fieldset class="inputData">
-                    <label class="" for="type">Tipo de usuario:</label>
-                    <select name="type">
-                        <% for( let i = 0; i < type.length; i++ ) { %>
-                            <% if (type[i].id_user_type == user.id_user_type) { %>
-                                <option value="<%= type[i].id_user_type %>" selected>
-                                    <%= type[i].type  %> 
-                                </option>
-                            <% } else{ %>
-                                <option value="<%= type[i].id_user_type %>">
-                                    <%= type[i].type  %> 
-                                </option>
-                                <% } %>
-                        <% } %>
-                    </select>
-                </fieldset>
+                <% if(isLogged && user.userType.type == "admin"){ %> 
+                    <fieldset class="inputData">
+                        <label class="" for="type">Tipo de usuario:</label>
+                        <select name="type">
+                            <% for( let i = 0; i < type.length; i++ ) { %>
+                                <% if (type[i].id_user_type == user.id_user_type) { %>
+                                    <option value="<%= type[i].id_user_type %>" selected>
+                                        <%= type[i].type  %> 
+                                    </option>
+                                <% } else{ %>
+                                    <option value="<%= type[i].id_user_type %>">
+                                        <%= type[i].type  %> 
+                                    </option>
+                                    <% } %>
+                            <% } %>
+                        </select>
+                    </fieldset>
+                <% } %>
                 
 
             </section>

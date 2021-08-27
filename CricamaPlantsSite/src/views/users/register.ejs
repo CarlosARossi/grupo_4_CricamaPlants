@@ -114,16 +114,18 @@
             <% } %>
 
             <!-- USER TYPE -->
-            <fieldset class="">
-                <label for="type">Tipo de usuario:</label>
-                <select name="type">
-                    <% for( let i = 0; i < type.length; i++ ) { %>
-                        <option value="<%= type[i].id_user_type %>">
-                            <%= type[i].type  %> 
-                        </option>
-                    <% } %>
-                </select>
-            </fieldset>
+            <% if(isLogged && user.userType.type == "admin"){ %> 
+                <fieldset class="">
+                    <label for="type">Tipo de usuario:</label>
+                    <select name="type">
+                        <% for( let i = 0; i < type.length; i++ ) { %>
+                            <option value="<%= type[i].id_user_type %>">
+                                <%= type[i].type  %> 
+                            </option>
+                        <% } %>
+                    </select>
+                </fieldset>
+            <% } %>  
 
             <fieldset>
                 <button type="submit" name="register" class="button">Registrate!</button>
