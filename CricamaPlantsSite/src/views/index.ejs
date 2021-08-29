@@ -13,7 +13,7 @@
         
         <a href='/productDetail'><img class='banner' src="/img/designs/bannerKit.jpg" alt="Banner Kit"></a>
 
-        <section class="generalArticles">
+        <!-- <section class="generalArticles">
             
             <article class="articleMain">
                 <a href='/productDetail/1'>
@@ -127,8 +127,32 @@
                 </a>
             </article>
         
-        </section>
+        </section> -->
             
+        
+        <section class="generalArticles">
+            <% if(list.length > 0){ %>
+                <% list.forEach(product => { %>
+
+                <article class="articleMain">
+                    <a href='/productDetail/<%= product.id_product %>'>
+                        <figure><img class='image' src="<%= product.image%>" alt=""></figure>
+                        <section class="box-article">
+                            <i id='iconCart' class="fas fa-shopping-cart"></i>
+                            <p class="price">$<%= product.price %></p>
+                            <p class="name"><%= product.name %></p>
+                            <p class="quotes">3 cuotas sin interés de $<%= Math.round(product.price/3) %></p>
+                        </section>
+                    </a>
+                </article>
+
+                <% }) %>
+                <% }else{ %>
+                    <h2>No se encontraron articulos que contengan "<%= locals.keyword ? keywords : null %>"</h2>
+            <% } %>
+
+        </section>
+
     </main>
 
     <!---------------------------------------- FOOTER ---------------------------------------->

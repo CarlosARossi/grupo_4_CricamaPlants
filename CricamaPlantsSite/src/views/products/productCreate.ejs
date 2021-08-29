@@ -42,8 +42,7 @@
                     rows="10" 
                     placeholder="Descripción del producto"
                     class= '<%= locals.errors && errors.description ? 'inputError' : null %>'
-                    value= '<%= locals.oldData ? oldData.description : null %>'
-                ></textarea>
+                ><%= locals.oldData ? oldData.description : null %></textarea>
             </fieldset>
 
             <% if (locals.errors && errors.description) { %>

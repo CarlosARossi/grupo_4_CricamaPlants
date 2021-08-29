@@ -8,7 +8,7 @@ const multer = require ('multer');
 const validRegister = require("../middlewares/validRegisterMiddleware");
 const uploadFile = require("../middlewares/uploadFileMiddleware");
 const validLogin = require("../middlewares/validLoginMiddleware");
-const validEdit = require("../middlewares/validEditMiddleware");
+const validEditUser = require("../middlewares/validEditUserMiddleware");
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require("../middlewares/authMiddleware")
 const upload = multer({storage:uploadFile('users')});
@@ -32,7 +32,7 @@ router.post("/register",[upload.single("image")],validRegister,userController.re
 
 //Edit user
 router.get("/userEdit/:id",userController.userEdit);
-router.put("/userSave/:id",[upload.single("image")],validEdit,userController.userSave);
+router.put("/userSave/:id",[upload.single("image")],validEditUser,userController.userSave);
 
 //Delete user
 router.delete("/userDelete/:id",userController.userDelete)

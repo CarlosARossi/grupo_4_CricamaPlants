@@ -3,6 +3,7 @@ const path = require('path');
 const product = require('../models/productModel');
 const users = require('../models/userModel');
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 
 //Functions for JSON
 /* 
@@ -94,6 +95,17 @@ const productController = {
     save: async (req, res) => {
 
         try{
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0){
+                let product = await db.Product.findByPk(req.params.id);
+                let categories = await db.Category.findAll();
+                return res.render('products/productCreate', {
+                    product: product,
+                    categories: categories,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
             let newProduct = await db.Product.create({
                     created_at: new Date(),
                     updated_at: new Date(),
@@ -103,7 +115,7 @@ const productController = {
                     price: req.body.price,
                     id_category: req.body.category
                     });
-                    console.log(newProduct)
+                    /* console.log(newProduct) */
         return res.redirect('/productDetail/' + newProduct.id_product)
         }catch (error){
             console.log(error)
@@ -128,7 +140,17 @@ const productController = {
     },
 
     saveEdition: async (req, res) => {
-        try{
+        try{const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0){
+                let product = await db.Product.findByPk(req.params.id);
+                let category = await db.Category.findAll();
+                return res.render('products/productEdit', {
+                    product:product, 
+                    category:category,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
             let productEdit = await db.Product.findByPk(req.params.id)
             let product = await db.Product.update({
                 created_at: new Date(),

@@ -173,6 +173,7 @@ const userController = {
             return res.render('users/userEdit', {
                 user:user, 
                 type:type
+
             });
         }catch (error){
             return res.send(error)
@@ -183,11 +184,11 @@ const userController = {
         try{
             const resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0){
-                let user = await db.User.findByPk(req.params.id);
+                let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]});
                 let type = await db.UserType.findAll();
                 return res.render('users/userEdit', {
-                    user:user,
-                    type:type,
+                    user: user,
+                    type: type,
                     errors: resultValidation.mapped(),
                     oldData: req.body
                 });

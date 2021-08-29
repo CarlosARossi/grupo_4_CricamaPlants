@@ -6,6 +6,8 @@ const multer = require ('multer');
 
 
 //Middlewares
+const validProduct = require("../middlewares/validProductMiddleware");
+const validEditProduct = require("../middlewares/validEditProductMiddleware");
 const uploadFile = require("../middlewares/uploadFileMiddleware");
 const upload = multer({storage:uploadFile('products')});
 
@@ -26,11 +28,11 @@ router.post("/searchProduct",productController.searchProduct);
 
 //Create product
 router.get("/productCreate",productController.create);
-router.post("/save",[upload.single("image")],productController.save);
+router.post("/save",[upload.single("image")],validProduct,productController.save);
 
 //Edit product
 router.get("/productEdit/:id",productController.productEdit);
-router.put("/saveEdition/:id",[upload.single("image")],productController.saveEdition);
+router.put("/saveEdition/:id",[upload.single("image")],validEditProduct,productController.saveEdition);
 
 //Delete product
 router.delete("/productDelete/:id",productController.delete);
