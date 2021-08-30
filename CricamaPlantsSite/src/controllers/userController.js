@@ -245,7 +245,7 @@ const userController = {
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password,10),
                 image: req.file == undefined ? "/img/users/userDefault.png" : "/uploads/users/" + req.file.filename,
-                id_user_type: req.body.type
+                id_user_type: '2' //req.body.userType
             });
             return res.redirect("/userProfile/" + user.id_user)
         }catch (error){
