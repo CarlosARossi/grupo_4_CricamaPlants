@@ -79,7 +79,7 @@ CREATE TABLE products (
 
 LOCK TABLES products WRITE;
 INSERT INTO products VALUES 
-	(1,NULL,NULL,'ANTHURIUM X MACROLOBIUM','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',"/img/products/productDefault.jpg",2000,13),
+	(1,NULL,NULL,'ANTHURIUM X MACROLOBIUM','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',"/img/products/productDefault.jpg",2000,1),
     (2,NULL,NULL,'MACETA CILINDRO CEMENTO','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat','/uploads/products/image-1626129993039.jpg',500,2),
     (3,NULL,NULL,'FERTILIZANTE GENERAL','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat','/uploads/products/insumoFertilizante.jpg',99.99,3),
 	(4,NULL,NULL,'POTUS MARBLE QUEEN','Lorem ipsum dolor sit amet consectetur adipiscing elit placerat',"/uploads/products/plantaInteriorPotus.jpg",1500,1),

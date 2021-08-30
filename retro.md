@@ -90,3 +90,21 @@ A lo largo del proyecto corregimos muchos de los errores y ajustamos al mínimo 
  
 ### 5. Dejar de hacer:
 Consideramos que no hay ninguna actividad o acitud que haya que cambiar por completo.
+
+
+## Sprint 6 (estrella de mar)
+
+### 1. Comenzar a hacer:
+Consideramos que no hay propuestas o acciones que tengamos que comenzar a hacer en función de los resultados del sprint pasado.
+ 
+### 2. Hacer más:
+Al terminar una actividad del sprint, todos tenemos que ver como quedó y revisar la funcionalidad del código para ver si hay algo a mejorar. 
+ 
+### 3. Continuar haciendo:
+Seguir trabajando en equipo y con una comunicación activa. Pidiendo ayuda y con predisposición para ayudar a los demas. También continuar llevando a cabo todas las tareas opcionales del sprint.
+ 
+### 4. Hacer menos:
+No dejar actividades para último momento, ya que al final pueden surgir problemas y no llegar con el tiempo predispuesto para ello.
+ 
+### 5. Dejar de hacer:
+Consideramos que no hay ninguna actividad o acitud que haya que cambiar por completo.
