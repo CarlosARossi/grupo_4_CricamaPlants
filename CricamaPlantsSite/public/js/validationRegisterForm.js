@@ -1,17 +1,19 @@
- window.addEventListener('load', function(){
+window.addEventListener('load', function(){
 
     let form = document.querySelector('.form');
-    let firstName = document.querySelector("input[name='firstName']");
-    let lastName = document.querySelector("input[name='lastName']");
-    let email = document.querySelector("input[name='email']");
-    let image = document.querySelector("input[name='image']");
-    let password = document.querySelector("input[name='password']");
-    let passwordConfirm = document.querySelector("input[name='passwordConfirm']");
-
-    let errors = []
-
+    
     form.addEventListener("submit", function(event){
         //event.preventDefault();
+
+        let errors = []
+
+        let firstName = document.querySelector("input[name='firstName']");
+        let lastName = document.querySelector("input[name='lastName']");
+        let email = document.querySelector("input[name='email']");
+        let image = document.querySelector("input[name='image']");
+        let password = document.querySelector("input[name='password']");
+        let passwordConfirm = document.querySelector("input[name='passwordConfirm']");
+
         if(firstName.value == ""){
             errors.push("El campo nombre no debe estar vacío");
         }
@@ -22,20 +24,24 @@
             errors.push("El campo email no debe estar vacío");
         }
         if(image.value == ""){
-            errors.push("Pon una imagen");
+            errors.push("Agrega una imagen");
         }
         if(password.value == ""){
-            errors.push("El campo contrasena no debe estar vacío");
+            errors.push("Te falta una contraseña");
         }
         if(passwordConfirm.value == ""){
-            errors.push("coloca la misma contrasena");
+            errors.push("Tenes que repetir la contraseña");
         }
         if (errors.length > 0){
             event.preventDefault();
             let ulErrors = document.querySelector('div.errors ul');
+            ulErrors.innerHTML = '';
             for(let i = 0; i < errors.length; i++){
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
             }
+            /*  errors.forEach(error => {
+                ulErrors.innerHTML += `<li>${error}</li>`
+            }); */
         }
     });
 

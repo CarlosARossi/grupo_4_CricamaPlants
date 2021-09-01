@@ -1,26 +1,30 @@
 window.addEventListener('load', function(){
 
     let form = document.querySelector('.form');
-    
-    let email = document.querySelector("input[name='email']");
-    let password = document.querySelector("input[name='password']");
-    
-    let errors = []
 
     form.addEventListener("submit", function(event){
         
+        let errors = [];
+
+        let email = document.querySelector("input[name='email']");
+        let password = document.querySelector("input[name='password']");
+
         if(email.value == ""){
-            errors.push("El campo email no debe estar vacío");
+            errors.push("Te falta el email");
         }
         if(password.value == ""){
-            errors.push("El campo contrasena no debe estar vacío");
+            errors.push("Te falta la contraseña");
         }
         if (errors.length > 0){
             event.preventDefault();
             let ulErrors = document.querySelector('div.errors ul');
-            for(let i = 0; i < errors.length; i++){
+            ulErrors.innerHTML = '';
+            /* for(let i = 0; i < errors.length; i++){
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
-            }
+            } */
+            errors.forEach(error => {
+                ulErrors.innerHTML += `<li>${error}</li>`
+            });
         }
     });
 
