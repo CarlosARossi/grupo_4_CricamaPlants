@@ -4,6 +4,9 @@ const product = require('../models/productModel');
 const users = require('../models/userModel');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
+
 
 //Functions for JSON
 /* 
@@ -184,16 +187,33 @@ const productController = {
 
     searchProduct: async (req, res) => {
         try{
-            let product = await db.Product.findAll({where:{ name: req.body}})
+            let product = await db.Product.findAll({where:{ 
+                [Op.or]: [
+                    {   
+                    name: {
+                        [Op.like]: `%${req.body.search}%`
+                        }
+                    },
+                    {
+                    description: {
+                        [Op.like]: `%${req.body.search}%`
+                        },
+                    }]
+                }
+            })
+            let category = ""
+            let keyword = ""
+            console.log(product);
             res.render("products/products",{
                 list: product, 
-                keyword: req.body ? req.body.search : null, 
-                category: req.params.category ? req.params.category : null
+                keyword: req.body ? req.body.search : keyword, 
+                category: req.params.category ? req.params.category : category
             })
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
-    },//search for a product by name
+    },//search for a product by name or description
 
 }
     
