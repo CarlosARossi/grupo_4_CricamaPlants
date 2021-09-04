@@ -18,6 +18,10 @@
 
                 <h1 id="title">Edición de productos</h1>
 
+                <div class="errors">
+                    <ul></ul>
+                </div>
+
                 <!-- IMAGE -->
                 <figure><img class='imageEdit' src="<%=product.image%>"  alt=""></figure>
 
@@ -134,6 +138,7 @@
 
     <!---------------------------------------- FOOTER ---------------------------------------->
     <%- include('../includes/footer') %>
+    <script src="/js/validationProductEdit.js"></script>
 
 </body>
 </html>
