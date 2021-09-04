@@ -24,7 +24,6 @@
                     type=text 
                     name="name" 
                     autofocus
-                    required 
                     placeholder="Nombre del producto"
                     class= '<%= locals.errors && errors.name ? 'inputError' : null %>'
                     value= '<%= locals.oldData ? oldData.name : null %>' 
@@ -102,7 +101,7 @@
                 </p>
             <% } %>
 
-
+            <!-- BUTTON -->
             <fieldset>
                 <button type="submit" name="save" class="button">ENVIAR</button>
             </fieldset>

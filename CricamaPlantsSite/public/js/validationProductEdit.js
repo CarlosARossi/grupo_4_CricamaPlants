@@ -8,20 +8,20 @@ window.addEventListener('load', function(){
         let errors = []
 
         let name = document.querySelector("input[name='name']");
-        let description = document.querySelector("input[name='description']");
+        let description = document.querySelector("textarea[name='description']");
         let image = document.querySelector("input[name='image']");
-        let category = document.querySelector("input[name='category']");
+        let category = document.querySelector("select[name='category']");
         let price = document.querySelector("input[name='price']");
 
         if(name.value == ""){
-            errors.push("El campo nombre no debe estar vacío");
+            errors.push("Agrega un nombre");
         }else if(name.value.length < 3){
-            errors.push("El nombre es muy corto");
+            errors.push("El nombre es muy corto, mínimo 3 caracteres");
         }
         if(description.value == ""){
             errors.push("Agrega una descripción");
         }else if(description.value.length < 15){
-            errors.push("La descripción es muy corta");
+            errors.push("La descripción es muy corta, mínimo 15 caracteres");
         }
         if(image.value == ""){
             errors.push("Agrega una imagen");

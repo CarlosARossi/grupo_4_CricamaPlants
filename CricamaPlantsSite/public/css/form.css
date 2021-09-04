@@ -159,11 +159,7 @@ select, option{
     border-radius: 10px !important; 
 }
 
-.errors ul li{
-    font-weight: 600;
-    color: tomato;
-    padding: 2px;
-}
+
 
 /* .inputData{
     position: relative;

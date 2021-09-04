@@ -203,7 +203,11 @@ const userController = {
                     password: bcryptjs.hashSync(req.body.password,10),
                     image: req.file == undefined ? userEdit.image : "/uploads/users/" + req.file.filename, 
                     id_user_type: req.body.type   
-                },{include: [{association: "userType"}],where: {id_user: req.params.id}});
+                },{
+                    include: [{association: "userType"}],
+                    where: {id_user: req.params.id}
+                    }
+                );
             return res.redirect("/userProfile/" + req.params.id)
         }catch (error){
             console.log(error)
