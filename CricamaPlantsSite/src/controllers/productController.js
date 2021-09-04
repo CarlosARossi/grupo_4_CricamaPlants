@@ -84,13 +84,23 @@ const productController = {
 
     create: async (req, res) => {
         try{
-            let categories = await db.Category.findAll()
+            if(req.session.userLogged != undefined){
+                if(req.session.userLogged.userType.type == "admin"){//Habilita la lista de usuarios si el userLogged es admin
+                    let categories = await db.Category.findAll()
 
-            return res.render('products/productCreate', {
-                categories:categories
-            });
+                    return res.render('products/productCreate', {
+                        categories:categories
+                    });
+                }
+                else{
+                    return res.render('not-found')
+                }
+            }else{
+                return res.render('not-found')
+            }
 
         }catch (error){
+            console.log(error)
             return res.send(error)
         }
     },
