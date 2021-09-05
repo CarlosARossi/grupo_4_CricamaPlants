@@ -13,83 +13,58 @@
 /*********************** MAIN ***********************/
 
 main{
-    margin: 20px 40px;
     color: #30544E;
+    margin: 10px;
 }
 
 main h2{
     margin-bottom: 3px;
 }
 
-.boxImagen{
-    height: 55%;
-    margin-bottom: 15px;
-}
-
-.boxImagen figure{
-    text-align: center;
-}
-
-figure img{
-    width: 70%;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-.boxImagen2{
-    display: flex;
-    flex-wrap: wrap;
-    width: 60%;
-    height: 60%;
-    border: solid 2px #30544E;
+.product{
     margin: auto;
-    padding: 10px;
-    border-radius: 8px;
-    line-height: 40px;
-    font-size: 14px;
-    font-style: italic;
-    justify-content: space-between;
-}
-
-main p{
-    text-align: center;
-}
-
-.boxImagen2 i{
-    margin: 5px;
-}
-
-.texto1{
-    width: 44%;
-}
-
-.boxCantidad{
+    padding: 5px;
+    width: 90vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    border: solid #30544E 1px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.boxCantidad input{
-    width: 25%;
-    height: 70%;
-    margin: 7px;
+.product p{
+    margin: 0px;
 }
 
-.boxImagen label{
-    margin-left: 10px;
+.imageCart{
+    width: 15vw;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
-.boxImagen select{
-    width: 33%;
+.quantity{
+    height: fit-content;
+    width: 10vw;
+}
+
+.buttonTrash{
+    color: #30544E;
+    font-size: 1em;
+    background-color: #F5E078;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 4px;
+    transition: all 100ms;
 }
 
 .boxSubtotal{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 10px;
+    margin: auto;
     align-items: center;
+    width: 90vw;
 }
 
 .boxEnvio{
@@ -109,25 +84,7 @@ main p{
     align-items: center;
 }
 
-.comprarButton{
-    color: #30544E;
-    font-size: 0.8rem;
-    background-color: #F5E078;
-    border: 1px solid #30544E;
-    width: 15vw;
-    border-radius: 4px;
-    padding: 4px;
-    transition: all 100ms;
-    margin-left: 8px;
-}
 
-.comprarButton:hover{
-    background-color: #30544E;
-    color: #F5E078;
-    border: solid 1px #F5E078;
-    font-size: 0.8rem;
-    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
-}
 
 .articleEnvio{
     line-height: 20px;
@@ -135,7 +92,7 @@ main p{
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: black;
-  }
+}
 
 ::-moz-placeholder { /* Firefox 19+ */
     color: black;
@@ -176,39 +133,67 @@ main p{
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
+.buy{
+    width: 90vw;
+    text-align: right;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.buyButton{
+    color: #30544E;
+    font-size: 1rem;
+    background-color: #F5E078;
+    border: 1px solid #30544E;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 100ms;
+    margin-left: 8px;
+}
+
+.buyButton:hover{
+    background-color: #30544E;
+    color: #F5E078;
+    border: solid 1px #F5E078;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+}
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
     
-    main img{
-        width: 50%;
+    .product{
+        width: 80vw;
+    }
+    
+    .imageCart{
+        width: 130px;
     }
 
-    .boxImagen{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+    .quantity{
+        width: 5vw;
     }
 
-    .boxImagen figure{
-       width: 50%;
+    .boxSubtotal{
+        width: 80vw;
+        margin: auto;
+        padding: 20px;
     }
 
-    .boxImagen label{
-        margin-left: 0px;
+    .boxEnvio{
+        width: 80vw;
+        margin: auto;
+        padding: 20px;
     }
 
-    .boxImagen2{
-        font-size: 16px;
-        display: flex;
-        justify-content: space-around;
-        width: 35%;
+    .buy{
+        width: 80vw;
     }
 
-    main p{
-        font-size: 15px;
+    .buyButton{
+        font-size: 1.5rem;
+        padding: 7px;
     }
-
 }
 
 /*********************************************** DESKTOP ***********************************************/

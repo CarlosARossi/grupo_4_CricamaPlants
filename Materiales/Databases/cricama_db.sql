@@ -71,6 +71,7 @@ CREATE TABLE products (
     description 	TEXT,
     image 			VARCHAR(255),
 	price 			DECIMAL(10,2),
+	quantity		INT UNSIGNED NOT NULL,
 	id_category 	SMALLINT(6) UNSIGNED NOT NULL,
 	PRIMARY KEY (id_product),
 	INDEX (id_category),

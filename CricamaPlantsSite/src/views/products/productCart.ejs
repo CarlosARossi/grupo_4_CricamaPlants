@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/productCart.css">
+    
+</head>
+<body>
+    <!---------------------------------------- HEADER ---------------------------------------->
+    <%- include('../includes/header') %>
+
+    <!---------------------------------------- MAIN ---------------------------------------->
+    <main>
+
+        <h2>Carrito de compras</h2>
+        
+
+        <section class="product">
+
+            <figure>
+                <img class='imageCart' src="/img/products/samples/plantaInterior1.jpg" alt="">
+            </figure>
+
+            <p class="name">Ficus Elástica</p>
+            
+            <section>
+                <label for="quantity">Cantidad:</label>
+                <input class="quantity" value="1" type="number" name="quantity">
+            </section>
+
+            <button type="submit"><i class="fas fa-trash buttonTrash"></i></button>
+
+            <p class="price">$500</p>
+
+        </section>
+
+        <section class="product">
+
+            <figure>
+                <img class='imageCart' src="/img/products/samples/plantaInterior2.jpg" alt="">
+            </figure>
+
+            <p class="name">Potus Marble</p>
+            
+            <section>
+                <label for="quantity">Cantidad:</label>
+                <input class="quantity" value="1" type="number" name="quantity">
+            </section>
+
+            <button type="submit"><i class="fas fa-trash buttonTrash"></i></button>
+
+            <p class="price">$600</p>
+
+        </section>
+
+        <section class="boxSubtotal">
+            <h4>SUBTOTAL (sin envío)</h4><p class="price">$850</p>
+        </section>
+
+        <section class="boxEnvio">
+
+            <article class="articleEnvio">
+                <p>Retiro en el local (SIN COSTO) ó seleccioná la forma de envío <i class="fas fa-truck"></i></p>
+            </article>
+
+            <article class="postalButton">
+                <input type="text" placeholder="Ingresá tu codigo postal" class="cantidad"><button class="cantidad">Calcular</button> 
+            </article>
+
+
+            <article class="boxTotal">
+                <h5>Total $850 ó hasta 3 cuotas sin interés de $283.33</h5>
+            </article>
+
+        
+        </section>
+
+        <section class="buy">
+            <button type="submit" class="buyButton">COMPRAR</button>
+        </section>
+    
+    </main>
+
+    <!---------------------------------------- FOOTER ---------------------------------------->
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

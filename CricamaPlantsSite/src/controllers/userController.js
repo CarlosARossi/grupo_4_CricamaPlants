@@ -150,6 +150,7 @@ const userController = {
                 return res.redirect("userProfile/"+user.id_user)
             }
         }catch (error){
+            console.log('access')
             console.log(error)
             return res.send(error)
         }
@@ -158,10 +159,13 @@ const userController = {
     userProfile: async (req, res) => {
         try{
             let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]})
+            console.log(req.session.userLogged);
             return res.render('users/userProfile', {
                 user: req.session.userLogged.userType.type == "admin" ? user : req.session.userLogged ////Habilita el acceso al perfil de otros usuarios si userLogged es admin
             });
         }catch (error){
+            console.log('userProfile')
+            console.log(error)
             return res.send(error)
         }
     },

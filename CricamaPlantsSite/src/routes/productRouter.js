@@ -15,7 +15,7 @@ const upload = multer({storage:uploadFile('products')});
 //Routes
 
 //Product Car
-router.get("/productCar",productController.productCar);
+router.get("/productCart",productController.productCart);
 
 //Product Detail
 router.get("/productDetail/:id",productController.productDetail);

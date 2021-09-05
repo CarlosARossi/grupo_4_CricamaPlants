@@ -36,6 +36,11 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
+        quantity: {
+            type: dataTypes.INTEGER,
+            unsigned: true,
+            allowNull: false,
+        },
         id_category: {
             type: dataTypes.INTEGER,
             unsigned: true,

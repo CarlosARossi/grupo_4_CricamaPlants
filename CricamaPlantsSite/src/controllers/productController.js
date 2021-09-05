@@ -47,7 +47,7 @@ module.exports = productController;   */
 
 const productController = {
 
-    productCar:(req,res) => res.render('products/productCar'),
+    productCart:(req,res) => res.render('products/productCart'),
 
     list: async (req, res) => {
         try{
