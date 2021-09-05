@@ -78,6 +78,10 @@ a{
     animation-iteration-count: 30;
     animation-direction: linear;
 }*/
+.errors{
+    display: flex;
+    justify-content: center
+}
 
 .errors ul li{
     font-weight: 600;
