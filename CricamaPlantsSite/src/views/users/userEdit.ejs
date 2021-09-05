@@ -18,6 +18,10 @@
 
                 <h1 id="title">Edición de usuarios</h1>
 
+                <div class="errors">
+                    <ul></ul>
+                </div>
+
                 <!-- IMAGE -->
                 <figure><img class='avatarProfile' src="<%=user.image%>"  alt=""></figure>
 
@@ -100,6 +104,7 @@
                 <% } %>
 
 
+                
                 <% if(isLogged && user.type == "admin"){ %> 
                     <fieldset class="">
                         <label for="categoria">Tipo de usuario:</label>
@@ -115,6 +120,7 @@
                         </select>
                     </fieldset>
                 <% } %> 
+                
 
 
                 <!-- PASSWORD -->
@@ -194,6 +200,7 @@
 
     <!---------------------------------------- FOOTER ---------------------------------------->
     <%- include('../includes/footer') %>
+    <script src="/js/validationUserEdirForm.js"></script>
 
 </body>
 </html>

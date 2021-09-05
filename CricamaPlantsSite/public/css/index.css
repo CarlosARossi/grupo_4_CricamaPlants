@@ -44,18 +44,54 @@ h3 {
 
 ul{
     list-style: none;
-}
+}/*para los bullet points puede ser aca el tema*/
 
 a{
     text-decoration:none;
     color: inherit;
 }
 
+@keyframes shaker{
+    0%{
+        transform: translateY(50%);
+    };
+    100%{
+        transform: translateY(-50%);
+    };
+}
+
+/*@keyframes blinker{
+    0%{
+        opacity: 1
+    };
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1
+    };
+}
+
+.forBlinker{
+    animation-name: blinker;
+    animation-duration: 100ms;
+    animation-iteration-count: 30;
+    animation-direction: linear;
+}*/
+
 .errors ul li{
     font-weight: 600;
     color: tomato;
     padding: 2px;
+    animation-name: shaker;
+    animation-duration: 20ms;
+    animation-iteration-count: 30;
+    animation-direction: normal;
 }
+
+
+
+
 
 /*********************************************** MOBILE ***********************************************/
 
