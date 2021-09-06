@@ -62,6 +62,10 @@ module.exports = function (sequelize, dataTypes) {
             as: "category",
             foreignKey: "id_category"
         });
+        Product.hasMany(models.ShopCart, {
+            as: "shopCart",
+            foreignKey: "id_product"
+        });
     }
 
     return Product;

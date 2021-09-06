@@ -62,10 +62,10 @@ module.exports = function (sequelize, dataTypes) {
             as: "userType",
             foreignKey: "id_user_type"
         });
-      /*   User.belongsTo(models.ShopCart, {
+        User.hasMany(models.ShopCart, {
             as: "shopCart",
-            foreignKey: "id_shop"
-        }); */
+            foreignKey: "id_user"
+        });
     }
     
     return User;

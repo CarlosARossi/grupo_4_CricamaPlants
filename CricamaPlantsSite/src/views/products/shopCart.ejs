@@ -15,47 +15,41 @@
 
         <h2>Carrito de compras</h2>
         
+        <% if (shopCart.length > 0) { %>
+            <% shopCart.forEach(item => { %>
+                <section class="product">
 
-        <section class="product">
+                    <figure>
+                        <img class='imageCart' src="<%= item.product.image %>" alt="">
+                    </figure>
+        
+                    <p class="name"><%= item.product.name  %> </p>
+                    
+                    <section class= "quantity">
+                        <label for="quantity">Cantidad:</label>
+                        <input class="quantity" value="<%= item.quantity %>" type="number" name="quantity" min="1">
+                    </section>
+        
+                    <form action="/deleteCart/<%= item.id_shop %>?_method=DELETE" method="post">
+                        <button type="submit"><i class="fas fa-trash buttonTrash"></i></button>
+                    </form>
 
-            <figure>
-                <img class='imageCart' src="/img/products/samples/plantaInterior1.jpg" alt="">
-            </figure>
+                    <p class="price">$<%= Math.round(item.product.price*item.quantity)  %></p>
+        
+                </section>
+            <% }) %> 
+        <% }else{%>
+            <h2>Carrito vacio</h2>
+        <% } %> 
 
-            <p class="name">Ficus Elástica</p>
-            
-            <section>
-                <label for="quantity">Cantidad:</label>
-                <input class="quantity" value="1" type="number" name="quantity">
-            </section>
-
-            <button type="submit"><i class="fas fa-trash buttonTrash"></i></button>
-
-            <p class="price">$500</p>
-
-        </section>
-
-        <section class="product">
-
-            <figure>
-                <img class='imageCart' src="/img/products/samples/plantaInterior2.jpg" alt="">
-            </figure>
-
-            <p class="name">Potus Marble</p>
-            
-            <section>
-                <label for="quantity">Cantidad:</label>
-                <input class="quantity" value="1" type="number" name="quantity">
-            </section>
-
-            <button type="submit"><i class="fas fa-trash buttonTrash"></i></button>
-
-            <p class="price">$600</p>
-
-        </section>
+    
+            <% for( let i = 0; i < shopCart.length; i++ ) { 
+                var subtotal = 0;
+                subtotal + shopCart[i].product.price;
+            }%>
 
         <section class="boxSubtotal">
-            <h4>SUBTOTAL (sin envío)</h4><p class="price">$850</p>
+            <h4>SUBTOTAL (sin envío)</h4><p class="price"><%= subtotal %> </p>
         </section>
 
         <section class="boxEnvio">

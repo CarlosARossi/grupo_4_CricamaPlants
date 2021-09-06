@@ -138,7 +138,11 @@
                     <a href='/productDetail/<%= product.id_product %>'>
                         <figure><img class='image' src="<%= product.image%>" alt=""></figure>
                         <section class="box-article">
-                            <i id='iconCart' class="fas fa-shopping-cart"></i>
+                            <form action="/shopCart/add" method="POST">
+                                <input type="hidden" name="product" value="<%= product.id_product %>">
+                                <input type="hidden" name="user" value="<%= user.id_user %>">
+                                <button type="submit"><i id='iconCart' class="fas fa-shopping-cart"></i></button>
+                            </form>
                             <p class="price">$<%= product.price %></p>
                             <p class="name"><%= product.name %></p>
                             <p class="quotes">3 cuotas sin interés de $<%= Math.round(product.price/3) %></p>

@@ -101,6 +101,23 @@
                 </p>
             <% } %>
 
+            <!-- QUANTITY -->
+            <fieldset class="">
+                <input 
+                    type=number 
+                    name="quantity" 
+                    placeholder="Cantidad"
+                    class= '<%= locals.errors && errors.quantity ? 'inputError' : null %>'
+                    value= '<%= locals.oldData ? oldData.quantity : null %>'
+                >
+            </fieldset>
+
+            <% if (locals.errors && errors.quantity) { %>
+                <p class="feedbackError">
+                    <%= errors.quantity.msg %> 
+                </p>
+            <% } %>
+
             <!-- BUTTON -->
             <fieldset>
                 <button type="submit" name="save" class="button">ENVIAR</button>

@@ -47,11 +47,94 @@ module.exports = productController;   */
 
 const productController = {
 
-    productCart:(req,res) => res.render('products/productCart'),
+    shopCart: async (req, res) => {
+        try {
+            if(!req.session.userLogged){
+                res.redirect('/login')
+            }
+            console.log(req.session.userLogged.id_user);
+            const products = await db.Product.findAll();
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({where: {id_user: req.session.userLogged.id_user},include: [{association: "product"},{association: "user"}]}) : "";
+            console.log(shopCart);
+            res.render('products/shopCart',{
+                user: user,
+                products: products,
+                shopCart: shopCart
+            })
+
+        } catch (error) {
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    createCart: async (req, res) => {
+        try {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0){
+                let products = await db.Product.findByPk(req.body.product, {include: [{association: "category"}]})
+                return res.render('products/productDetail', {
+                    product: products,
+                    user: user,
+                    shopCart: shopCart,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
+            if(!req.session.userLogged){
+                res.redirect('/login')
+            }
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user, {include: [{association: "userType"}]}) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({include: ['product', 'user']},{where: {id_user: req.session.userLogged.id_user}}) : "";
+            const product = await db.Product.findByPk(req.body.product)
+            const createCart = await db.ShopCart.create({
+                id_user: req.body.user,
+                id_product: product.id_product,
+                quantity: req.body.quantity,
+                price: product.price,
+                created_at: Date.now(),
+                updated_at: Date.now(),
+            })
+            res.redirect('/shopCart')
+        } catch (error) {
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    updateCart: async (req, res) => {
+        try {
+            res.send({data: req.body, id: req.params.id})
+        } catch (error) {
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    deleteCart: async (req, res) => {
+        try{
+            let productCartDelete = await db.ShopCart.destroy({where: {id_shop: req.params.id}});
+            return res.redirect('/shopCart');
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
+    },
 
     list: async (req, res) => {
         try{
-                if (req.params.category){
+            if(req.session.userLogged){
+                var user = await db.User.findByPk(req.session.userLogged.id_user);
+                var shopCart = await db.ShopCart.findAll(
+                    {where: {id_user: req.session.userLogged.id_user}},
+                    {include: ['product', 'user']}
+                );
+            }else{
+                var user = ""
+                var shopCart = ""
+            }
+            if (req.params.category){
                 var category = await db.Category.findOne({where:{ category: req.params.category}})
                 var products = await db.Product.findAll({where:{ id_category: category.id_category}})
             }else{
@@ -60,8 +143,9 @@ const productController = {
             }
             return res.render('products/products', {
                 list: products, 
-                category: category
-                
+                category: category,
+                user:user,
+                shopCart:shopCart
             })
         }catch (error){
             console.log(error)
@@ -71,11 +155,13 @@ const productController = {
 
     productDetail: async (req, res) => {
         try{
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user, {include: [{association: "userType"}]}) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({include: ['product', 'user']},{where: {id_user: req.session.userLogged.id_user}}) : "";
             let products = await db.Product.findByPk(req.params.id, {include: [{association: "category"}]})
-            
             return res.render('products/productDetail', {
                 product: products,
-                user: req.session.userLogged
+                user: user,
+                shopCart: shopCart
             })
             }catch (error){
                 return res.send(error)
@@ -106,7 +192,6 @@ const productController = {
     },
 
     save: async (req, res) => {
-
         try{
             const resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0){
@@ -126,9 +211,10 @@ const productController = {
                     description: req.body.description,
                     image: req.file == undefined ? "/img/products/productDefault.jpg" : "/uploads/products/" + req.file.filename,
                     price: req.body.price,
+                    quantity: req.body.quantity,
                     id_category: req.body.category
                     });
-                    /* console.log(newProduct) */
+
         return res.redirect('/productDetail/' + newProduct.id_product)
         }catch (error){
             console.log(error)
@@ -172,6 +258,7 @@ const productController = {
                 description: req.body.description,
                 image: req.file == undefined ? productEdit.image : "/uploads/products/" + req.file.filename,
                 price: req.body.price,
+                quantity: req.body.quantity,
                 id_category: req.body.category
             }, {
                 where: {id_product: req.params.id}

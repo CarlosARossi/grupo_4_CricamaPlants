@@ -10,12 +10,16 @@ const validProduct = require("../middlewares/validProductMiddleware");
 const validEditProduct = require("../middlewares/validEditProductMiddleware");
 const uploadFile = require("../middlewares/uploadFileMiddleware");
 const upload = multer({storage:uploadFile('products')});
+const validStock = require("../middlewares/validStockMiddleware");
 
 
 //Routes
 
 //Product Car
-router.get("/productCart",productController.productCart);
+router.get("/shopCart",productController.shopCart);
+router.post("/shopCart/add",validStock,productController.createCart);
+router.post("/shopCart/update/:id",productController.updateCart);
+router.delete("/deleteCart/:id",productController.deleteCart);
 
 //Product Detail
 router.get("/productDetail/:id",productController.productDetail);

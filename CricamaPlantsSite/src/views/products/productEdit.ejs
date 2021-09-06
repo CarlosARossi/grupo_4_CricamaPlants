@@ -99,6 +99,22 @@
                     </p>
                 <% } %>
 
+                <!-- PRICE -->
+                <fieldset class="inputData">
+                    <label class="" for="quantity">Cantidad:</label>
+                    <input 
+                        type='number' 
+                        name="quantity" 
+                        class= '<%= locals.errors && errors.quantity ? 'inputError' : null %>'
+                        value= '<%= locals.oldData ? oldData.quantity :  product.quantity %>' 
+                    >
+                </fieldset>
+                <% if (locals.errors && errors.quantity) { %>
+                    <p class="feedbackError">
+                        <%= errors.quantity.msg %> 
+                    </p>
+                <% } %>
+
                 <!-- CATEGORY -->
                 <fieldset class="inputData">
                     <label class="" for="type">Categoría:</label>

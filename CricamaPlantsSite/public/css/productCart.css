@@ -43,7 +43,27 @@ main h2{
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
+.name{
+    font-size: 1em;
+    width: 30vw;
+}
+
+.price{
+    font-size: 1em;
+    width: 17vw;
+}
+
 .quantity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantity label{
+    font-size: 0.5em;
+}
+
+.quantity input{
     height: fit-content;
     width: 10vw;
 }
@@ -170,7 +190,22 @@ main h2{
         width: 130px;
     }
 
-    .quantity{
+    .name{
+        font-size: 1.5em;
+        width: 30vw;
+    }
+    
+    .price{
+        font-size: 1.5em;
+        width: 17vw;
+    }
+    
+    
+    .quantity label{
+        font-size: 1em;
+    }
+
+    .quantity input{
         width: 5vw;
     }
 

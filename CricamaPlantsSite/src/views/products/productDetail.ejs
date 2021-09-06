@@ -31,8 +31,19 @@
                 <p class="description">Stock: <%= product.quantity %> unidades</p>
                 <p class="quotes">Hasta 3 cuotas sin interés</p>
                 <p class="discount">Descuento por transferencia o pago en efectivo</p>  
+                <form action="/shopCart/add" method="POST">
+                    <input type="hidden" name="product" value="<%= product.id_product %>">
+                    <input type="hidden" name="user" value="<%= user.id_user %>">
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" name="quantity" value="1" min="1">
+                    <% if (locals.errors && errors.quantity) { %>
+                        <p class="feedbackError">
+                            <%= errors.quantity.msg %> 
+                        </p>
+                    <% } %>
+                    <button type="submit" class="cartButton">Agregar al carrito</button>
+                </form>
                 
-                <button class="cartButton">Agregar al carrito</button>
 
                 <% if(isLogged && user.userType.type == "admin"){ %> 
                 <ul class="adminButtons">
