@@ -31,6 +31,8 @@ app.use(cookies())
 //Global middlewares
 const userLoggedMiddleware = require("../src/middlewares/userLoggedMiddleware")
 app.use(userLoggedMiddleware)
+const rememberMiddleware = require("../src/middlewares/rememberMiddleware")
+app.use(rememberMiddleware);
 
 //Data Configuration
 app.use(express.urlencoded({extended:false})) // add req.body
@@ -43,8 +45,8 @@ const user = require('./routes/userRouter');
 app.use(user);
 const product = require('./routes/productRouter');
 app.use(product);
-const cookieParser = require('cookie-parser');
-app.use(cookieParser);
+//const cookieParser = require('cookie-parser');
+//app.use(cookies);
 /* const Productos = require('./routes/Products');
 app.use(Productos); */
 

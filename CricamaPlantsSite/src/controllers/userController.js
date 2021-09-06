@@ -144,8 +144,10 @@ const userController = {
                 let user = await db.User.findOne({include: [{association: "userType"}],where:{ email: req.body.email}})
                 delete user.password; //Borro la password por seguridad
                 req.session.userLogged = user;
-                if(req.body.remember){
-                    res.cookie('userEmail', req.body.email, { maxAge: 1000 * 300 })
+
+
+                if(req.body.remember != undefined){
+                    res.cookie('remember', user.email, { maxAge: 20 })
                 }
                 return res.redirect("userProfile/"+user.id_user)
             }
