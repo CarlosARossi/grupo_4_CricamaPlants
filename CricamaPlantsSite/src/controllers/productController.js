@@ -52,15 +52,19 @@ const productController = {
             if(!req.session.userLogged){
                 res.redirect('/login')
             }
-            console.log(req.session.userLogged.id_user);
             const products = await db.Product.findAll();
             const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user) : "";
             const shopCart = req.session.userLogged ? await db.ShopCart.findAll({where: {id_user: req.session.userLogged.id_user},include: [{association: "product"},{association: "user"}]}) : "";
-            console.log(shopCart);
+            let totalPrice = 0;
+            for (let i = 0; i < shopCart.length; i++) {
+                totalPrice += (Number(shopCart[i].product.price)*Number(shopCart[i].quantity))
+            }
+            
             res.render('products/shopCart',{
                 user: user,
                 products: products,
-                shopCart: shopCart
+                shopCart: shopCart,
+                totalPrice: totalPrice
             })
 
         } catch (error) {
@@ -71,6 +75,8 @@ const productController = {
 
     createCart: async (req, res) => {
         try {
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user, {include: [{association: "userType"}]}) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({include: ['product', 'user']},{where: {id_user: req.session.userLogged.id_user}}) : "";
             const resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0){
                 let products = await db.Product.findByPk(req.body.product, {include: [{association: "category"}]})
@@ -85,8 +91,6 @@ const productController = {
             if(!req.session.userLogged){
                 res.redirect('/login')
             }
-            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user, {include: [{association: "userType"}]}) : "";
-            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({include: ['product', 'user']},{where: {id_user: req.session.userLogged.id_user}}) : "";
             const product = await db.Product.findByPk(req.body.product)
             const createCart = await db.ShopCart.create({
                 id_user: req.body.user,
@@ -124,16 +128,9 @@ const productController = {
 
     list: async (req, res) => {
         try{
-            if(req.session.userLogged){
-                var user = await db.User.findByPk(req.session.userLogged.id_user);
-                var shopCart = await db.ShopCart.findAll(
-                    {where: {id_user: req.session.userLogged.id_user}},
-                    {include: ['product', 'user']}
-                );
-            }else{
-                var user = ""
-                var shopCart = ""
-            }
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({where: {id_user: req.session.userLogged.id_user},include: [{association: "product"},{association: "user"}]}) : "";
+            
             if (req.params.category){
                 var category = await db.Category.findOne({where:{ category: req.params.category}})
                 var products = await db.Product.findAll({where:{ id_category: category.id_category}})
@@ -312,6 +309,23 @@ const productController = {
         }
     },//search for a product by name or description
 
+    OutOfStock: async (req, res) => {
+        try{
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({where: {id_user: req.session.userLogged.id_user},include: [{association: "product"},{association: "user"}]}) : "";
+            var category = await db.Category.findAll()
+            var products = await db.Product.findAll({where:{ quantity: 0},include: [{association: "category"}]})
+            return res.render('products/productsOutOfStock', {
+                list: products, 
+                category: category,
+                user:user,
+                shopCart:shopCart
+            })
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
+    },
 }
     
 module.exports = productController;

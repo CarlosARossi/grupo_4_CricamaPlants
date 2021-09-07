@@ -42,17 +42,11 @@
             <h2>Carrito vacio</h2>
         <% } %> 
 
-    
-            <% for( let i = 0; i < shopCart.length; i++ ) { 
-                var subtotal = 0;
-                subtotal + shopCart[i].product.price;
-            }%>
-
         <section class="boxSubtotal">
-            <h4>SUBTOTAL (sin envío)</h4><p class="price"><%= subtotal %> </p>
+            <p class="title">SUBTOTAL (sin envío):</p><p class="price">    $<%= totalPrice %> </p>
         </section>
 
-        <section class="boxEnvio">
+        <!-- <section class="boxEnvio">
 
             <article class="articleEnvio">
                 <p>Retiro en el local (SIN COSTO) ó seleccioná la forma de envío <i class="fas fa-truck"></i></p>
@@ -68,7 +62,7 @@
             </article>
 
         
-        </section>
+        </section> -->
 
         <section class="buy">
             <button type="submit" class="buyButton">COMPRAR</button>

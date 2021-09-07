@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./includes/head') %>
+    <%- include('../includes/head') %>
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <!---------------------------------------- HEADER ---------------------------------------->
-    <%- include('./includes/header') %>
+    <%- include('../includes/header') %>
 
     <!---------------------------------------- MAIN ---------------------------------------->
     <main>
-        
-        <a href='/productDetail'><img class='banner' src="/img/designs/bannerKit.jpg" alt="Banner Kit"></a>
-            
+
+        <section class="boxFirst">
+            <p><a href='/'>Inicio</a> <a href='/products'>/ Productos</a>
+                <% if(category.category) {%> 
+                    <a href='/products/<%= category.category %>'>/ <%= category.category %></a>
+                <% }%> 
+            </p> 
+        </section>
+
         <section class="generalArticles">
             <% if(list.length > 0){ %>
                 <% list.forEach(product => { %>
@@ -21,30 +27,25 @@
                     <a href='/productDetail/<%= product.id_product %>'>
                         <figure><img class='image' src="<%= product.image%>" alt=""></figure>
                         <section class="box-article">
-                            <form action="/shopCart/add" method="POST">
-                                <input type="hidden" name="product" value="<%= product.id_product %>">
-                                <input type="hidden" name="user" value="<%= user.id_user %>">
-                                <input type="hidden" name="quantity" value="1" min="1">
-                                <button type="submit"><i id='iconCart' class="fas fa-shopping-cart"></i></button>
-                            </form>
                             <p class="price">$<%= product.price %></p>
                             <p class="name"><%= product.name %></p>
-                            <p class="quotes">3 cuotas sin interés de $<%= Math.round(product.price/3) %></p>
                         </section>
                     </a>
                 </article>
 
                 <% }) %>
                 <% }else{ %>
-                    <h2>No se encontraron articulos que contengan "<%= locals.keyword ? keywords : null %>"</h2>
+                    <h2>Hay stock de todo!</h2>
             <% } %>
 
         </section>
 
+    <!--  <a id='newProduct' href='/productCreate'><i class="fas fa-plus"></i></a> -->
+            
     </main>
 
     <!---------------------------------------- FOOTER ---------------------------------------->
-    <%- include('./includes/footer') %>
+    <%- include('../includes/footer') %>
 
 </body>
 </html>

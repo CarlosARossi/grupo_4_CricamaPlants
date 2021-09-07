@@ -15,7 +15,7 @@ const validStock = require("../middlewares/validStockMiddleware");
 
 //Routes
 
-//Product Car
+//Product Cart
 router.get("/shopCart",productController.shopCart);
 router.post("/shopCart/add",validStock,productController.createCart);
 router.post("/shopCart/update/:id",productController.updateCart);
@@ -26,6 +26,9 @@ router.get("/productDetail/:id",productController.productDetail);
 
 //List of all products and products by category
 router.get("/products/:category?",productController.list);
+
+//List of all products out of stock
+router.get("/productsOutOfStock",productController.OutOfStock);
 
 //Search a product by name
 router.post("/searchProduct",productController.searchProduct);
