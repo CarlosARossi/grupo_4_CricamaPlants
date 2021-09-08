@@ -12,6 +12,7 @@ window.addEventListener('load', function(){
         let image = document.querySelector("input[name='image']");
         let category = document.querySelector("select[name='category']");
         let price = document.querySelector("input[name='price']");
+        let quantity = document.querySelector("input[name='quantity']");
 
         if(name.value == ""){
             errors.push("Agrega un nombre");
@@ -31,6 +32,9 @@ window.addEventListener('load', function(){
         }
         if(price.value == ""){
             errors.push("Ingrese el valor, o es gratis?");
+        }
+        if(quantity.value == ""){
+            errors.push("Ingrese una cantidad, aunque sea 0");
         }
         if (errors.length > 0){
             event.preventDefault();

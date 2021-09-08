@@ -33,5 +33,7 @@ module.exports =  [
         return true;
     }),
     body('price')
-        .notEmpty().withMessage('Te faltó el precio, o lo vas a regalar?...')
+        .notEmpty().withMessage('Te faltó el precio, o lo vas a regalar?...'),
+    body('quantity')
+        .notEmpty().withMessage('Te faltó la cantidad, podes poner 0 igual')
 ]
