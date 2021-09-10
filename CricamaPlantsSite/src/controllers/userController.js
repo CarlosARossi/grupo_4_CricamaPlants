@@ -147,7 +147,7 @@ const userController = {
 
                 if(req.body.remember){
                     console.log('remember');
-                    res.cookie('userEmail', req.body.email,  { maxAge: (1000 * 60) * 2})
+                    res.cookie('userEmail', req.body.email,  { maxAge: (1000 * 60) * 2 })
                 }
                 return res.redirect("userProfile/"+user.id_user)
             }
