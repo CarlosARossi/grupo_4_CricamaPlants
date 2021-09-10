@@ -31,8 +31,8 @@ app.use(cookies())
 //Global middlewares
 const userLoggedMiddleware = require("../src/middlewares/userLoggedMiddleware")
 app.use(userLoggedMiddleware)
-const rememberMiddleware = require("../src/middlewares/rememberMiddleware")
-app.use(rememberMiddleware);
+/* const rememberMiddleware = require("../src/middlewares/rememberMiddleware")
+app.use(rememberMiddleware); */
 
 //Data Configuration
 app.use(express.urlencoded({extended:false})) // add req.body

@@ -145,9 +145,9 @@ const userController = {
                 delete user.password; //Borro la password por seguridad
                 req.session.userLogged = user;
 
-
-                if(req.body.remember != undefined){
-                    res.cookie('remember', user.email, { maxAge: 20 })
+                if(req.body.remember){
+                    console.log('remember');
+                    res.cookie('userEmail', req.body.email,  { maxAge: (1000 * 60) * 2})
                 }
                 return res.redirect("userProfile/"+user.id_user)
             }
@@ -161,7 +161,6 @@ const userController = {
     userProfile: async (req, res) => {
         try{
             let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]})
-            console.log(req.session.userLogged);
             return res.render('users/userProfile', {
                 user: req.session.userLogged.userType.type == "admin" ? user : req.session.userLogged ////Habilita el acceso al perfil de otros usuarios si userLogged es admin
             });

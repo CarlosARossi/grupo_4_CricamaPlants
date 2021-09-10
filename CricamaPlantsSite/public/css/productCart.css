@@ -69,14 +69,25 @@ main h2{
     width: 10vw;
 }
 
+button{
+    border: none;
+}
+
 .buttonTrash{
-    color: #30544E;
+    color: #F5E078;
+    border: solid 1px #F5E078;
     font-size: 1em;
-    background-color: #F5E078;
+    background-color: #30544E;
     width: fit-content;
     border-radius: 4px;
     padding: 4px;
     transition: all 100ms;
+}
+
+.buttonTrash:hover{
+    color: #30544E;
+    border: solid 1px #30544E;
+    background-color: #F5E078;
 }
 
 .boxSubtotal{
