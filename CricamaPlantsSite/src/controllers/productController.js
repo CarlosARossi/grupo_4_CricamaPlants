@@ -47,6 +47,8 @@ module.exports = productController;   */
 
 const productController = {
 
+    /*--------------------- SHOPCART ---------------------*/
+
     shopCart: async (req, res) => {
         try {
             if(!req.session.userLogged){
@@ -126,29 +128,32 @@ const productController = {
         }
     },
 
-    list: async (req, res) => {
-        try{
-            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user) : "";
-            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({where: {id_user: req.session.userLogged.id_user},include: [{association: "product"},{association: "user"}]}) : "";
+    buyCart: async (req, res) => {
+        try {
+            const shopCart = await db.ShopCart.findAll({include: ['product', 'user']},{where: {id_user: req.session.userLogged.id_user}});
             
-            if (req.params.category){
-                var category = await db.Category.findOne({where:{ category: req.params.category}})
-                var products = await db.Product.findAll({where:{ id_category: category.id_category}})
-            }else{
-                var category = ""
-                var products = await db.Product.findAll()
-            }
-            return res.render('products/products', {
-                list: products, 
-                category: category,
-                user:user,
-                shopCart:shopCart
-            })
-        }catch (error){
+            shopCart.forEach(async element => {
+                const product = await db.Product.findByPk(element.id_product)
+                console.log(product);
+                const productEdit = await db.Product.update({
+                    updated_at: new Date(),
+                    quantity: product.quantity - element.quantity,
+                }, {
+                    where: {id_product: element.id_product}
+                    }
+                );
+            });
+
+            const emptyCart = await db.ShopCart.destroy({where: {id_user: req.session.userLogged.id_user}});
+
+            return res.redirect('/shopCart');
+        } catch (error) {
             console.log(error)
             return res.send(error)
         }
     },
+
+    /*--------------------- PRODUCTS ---------------------*/
 
     productDetail: async (req, res) => {
         try{
@@ -273,6 +278,32 @@ const productController = {
         try{
             let productDelete = await db.Product.destroy({where: {id_product: req.params.id}});
             return res.redirect('/');
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    /*--------------------- OTHERS ---------------------*/
+
+    list: async (req, res) => {
+        try{
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({where: {id_user: req.session.userLogged.id_user},include: [{association: "product"},{association: "user"}]}) : "";
+            
+            if (req.params.category){
+                var category = await db.Category.findOne({where:{ category: req.params.category}})
+                var products = await db.Product.findAll({where:{ id_category: category.id_category}})
+            }else{
+                var category = ""
+                var products = await db.Product.findAll()
+            }
+            return res.render('products/products', {
+                list: products, 
+                category: category,
+                user:user,
+                shopCart:shopCart
+            })
         }catch (error){
             console.log(error)
             return res.send(error)

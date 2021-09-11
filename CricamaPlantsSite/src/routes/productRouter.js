@@ -20,6 +20,7 @@ router.get("/shopCart",productController.shopCart);
 router.post("/shopCart/add",validStock,productController.createCart);
 router.post("/shopCart/update/:id",productController.updateCart);
 router.delete("/deleteCart/:id",productController.deleteCart);
+router.post("/shopCart/buy",validStock,productController.buyCart);
 
 //Product Detail
 router.get("/productDetail/:id",productController.productDetail);
