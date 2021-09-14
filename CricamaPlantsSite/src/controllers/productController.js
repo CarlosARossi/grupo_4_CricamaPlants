@@ -293,7 +293,7 @@ const productController = {
             
             if (req.params.category){
                 var category = await db.Category.findOne({where:{ category: req.params.category}})
-                var products = await db.Product.findAll({where:{ id_category: category.id_category}})
+                var products = await db.Product.findAll({where:{ id_category: category.id_category},include: [{association: "category"}]})
             }else{
                 var category = ""
                 var products = await db.Product.findAll()
@@ -352,6 +352,38 @@ const productController = {
                 user:user,
                 shopCart:shopCart
             })
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    /*--------------------- APIs ---------------------*/
+
+    productsAPIs: async (req, res) => {
+        try{
+            let products = await db.Product.findAll();
+            return res.status(200).json({
+                count: products.length,
+                products: products,
+                status: 200
+            });
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    productsAPIsID: async (req, res) => {
+        try{
+            let products = await db.Product.findByPk(req.params.id, {include: [{association: "category"}]});
+            if(products){
+                return res.status(200).json({
+                    data: products,
+                    status: 200
+                })
+            }
+            return res.status(404).json('Product not found')
         }catch (error){
             console.log(error)
             return res.send(error)

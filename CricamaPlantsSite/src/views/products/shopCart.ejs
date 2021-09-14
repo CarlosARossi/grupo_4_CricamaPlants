@@ -27,7 +27,7 @@
                     
                     <section class= "quantity">
                         <label for="quantity">Cantidad:</label>
-                        <input class="quantity" value="<%= item.quantity %>" type="number" name="quantity" min="1">
+                        <input class="quantity" data-product='<%= item.product.name %> ' value="<%= item.quantity %>" type="number" name="quantity" min="1">
                     </section>
         
                     <form action="/deleteCart/<%= item.id_shop %>?_method=DELETE" method="post">

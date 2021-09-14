@@ -37,8 +37,8 @@ router.put("/userSave/:id",[upload.single("image")],validEditUser,userController
 //Delete user
 router.delete("/userDelete/:id",userController.userDelete)
 
-//Admin Profile
-router.get("/admin",userController.admin);
+/* //Admin Profile
+router.get("/admin",userController.admin); */
 
 //Logout user
 router.get("/logout", userController.logout)

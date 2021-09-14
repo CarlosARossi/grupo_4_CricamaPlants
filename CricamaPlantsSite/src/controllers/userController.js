@@ -105,10 +105,6 @@ module.exports = userController;
 //Functions for Databases
 const userController = {
 
-    admin:(req,res) => {
-        res.render('users/admin')
-    },
-
     list: async (req, res) => {
         try{
             if(req.session.userLogged.userType.type == "admin"){//Habilita la lista de usuarios si el userLogged es admin
@@ -127,6 +123,21 @@ const userController = {
             return res.send(error)
         }
     },
+
+    userProfile: async (req, res) => {
+        try{
+            let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]})
+            return res.render('users/userProfile', {
+                user: req.session.userLogged.userType.type == "admin" ? user : req.session.userLogged ////Habilita el acceso al perfil de otros usuarios si userLogged es admin
+            });
+        }catch (error){
+            console.log('userProfile')
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    /*--------------------- LOGIN ---------------------*/
 
     login: (req,res) => {
         res.render('users/login')
@@ -158,18 +169,7 @@ const userController = {
         }
     },
 
-    userProfile: async (req, res) => {
-        try{
-            let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]})
-            return res.render('users/userProfile', {
-                user: req.session.userLogged.userType.type == "admin" ? user : req.session.userLogged ////Habilita el acceso al perfil de otros usuarios si userLogged es admin
-            });
-        }catch (error){
-            console.log('userProfile')
-            console.log(error)
-            return res.send(error)
-        }
-    },
+    /*--------------------- EDITION ---------------------*/
 
     userEdit: async (req, res) => {
         try{
@@ -221,6 +221,8 @@ const userController = {
         }
     },
 
+    /*--------------------- REGISTER ---------------------*/
+
     registerForm: async (req, res) => {
         try{
             let type = await db.UserType.findAll()
@@ -264,6 +266,8 @@ const userController = {
         }
     },
 
+    /*--------------------- DELETE ---------------------*/
+
     userDelete: async (req, res) => {
         try{
             let userDelete = await db.User.destroy({where: {id_user: req.params.id}});
@@ -273,6 +277,8 @@ const userController = {
             return res.send(error)
         }
     },
+
+    /*--------------------- LOGOUT ---------------------*/
 
     logout: (req, res) => {
         res.clearCookie('userEmail');
@@ -284,7 +290,9 @@ const userController = {
 
     usersAPIs: async (req, res) => {
         try{
-            let users = await db.User.findAll({atributes:["id_user", "last_name", "email"]});
+            let users = await db.User.findAll({
+                attributes:["id_user", "last_name", "email"]
+            });
             return res.status(200).json({
                 count: users.length,
                 users: users,
@@ -305,7 +313,7 @@ const userController = {
                     status: 200
                 })
             }
-            return res.status(200).json('User not found')
+            return res.status(404).json('User not found')
         }catch (error){
             console.log(error)
             return res.send(error)

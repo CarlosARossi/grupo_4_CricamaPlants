@@ -24,9 +24,9 @@ window.addEventListener('load', function(){
         }else if(description.value.length < 15){
             errors.push("La descripción es muy corta, mínimo 15 caracteres");
         }
-        if(image.value == ""){
+        /* if(image.value == ""){
             errors.push("Agrega una imagen");
-        }
+        } */
         if(category.value == ""){
             errors.push("Define una categoría");
         }

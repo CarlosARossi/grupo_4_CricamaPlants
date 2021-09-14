@@ -45,6 +45,10 @@ router.put("/saveEdition/:id",[upload.single("image")],validEditProduct,productC
 //Delete product
 router.delete("/productDelete/:id",productController.delete);
 
+//APIs
+router.get("/api/products", productController.productsAPIs)
+router.get("/api/products/:id", productController.productsAPIsID)
+
 module.exports = router;
 
 

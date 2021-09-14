@@ -7,10 +7,10 @@ window.addEventListener('load', function(){
 
     quantity.forEach(item => {
     
-        item.addEventListener("click", function(){
-        console.log("click");
-        price.innerText = 'lalala';
-    console.log(price);
+        item.addEventListener("change", function(e){
+        console.log("click",e.target.dataset.product);
+        /* price.innerText = 'lalala'; */
+        console.log(price);
         })
     })
 
