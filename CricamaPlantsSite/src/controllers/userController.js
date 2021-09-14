@@ -278,7 +278,39 @@ const userController = {
         res.clearCookie('userEmail');
         req.session.destroy()
         return res.redirect("/")
-    }
+    },
+
+    /*--------------------- APIs ---------------------*/
+
+    usersAPIs: async (req, res) => {
+        try{
+            let users = await db.User.findAll({atributes:["id_user", "last_name", "email"]});
+            return res.status(200).json({
+                count: users.length,
+                users: users,
+                status: 200
+            });
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
+    },
+
+    usersAPIsID:async (req, res) => {
+        try{
+            let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]});
+            if(user){
+                return res.status(200).json({
+                    data: user,
+                    status: 200
+                })
+            }
+            return res.status(200).json('User not found')
+        }catch (error){
+            console.log(error)
+            return res.send(error)
+        }
+    },
 }
 
 module.exports = userController;

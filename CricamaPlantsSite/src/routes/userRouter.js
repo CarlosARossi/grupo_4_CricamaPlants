@@ -43,5 +43,9 @@ router.get("/admin",userController.admin);
 //Logout user
 router.get("/logout", userController.logout)
 
+//APIs
+router.get("/api/users", userController.usersAPIs)
+router.get("/api/users/:id", userController.usersAPIsID)
+
 module.exports = router;
 
