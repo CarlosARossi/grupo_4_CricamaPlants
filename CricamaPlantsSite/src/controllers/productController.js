@@ -4,9 +4,10 @@ const product = require('../models/productModel');
 const users = require('../models/userModel');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
+const { category } = require('../models/productModel');
 const Op = Sequelize.Op;
-
+const {fn, col } = db.sequelize
 
 //Functions for JSON
 /* 
@@ -111,7 +112,15 @@ const productController = {
 
     updateCart: async (req, res) => {
         try {
-            res.send({data: req.body, id: req.params.id})
+            /* res.send({data: req.body, id: req.params.id}) */
+            let updateCart = await db.ShopCart.update({
+                updated_at: new Date(),
+                quantity: req.body.quantity,
+            }, {
+                where: {id_shop: req.params.id}
+                }
+            );
+            res.redirect('/shopCart')
         } catch (error) {
             console.log(error)
             return res.send(error)
@@ -254,7 +263,6 @@ const productController = {
             }
             let productEdit = await db.Product.findByPk(req.params.id)
             let product = await db.Product.update({
-                created_at: new Date(),
                 updated_at: new Date(),
                 name: req.body.name,
                 description: req.body.description,
@@ -362,9 +370,38 @@ const productController = {
 
     productsAPIs: async (req, res) => {
         try{
-            let products = await db.Product.findAll();
+            let products = await db.Product.findAll({
+                include: [{
+                    association: "category",
+                    attributes:[
+                        ['id_category', 'id'],
+                        ['category','name'],
+                ]}],
+                attributes: [
+                    ['id_product', 'id'],
+                    'name',
+                    'description',
+                    [fn('concat', 'http://localhost:3000/api/products/', col('id_product')), "detail"]
+                ],
+                limit: 10
+            });
+
+            let categories = await db.Category.findAll({
+                include:[{
+                    association: 'product',
+                    attributes: [[fn('count', col('name')),'counts']]
+                    /*group: 'id_product',
+                    raw: true */
+                }],
+                attributes: [
+                    ['category', 'name'],
+                ], 
+                group: ['id_category']
+            })
+
             return res.status(200).json({
                 count: products.length,
+                countByCategory: categories,
                 products: products,
                 status: 200
             });
@@ -376,7 +413,25 @@ const productController = {
 
     productsAPIsID: async (req, res) => {
         try{
-            let products = await db.Product.findByPk(req.params.id, {include: [{association: "category"}]});
+            let products = await db.Product.findByPk(req.params.id,{
+                include: [{
+                    association: "category",
+                    attributes:[
+                        ['id_category', 'id'],
+                        ['category','name'],
+                    ]}],
+                attributes: {
+                    include: [
+                        [fn('concat', 'http://localhost:3000', col('image')), 'image']
+                    ],
+                    exclude: [
+                        'image',
+                        'id_category',
+                        'created_at',
+                        'updated_at'
+                    ]
+                }
+            });
             if(products){
                 return res.status(200).json({
                     data: products,

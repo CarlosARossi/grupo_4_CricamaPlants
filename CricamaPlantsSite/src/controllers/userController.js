@@ -4,6 +4,7 @@ const users = require('../models/userModel');
 const bcryptjs = require('bcryptjs');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
+const {fn, col } = db.sequelize
 
 
 //Functions for JSON
@@ -291,7 +292,12 @@ const userController = {
     usersAPIs: async (req, res) => {
         try{
             let users = await db.User.findAll({
-                attributes:["id_user", "last_name", "email"]
+                attributes:[
+                    'id_user', 
+                    [fn('concat', col('first_name'), ' ', col('last_name')), "name"], 
+                    'email',
+                    [fn('concat', 'http://localhost:3000/api/users/', col('id_user')), "name"]
+                ]
             });
             return res.status(200).json({
                 count: users.length,
@@ -306,7 +312,19 @@ const userController = {
 
     usersAPIsID:async (req, res) => {
         try{
-            let user = await db.User.findByPk(req.params.id, {include: [{association: "userType"}]});
+            let user = await db.User.findByPk(req.params.id, {
+                attributes: {
+                    include: [
+                        [fn('concat', 'http://localhost:3000', col('image')), 'image']
+                    ],
+                    exclude: [
+                        'image',
+                        'password', 
+                        'id_user_type'
+                    ]
+                }
+                
+            });
             if(user){
                 return res.status(200).json({
                     data: user,

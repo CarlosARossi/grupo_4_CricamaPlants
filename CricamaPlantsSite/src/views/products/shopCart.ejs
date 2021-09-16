@@ -25,11 +25,13 @@
         
                     <p class="name"><%= item.product.name  %> </p>
                     
-                    <section class= "quantity">
-                        <label for="quantity">Cantidad:</label>
-                        <input class="quantity" data-product='<%= item.product.name %> ' value="<%= item.quantity %>" type="number" name="quantity" min="1">
-                    </section>
-        
+                    <form action="/updateCart/<%= item.id_shop %>" method="post" class='quantityForm'>
+                        <section class= "quantity">
+                            <label for="quantity">Cantidad:</label>
+                            <input class="quantity" data-product='<%= item.product.name %> ' value="<%= item.quantity %>" type="number" name="quantity" min="1">
+                        </section>
+                    </form>    
+                    
                     <form action="/deleteCart/<%= item.id_shop %>?_method=DELETE" method="post">
                         <button type="submit"><i class="fas fa-trash buttonTrash"></i></button>
                     </form>
