@@ -1,23 +1,21 @@
 window.addEventListener('load', function(){
-    console.log('shopCart!');
-    let quantity = document.querySelectorAll("input[name='quantity']");
-    let price = document.querySelectorAll(".price");
-    let form = document.querySelectorAll(".quantityForm");
 
+    let quantityForm = document.querySelectorAll(".quantityForm");
 
-    form.forEach(item=>{
-        item.addEventListener('submit', function(e){
-            quantity.addEventListener('change',this,false)
+    quantityForm.forEach(form=>{
+
+        form.querySelector("input[name='quantity']").addEventListener('change', (e) => {
+
+            const target = e.target;
+            const value = target.value;
+            const form = target.parentElement.parentElement;
+
+            if(value !== null && value >= 1){
+                form.submit()
+            }
+
         })
+
     })
- /*    quantity.forEach(item => {
-    
-        item.addEventListener("change", function(e){
-            console.log('send');
-            form.addEventListener("submit",this,false)
-            console.log("click",e.target.dataset.product);
-        })
-    }) */
-
 
 })

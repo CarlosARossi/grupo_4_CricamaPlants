@@ -389,18 +389,29 @@ const productController = {
             let categories = await db.Category.findAll({
                 include:[{
                     association: 'product',
-                    attributes: [[fn('count', col('name')),'counts']]
-                    /*group: 'id_product',
-                    raw: true */
+                    attributes:[
+                        ['id_product', 'category'],
+                        [fn('count', col('category')),'Count']
+                    ]
                 }],
-                attributes: [
+                attributes:[
                     ['category', 'name'],
-                ], 
-                group: ['id_category']
+                    /* [fn.literal('"category"."product"'), 'quantity'] */
+                ]
             })
+
+            /* let countByCategories = await categories.map(categorie => Object.assign(categorie,{count: categorie.product.length})
+            
+            ) */
+
+            let countByCategories = await categories.map(cat => Object.assign(cat,{...cat,count:Array.from(cat.product).map(p => p.id).length}))
+            console.log(countByCategories);
+            
+            /* return res.send(categories.map(c => c.product.length)); */
 
             return res.status(200).json({
                 count: products.length,
+                /* countByCategory: categories.map(c => Object({data: {...c}, count: c.product.length})), */
                 countByCategory: categories,
                 products: products,
                 status: 200
