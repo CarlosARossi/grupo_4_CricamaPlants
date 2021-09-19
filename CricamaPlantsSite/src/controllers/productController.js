@@ -391,33 +391,30 @@ const productController = {
                     association: 'product',
                     group: ['category'],
                     attributes:[
-                        ['id_product', 'category'],
-                        /* [fn('count', col('category')),'Count'] */
+                        ['id_product', 'product'],
                     ]
                 }],
                 attributes:[
                     ['category', 'name'],
-                    /* ['categories.product', 'quantity'] */
                 ]
             })
 
-            /* let countByCategories = await categories.map(categorie => Object.assign(categorie,{count: categorie.product.length})
-            
-            ) */
+            let countByCategory = []
 
-            /* let countByCategories = await categories.map(cat => Object.assign(cat,{...cat,count:Array.from(cat.product).map(p => p.id).length})) */
-            
-            
-            categories.map(cat => {cat.product.map(prod => Object.assign(prod,prod.length))})
-            /* return res.send(categories.map(c => c.product.length)); */
-            console.log(categories);
+            for (let i = 0; i < categories.length; i++) {
+                let tempCategories = {}
+                tempCategories.name = categories[i].dataValues.name
+                tempCategories.products = categories[i].product.length
+                countByCategory.push(tempCategories)
+            }
+
             return res.status(200).json({
                 count: products.length,
-                /* countByCategory: categories.map(c => Object({data: {...c}, count: c.product.length})), */
-                countByCategory: categories,
+                countByCategory: countByCategory,
                 products: products,
                 status: 200
             });
+
         }catch (error){
             console.log(error)
             return res.send(error)
