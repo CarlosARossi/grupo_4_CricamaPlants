@@ -60,6 +60,30 @@ a{
     };
 }
 
+.personalName{
+    font-size: 1.8em;
+    width: 85vw;
+    margin: auto;
+    text-align: left;
+    color: #30544E;
+    margin-top: 25px;
+}
+
+.description{
+    font-size: 1.2em;
+    width: 85vw;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.repo{
+    font-size: 1.2em;
+    width: 85vw;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
 /*@keyframes blinker{
     0%{
         opacity: 1
