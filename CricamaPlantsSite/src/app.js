@@ -4,7 +4,10 @@ const path = require('path');
 const method = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const cors = require('cors');
 
+//Cors
+app.use(cors())
 
 //Server Start
 app.set("port",process.env.PORT || 3000);
