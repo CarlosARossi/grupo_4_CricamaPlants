@@ -1,0 +1,11 @@
+.bottomBar{
+    background-color: #30544E;
+    color: #F5E078;
+    height: 30px;
+    margin: 45px;
+    border-style: solid;
+    border-radius: 10px;
+    display: flex;
+    padding: 35px;
+    align-items: center;
+}

@@ -1,0 +1,14 @@
+.centerBar {
+    text-align: center;
+    background-color: #30544E;
+    color: #F5E078;
+    height: 30px;
+    margin: 45px;
+    border-style: solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    align-items: center;
+}  
+
