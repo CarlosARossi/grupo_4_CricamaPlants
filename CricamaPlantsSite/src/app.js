@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const favicon = require('serve-favicon');
 const path = require('path');
 const method = require('method-override');
 const session = require('express-session');
@@ -8,6 +9,9 @@ const cors = require('cors');
 
 //Cors
 app.use(cors())
+
+//Favicon
+app.use(favicon(path.join(__dirname, '../public', 'favicon.ico')));
 
 //Server Start
 app.set("port",process.env.PORT || 3000);
