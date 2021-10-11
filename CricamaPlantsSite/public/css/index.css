@@ -204,7 +204,24 @@ main {
     height: 294px;
 }
 
-#iconCart{
+#formCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#30544E;
+    height: 40px;
+    border-radius:100%;
+    position: absolute;
+    right: 10px;
+}
+
+#formCart:hover{
+    background-color: #30544E;
+    color: #F5E078;
+    transition: all 0.5s;
+}
+
+#formCart button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,11 +230,9 @@ main {
     width: 40px;
     border: solid 2px #30544E;
     border-radius:100%;
-    position: absolute;
-    right: 10px;
 }
 
-#iconCart:hover{
+#formCart button:hover{
     background-color: #30544E;
     color: #F5E078;
     border: solid #F5E078 2px;

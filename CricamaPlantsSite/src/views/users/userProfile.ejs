@@ -45,6 +45,9 @@
                     <a href='#deleteOption'>
                         <li><button type="submit"><i class="fas fa-trash iconAdmin"></i> Borrar Perfil</button></li>
                     </a>
+                    <a href='/logout'>
+                        <li><i class="fas fa-sign-out-alt"></i> Salir</li>
+                    </a>
                     <% if(isLogged && user.userType.type == "admin"){ %> 
                     <a href='/productCreate'> 
                         <li><i class="fas fa-upload iconAdmin"></i> Cargá un nuevo producto!</li>

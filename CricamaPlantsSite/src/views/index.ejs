@@ -22,7 +22,7 @@
                     <a href='/productDetail/<%= product.id_product %>'>
                         <figure><img class='image' src="<%= product.image%>" alt=""></figure>
                         <section class="box-article">
-                            <form action="/shopCart/add" method="POST">
+                            <form id='formCart' action="/shopCart/add" method="POST">
                                 <input type="hidden" name="product" value="<%= product.id_product %>">
                                 <input type="hidden" name="user" value="<%= user.id_user %>">
                                 <input type="hidden" name="quantity" value="1" min="1">
