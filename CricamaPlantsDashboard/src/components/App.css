@@ -1,0 +1,26 @@
+.paletteColor{
+  color:  #30544E
+          #F5E078
+          #FAD7C5
+          #A78B48
+          #000000
+          #E2E7E6
+          #FFFFFF
+}
+
+/*********************** GENERAL ***********************/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  font-family: 'Roboto', sans-serif;
+  background-color: #E2E7E6;
+  position: relative;
+  max-width: 100vw;
+  overflow-x:hidden;
+  max-height: 100vw;
+}
