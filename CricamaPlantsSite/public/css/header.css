@@ -22,7 +22,7 @@ header{
 
 .logo{
     padding: 2px;
-    width: 20vw;   
+    width: 75px;   
 }
 
 .search { 
@@ -160,7 +160,7 @@ header{
 
     /*********************** HEADER TABLET ***********************/    
     .logo {
-        width: 100px;
+        width: 80px;
     }
 
     #menuNav:target{
@@ -239,8 +239,8 @@ header{
     }
 
     .avatar{
-        width: 2em;
-        height: 2em;
+        width: 1.5em;
+        height: 1.5em;
     }
 
     .iconsNav>li:hover>ul {

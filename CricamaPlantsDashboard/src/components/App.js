@@ -4,11 +4,13 @@ import './topBar/topBar.css';
 import './centerBar/centerBar.css';
 import './bottomBar/bottomBar.css';
 import './header/header.css'
+import './footer/footer.css'
 import './User.js';
 import TopBar from './topBar/TopBar';
 import CenterBar from './centerBar/CenterBar';
 import BottomBar from './bottomBar/BottomBar';
 import Header from './header/Header';
+import Footer from './footer/Footer';
 import User from './User';
 
 
@@ -39,9 +41,7 @@ function App(props) {
 
       </div>
 
-      
-
-      
+      <Footer />
 
     </React.Fragment>
   );
