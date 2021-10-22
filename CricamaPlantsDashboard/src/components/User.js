@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class User extends Component {
+    
     constructor (props) {
         super (props)
         this.state = {
@@ -8,29 +9,31 @@ class User extends Component {
         }
     }
 
-    apiCall(url, consecuencia) {
+    apiCall(url, handler) {
         fetch(url)
             .then( response => response.json())
-            .then( data => consecuencia(data))
+            .then( data => handler(data))
             .catch( error => console.log(error))
     }
 
-
     componentDidMount(){
-        this.apiCall('http://localhost:3000/api/users/1', this.mostrarUser)   
+        console.log('Mounted!');
+        this.apiCall('http://localhost:3000/api/users', this.mostrarUser)   
     }
 
     mostrarUser = (data) => {
         console.log(data)
         this.setState(
             {
-                user: data.data.email
+                user: data.count
             }
         )
     }
 
     render(){
         
+        console.log(this.state.user);
+
         return (
             <div>
                 {this.state.user}

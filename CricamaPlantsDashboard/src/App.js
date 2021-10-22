@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
-import './topBar/topBar.css';
-import './centerBar/centerBar.css';
-import './bottomBar/bottomBar.css';
-import './header/header.css'
-import './footer/footer.css'
-import './User.js';
-import TopBar from './topBar/TopBar';
-import CenterBar from './centerBar/CenterBar';
-import BottomBar from './bottomBar/BottomBar';
-import Header from './header/Header';
-import Footer from './footer/Footer';
-import User from './User';
+import './components/topBar/topBar.css';
+import './components/centerBar/centerBar.css';
+import './components/bottomBar/bottomBar.css';
+import './components/header/header.css'
+import './components/footer/footer.css'
+import './components/User.js';
+import TopBar from './components/topBar/TopBar';
+import CenterBar from './components/centerBar/CenterBar';
+import BottomBar from './components/bottomBar/BottomBar';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import User from './components/User';
 
 
 function App(props) {
