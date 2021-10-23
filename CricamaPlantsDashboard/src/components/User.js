@@ -25,7 +25,7 @@ class User extends Component {
         console.log(data)
         this.setState(
             {
-                user: data.count
+                user: data.cont
             }
         )
     }

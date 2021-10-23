@@ -170,12 +170,12 @@ a{
     margin: 20px;
 }
 
-.feedbackError {
+/* .feedbackError {
     font-size: 0.85em;
     color: tomato;
     font-weight: 500;
     font-style: italic;
-}
+} */
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){

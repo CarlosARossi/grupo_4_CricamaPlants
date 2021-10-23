@@ -17,10 +17,15 @@ const mainController = {
                 var shopCart = ""
                 /* console.log("Sin usuario"); */
             }
-            var category = ""
-            var products = await db.Product.findAll()
+            const category = ""
+            const products = await db.Product.findAll({include: [{association: "category"}]})
+
+            const productsOrder = products.sort(function (a,b){
+                return (b.quantity - a.quantity)
+            })
+
             return res.render('index', {
-                list: products, 
+                list: productsOrder, 
                 category: category,
                 user: user,
                 shopCart: shopCart

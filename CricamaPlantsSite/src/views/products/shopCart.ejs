@@ -18,24 +18,31 @@
         <% if (shopCart.length > 0) { %>
             <% shopCart.forEach(item => { %>
                 <section class="product">
-
+                    
                     <figure>
                         <img class='imageCart' src="<%= item.product.image %>" alt="">
                     </figure>
-        
-                    <p class="name"><%= item.product.name  %> </p>
-                    
+
+                    <a href='/productDetail/<%= item.product.id_product %>'>
+                        <p class="name"><%= item.product.name  %> </p>
+                    </a>
+
                     <form action="/updateCart/<%= item.id_shop %>" method="post" class='quantityForm'>
+
                         <section class= "quantity">
                             <label for="quantity">Cantidad:</label>
-                            <input class="quantity" data-product='<%= item.product.name %> ' value="<%= item.quantity %>" type="number" name="quantity" min="1">
+                            <input class="quantity" data-product='<%= item.product.name %>' value="<%= item.quantity %>" type="number" name="quantity" min="1">
+                            <input type="hidden" name="product" value="<%= item.product.id_product %>">
                         </section>
+
+                        <% if (locals.errors && errors.quantity && (productError==item.product.id_product)) { %>
+                            <p class="feedbackError">
+                                <%= errors.quantity.msg %> 
+                            </p>
+                        <% } %> 
+
                     </form>
-                    <% if (locals.errors && errors.quantity) { %>
-                        <p class="feedbackError">
-                            <%= errors.quantity.msg %> 
-                        </p>
-                    <% } %>    
+                    
                     
                     <form action="/deleteCart/<%= item.id_shop %>?_method=DELETE" method="post">
                         <button type="submit"><i class="fas fa-trash buttonTrash"></i></button>

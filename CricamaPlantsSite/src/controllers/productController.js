@@ -58,6 +58,8 @@ const productController = {
             const products = await db.Product.findAll();
             const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user) : "";
             const shopCart = req.session.userLogged ? await db.ShopCart.findAll({where: {id_user: req.session.userLogged.id_user},include: [{association: "product"},{association: "user"}]}) : "";
+            
+
             let totalPrice = 0;
             for (let i = 0; i < shopCart.length; i++) {
                 totalPrice += (Number(shopCart[i].product.price)*Number(shopCart[i].quantity))
@@ -81,6 +83,7 @@ const productController = {
             const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user, {include: [{association: "userType"}]}) : "";
             const shopCart = req.session.userLogged ? await db.ShopCart.findAll({include: ['product', 'user']},{where: {id_user: req.session.userLogged.id_user}}) : "";
             const resultValidation = validationResult(req);
+
             if (resultValidation.errors.length > 0){
                 let products = await db.Product.findByPk(req.body.product, {include: [{association: "category"}]})
                 return res.render('products/productDetail', {
@@ -113,6 +116,32 @@ const productController = {
     updateCart: async (req, res) => {
         try {
             /* res.send({data: req.body, id: req.params.id}) */
+            const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.id_user, {include: [{association: "userType"}]}) : "";
+            const shopCart = req.session.userLogged ? await db.ShopCart.findAll({include: ['product', 'user']},{where: {id_user: req.session.userLogged.id_user}}) : "";
+            const resultValidation = validationResult(req);
+            let productError = null;
+            let totalPrice = 0;
+
+            for (let i = 0; i < shopCart.length; i++) {
+                totalPrice += (Number(shopCart[i].product.price)*Number(shopCart[i].quantity))
+            }
+            
+            if (resultValidation.errors.length > 0){
+                let products = await db.Product.findByPk(req.body.product, {include: [{association: "category"}]});
+                productError = await db.ShopCart.findByPk(req.params.id);
+                /* console.log(resultValidation);
+                console.log(productError); */
+                return res.render('products/shopCart', {
+                    user: user,
+                    product: products,
+                    shopCart: shopCart,
+                    totalPrice: totalPrice,
+                    productError: productError.id_product,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
+
             let updateCart = await db.ShopCart.update({
                 updated_at: new Date(),
                 quantity: req.body.quantity,
@@ -143,7 +172,7 @@ const productController = {
             
             shopCart.forEach(async element => {
                 const product = await db.Product.findByPk(element.id_product)
-                console.log(product);
+                /* console.log(product); */
                 const productEdit = await db.Product.update({
                     updated_at: new Date(),
                     quantity: product.quantity - element.quantity,
@@ -336,7 +365,7 @@ const productController = {
             })
             let category = ""
             let keyword = ""
-            console.log(product);
+            /* console.log(product); */
             res.render("products/products",{
                 list: product, 
                 keyword: req.body ? req.body.search : keyword, 
