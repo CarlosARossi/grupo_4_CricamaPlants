@@ -18,6 +18,8 @@ window.addEventListener('load', function(){
             errors.push("Agrega un nombre");
         }else if(name.value.length < 3){
             errors.push("El nombre es muy corto, mínimo 3 caracteres");
+        }else if(name.value.length > 25){
+            errors.push("El nombre es muy largo, máximo 25 caracteres");
         }
         if(description.value == ""){
             errors.push("Agrega una descripción");

@@ -270,12 +270,12 @@ main {
     padding: 10px;
 }
 
-.feedbackError {
+/* .feedbackError {
     font-size: 0.85em;
     color: tomato;
     font-weight: 500;
     font-style: italic;
-}
+} */
 
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
@@ -294,7 +294,7 @@ main {
     .generalArticles{    
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-content: space-between;
         padding-top: 10px;
     }
