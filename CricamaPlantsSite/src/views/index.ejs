@@ -12,33 +12,84 @@
     <main>
         
         <a href='/productDetail'><img class='banner' src="/img/designs/bannerKit.jpg" alt="Banner Kit"></a>
-            <!-- 
-        <h1>Plantas</h1> -->
-        <section class="generalArticles">
-            <% if(list.length > 0){ %>
+        
+        <h1>Plantas</h1>
+            <section class="generalArticles">
+                <% let i = 0 %> 
                 <% list.forEach(product => { %>
-
-                <article class="articleMain">
-                    <a href='/productDetail/<%= product.id_product %>'>
-                        <figure><img class='image' src="<%= product.image%>" alt=""></figure>
-                        <section class="box-article">
-                            <form id='formCart' action="/shopCart/add" method="POST">
-                                <input type="hidden" name="product" value="<%= product.id_product %>">
-                                <input type="hidden" name="user" value="<%= user.id_user %>">
-                                <input type="hidden" name="quantity" value="1" min="1">
-                                <button type="submit"><i id='iconCart' class="fas fa-shopping-cart"></i></button>
-                            </form>
-                            <p class="price">$<%= product.price %></p>
-                            <p class="name"><%= product.name %></p>
-                            <p class="quotes">3 cuotas sin interés de $<%= Math.round(product.price/3) %></p>
-                        </section>
-                    </a>
-                </article>
-
+                    <% if(product.category.category == "plantas" && i<4){ %>
+                        <% i++ %> 
+                        <article class="articleMain">
+                            <a href='/productDetail/<%= product.id_product %>'>
+                                <figure><img class='image' src="<%= product.image%>" alt=""></figure>
+                                <section class="box-article">
+                                    <form id='formCart' action="/shopCart/add" method="POST">
+                                        <input type="hidden" name="product" value="<%= product.id_product %>">
+                                        <input type="hidden" name="user" value="<%= user.id_user %>">
+                                        <input type="hidden" name="quantity" value="1" min="1">
+                                        <button type="submit"><i id='iconCart' class="fas fa-shopping-cart"></i></button>
+                                    </form>
+                                    <p class="price">$<%= product.price %></p>
+                                    <p class="name"><%= product.name %></p>
+                                    <p class="quotes">3 cuotas sin interés de $<%= Math.round(product.price/3) %></p>
+                                </section>
+                            </a>
+                        </article>
+                    <% } %>
                 <% }) %>
-            <% } %>
+            </section>
 
-        </section>
+            <h1>Macetas</h1>
+                <section class="generalArticles">
+                    <% i = 0 %> 
+                    <% list.forEach(product => { %>
+                        <% if(product.category.category == "macetas" && i<4){ %>
+                            <% i++ %> 
+                            <article class="articleMain">
+                                <a href='/productDetail/<%= product.id_product %>'>
+                                    <figure><img class='image' src="<%= product.image%>" alt=""></figure>
+                                    <section class="box-article">
+                                        <form id='formCart' action="/shopCart/add" method="POST">
+                                            <input type="hidden" name="product" value="<%= product.id_product %>">
+                                            <input type="hidden" name="user" value="<%= user.id_user %>">
+                                            <input type="hidden" name="quantity" value="1" min="1">
+                                            <button type="submit"><i id='iconCart' class="fas fa-shopping-cart"></i></button>
+                                        </form>
+                                        <p class="price">$<%= product.price %></p>
+                                        <p class="name"><%= product.name %></p>
+                                        <p class="quotes">3 cuotas sin interés de $<%= Math.round(product.price/3) %></p>
+                                    </section>
+                                </a>
+                            </article>
+                        <% } %>
+                    <% }) %>
+                </section>
+
+                <h1>Insumos</h1>
+                <section class="generalArticles">
+                    <% i = 0 %>
+                    <% list.forEach(product => { %>
+                        <% if(product.category.category == "insumos" && i<4){ %>
+                            <% i++ %> 
+                            <article class="articleMain">
+                                <a href='/productDetail/<%= product.id_product %>'>
+                                    <figure><img class='image' src="<%= product.image%>" alt=""></figure>
+                                    <section class="box-article">
+                                        <form id='formCart' action="/shopCart/add" method="POST">
+                                            <input type="hidden" name="product" value="<%= product.id_product %>">
+                                            <input type="hidden" name="user" value="<%= user.id_user %>">
+                                            <input type="hidden" name="quantity" value="1" min="1">
+                                            <button type="submit"><i id='iconCart' class="fas fa-shopping-cart"></i></button>
+                                        </form>
+                                        <p class="price">$<%= product.price %></p>
+                                        <p class="name"><%= product.name %></p>
+                                        <p class="quotes">3 cuotas sin interés de $<%= Math.round(product.price/3) %></p>
+                                    </section>
+                                </a>
+                            </article>
+                        <% } %>
+                    <% }) %>
+                </section>
 
     </main>
 

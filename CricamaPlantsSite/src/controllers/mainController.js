@@ -17,10 +17,19 @@ const mainController = {
                 var shopCart = ""
                 /* console.log("Sin usuario"); */
             }
-            var category = ""
-            var products = await db.Product.findAll()
+            const category = ""
+            const products = await db.Product.findAll({include: [{association: "category"}]})
+
+            const productFilter = products.filter( e => {
+                return e.quantity>0;
+            })//quito los articulos sin stock
+
+            const productsOrder = productFilter.sort(function (a,b){
+                return (b.quantity - a.quantity)
+            })//ordeno los articulos por cantidad descendente
+
             return res.render('index', {
-                list: products, 
+                list: productsOrder, 
                 category: category,
                 user: user,
                 shopCart: shopCart

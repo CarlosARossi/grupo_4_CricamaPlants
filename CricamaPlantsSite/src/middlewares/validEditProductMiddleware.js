@@ -8,6 +8,7 @@ module.exports =  [
     body('name')
         .notEmpty().withMessage('Tenes que escribir un nombre de producto')
         .isLength({ min: 5 }).withMessage('Nombre de producto muy corto')
+        .isLength({ max: 25 }).withMessage('Nombre de producto muy largo')
         .custom(async (value, {req}) => {
             let created = await db.Product.findOne({where:{ name: value}});
             let product = await db.Product.findByPk(req.params.id);

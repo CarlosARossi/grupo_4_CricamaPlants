@@ -57,10 +57,11 @@ main h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3px;
 }
 
 .quantity label{
-    font-size: 0.5em;
+    font-size: 0.75em;
 }
 
 .quantity input{
@@ -197,6 +198,14 @@ button{
     box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
 }
 
+.feedbackError {
+    position: absolute;
+    font-size: 0.75em;
+    color: tomato;
+    font-weight: 500;
+    font-style: italic;
+}
+
 /*********************************************** TABLET ***********************************************/
 @media (min-width: 768px){
     
@@ -251,6 +260,10 @@ button{
     .buyButton{
         font-size: 1.5rem;
         padding: 7px;
+    }
+
+    .feedbackError {
+        font-size: 0.9em;
     }
 }
 

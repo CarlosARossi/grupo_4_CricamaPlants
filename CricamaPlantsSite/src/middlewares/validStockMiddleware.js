@@ -5,7 +5,7 @@ const db = require('../database/models');
 module.exports =  [
     body('quantity').custom(async (value, { req }) => {
         let product = await db.Product.findByPk(req.body.product);
-        /* console.log('entre');
+        /* console.log('validStockMiddleware');
         console.log(product.quantity); */
         if(value > product.quantity){
             console.log('error');

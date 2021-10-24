@@ -70,10 +70,10 @@ a{
     font-size: 1em;
     background-color: #F5E078;
     border: 1px solid #30544E;
-    width: 25vw;
+    width: fit-content;
     border-radius: 4px;
-    margin: auto;
-    padding: 5px;
+    margin-top: 8px;
+    padding: 7px;
     transition: all 100ms;
 }
 
@@ -86,35 +86,35 @@ a{
     }
 
 
-    .adminButtons li{
-        color: #30544E;
-        border: 1px solid #30544E;
-        background-color: #F5E078;
-        border-radius: 5px;
-        margin: auto;
-        margin-top: 10px;
-        padding: 5px;
-        text-align: center;
-        width: 25vw;
-    }
-    
-    .adminButtons li button{
-        border: none;
-        background-color: inherit;
-        color: #30544E;
-    }
-    
-    .adminButtons li:hover{
-        background-color: #30544E;
-        color: #F5E078;
-        border: solid 1px #F5E078;
-        font-size: 1em;
-        box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
-    }
-    
-    .adminButtons li:hover>button{
-        color: #F5E078;
-    }
+.adminButtons li{
+    color: #30544E;
+    border: 1px solid #30544E;
+    background-color: #F5E078;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 25vw;
+}
+
+.adminButtons li button{
+    border: none;
+    background-color: inherit;
+    color: #30544E;
+}
+
+.adminButtons li:hover{
+    background-color: #30544E;
+    color: #F5E078;
+    border: solid 1px #F5E078;
+    font-size: 1em;
+    box-shadow: 0px 0px 10px rgba(100,100,100,0.6);
+}
+
+.adminButtons li:hover>button{
+    color: #F5E078;
+}
 
 /* #adminButtons li button{
     border: none;
@@ -170,7 +170,14 @@ a{
     margin: 20px;
 }
 
+.shopForm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .feedbackError {
+    /* position: absolute; */
     font-size: 0.85em;
     color: tomato;
     font-weight: 500;
@@ -212,9 +219,6 @@ a{
     }
 
     .cartButton{
-        width: 54%;
-        margin: auto;
-        padding: 4px;
         font-size: 1.1rem;
     }
 

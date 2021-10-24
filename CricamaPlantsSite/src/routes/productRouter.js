@@ -18,7 +18,7 @@ const validStock = require("../middlewares/validStockMiddleware");
 //Product Cart
 router.get("/shopCart",productController.shopCart);
 router.post("/shopCart/add",validStock,productController.createCart);
-router.post("/updateCart/:id",productController.updateCart);
+router.post("/updateCart/:id",validStock,productController.updateCart);
 router.delete("/deleteCart/:id",productController.deleteCart);
 router.post("/shopCart/buy",validStock,productController.buyCart);
 
