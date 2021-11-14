@@ -5,7 +5,7 @@ class User extends Component {
     constructor (props) {
         super (props)
         this.state = {
-            user: ""
+            user: []
         }
     }
 
@@ -22,21 +22,24 @@ class User extends Component {
     }
 
     mostrarUser = (data) => {
-        console.log(data)
+        /* console.log(data) */
         this.setState(
             {
-                user: data.cont
+                user: data
             }
         )
     }
 
     render(){
         
-        console.log(this.state.user);
-
+        /* console.log(this.state.user); */
+        let count = this.state.user.count;
+        /* console.log(count); */
+        let user = "5";
         return (
             <div>
-                {this.state.user}
+                {count}
+                {user}
             </div>
         )
     }

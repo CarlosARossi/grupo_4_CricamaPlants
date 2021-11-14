@@ -398,7 +398,8 @@ const productController = {
     /*--------------------- APIs ---------------------*/
 
     productsAPIs: async (req, res) => {
-        try{
+        
+        /*  try{
             let products = await db.Product.findAll({
                 include: [{
                     association: "category",
@@ -409,7 +410,8 @@ const productController = {
                 attributes: [
                     ['id_product', 'id'],
                     'name',
-                    'description',
+                    'created_at',
+                    'description'
                     [fn('concat', 'http://localhost:3000/api/products/', col('id_product')), "detail"]
                 ],
                 limit: 10
@@ -443,7 +445,54 @@ const productController = {
                 products: products,
                 status: 200
             });
+ */
 
+        try{
+            let products = await db.Product.findAll();
+
+            let insumos = 0;
+            let macetas = 0;
+            let plantas = 0;
+            let desconocida = 0;
+
+
+            products.forEach(prod => {
+
+                if (prod.id_category == 1) {
+                    insumos += 1;
+                    prod.id_category = "insumos"
+                } else if (prod.id_category == 2) {
+                    macetas += 1;
+                    prod.id_category = "macetas"
+                } else if (prod.id_category == 3) {
+                    plantas += 1;
+                    prod.id_category = "plantas"
+                } else {
+                    desconocida + 1
+                }
+
+            })
+
+            products = products.map(prop =>{
+                return {
+                    id: prop.id_product,
+                    name: prop.name,
+                    created_at: prop.created_at,
+                    category: prop.id_category,
+                    detail: 'http://localhost:3000/api/products/' + prop.id_product
+                }
+            })
+
+            return res.status(200).json({
+                count: products.length,
+                countByCategory: {
+                    insumos: insumos,
+                    macetas: macetas,
+                    plantas: plantas
+                },
+                products: products,
+                status: 200
+            });
         }catch (error){
             console.log(error)
             return res.send(error)

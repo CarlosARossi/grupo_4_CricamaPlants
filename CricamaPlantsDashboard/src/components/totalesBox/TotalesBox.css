@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#div-totalesBox {
+    width: 100%;
+    height: auto;
+    margin-top: 11px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+#div-totalesBox h1 {
+    font-size: 21px;
+    color: #5a5c69;
+    margin-left: 12px;
+}
+

@@ -1,14 +1,15 @@
 import React from 'react';
 import TopInfo from './TopInfo';
 import PropTypes from 'prop-types';
+import User from '../User';
 
 function TopBar(props) {
     return(
-    
+        
         <React.Fragment>
-
+            <div>{User}</div>
             <TopInfo title="Total de productos en stock: " total=""/>
-            <TopInfo title="Total de usuarios: " total=""/>
+            <TopInfo title="Total de usuarios:" total=""/><User />
             <TopInfo title="Total de categorías: " total=""/>
 
         </React.Fragment>)

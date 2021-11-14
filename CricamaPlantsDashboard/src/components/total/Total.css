@@ -1,0 +1,72 @@
+.paletteColor{
+    color:  #30544E
+            #F5E078
+            #FAD7C5
+            #A78B48
+            #000000
+            #E2E7E6
+            #FFFFFF
+}
+
+  /*********************** GENERAL ***********************/
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.div-total{
+    background-color: #30544E;
+    min-width: 18%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #F5E078;
+    border-radius: 5px;
+    position: relative;
+}
+
+.div-total::after {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    content: " ";
+    background: linear-gradient(#d3d1d1, #d3d1d1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 93%;
+    height: 93%;
+    filter:blur(10px);
+    z-index: -1;
+}
+
+.borderRed{
+    border-left: 4px solid crimson;
+}
+
+.borderYellow{
+    border-left: 4px solid #f6c23e;
+}
+
+.borderGreen{
+    border-left: 4px solid #1cc88a;
+}
+
+.borderBlue{
+    border-left: 4px solid #4e73df;
+}
+
+.borderViolet{
+    border-left: 4px solid #a73ed8;
+}
+
+
+.div-total p {
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 1em;
+    color: #F5E078;
+}

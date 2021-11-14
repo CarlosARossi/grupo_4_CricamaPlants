@@ -296,7 +296,8 @@ const userController = {
                     'id_user', 
                     [fn('concat', col('first_name'), ' ', col('last_name')), "name"], 
                     'email',
-                    [fn('concat', 'http://localhost:3000/api/users/', col('id_user')), "name"]
+                    'created_at',
+                    [fn('concat', 'http://localhost:3000/api/users/', col('id_user')), "URL"]
                 ]
             });
             return res.status(200).json({
