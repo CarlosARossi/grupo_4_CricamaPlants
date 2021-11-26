@@ -13,7 +13,8 @@ import '../User.js';
 
 
 // import components
-import TotalesBox from '../totalesBox/TotalesBox';
+import TotalsBox from '../totalsBox/totalsBox';
+import LastProductInDB from '../lastProductInDB/LastProductInDB';
 import TopBar from '../topBar/TopBar';
 import CenterBar from '../centerBar/CenterBar';
 import Header from '../header/Header';
@@ -28,13 +29,15 @@ function App(props) {
       <Header />
 
       <div className="app">
-          <div className="TotalesBox"><TotalesBox /></div>
+          <div className="TotalesBox"><TotalsBox /></div>
 
-          <div className="topBar"><TopBar /></div>
+          <div className=""><LastProductInDB /></div>
+
+          {/* <div className="topBar"><TopBar /></div>
 
           <div className="centerBar"><CenterBar /></div>
 
-          <div className=""><User /></div>
+          <div className=""><User /></div> */}
 
       </div>
 

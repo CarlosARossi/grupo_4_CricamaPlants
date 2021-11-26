@@ -2,12 +2,12 @@
 import React, { useState, useEffect } from 'react';     
 
 // import css
-import './totalesTira.css';
+import './totalsBand.css';
 
 // import components
 import Total from '../total/Total';
 
-function TotalesTira() {
+function TotalsBand() {
 
     // Estado de todos los productos y de cada categoría
     const [products, setProducts] = useState([]);
@@ -106,4 +106,4 @@ function TotalesTira() {
     )
 }
 
-export default TotalesTira;
+export default TotalsBand;
