@@ -1,5 +1,6 @@
 // import de react
 import React, { useState, useEffect } from 'react';
+import * as dayjs from 'dayjs'
 
 // import css
 import './LastProductInDB.css'
@@ -27,8 +28,14 @@ function LastProductInDB(props) {
 
                         //setProducts((data.data));
                         /* console.log(data.products[data.products.length - 1].id); */
-
-                        const urlLastProduct = `http://localhost:3000/api/products/${data.products[data.products.length - 1].id}`//probar con [-1]
+                        let element = data.products[0];
+                        for (let i = 0; i < data.products.length; i++) {
+                            if(element.created_at < data.products[i].created_at){
+                                element = data.products[i]
+                            }
+                            
+                        }
+                        const urlLastProduct = `http://localhost:3000/api/products/${element.id}`//probar con [-1]
 
                         fetch(urlLastProduct)
                             .then(response2 => response2.json())
@@ -68,13 +75,17 @@ function LastProductInDB(props) {
                         {
                             (lastProduct.data) ? <p class="name">{lastProduct.data.name}</p> : <p class="name">Cargando...</p>
                         }
-                        <p>Privilegios del producto:</p>
-                        <ul id='second-section-ul-lastMovieIn'>
+                        <p class="price">Categoría del producto:</p>
+                        {
+                            (lastProduct.data) ? <p class="name">{lastProduct.data.category.name}</p> : <p class="name">Cargando...</p>
+                        }
+                        {/* <ul id='second-section-ul-lastMovieIn'>
                             {(lastProduct.detail && lastProduct.detail.length > 0) ? (lastProduct.detail[0].info_category.privileges.map((p, i) => {
                             return <li key={i}>{p.privilege}</li>
                             })) : <h5>Cargando...</h5>}
-                        </ul>
+                        </ul> */}
                     </section>
+                    
                 </a>
             </article>
     )
